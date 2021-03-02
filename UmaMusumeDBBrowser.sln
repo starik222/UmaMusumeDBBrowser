@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmaMusumeDBBrowser", "UmaMusumeDBBrowser\UmaMusumeDBBrowser.csproj", "{C762CA09-91E8-4AFF-AEB8-CFD216263D8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C762CA09-91E8-4AFF-AEB8-CFD216263D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C762CA09-91E8-4AFF-AEB8-CFD216263D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C762CA09-91E8-4AFF-AEB8-CFD216263D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C762CA09-91E8-4AFF-AEB8-CFD216263D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {820B08E8-F39C-4171-A18A-41CB396EB59C}
+	EndGlobalSection
+EndGlobal
