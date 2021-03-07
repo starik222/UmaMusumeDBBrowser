@@ -71,11 +71,6 @@ namespace UmaMusumeDBBrowser
                                 ts.IconSettings.Add(new KeyValuePair<string, List<string>>(listParam[0], dirs));
                                 break;
                             }
-                        //case "IconPath":
-                        //    {
-                        //        ts.IconPath = subItems[1];
-                        //        break;
-                        //    }
                         case "TextTypeAndName":
                             {
                                 string[] listParam = subItems[1].Split(new char[] { ',' });
@@ -87,6 +82,19 @@ namespace UmaMusumeDBBrowser
                         case "CustomQueryMainTable":
                             {
                                 ts.CustomQueryMainTable = subItems[1];
+                                break;
+                            }
+                        case "RowHeight":
+                            {
+                                ts.RowHeight = Convert.ToInt32(subItems[1]);
+                                break;
+                            }
+                        case "ColumnWidth":
+                            {
+                                string[] listParam = subItems[1].Split(new char[] { ',' });
+                                if (listParam.Length != 2)
+                                    throw new Exception("В секции ColumnWidth должно быть два параметра.");
+                                ts.ColumnWidth.Add(new KeyValuePair<string, int>(listParam[0].Trim(), Convert.ToInt32(listParam[1].Trim())));
                                 break;
                             }
                     }

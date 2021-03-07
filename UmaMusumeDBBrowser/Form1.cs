@@ -72,6 +72,7 @@ namespace UmaMusumeDBBrowser
                 }
             }
             table.AcceptChanges();
+            dataGridView1.RowTemplate.Height = settings.RowHeight;
             dataGridView1.DataSource = table;
             //dataGridView1.RowTemplate.Height = 50;
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
@@ -97,6 +98,13 @@ namespace UmaMusumeDBBrowser
                 dataGridView1.Columns[item.Value + "_trans"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 dataGridView1.Columns[item.Value + "_trans"].ReadOnly = false;
             }
+            foreach (var item in settings.ColumnWidth)
+            {
+                dataGridView1.Columns[item.Key].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dataGridView1.Columns[item.Key].Width = item.Value;
+                dataGridView1.Columns[item.Key].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            }
+            
             currentTableSettings = settings;
             currentTable = table;
             if (filter != null)
@@ -104,8 +112,8 @@ namespace UmaMusumeDBBrowser
                 filter.Close();
                 filter = null;
             }
-
-           // var test = table.DefaultView.RowFilter = "LEN(SkillName)=5";
+            
+            // var test = table.DefaultView.RowFilter = "LEN(SkillName)=5";
         }
 
         private void CheckBeforeReload()

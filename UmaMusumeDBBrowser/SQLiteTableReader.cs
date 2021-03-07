@@ -129,15 +129,15 @@ namespace UmaMusumeDBBrowser
                     {
                         string cName = reader.GetName(i);
                         int iconIndex = -1;
-                        if (useImage && (iconIndex = settings.IconSettings.FindIndex(a => a.Key.Equals(cName)))!=-1)
+                        if (useImage && (iconIndex = settings.IconSettings.FindIndex(a => a.Key.Equals(cName))) != -1)
                         {
                             object icon = reader[i];
                             row[cName] = icon;
                             string iconPath = FindFile(appPath, settings.IconSettings[iconIndex].Value, icon + ".png");
-                            if (iconPath!=null)
+                            if (iconPath != null)
                             {
                                 Image img = Image.FromFile(iconPath);
-                                row[cName+"_image"] = img.Clone();
+                                row[cName + "_image"] = img.Clone();
                                 img.Dispose();
                             }
                         }
@@ -150,14 +150,14 @@ namespace UmaMusumeDBBrowser
                             else
                                 row[cName] = reader[i];
                         }
-                        
+
                     }
                     table.Rows.Add(row);
                 }
             }
 
-
-                return table;
+            TableModifier.ModifyTable(ref table);
+            return table;
         }
 
         private string FindFile(string appPath, List<string> dirs, string fName)
