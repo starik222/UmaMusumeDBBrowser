@@ -30,6 +30,7 @@ namespace UmaMusumeDBBrowser
             {
                 textBox1.Text = imagelist.listView1.SelectedItems[0].ImageKey;
             }
+            //imagelist.BackgroundImage
             imagelist.Close();
         }
 

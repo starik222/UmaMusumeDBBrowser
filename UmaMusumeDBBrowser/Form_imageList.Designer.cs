@@ -85,6 +85,7 @@ namespace UmaMusumeDBBrowser
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_imageList";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_imageList_FormClosing);
             this.Load += new System.EventHandler(this.Form_imageList_Load);
             this.ResumeLayout(false);
 

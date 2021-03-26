@@ -122,10 +122,15 @@ namespace UmaMusumeDBBrowser
                 return;
 
             DataTable table = ((DataTable)dataGridView1.DataSource).GetChanges();
-            if (table == null)
-                return;
-            if (MessageBox.Show("Найдены несохраненные изменения.\nСохранить изменения в словарь перевода?", "Найдены изменения", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                SaveCurrentDictonary();
+            if (table != null)
+            {
+                if (MessageBox.Show("Найдены несохраненные изменения.\nСохранить изменения в словарь перевода?", "Найдены изменения", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    SaveCurrentDictonary();
+            }
+            //DataTable temp = (DataTable)dataGridView1.DataSource;
+            dataGridView1.DataSource = null;
+            //temp.Dispose();
+            GC.Collect();
         }
 
         private void SaveCurrentDictonary()
@@ -162,7 +167,7 @@ namespace UmaMusumeDBBrowser
                 if (currentTableSettings.TextTypeAndName.FindIndex(a => a.Value.Equals(cName)) != -1)
                 {
                     if (dataGridView1.SelectedCells[i].Value != DBNull.Value && !string.IsNullOrWhiteSpace((string)dataGridView1.SelectedCells[i].Value))
-                        dataGridView1[cName + "_trans", dataGridView1.SelectedCells[i].RowIndex].Value = Program.tools.TranslateText((string)dataGridView1.SelectedCells[i].Value, toolStripComboBox1.Text, false);
+                        dataGridView1[cName + "_trans", dataGridView1.SelectedCells[i].RowIndex].Value = Program.tools.TranslateText((string)dataGridView1.SelectedCells[i].Value, toolStripComboBox1.Text, true);
                 }
             }
         }

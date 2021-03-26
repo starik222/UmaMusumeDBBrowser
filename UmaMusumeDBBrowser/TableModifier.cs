@@ -14,6 +14,8 @@ namespace UmaMusumeDBBrowser
         {
             if (table.TableName.Equals("skill_data"))
                 ModifySkillDataTable(ref table);
+            if (table.TableName.Equals("race"))
+                ModifyRaceDataTable(ref table);
         }
 
 
@@ -28,6 +30,135 @@ namespace UmaMusumeDBBrowser
                     string text = (string)table.Rows[i]["condition_1"];
                     table.Rows[i]["condition_1"] = Regex.Replace(text, pattern, evaluator, RegexOptions.IgnoreCase);
                 }
+            }
+        }
+
+        private static void ModifyRaceDataTable(ref DataTable table)
+        {
+            ModifyColumnData(GetGrade, "grade", ref table);
+            ModifyColumnData(GetTurn, "turn", ref table);
+            ModifyColumnData(GetRaceTrack, "race_track_id", ref table);
+            ModifyColumnData(GetGround, "ground", ref table);
+            ModifRaceDate(ref table);
+        }
+
+        private static void ModifRaceDate(ref DataTable table)
+        {
+            if (table.Columns.Contains("date"))
+            {
+                DataColumn Col = table.Columns.Add("month", typeof(int));
+                Col.SetOrdinal(table.Columns["date"].Ordinal);
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    Int64 val = (Int64)table.Rows[i]["date"];
+                    val = val / 100;
+                    table.Rows[i]["month"] = (int)val;
+                }
+            }
+        }
+
+        private static void ModifyColumnData(Func<object, string> func, string colName, ref DataTable table)
+        {
+            if (table.Columns.Contains(colName))
+            {
+                DataColumn tempCol = table.Columns.Add(colName + "_temp", typeof(string));
+                tempCol.SetOrdinal(table.Columns[colName].Ordinal);
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    object val = table.Rows[i][colName];
+                    table.Rows[i][colName + "_temp"] = func(val);
+                }
+                table.Columns.Remove(colName);
+                tempCol.ColumnName = colName;
+                tempCol.Caption = colName;
+            }
+        }
+
+        private static string GetGrade(object grade)
+        {
+            Int64 val = (Int64)grade;
+            switch (val)
+            {
+                case 400:
+                    return "Op";
+                case 700:
+                    return "Pre-Op";
+                case 300:
+                    return "G3";
+                case 200:
+                    return "G2";
+                case 100:
+                    return "G1";
+                default:
+                    return val.ToString();
+            }
+        }
+
+        private static string GetGround(object ground)
+        {
+            Int64 val = (Int64)ground;
+            switch (val)
+            {
+                case 1:
+                    return "芝(Трава)";
+                case 2:
+                    return "ダート(Грязь)";
+                default:
+                    return val.ToString();
+            }
+        }
+
+        private static string GetRaceTrack(object track)
+        {
+            Int64 val = (Int64)track;
+            switch (val)
+            {
+                case 10001:
+                    return "札幌";
+                case 10002:
+                    return "函館";
+                case 10003:
+                    return "新潟";
+                case 10004:
+                    return "福島";
+                case 10005:
+                    return "中山";
+                case 10006:
+                    return "東京";
+                case 10007:
+                    return "中京";
+                case 10008:
+                    return "京都";
+                case 10009:
+                    return "阪神";
+                case 10010:
+                    return "小倉";
+                case 10101:
+                    return "大井";
+                default:
+                    return val.ToString();
+            }
+        }
+
+        private static string GetTurn(object turn)
+        {
+            string val = (string)turn;
+            switch (val)
+            {
+                case "21":
+                    return "左(Влево)";
+                case "22":
+                    return "左・内(Влево/внутри)";
+                case "23":
+                    return "左・外(Влево/снаружи)";
+                case "11":
+                    return "右(Вправо)";
+                case "12":
+                    return "右・内(Вправо/внутри)";
+                case "13":
+                    return "右・外(Вправо/снаружи)";
+                default:
+                    return val;
             }
         }
 
