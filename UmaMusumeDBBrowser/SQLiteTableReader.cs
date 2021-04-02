@@ -119,6 +119,7 @@ namespace UmaMusumeDBBrowser
                         {
                             useImage = true;
                             table.Columns.Add(cName + "_image", typeof(Image));
+                            table.Columns.Add(cName + "_imagePath", typeof(string));
                         }
                     }
                 }
@@ -138,6 +139,7 @@ namespace UmaMusumeDBBrowser
                             {
                                 Image img = Image.FromFile(iconPath);
                                 row[cName + "_image"] = img.Clone();
+                                row[cName + "_imagePath"] = iconPath;
                                 img.Dispose();
                             }
                         }

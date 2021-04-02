@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Translator;
+using ExcelPrint;
 
 namespace UmaMusumeDBBrowser
 {
@@ -23,13 +24,25 @@ namespace UmaMusumeDBBrowser
         {
             Text += " ver. " + Application.ProductVersion;
             Program.TableDisplaySettings = new SettingsLoader().LoadSettings();
+            if (File.Exists(Path.Combine(Application.StartupPath, "Dictonaries\\Languages.txt")))
+            {
+                toolStripComboBox1.Items.AddRange(File.ReadAllLines(Path.Combine(Application.StartupPath, "Dictonaries\\Languages.txt")));
+                string selectedLang = (string)Properties.Settings.Default["SelectedLang"];
+                if (!string.IsNullOrWhiteSpace(selectedLang))
+                {
+                    if (toolStripComboBox1.Items.Contains(selectedLang))
+                        toolStripComboBox1.SelectedItem = selectedLang;
+                }
+                else if (toolStripComboBox1.Items.Count > 0)
+                    toolStripComboBox1.SelectedIndex = 0;
+            }
+
 
             foreach (var item in Program.TableDisplaySettings)
             {
                 listBox1.Items.Add(item);
             }
 
-            toolStripComboBox1.SelectedIndex = 0;
 
         }
 
@@ -45,6 +58,7 @@ namespace UmaMusumeDBBrowser
         private List<NAMES> currentDictonary = null;
         private TableSettings currentTableSettings = null;
         private DataTable currentTable = null;
+        private string selectedLanguages = null;
 
         private void SetDataTable(TableSettings settings)
         {
@@ -54,7 +68,7 @@ namespace UmaMusumeDBBrowser
             var table = reader.GetDataTable(settings);
             reader.Disconnect();
 
-            currentDictonary = Program.TransDict.LoadDictonary(Path.Combine(Program.DictonariesDir, settings.TableName + ".txt"));
+            currentDictonary = Program.TransDict.LoadDictonary(Path.Combine(Program.DictonariesDir, settings.TableName + "_" + toolStripComboBox1.SelectedItem + ".txt"));
             if (currentDictonary.Count > 0)
             {
                 foreach (var item in settings.TextTypeAndName)
@@ -81,6 +95,10 @@ namespace UmaMusumeDBBrowser
                 {
                     ((DataGridViewImageColumn)dataGridView1.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Zoom;
                     dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                }
+                else if (dataGridView1.Columns[i].Name.EndsWith("_imagePath"))
+                {
+                    dataGridView1.Columns[i].Visible = false;
                 }
                 else
                 {
@@ -137,6 +155,11 @@ namespace UmaMusumeDBBrowser
         {
             if (currentDictonary == null || dataGridView1.DataSource == null)
                 return;
+            if (selectedLanguages == null)
+            {
+                MessageBox.Show("Не выбран язык перевода!");
+                return;
+            }
             DataTable table = ((DataTable)dataGridView1.DataSource).GetChanges();
             if (table == null)
                 return;
@@ -147,7 +170,7 @@ namespace UmaMusumeDBBrowser
                     Program.TransDict.SetTranslation(ref currentDictonary, table.Rows[i][item.Value] != DBNull.Value ? (string)table.Rows[i][item.Value] : null, table.Rows[i][item.Value + "_trans"] != DBNull.Value ? (string)table.Rows[i][item.Value + "_trans"] : null);
                 }
             }
-            Program.TransDict.SaveDictonary(currentDictonary, Path.Combine(Program.DictonariesDir, currentTableSettings.TableName + ".txt"));
+            Program.TransDict.SaveDictonary(currentDictonary, Path.Combine(Program.DictonariesDir, currentTableSettings.TableName + "_" + selectedLanguages + ".txt"));
             ((DataTable)dataGridView1.DataSource).AcceptChanges();
             MessageBox.Show("Сохранено");
         }
@@ -166,8 +189,8 @@ namespace UmaMusumeDBBrowser
                 string cName = dataGridView1.Columns[dataGridView1.SelectedCells[i].ColumnIndex].Name;
                 if (currentTableSettings.TextTypeAndName.FindIndex(a => a.Value.Equals(cName)) != -1)
                 {
-                    if (dataGridView1.SelectedCells[i].Value != DBNull.Value && !string.IsNullOrWhiteSpace((string)dataGridView1.SelectedCells[i].Value))
-                        dataGridView1[cName + "_trans", dataGridView1.SelectedCells[i].RowIndex].Value = Program.tools.TranslateText((string)dataGridView1.SelectedCells[i].Value, toolStripComboBox1.Text, true);
+                    if (selectedLanguages != null && dataGridView1.SelectedCells[i].Value != DBNull.Value && !string.IsNullOrWhiteSpace((string)dataGridView1.SelectedCells[i].Value))
+                        dataGridView1[cName + "_trans", dataGridView1.SelectedCells[i].RowIndex].Value = Program.tools.TranslateText((string)dataGridView1.SelectedCells[i].Value, selectedLanguages, true);
                 }
             }
         }
@@ -213,6 +236,78 @@ namespace UmaMusumeDBBrowser
             {
                 MessageBox.Show(ex.Message, "Ошибка установки фильтра", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            if (currentTableSettings == null)
+                return;
+            int hiddenColumnCount = 0;
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                if (!dataGridView1.Columns[i].Visible)
+                    hiddenColumnCount++;
+            }
+            PrintToExcel excel = new PrintToExcel();
+            excel.CreateWorkBook();
+            excel.SetCurrentSheet(1);
+            var copyMode = dataGridView1.ClipboardCopyMode;
+            dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridView1.SelectAll();
+            excel.SelectedCellsToBuffer(dataGridView1);
+            excel.PasteFromBuffer("Table: " + currentTableSettings.TableName, dataGridView1.Rows.Count, dataGridView1.RowTemplate.Height, dataGridView1.Columns.Count + 1 - hiddenColumnCount, 70, true, false);
+            int curHidden = 0;
+            var dpi = GetDPI();
+            for (int j = 0; j < dataGridView1.Columns.Count; j++)
+            {
+                if (!dataGridView1.Columns[j].Visible)
+                    curHidden++;
+                if (dataGridView1.Columns[j].ValueType != typeof(Image))
+                    continue;
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    excel.SetCurrentCell(i + 3, j + 2 - curHidden);
+                    string imagePath = string.Empty;
+                    if (dataGridView1[dataGridView1.Columns[j].Name + "Path", i].Value != DBNull.Value)
+                    {
+                        Size imgSize = ((Image)(dataGridView1[dataGridView1.Columns[j].Name, i].Value)).Size;
+                        double scale = imgSize.Width / imgSize.Height;
+                        if (excel.CurrentCells.Width < excel.CurrentCells.Height * scale)
+                        {
+                            excel.CurrentCells.EntireColumn.ColumnWidth = excel.CurrentCells.EntireRow.RowHeight * scale / 5;
+                        }
+                        excel.Worksheet.Shapes.AddPicture((string)dataGridView1[dataGridView1.Columns[j].Name + "Path", i].Value, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, excel.CurrentCells.Left, excel.CurrentCells.Top, excel.CurrentCells.Height * scale, excel.CurrentCells.Height);
+                    }
+                    
+                }
+            }
+            excel.Finally();
+
+            dataGridView1.ClipboardCopyMode = copyMode;
+        }
+
+        private PointF GetDPI()
+        {
+            PointF pf = new PointF();
+            Graphics g = this.CreateGraphics();
+            try
+            {
+                pf.X = g.DpiX;
+                pf.Y = g.DpiY;
+            }
+            finally
+            {
+                g.Dispose();
+            }
+            return pf;
+        }
+
+        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox1_SelectedIndexChanged(sender, e);
+            selectedLanguages = (string)toolStripComboBox1.SelectedItem;
+            Properties.Settings.Default["SelectedLang"] = (string)toolStripComboBox1.SelectedItem;
+            Properties.Settings.Default.Save();
         }
     }
 }

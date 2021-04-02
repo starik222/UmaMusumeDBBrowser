@@ -23,12 +23,13 @@ namespace UmaMusumeDBBrowser
             StreamReader reader = new StreamReader(IniFile);
             while (!reader.EndOfStream)
             {
-                if (reader.Peek() == '#')
+                int startChar = reader.Peek();
+                if (startChar == '#' || startChar=='\n' || startChar == '\r' || startChar == ' ')
                 {
                     reader.ReadLine();
                     continue;
                 }
-                if (reader.Peek() != '[')
+                if (startChar != '[')
                     throw new Exception("Формат файла нарушен!");
                 TableSettings ts = new TableSettings();
                 ts.TableName = reader.ReadLine();

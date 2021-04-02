@@ -41,12 +41,19 @@ namespace UmaMusumeDBBrowser
 
         public string GetFilter()
         {
-            List<string> lines = new List<string>();
-            foreach (var item in listBox3.Items)
+            if (!checkBox1.Checked)
             {
-                lines.Add(((FilterData)item).ToString());
+                List<string> lines = new List<string>();
+                foreach (var item in listBox3.Items)
+                {
+                    lines.Add(((FilterData)item).ToString());
+                }
+                return string.Join(" AND ", lines);
             }
-            return string.Join(" AND ", lines);
+            else
+            {
+                return textBox2.Text;
+            }
         }
 
         private void Form_filter_Load(object sender, EventArgs e)
@@ -100,6 +107,24 @@ namespace UmaMusumeDBBrowser
                 button1.Enabled = true;
             else
                 button1.Enabled = false;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox2.Enabled = checkBox1.Checked;
+            StandartFilterEnable(!checkBox1.Checked);
+        }
+
+        private void StandartFilterEnable(bool enable)
+        {
+            button2.Enabled = enable;
+            button6.Enabled = enable;
+            button5.Enabled = enable;
+            listBox1.Enabled = enable;
+            listBox2.Enabled = enable;
+            listBox3.Enabled = enable;
+            textBox1.Enabled = enable;
+            button1.Enabled = enable;
         }
     }
 }
