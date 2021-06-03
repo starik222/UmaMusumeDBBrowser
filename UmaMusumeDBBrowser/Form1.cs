@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using Translator;
 using ExcelPrint;
+using System.Text.RegularExpressions;
 
 namespace UmaMusumeDBBrowser
 {
@@ -22,6 +23,11 @@ namespace UmaMusumeDBBrowser
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (!Program.IsDebug)
+            {
+                toolStripButton7.Visible = false;
+                toolStripButton5.Visible = false;
+            }
             Text += " ver. " + Application.ProductVersion;
             Program.TableDisplaySettings = new SettingsLoader().LoadSettings();
             if (File.Exists(Path.Combine(Application.StartupPath, "Dictonaries\\Languages.txt")))
@@ -60,13 +66,60 @@ namespace UmaMusumeDBBrowser
         private DataTable currentTable = null;
         private string selectedLanguages = null;
 
-        private void SetDataTable(TableSettings settings)
+        public void LoadTableByText(string text)
         {
-            
-            SQLiteTableReader reader = new SQLiteTableReader(Application.StartupPath);
+            SQLiteTableReader reader = new SQLiteTableReader(Application.StartupPath, Program.DbPath);
             reader.Connect();
-            var table = reader.GetDataTable(settings);
+            var data = reader.GetDataTableByText(text, Program.TableDisplaySettings);
             reader.Disconnect();
+            listBox1.ClearSelected();
+            if (data.table == null)
+            {
+                dataGridView1.DataSource = null;
+                currentTableSettings = null;
+                currentTable = null;
+            }
+            else
+            {
+                CheckBeforeReload();
+                SetDataTable(data.settings, data.table);
+            }
+        }
+
+        public void LoadTableByIds(string tableName, List<Int64> ids)
+        {
+            var tableSetting = Program.TableDisplaySettings.Find(a => a.TableName.Equals(tableName));
+
+            SQLiteTableReader reader = new SQLiteTableReader(Application.StartupPath, Program.DbPath);
+            reader.Connect();
+            var table = reader.GetDataTable(tableSetting, ids);
+            reader.Disconnect();
+            listBox1.ClearSelected();
+            if (table == null)
+            {
+                dataGridView1.DataSource = null;
+                currentTableSettings = null;
+                currentTable = null;
+            }
+            else
+            {
+                CheckBeforeReload();
+                SetDataTable(tableSetting, table);
+            }
+        }
+
+        private void SetDataTable(TableSettings settings, DataTable preloadedTable = null)
+        {
+            DataTable table = null;
+            if (preloadedTable == null)
+            {
+                SQLiteTableReader reader = new SQLiteTableReader(Application.StartupPath, Program.DbPath);
+                reader.Connect();
+                table = reader.GetDataTable(settings);
+                reader.Disconnect();
+            }
+            else
+                table = preloadedTable;
 
             currentDictonary = Program.TransDict.LoadDictonary(Path.Combine(Program.DictonariesDir, settings.TableName + "_" + toolStripComboBox1.SelectedItem + ".txt"));
             if (currentDictonary.Count > 0)
@@ -308,6 +361,88 @@ namespace UmaMusumeDBBrowser
             selectedLanguages = (string)toolStripComboBox1.SelectedItem;
             Properties.Settings.Default["SelectedLang"] = (string)toolStripComboBox1.SelectedItem;
             Properties.Settings.Default.Save();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Form_GameWindow gameWindow = new Form_GameWindow();
+            gameWindow.Show();
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            Form_GameRecognizer form_GameRecognizer = new Form_GameRecognizer();
+            //form_GameRecognizer.Owner = this;
+            form_GameRecognizer.parentForm = this;
+            toolStripComboBox1.Enabled = false;
+            form_GameRecognizer.Show();
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
+            openFileDialog.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() != DialogResult.OK)
+                return;
+            Regex regex = new Regex("\"(.*?)\",\\s?\"(.*?)\"", RegexOptions.Singleline);
+            List<NAMES> dict = new List<NAMES>();
+            foreach (var file in openFileDialog.FileNames)
+            {
+                string[] lines = File.ReadAllLines(file);
+                foreach (var item in lines)
+                {
+                    Match m = regex.Match(item);
+                    if (m.Success)
+                    {
+                        string orig = m.Groups[1].Value;
+                        string trans = m.Groups[2].Value;
+                        if (trans.Contains("<size"))
+                        {
+                            trans = Regex.Replace(trans, "<size=\\d*>", "");
+                            trans = trans.Replace("</size>", "");
+                        }
+                        orig = orig.Replace("\\n", "");
+                        trans = trans.Replace("\\n", " ");
+                        dict.Add(new NAMES() { orig_name = orig, translit_name = trans });
+                    }
+                }
+            }
+
+            foreach (var item in currentTableSettings.TextTypeAndName)
+            {
+                for (int i = 0; i < currentTable.Rows.Count; i++)
+                {
+                    string original = (string)currentTable.Rows[i][item.Value];
+                    if (!string.IsNullOrWhiteSpace(original))
+                    {
+                        string trans = Program.TransDict.GetTranslation(dict, original);
+                        if (!string.IsNullOrWhiteSpace(trans))
+                            currentTable.Rows[i][item.Value + "_trans"] = trans;
+                    }
+                }
+            }
+
+            if (MessageBox.Show("Произвести поиск совпадений в тексте?", "Поиск подстрок в тексте", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                foreach (var item in currentTableSettings.TextTypeAndName)
+                {
+                    for (int i = 0; i < currentTable.Rows.Count; i++)
+                    {
+                        string original = (string)currentTable.Rows[i][item.Value];
+                        if (!string.IsNullOrWhiteSpace(original))
+                        {
+                            if (currentTable.Rows[i][item.Value + "_trans"] == DBNull.Value || string.IsNullOrWhiteSpace((string)currentTable.Rows[i][item.Value + "_trans"]))
+                            {
+                                string trans = Program.tools.CompareAndReplace(original, dict);
+                                if (!string.IsNullOrWhiteSpace(trans))
+                                    currentTable.Rows[i][item.Value + "_trans"] = trans;
+                            }
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

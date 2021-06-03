@@ -23,7 +23,13 @@ namespace UmaMusumeDBBrowser
                 Directory.CreateDirectory(DictonariesDir);
             TransDict = new TranslationDictonary();
             tools = new TextTool(Application.StartupPath);
-
+            TessManager = new TesseractManager();
+            IconDB = new IconManager(Application.StartupPath);
+            string testDbPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Appdata\\LocalLow\\Cygames\\umamusume\\master\\master.mdb";
+            if (File.Exists(testDbPath))
+                DbPath = testDbPath;
+            else
+                DbPath = "master.db";
             Application.Run(new Form1());
         }
 
@@ -34,5 +40,25 @@ namespace UmaMusumeDBBrowser
         public static TranslationDictonary TransDict;
 
         public static TextTool tools;
+
+        public static TesseractManager TessManager;
+
+        public static IconManager IconDB;
+
+        public static string DbPath;
+
+
+
+        public static bool IsDebug
+        {
+            get
+            {
+#if DEBUG
+                return true;
+#else
+            return false;
+#endif
+            }
+        }
     }
 }
