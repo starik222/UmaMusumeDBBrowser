@@ -29,8 +29,8 @@ namespace UmaMusumeDBBrowser
 
         public class BSPanel
         {
-            public Size Ver4 { get; set; }
-            public Size Ver5 { get; set; }
+            public Rect Ver4 { get; set; }
+            public Rect Ver5 { get; set; }
         }
 
         public class Elements

@@ -99,14 +99,14 @@ namespace UmaMusumeDBBrowser
                 Image origImg = WindowManager.CaptureWindow(handle);
                 if (gameType == GameType.BluestacksV4)
                 {
-                    Rectangle rectangle = new Rectangle(1, settings.BlueStacksPanel.Ver4.Height, origImg.Width - 1 - settings.BlueStacksPanel.Ver4.Width,
-                        origImg.Height - 1 - settings.BlueStacksPanel.Ver4.Height);
+                    Rectangle rectangle = new Rectangle(settings.BlueStacksPanel.Ver4.X, settings.BlueStacksPanel.Ver4.Height, origImg.Width - settings.BlueStacksPanel.Ver4.X - settings.BlueStacksPanel.Ver4.Width,
+                        origImg.Height - settings.BlueStacksPanel.Ver4.Y - settings.BlueStacksPanel.Ver4.Height);
                     origImg = origImg.CropAtRect(rectangle);
                 }
                 else if (gameType == GameType.BluestacksV5)
                 {
-                    Rectangle rectangle = new Rectangle(1, settings.BlueStacksPanel.Ver5.Height, origImg.Width - 1 - settings.BlueStacksPanel.Ver5.Width,
-                        origImg.Height - 1 - settings.BlueStacksPanel.Ver5.Height);
+                    Rectangle rectangle = new Rectangle(settings.BlueStacksPanel.Ver5.X, settings.BlueStacksPanel.Ver5.Height, origImg.Width - settings.BlueStacksPanel.Ver5.X - settings.BlueStacksPanel.Ver5.Width,
+                        origImg.Height - settings.BlueStacksPanel.Ver5.Y - settings.BlueStacksPanel.Ver5.Height);
                     origImg = origImg.CropAtRect(rectangle);
                 }
                 Size normalSize = new Size();

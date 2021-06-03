@@ -11,10 +11,14 @@
   },
   "BlueStacksPanel": {
     "Ver4": {
-      "Width": 35,
-      "Height": 35
+      "x": 2,
+      "y" : 2,
+      "Width": 62,
+      "Height": 43
     },
     "Ver5": {
+      "x": 1,
+      "y": 1,
       "Width": 35,
       "Height": 35
     }
