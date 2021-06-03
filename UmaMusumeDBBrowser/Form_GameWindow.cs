@@ -15,6 +15,8 @@ using Emgu.CV.Util;
 using System.IO;
 using System.Drawing.Imaging;
 using Emgu.CV.CvEnum;
+using System.Diagnostics;
+
 namespace UmaMusumeDBBrowser
 {
     public partial class Form_GameWindow : Form
@@ -27,7 +29,8 @@ namespace UmaMusumeDBBrowser
         private void button1_Click(object sender, EventArgs e)
         {
             //WindowManager screen = new ScreenCapture();
-            IntPtr handle = WindowManager.FindWindow("UnityWndClass", "umamusume");
+            //IntPtr handle = WindowManager.FindWindow("UnityWndClass", "umamusume");
+            IntPtr handle = WindowManager.GetHandleByProcessName("BlueStacks");
             if (handle == IntPtr.Zero)
             {
                 MessageBox.Show("Окно не найдено!");
@@ -39,6 +42,9 @@ namespace UmaMusumeDBBrowser
             pictureBox1.Image = null;
             pictureBox1.Image = img;
         }
+
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {

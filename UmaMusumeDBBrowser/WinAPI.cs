@@ -72,7 +72,8 @@ namespace UmaMusumeDBBrowser
 
         [DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
         public static extern int MapWindowPoints(IntPtr hWndFrom, IntPtr hWndTo, [In, Out] ref System.Drawing.Point pt, [MarshalAs(UnmanagedType.U4)] int cPoints);
-
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
         /// <summary>
         /// Flags used with the Windows API (User32.dll):GetSystemMetrics(SystemMetric smIndex)
         ///  

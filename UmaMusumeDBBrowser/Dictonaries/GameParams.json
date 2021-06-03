@@ -9,6 +9,16 @@
       "Height": 568
     }
   },
+  "BlueStacksPanel": {
+    "Ver4": {
+      "Width": 35,
+      "Height": 35
+    },
+    "Ver5": {
+      "Width": 35,
+      "Height": 35
+    }
+  },
   "GameElements": {
     "UmaMusumeSubNameBounds": {
       "x": 256,

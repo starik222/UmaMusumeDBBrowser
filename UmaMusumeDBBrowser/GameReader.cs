@@ -36,16 +36,23 @@ namespace UmaMusumeDBBrowser
         private string cardName = null;
 
         private List<NAMES> charReplaceDictonary;
+        private GameType gameType;
 
 
-        public GameReader(UmaMusumeLibrary umaMusumeLibrary, SkillManager skillManager, GameSettings gameSettings, List<NAMES> replaceChars = null)
+        public GameReader(GameType gameWindowType, UmaMusumeLibrary umaMusumeLibrary, SkillManager skillManager, GameSettings gameSettings, List<NAMES> replaceChars = null)
         {
+            gameType = gameWindowType;
             library = umaMusumeLibrary;
             skManager = skillManager;
             settings = gameSettings;
             charReplaceDictonary = replaceChars;
             lastSkillResult = new List<SkillManager.SkillData>();
 
+        }
+
+        public void SetGameType(GameType gameWindowType)
+        {
+            gameType = gameWindowType;
         }
 
 
@@ -67,6 +74,8 @@ namespace UmaMusumeDBBrowser
             IsStarted = false;
         }
 
+
+
         private void Processed(int periodMillisec, CancellationToken token)
         {
 
@@ -75,13 +84,31 @@ namespace UmaMusumeDBBrowser
             while (!token.IsCancellationRequested)
             {
                 Thread.Sleep(periodMillisec);
-                IntPtr handle = WindowManager.FindWindow("UnityWndClass", "umamusume");
+                IntPtr handle = IntPtr.Zero;
+                if (gameType == GameType.DMM)
+                {
+                    handle = WindowManager.FindWindow("UnityWndClass", "umamusume");
+                }
+                else
+                    handle = WindowManager.GetHandleByProcessName("BlueStacks");
                 if (handle == IntPtr.Zero)
                 {
                     DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.GameNotFound, DataClass = "Game not found!" });
                     continue;
                 }
                 Image origImg = WindowManager.CaptureWindow(handle);
+                if (gameType == GameType.BluestacksV4)
+                {
+                    Rectangle rectangle = new Rectangle(1, settings.BlueStacksPanel.Ver4.Height, origImg.Width - 1 - settings.BlueStacksPanel.Ver4.Width,
+                        origImg.Height - 1 - settings.BlueStacksPanel.Ver4.Height);
+                    origImg = origImg.CropAtRect(rectangle);
+                }
+                else if (gameType == GameType.BluestacksV5)
+                {
+                    Rectangle rectangle = new Rectangle(1, settings.BlueStacksPanel.Ver5.Height, origImg.Width - 1 - settings.BlueStacksPanel.Ver5.Width,
+                        origImg.Height - 1 - settings.BlueStacksPanel.Ver5.Height);
+                    origImg = origImg.CropAtRect(rectangle);
+                }
                 Size normalSize = new Size();
                 if (origImg.Width < origImg.Height)
                 {
@@ -553,6 +580,13 @@ namespace UmaMusumeDBBrowser
             GameNotFound = -1,
             NotFound = -2,
             DebugImage = -3
+        }
+
+        public enum GameType
+        {
+            DMM,
+            BluestacksV4,
+            BluestacksV5
         }
     }
 
