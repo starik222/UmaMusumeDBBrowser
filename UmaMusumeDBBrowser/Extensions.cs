@@ -118,7 +118,15 @@ namespace UmaMusumeDBBrowser
             return new float[1];
         }
 
-
+        public static Image CropAtRect(this Image b, Rectangle r)
+        {
+            Bitmap nb = new Bitmap(r.Width, r.Height);
+            using (Graphics g = Graphics.FromImage(nb))
+            {
+                g.DrawImage(b, -r.X, -r.Y);
+                return nb;
+            }
+        }
         public static float PercentageComparison(this String orig, String text)
         {
             if (orig.Length != text.Length)

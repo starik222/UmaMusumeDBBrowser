@@ -48,7 +48,7 @@ namespace UmaMusumeDBBrowser
             settings = JsonConvert.DeserializeObject<GameSettings>(File.ReadAllText(Path.Combine(Program.DictonariesDir, "GameParams.json")));
             LoadImagesToSettings();
             var repDict = Program.TransDict.LoadDictonary(Path.Combine(Program.DictonariesDir, "ReplaceChars.txt"));
-            gameReader = new GameReader(library, skillManager, settings, repDict);
+            gameReader = new GameReader(GameReader.GameType.DMM, library, skillManager, settings, repDict);
             gameReader.DataChanged += GameReader_DataChanged;
             //comboBox1.Items.AddRange(library.GetCardNameList());
         }
@@ -249,6 +249,12 @@ namespace UmaMusumeDBBrowser
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (radioButton1.Checked)
+                gameReader.SetGameType(GameReader.GameType.DMM);
+            else if (radioButton2.Checked)
+                gameReader.SetGameType(GameReader.GameType.BluestacksV4);
+            else if (radioButton3.Checked)
+                gameReader.SetGameType(GameReader.GameType.BluestacksV5);
             gameReader.StartAsync(/*(string)comboBox1.SelectedItem,*/ (int)numericUpDown1.Value * 1000);
             IsReaderStarted(true);
         }

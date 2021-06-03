@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Diagnostics;
 
 namespace UmaMusumeDBBrowser
 {
@@ -49,6 +50,21 @@ namespace UmaMusumeDBBrowser
             Image img = CaptureScreen();
             img.Save(filename, format);
         }
+
+
+        public static IntPtr GetHandleByProcessName(string wName)
+        {
+            foreach (Process pList in Process.GetProcesses())
+                if (pList.MainWindowTitle.Contains(wName))
+                    return pList.MainWindowHandle;
+
+            return IntPtr.Zero;
+        }
+
+        //public static IntPtr GetWindowByHandle(IntPtr handle)
+        //{
+
+        //}
 
     }
 }

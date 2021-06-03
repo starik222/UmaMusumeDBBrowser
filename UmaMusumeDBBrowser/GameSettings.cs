@@ -16,6 +16,7 @@ namespace UmaMusumeDBBrowser
     public class GameSettings
     {
         public GameSize GameNormalSize { get; set; }
+        public BSPanel BlueStacksPanel { get; set; }
         public Elements GameElements { get; set; }
         public List<GamePart> GameParts { get; set; }
 
@@ -24,6 +25,12 @@ namespace UmaMusumeDBBrowser
         {
             public Size Vertical { get; set; }
             public Size Horizontal { get; set; }
+        }
+
+        public class BSPanel
+        {
+            public Size Ver4 { get; set; }
+            public Size Ver5 { get; set; }
         }
 
         public class Elements
