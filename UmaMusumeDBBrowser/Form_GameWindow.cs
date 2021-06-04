@@ -29,8 +29,9 @@ namespace UmaMusumeDBBrowser
         private void button1_Click(object sender, EventArgs e)
         {
             //WindowManager screen = new ScreenCapture();
-            //IntPtr handle = WindowManager.FindWindow("UnityWndClass", "umamusume");
-            IntPtr handle = WindowManager.GetHandleByProcessName("BlueStacks");
+            IntPtr handle = WindowManager.FindWindow("UnityWndClass", "umamusume");
+            //IntPtr handle = WindowManager.GetHandleByProcessName("BlueStacks");
+            //IntPtr handle = WindowManager.GetHandleByProcessName("кони");
             if (handle == IntPtr.Zero)
             {
                 MessageBox.Show("Окно не найдено!");
@@ -133,6 +134,40 @@ namespace UmaMusumeDBBrowser
             if (openFileDialog.ShowDialog() != DialogResult.OK)
                 return;
             pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Image<Bgr, byte> image = ImageManager.PrepareImage((Bitmap)pictureBox1.Image, new Size(588, 1045));
+            Mat backTest = new Mat(image.Mat, new Rectangle(131, 195, 30, 6));
+            CvInvoke.CvtColor(backTest, backTest, ColorConversion.Bgr2Gray);
+            double minVal = 0, maxVal = 0;
+            Point minLoc = new Point(), maxLoc = new Point();
+            CvInvoke.MinMaxLoc(backTest, ref minVal, ref maxVal, ref minLoc, ref maxLoc);
+            minVal -= 4;
+            maxVal += 4;
+            Mat txtImg = new Mat();
+            CvInvoke.InRange(backTest, new ScalarArray(new MCvScalar(minVal)), new ScalarArray(new MCvScalar(maxVal)), txtImg);
+            var imgRatio = ImageWhiteRatio(txtImg);
+            pictureBox1.Image = txtImg.ToBitmap();
+
+            Mat backIcon = new Mat(image.Mat, new Rectangle(96, 195, 30, 6));
+            CvInvoke.CvtColor(backIcon, backIcon, ColorConversion.Bgr2Gray);
+            Mat test2 = new Mat();
+            CvInvoke.InRange(backIcon, new ScalarArray(new MCvScalar(minVal)), new ScalarArray(new MCvScalar(maxVal)), test2);
+            var imgRatio2 = ImageWhiteRatio(test2);
+            pictureBox1.Image = test2.ToBitmap();
+
+        }
+
+        private float ImageWhiteRatio(Mat thresImage)
+        {
+            if (thresImage.Depth != DepthType.Cv8U)
+                throw new Exception("Изображение должно быть черно-белым");
+            int whiteCount = CvInvoke.CountNonZero(thresImage);
+            int imagePixelCount = thresImage.Rows * thresImage.Cols;
+            float whiteRatio = (float)(whiteCount) / (float)imagePixelCount;
+            return whiteRatio;
         }
     }
 }

@@ -72,8 +72,9 @@ namespace UmaMusumeDBBrowser
             {
                 case GameReader.GameDataType.GameNotFound:
                     {
-                        if (Program.IsDebug)
-                            Extensions.SetTextToControl(label1, (string)gameDataArgs.DataClass);
+                        Extensions.SetTextToControl(label1, (string)gameDataArgs.DataClass);
+                        IsReaderStarted(false);
+                        SelectTab(tabPage1);
                         break;
                     }
                 case GameReader.GameDataType.NotFound:
@@ -250,19 +251,43 @@ namespace UmaMusumeDBBrowser
         private void button1_Click(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
-                gameReader.SetGameType(GameReader.GameType.DMM);
-            else if (radioButton2.Checked)
-                gameReader.SetGameType(GameReader.GameType.BluestacksV4);
-            else if (radioButton3.Checked)
-                gameReader.SetGameType(GameReader.GameType.BluestacksV5);
+            {
+
+                if (!gameReader.SetWindowInfo(GameReader.GameType.DMM, IntPtr.Zero))
+                {
+                    goto gameNotFound;
+                }
+            }
+            else
+            {
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Сначала необходимо выбрать процесс из списка.");
+                    return;
+                }
+                IntPtr handle = (IntPtr)dataGridView1.SelectedRows[0].Cells["pHandle"].Value;
+                if (radioButton2.Checked)
+                {
+                    if (!gameReader.SetWindowInfo(GameReader.GameType.BluestacksV4, handle))
+                        goto gameNotFound;
+                }
+                else if (radioButton3.Checked)
+                {
+                    if(!gameReader.SetWindowInfo(GameReader.GameType.BluestacksV5, handle))
+                        goto gameNotFound;
+                }
+            }
             gameReader.StartAsync(/*(string)comboBox1.SelectedItem,*/ (int)numericUpDown1.Value * 1000);
             IsReaderStarted(true);
+            return;
+        gameNotFound:
+            MessageBox.Show("Игровое окно не найдено!");
         }
         private void IsReaderStarted(bool started)
         {
-            button1.Enabled = !started;
-            button3.Enabled = started;
-            numericUpDown1.Enabled = !started;
+            Extensions.SetControlEnable(button1, !started);
+            Extensions.SetControlEnable(button3, started);
+            Extensions.SetControlEnable(numericUpDown1, !started);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -293,6 +318,54 @@ namespace UmaMusumeDBBrowser
             parentForm.toolStripComboBox1.Enabled = true;
             if (gameReader.IsStarted)
                 gameReader.Stop();
+        }
+
+        private void dataGridView1_VisibleChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.Visible)
+            {
+                UpdateProcessList();
+            }
+        }
+
+        private void UpdateProcessList()
+        {
+            dataGridView1.DataSource = WindowManager.GetProcessesTable();
+            dataGridView1.Columns["pHandle"].Visible = false;
+            dataGridView1.Columns["pIcon"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            dataGridView1.Columns["ProcessName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns["WindowTitle"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.ReadOnly = true;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+                VisibleProcessControls(true);
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton3.Checked)
+                VisibleProcessControls(true);
+        }
+
+        private void VisibleProcessControls(bool v)
+        {
+            dataGridView1.Visible = v;
+            label5.Visible = v;
+            button2.Visible = v;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+                VisibleProcessControls(false);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UpdateProcessList();
         }
     }
 }

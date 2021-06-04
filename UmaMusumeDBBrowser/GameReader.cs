@@ -37,6 +37,7 @@ namespace UmaMusumeDBBrowser
 
         private List<NAMES> charReplaceDictonary;
         private GameType gameType;
+        private IntPtr gameHandle;
 
 
         public GameReader(GameType gameWindowType, UmaMusumeLibrary umaMusumeLibrary, SkillManager skillManager, GameSettings gameSettings, List<NAMES> replaceChars = null)
@@ -47,6 +48,7 @@ namespace UmaMusumeDBBrowser
             settings = gameSettings;
             charReplaceDictonary = replaceChars;
             lastSkillResult = new List<SkillManager.SkillData>();
+            gameHandle = IntPtr.Zero;
 
         }
 
@@ -74,6 +76,25 @@ namespace UmaMusumeDBBrowser
             IsStarted = false;
         }
 
+        public bool SetWindowInfo(GameType gameWindowType, IntPtr handle)
+        {
+            gameType = gameWindowType;
+            if (gameType == GameType.DMM)
+            {
+                gameHandle = WindowManager.FindWindow("UnityWndClass", "umamusume");
+            }
+            else
+            {
+                gameHandle = handle;
+            }
+
+            if (gameHandle == IntPtr.Zero)
+            {
+                return false;
+            }
+            return true;
+        }
+
 
 
         private void Processed(int periodMillisec, CancellationToken token)
@@ -84,29 +105,39 @@ namespace UmaMusumeDBBrowser
             while (!token.IsCancellationRequested)
             {
                 Thread.Sleep(periodMillisec);
-                IntPtr handle = IntPtr.Zero;
-                if (gameType == GameType.DMM)
+                if (!User32.IsWindow(gameHandle))
                 {
-                    handle = WindowManager.FindWindow("UnityWndClass", "umamusume");
+                    DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.GameNotFound, DataClass = "Game not found! Scan is stopped!" });
+                    Stop();
+                    break;
                 }
-                else
-                    handle = WindowManager.GetHandleByProcessName("BlueStacks");
-                if (handle == IntPtr.Zero)
-                {
-                    DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.GameNotFound, DataClass = "Game not found!" });
+                //handle = WindowManager.GetHandleByProcessName("BlueStacks");
+                //if (handle == IntPtr.Zero)
+                //{
+                //    DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.GameNotFound, DataClass = "Game not found!" });
+                //    continue;
+                //}
+                Image origImg = WindowManager.CaptureWindow(gameHandle);
+                if (origImg.Width <= 1 || origImg.Height <= 1)
                     continue;
-                }
-                Image origImg = WindowManager.CaptureWindow(handle);
                 if (gameType == GameType.BluestacksV4)
                 {
                     Rectangle rectangle = new Rectangle(settings.BlueStacksPanel.Ver4.X, settings.BlueStacksPanel.Ver4.Height, origImg.Width - settings.BlueStacksPanel.Ver4.X - settings.BlueStacksPanel.Ver4.Width,
                         origImg.Height - settings.BlueStacksPanel.Ver4.Y - settings.BlueStacksPanel.Ver4.Height);
+                    if (rectangle.Width <= 0 || rectangle.Height <= 0 || rectangle.X <= 0 || rectangle.Y <= 0)
+                    {
+                        continue;
+                    }
                     origImg = origImg.CropAtRect(rectangle);
                 }
                 else if (gameType == GameType.BluestacksV5)
                 {
                     Rectangle rectangle = new Rectangle(settings.BlueStacksPanel.Ver5.X, settings.BlueStacksPanel.Ver5.Height, origImg.Width - settings.BlueStacksPanel.Ver5.X - settings.BlueStacksPanel.Ver5.Width,
                         origImg.Height - settings.BlueStacksPanel.Ver5.Y - settings.BlueStacksPanel.Ver5.Height);
+                    if (rectangle.Width <= 0 || rectangle.Height <= 0 || rectangle.X <= 0 || rectangle.Y <= 0)
+                    {
+                        continue;
+                    }
                     origImg = origImg.CropAtRect(rectangle);
                 }
                 Size normalSize = new Size();
@@ -335,11 +366,10 @@ namespace UmaMusumeDBBrowser
         private UmaMusumeLibrary.EventData GetEventData(Image<Bgr, byte> img, Rectangle partInfo)
         {
             int offset = 0;
-            //Нормально не работает, временно отключено.
-            //if (IsEventNameIcon(img.Mat))
-            //{
-            //    offset = settings.GameElements.EventNameIconBounds.Width + 5;
-            //}
+            if (IsEventNameIcon(img.Mat))
+            {
+                offset = settings.GameElements.EventNameIconBounds.Width + 5;
+            }
             Mat mat = new Mat(img.Mat, new Rectangle(settings.GameElements.EventNameBounds.X + offset, settings.GameElements.EventNameBounds.Y,
                 settings.GameElements.EventNameBounds.Width, settings.GameElements.EventNameBounds.Height));
             Mat invertedMat = new Mat();
@@ -519,47 +549,41 @@ namespace UmaMusumeDBBrowser
             return whiteRatio;
         }
 
+
         private bool IsEventNameIcon(Mat img)
         {
-            Mat iconMat = new Mat(img, settings.GameElements.EventNameIconBounds.GetRectangle());
-            Mat blueChannel = iconMat.Split()[0];
-            Mat thresBlue = new Mat();
-            CvInvoke.Threshold(blueChannel, thresBlue, 230f, 255f, ThresholdType.Binary);
-            if (Program.IsDebug)
-            {
-                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = blueChannel.ToBitmap() });
-            }
+            bool result = false;
+            Rectangle iconPartRect = settings.GameElements.EventNameIconBounds.GetRectangle();
+            iconPartRect.Height = 6;
+            Rectangle testBackRect = iconPartRect;
+            testBackRect.X += 35;
+            double minVal = 0, maxVal = 0;
+            Point minLoc = new Point(), maxLoc = new Point();
 
-            float blueRatio = ImageWhiteRatio(thresBlue);
-            if (Program.IsDebug)
-            {
-                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = thresBlue.ToBitmap() });
-            }
-            if (blueRatio > 0.7)
-            {
-                thresBlue.Dispose();
-                blueChannel.Dispose();
-                iconMat.Dispose();
-                return false;
-            }
-            Mat grayMay = new Mat();
-            CvInvoke.CvtColor(iconMat, grayMay, ColorConversion.Bgr2Gray);
-            CvInvoke.Threshold(grayMay, thresBlue, 155f, 255f, ThresholdType.Binary);
-            if (Program.IsDebug)
-            {
-                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = thresBlue.ToBitmap() });
-            }
-            blueRatio = ImageWhiteRatio(thresBlue);
-            thresBlue.Dispose();
-            grayMay.Dispose();
-            blueChannel.Dispose();
+            Mat backForTest = new Mat(img, testBackRect);
+            Mat iconMat = new Mat(img, iconPartRect);
+            CvInvoke.CvtColor(backForTest, backForTest, ColorConversion.Bgr2Gray);
+            CvInvoke.CvtColor(iconMat, iconMat, ColorConversion.Bgr2Gray);
+            CvInvoke.MinMaxLoc(backForTest, ref minVal, ref maxVal, ref minLoc, ref maxLoc);
+            minVal -= 5;
+            maxVal += 5;
+            Mat maskMat = new Mat();
+            CvInvoke.InRange(backForTest, new ScalarArray(new MCvScalar(minVal)), new ScalarArray(new MCvScalar(maxVal)), maskMat);
+            var imgRatio = ImageWhiteRatio(maskMat);
+            if (imgRatio < 0.9f)
+                throw new Exception("Ошибочная реализация?");
+            CvInvoke.InRange(iconMat, new ScalarArray(new MCvScalar(minVal)), new ScalarArray(new MCvScalar(maxVal)), maskMat);
+            imgRatio = ImageWhiteRatio(maskMat);
+
+            if (imgRatio < 0.7)
+                result = true;
+            maskMat.Dispose();
             iconMat.Dispose();
-            if (blueRatio > 0.5)
-                return true;
-            else
-                return false;
-
+            backForTest.Dispose();
+            return result;
         }
+
+
 
 
 

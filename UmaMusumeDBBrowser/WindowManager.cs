@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Diagnostics;
+using System.Data;
 
 namespace UmaMusumeDBBrowser
 {
@@ -61,10 +62,67 @@ namespace UmaMusumeDBBrowser
             return IntPtr.Zero;
         }
 
-        //public static IntPtr GetWindowByHandle(IntPtr handle)
-        //{
+        public static DataTable GetProcessesTable()
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("pHandle", typeof(IntPtr));
+            dataTable.Columns.Add("pIcon", typeof(Image));
+            dataTable.Columns.Add("ProcessName", typeof(string));
+            dataTable.Columns.Add("WindowTitle", typeof(string));
+            foreach (Process pList in Process.GetProcesses())
+            {
+                IntPtr handle = pList.MainWindowHandle;
+                if (handle == IntPtr.Zero)
+                    continue;
+                Image icon = GetSmallWindowIcon(handle);
+                string pName = pList.ProcessName;
+                string pWindowTitle = pList.MainWindowTitle;
+                dataTable.Rows.Add(handle, icon, pName, pWindowTitle);
+            }
+            return dataTable;
+        }
 
-        //}
+        /// <summary>
+        /// 64 bit version maybe loses significant 64-bit specific information
+        /// </summary>
+        static IntPtr GetClassLongPtr(IntPtr hWnd, int nIndex)
+        {
+            if (IntPtr.Size == 4)
+                return new IntPtr((long)User32.GetClassLong32(hWnd, nIndex));
+            else
+                return User32.GetClassLong64(hWnd, nIndex);
+        }
+
+
+        private static uint WM_GETICON = 0x007f;
+        private static IntPtr ICON_SMALL2 = new IntPtr(2);
+        private static IntPtr IDI_APPLICATION = new IntPtr(0x7F00);
+        private static int GCL_HICON = -14;
+
+        public static Image GetSmallWindowIcon(IntPtr hWnd)
+        {
+            try
+            {
+                IntPtr hIcon = default(IntPtr);
+
+                hIcon = User32.SendMessage(hWnd, WM_GETICON, ICON_SMALL2, IntPtr.Zero);
+
+                if (hIcon == IntPtr.Zero)
+                    hIcon = GetClassLongPtr(hWnd, GCL_HICON);
+
+                if (hIcon == IntPtr.Zero)
+                    hIcon = User32.LoadIcon(IntPtr.Zero, (IntPtr)0x7F00/*IDI_APPLICATION*/);
+
+                if (hIcon != IntPtr.Zero)
+                    return new Bitmap(Icon.FromHandle(hIcon).ToBitmap(), 16, 16);
+                else
+                    return null;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
     }
 }
