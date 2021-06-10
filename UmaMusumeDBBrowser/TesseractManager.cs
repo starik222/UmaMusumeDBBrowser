@@ -27,6 +27,17 @@ namespace UmaMusumeDBBrowser
             return engine.GetUTF8Text();
         }
 
+        public string GetTextMultiLine(IInputArray image)
+        {
+            engine.PageSegMode = Emgu.CV.OCR.PageSegMode.SingleBlock;
+            string text = GetText(image).Replace(" ", "").Replace("\r", "");
+            if (!string.IsNullOrWhiteSpace(text) && text.EndsWith("\n"))
+            {
+                text = text.Substring(0, text.Length - 1);
+            }
+            return text.Replace("\n", "\\n");
+        }
+
         public string GetTextSingleLine(IInputArray image)
         {
             engine.PageSegMode = Emgu.CV.OCR.PageSegMode.SingleLine;

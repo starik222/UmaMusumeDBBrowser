@@ -200,6 +200,7 @@
     <Compile Include="SQLiteTableReader.cs" />
     <Compile Include="TableModifier.cs" />
     <Compile Include="TableSettings.cs" />
+    <Compile Include="TazunaLibrary.cs" />
     <Compile Include="TesseractManager.cs" />
     <Compile Include="UmaMusumeLibrary.cs" />
     <Compile Include="WinAPI.cs" />
@@ -233,6 +234,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Dictonaries\EventLibrary.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Dictonaries\TazunaLibrary.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="master.db">

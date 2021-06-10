@@ -58,7 +58,7 @@ namespace UmaMusumeDBBrowser
         {
             if (control.InvokeRequired)
             {
-                var d = new VisibleDelegate(SetControlVisible);
+                var d = new VisibleDelegate(SetControlEnable);
                 control.Invoke(d, new object[] { control, enable });
             }
             else

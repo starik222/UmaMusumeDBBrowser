@@ -16,7 +16,7 @@ namespace UmaMusumeDBBrowser
     {
         //public List<string> CardList { get; private set; }
 
-        private const string pattern = "[-.?!)(,:？！+＋…･♪・『』～「」：（）/》]";
+        private const string pattern = "[-.?!)(,:？！+＋…･♪・『』～「」：（）/》|}]";
 
         public List<EventData> EventList { get; set; }
 
@@ -139,6 +139,41 @@ namespace UmaMusumeDBBrowser
                 return new List<EventData>();
         }
 
+        public List<EventData> FindEventByOptionsDiceAlg(string optionName, float confidence = 0.5f)
+        {
+            List<KeyValuePair<float, EventData>> datas = new List<KeyValuePair<float, EventData>>();
+            string prepareText = Regex.Replace(optionName, pattern, "");
+            int startLen = prepareText.Length;
+            if (startLen - 3 < 0)
+                startLen = 0;
+            else
+                startLen = startLen - 3;
+            int endLen = prepareText.Length;
+            if (endLen + 3 > optionListByNameLen.Last().Key)
+                endLen = optionListByNameLen.Last().Key;
+            else
+                endLen = endLen + 3;
+
+            for (int i = startLen; i <= endLen; i++)
+            {
+                if (!optionListByNameLen.ContainsKey(i))
+                    continue;
+                var lst = optionListByNameLen[i];
+                foreach (var item in lst)
+                {
+                    float confid = (float)item.Value.Text.DiceCoefficient(prepareText);
+                    if (confid > confidence)
+                        datas.Add(new KeyValuePair<float, EventData>(confid, EventList[item.Key]));
+                }
+            }
+            if (datas.Count > 0)
+            {
+                return datas.Select(a => a.Value).ToList();
+            }
+            else
+                return new List<EventData>();
+        }
+
         private EventData GetEventWithMaxConfidence(List<KeyValuePair<float, EventData>> datas)
         {
             float c = -1;
@@ -191,6 +226,8 @@ namespace UmaMusumeDBBrowser
             public string EventName { get; set; }
             public string EventNameToCheck { get; set; }
             public List<EventOption> EventOptionsList { get; set; }
+            public CardType Type { get; set; }
+            public string CardName { get; set; }
 
             public EventData()
             {
@@ -218,6 +255,14 @@ namespace UmaMusumeDBBrowser
                         return true;
                     return false;
                 }
+            }
+
+            public bool ContainsOptionDice(string text, float confidence = 0.6f)
+            {
+                if (EventOptionsList.Exists(a => a.OptionToCheck.DiceCoefficient(text) > confidence))
+                    return true;
+                else
+                    return false;
             }
 
 
@@ -249,7 +294,8 @@ namespace UmaMusumeDBBrowser
         public enum CardType
         {
             Character,
-            Support
+            Support,
+            MainStory
         }
     }
 

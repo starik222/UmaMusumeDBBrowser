@@ -36,6 +36,7 @@ namespace UmaMusumeDBBrowser
         private EventControlManager controlManager;
         private SkillControlManager skillControlManager;
         private SkillManager skillManager;
+        private TazunaLibrary tazunaLibrary;
         private string skillIconPath = null;
 
         public Form_GameRecognizer()
@@ -45,10 +46,12 @@ namespace UmaMusumeDBBrowser
             library.LoadLibrary(Path.Combine(Program.DictonariesDir, "EventLibrary.json"));
             skillManager = new SkillManager();
             skillManager.FillData();
+            tazunaLibrary = new TazunaLibrary();
+            tazunaLibrary.LoadLibrary(Path.Combine(Program.DictonariesDir, "TazunaLibrary.json"));
             settings = JsonConvert.DeserializeObject<GameSettings>(File.ReadAllText(Path.Combine(Program.DictonariesDir, "GameParams.json")));
             LoadImagesToSettings();
             var repDict = Program.TransDict.LoadDictonary(Path.Combine(Program.DictonariesDir, "ReplaceChars.txt"));
-            gameReader = new GameReader(GameReader.GameType.DMM, library, skillManager, settings, repDict);
+            gameReader = new GameReader(GameReader.GameType.DMM, library, tazunaLibrary, skillManager, settings, repDict);
             gameReader.DataChanged += GameReader_DataChanged;
             //comboBox1.Items.AddRange(library.GetCardNameList());
         }
@@ -116,6 +119,20 @@ namespace UmaMusumeDBBrowser
                         Extensions.SetTextToControl(label1, "Skill list");
                         break;
                     }
+                case GameReader.GameDataType.TazunaAfterHelp:
+                    {
+                        SelectTab(tabPage5);
+                        var data = (GameReader.TazunaHelpRelult)gameDataArgs.DataClass;
+                        if (!string.IsNullOrWhiteSpace(data.Warning))
+                            Extensions.SetTextToControl(textBox19, data.Warning);
+                        else
+                            Extensions.SetTextToControl(textBox19, "");
+                        if (!string.IsNullOrWhiteSpace(data.Desc))
+                            Extensions.SetTextToControl(textBox20, data.Desc);
+                        else
+                            Extensions.SetTextToControl(textBox20, "HELP TEXT NOT FOUND IN LIBRARY");
+                        break;
+                    }
             }
             //throw new NotImplementedException();
         }
@@ -141,6 +158,8 @@ namespace UmaMusumeDBBrowser
                     skillIconPath = skillSettings.IconSettings[0].Value[0];
             }
             skillTransDictonary = Program.TransDict.LoadDictonary(Path.Combine(Program.DictonariesDir, "skill_data" + "_" + parentForm.toolStripComboBox1.SelectedItem + ".txt"));
+
+            pictureBox6.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Images\\Tazuna.bmp"));
 
         }
 

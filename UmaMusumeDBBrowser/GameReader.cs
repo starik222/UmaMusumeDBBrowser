@@ -34,13 +34,16 @@ namespace UmaMusumeDBBrowser
         private GameSettings settings;
         private CancellationTokenSource tokenSource;
         private string cardName = null;
+        private TazunaLibrary tazunaLibrary;
 
         private List<NAMES> charReplaceDictonary;
         private GameType gameType;
         private IntPtr gameHandle;
 
+        private const float optionsConfidence = 0.6f;
 
-        public GameReader(GameType gameWindowType, UmaMusumeLibrary umaMusumeLibrary, SkillManager skillManager, GameSettings gameSettings, List<NAMES> replaceChars = null)
+
+        public GameReader(GameType gameWindowType, UmaMusumeLibrary umaMusumeLibrary, TazunaLibrary tazunaHelpLibrary, SkillManager skillManager, GameSettings gameSettings, List<NAMES> replaceChars = null)
         {
             gameType = gameWindowType;
             library = umaMusumeLibrary;
@@ -49,6 +52,7 @@ namespace UmaMusumeDBBrowser
             charReplaceDictonary = replaceChars;
             lastSkillResult = new List<SkillManager.SkillData>();
             gameHandle = IntPtr.Zero;
+            tazunaLibrary = tazunaHelpLibrary;
 
         }
 
@@ -119,14 +123,14 @@ namespace UmaMusumeDBBrowser
                 //}
                 Image origImg = WindowManager.CaptureWindow(gameHandle);
                 if (origImg.Width <= 1 || origImg.Height <= 1)
-                    continue;
+                    goto Exit;
                 if (gameType == GameType.BluestacksV4)
                 {
                     Rectangle rectangle = new Rectangle(settings.BlueStacksPanel.Ver4.X, settings.BlueStacksPanel.Ver4.Height, origImg.Width - settings.BlueStacksPanel.Ver4.X - settings.BlueStacksPanel.Ver4.Width,
                         origImg.Height - settings.BlueStacksPanel.Ver4.Y - settings.BlueStacksPanel.Ver4.Height);
                     if (rectangle.Width <= 0 || rectangle.Height <= 0 || rectangle.X <= 0 || rectangle.Y <= 0)
                     {
-                        continue;
+                        goto Exit;
                     }
                     origImg = origImg.CropAtRect(rectangle);
                 }
@@ -136,7 +140,7 @@ namespace UmaMusumeDBBrowser
                         origImg.Height - settings.BlueStacksPanel.Ver5.Y - settings.BlueStacksPanel.Ver5.Height);
                     if (rectangle.Width <= 0 || rectangle.Height <= 0 || rectangle.X <= 0 || rectangle.Y <= 0)
                     {
-                        continue;
+                        goto Exit;
                     }
                     origImg = origImg.CropAtRect(rectangle);
                 }
@@ -157,7 +161,7 @@ namespace UmaMusumeDBBrowser
                 {
                     DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.NotFound, DataClass = "Any game parts not found!" });
                     lastDataType = GameDataType.NotFound;
-                    continue;
+                    goto Exit;
                 }
                 switch (dataType.type)
                 {
@@ -169,16 +173,41 @@ namespace UmaMusumeDBBrowser
                     case GameDataType.TrainingEvent:
                         {
                             if (lastDataType == GameDataType.TrainingEvent)
-                                continue;
+                                goto Exit;
                             var eventData = GetEventData(currentImage, dataType.PartInfo);
                             if (eventData != null)
                             {
                                 DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = eventData });
+                                lastDataType = GameDataType.TrainingEvent;
                             }
                             else
+                            {
                                 DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = null });
+                                lastDataType = GameDataType.NotFound;
+                            }
+
                             //lastImage = currentImage;
-                            lastDataType = GameDataType.TrainingEvent;
+                            
+                            break;
+                        }
+                    case GameDataType.TazunaAfterHelp:
+                        {
+                            if (lastDataType == GameDataType.TazunaAfterHelp)
+                                goto Exit;
+                            if (dataType.PartInfo.Y > (settings.GameElements.TazunaAfterHelpWindow.Y + settings.GameElements.TazunaAfterHelpWindow.Height))
+                                goto Exit;
+                            var result = GetTazunaAfterHelp(currentImage, dataType.PartInfo);
+
+                            DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = new TazunaHelpRelult() { Desc = result.desc, Warning = result.warning } });
+                            //var eventData = GetEventData(currentImage, dataType.PartInfo);
+                            //if (eventData != null)
+                            //{
+                            //    DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = eventData });
+                            //}
+                            //else
+                            //    DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = null });
+                            ////lastImage = currentImage;
+                            lastDataType = GameDataType.TazunaAfterHelp;
                             break;
                         }
                     case GameDataType.UmaSkillList:
@@ -198,9 +227,53 @@ namespace UmaMusumeDBBrowser
 
                         }
                 }
-                currentImage.Dispose();
-                origImg.Dispose();
+            Exit:
+                if (currentImage != null)
+                    currentImage.Dispose();
+                if (origImg != null)
+                    origImg.Dispose();
             }
+        }
+
+
+        private (string desc, string warning) GetTazunaAfterHelp(Image<Bgr, byte> img, Rectangle partInfo)
+        {
+            string warningText = null;
+            string descText = null;
+            string tempText = null;
+            Rectangle tazunaHelpWindowRect = settings.GameElements.TazunaAfterHelpWindow.GetRectangle();
+            if (IsTazunaHelpWarning(img.Mat))
+            {
+                tazunaHelpWindowRect.Y += 4;
+                Mat warningWindow = new Mat(img.Mat, settings.GameElements.TazunaWarningWindow.GetRectangle());
+                CvInvoke.CvtColor(warningWindow, warningWindow, ColorConversion.Bgr2Gray);
+                if (Program.IsDebug)
+                {
+                    DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = warningWindow.ToBitmap() });
+                }
+                tempText = Program.TessManager.GetTextSingleLine(warningWindow);
+                warningWindow.Dispose();
+                var warnRes = tazunaLibrary.FindHelpItemByDescDice(tempText, TazunaLibrary.HelpType.AfterRaceWarning);
+                if (warnRes != null)
+                    warningText = warnRes.Translations;
+            }
+
+            Mat helpWindow = new Mat(img.Mat, tazunaHelpWindowRect);
+            CvInvoke.CvtColor(helpWindow, helpWindow, ColorConversion.Bgr2Gray);
+            if (Program.IsDebug)
+            {
+                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = helpWindow.ToBitmap() });
+            }
+            tempText = Program.TessManager.GetTextMultiLine(helpWindow);
+            tempText = CorrectText(tempText);
+            helpWindow.Dispose();
+
+            var res = tazunaLibrary.FindHelpItemByDescDice(tempText, TazunaLibrary.HelpType.AfterRaceDesc);
+            if (res != null)
+            {
+                descText =  res.Translations;
+            }
+            return (descText, warningText);
         }
 
         private string CorrectText(string text)
@@ -398,6 +471,7 @@ namespace UmaMusumeDBBrowser
                 eventData = library.FindEventByNameDiceAlg(text);
             }
 
+
             if (eventData.Count == 1)
             {
                 return eventData[0];
@@ -415,8 +489,12 @@ namespace UmaMusumeDBBrowser
                 text = UmaMusumeLibrary.PrepareText(text);
                 if (eventData.Count > 1)
                 {
-
-                    var res = eventData.Find(a => a.ContainsOption(text, true));
+                    var res = eventData.Find(a => a.ContainsOptionDice(text, optionsConfidence));
+                    //var res = eventData.Find(a => a.ContainsOption(text, true));
+                    //if (res == null)
+                    //{
+                    //    res = eventData.Find(a => a.ContainsOptionDice(text));
+                    //}
                     if (res == null)
                     {
                         //Поиск второго варианта
@@ -424,7 +502,12 @@ namespace UmaMusumeDBBrowser
                         text = GetOptionText(img.Mat, textRect, isNext);
                         text = CorrectText(text);
                         text = UmaMusumeLibrary.PrepareText(text);
-                        var res2 = eventData.Find(a => a.ContainsOption(text, true));
+                        var res2 = eventData.Find(a => a.ContainsOptionDice(text, optionsConfidence));
+                        //var res2 = eventData.Find(a => a.ContainsOption(text, true));
+                        //if (res2 == null)
+                        //{
+                        //    res2 = eventData.Find(a => a.ContainsOptionDice(text));
+                        //}
                         if (!isNext && res2 == null)
                         {
                             isNext = true;
@@ -437,7 +520,12 @@ namespace UmaMusumeDBBrowser
                 }
                 else
                 {
-                    var res = library.FindEventByOption(text, true);
+                    var res = library.FindEventByOptionsDiceAlg(text, optionsConfidence);
+                    //var res = library.FindEventByOption(text, true);
+                    //if (res.Count == 0)
+                    //{
+                    //    res = library.FindEventByOptionsDiceAlg(text);
+                    //}
                     if (res.Count == 1)
                         return res[0];
                     else if (res.Count == 0)
@@ -449,7 +537,12 @@ namespace UmaMusumeDBBrowser
                         text = GetOptionText(img.Mat, textRect, isNext);
                         text = CorrectText(text);
                         text = UmaMusumeLibrary.PrepareText(text);
-                        res = library.FindEventByOption(text, true);
+                        res = library.FindEventByOptionsDiceAlg(text, optionsConfidence);
+                        //res = library.FindEventByOption(text, true);
+                        //if (res.Count == 0)
+                        //{
+                        //    res = library.FindEventByOptionsDiceAlg(text);
+                        //}
                         if (res.Count == 1)
                             return res[0];
                         else
@@ -471,7 +564,12 @@ namespace UmaMusumeDBBrowser
                         text = GetOptionText(img.Mat, textRect, isNext);
                         text = CorrectText(text);
                         text = UmaMusumeLibrary.PrepareText(text);
-                        var res2 = res.Find(a => a.ContainsOption(text, true));
+                        var res2 = res.Find(a => a.ContainsOptionDice(text, optionsConfidence));
+                        //var res2 = res.Find(a => a.ContainsOption(text, true));
+                        //if (res2 == null)
+                        //{
+                        //    res2 = eventData.Find(a => a.ContainsOptionDice(text));
+                        //}
                         if (!isNext && res2 == null)
                         {
                             isNext = true;
@@ -530,10 +628,11 @@ namespace UmaMusumeDBBrowser
                         DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = tempImg.AsBitmap() });
                         tempImg.Dispose();
                     }
+                    grayImg.Dispose();
                     return (item.DataType, new Rectangle(maxLoc[0], item.Image.Size));
                 }
             }
-
+            grayImg.Dispose();
             return (GameDataType.NotFound, new Rectangle());
 
         }
@@ -547,6 +646,39 @@ namespace UmaMusumeDBBrowser
             int imagePixelCount = thresImage.Rows * thresImage.Cols;
             float whiteRatio = (float)(whiteCount) / (float)imagePixelCount;
             return whiteRatio;
+        }
+
+        private (int minVal, int maxVal) GetEventNameBackMinMax(Mat img)
+        {
+            Rectangle testBackRect = settings.GameElements.EventNameIconBounds.GetRectangle();
+            testBackRect.Height = 6;
+            testBackRect.X += 35;
+            double minVal = 0, maxVal = 0;
+            Point minLoc = new Point(), maxLoc = new Point();
+            Mat backForTest = new Mat(img, testBackRect);
+            CvInvoke.MinMaxLoc(backForTest, ref minVal, ref maxVal, ref minLoc, ref maxLoc);
+            backForTest.Dispose();
+            minVal -= 3;
+            maxVal += 3;
+            return ((int)minVal, (int)maxVal);
+
+        }
+
+
+        private bool IsTazunaHelpWarning(Mat img)
+        {
+            Rectangle testBackRect = settings.GameElements.TazunaWarningTestRect.GetRectangle();
+            double minVal = 0, maxVal = 0;
+            Point minLoc = new Point(), maxLoc = new Point();
+            Mat backForTest = new Mat(img, testBackRect);
+            CvInvoke.CvtColor(backForTest, backForTest, ColorConversion.Bgr2Gray);
+            CvInvoke.MinMaxLoc(backForTest, ref minVal, ref maxVal, ref minLoc, ref maxLoc);
+            backForTest.Dispose();
+            double res = maxVal - minVal;
+            if (res > 4)
+                return true;
+            else
+                return false;
         }
 
 
@@ -601,6 +733,7 @@ namespace UmaMusumeDBBrowser
             SelectPlanRace = 3,
             UmaInfo = 4,
             UmaSkillList = 5,
+            TazunaAfterHelp = 6,
             GameNotFound = -1,
             NotFound = -2,
             DebugImage = -3
@@ -611,6 +744,12 @@ namespace UmaMusumeDBBrowser
             DMM,
             BluestacksV4,
             BluestacksV5
+        }
+
+        public struct TazunaHelpRelult
+        {
+            public string Desc;
+            public string Warning;
         }
     }
 
