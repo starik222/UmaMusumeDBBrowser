@@ -83,6 +83,24 @@
       "y": 383,
       "width": 300,
       "height": 454
+    },
+    "TazunaAfterHelpWindow": {
+      "x": 117,
+      "y": 26,
+      "width": 431,
+      "height": 46
+    },
+    "TazunaWarningWindow": {
+      "x": 116,
+      "y": 5,
+      "width": 92,
+      "height": 20
+    },
+    "TazunaWarningTestRect": {
+      "x": 120,
+      "y": 16,
+      "width": 120,
+      "height": 8
     }
   },
   "GameParts": [
@@ -127,6 +145,12 @@
           "ImageName": "disableSkill.bmp"
         }
       ]
+    },
+    {
+      "PartName": "Tazuna help after race",
+      "DataType": 6,
+      "ImageName": "TazunaAfterHelp.bmp"
     }
+
   ]
 }
