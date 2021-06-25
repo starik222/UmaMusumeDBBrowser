@@ -34,5 +34,17 @@ namespace UmaMusumeDBBrowser.Properties {
                 this["SelectedLang"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SelectedScheme {
+            get {
+                return ((string)(this["SelectedScheme"]));
+            }
+            set {
+                this["SelectedScheme"] = value;
+            }
+        }
     }
 }

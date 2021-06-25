@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace UmaMusumeDBBrowser
 {
-    public class TazunaLibrary
+    public class TazunaManager
     {
         public List<HelpItem> TazunaHelpData { get; set; }
 
-        public TazunaLibrary()
+        public TazunaManager()
         {
             TazunaHelpData = new List<HelpItem>();
         }
@@ -21,7 +21,7 @@ namespace UmaMusumeDBBrowser
         public HelpItem FindHelpItemByDescDice(string text, HelpType type, float confidence = 0.5f)
         {
             List<KeyValuePair<float, HelpItem>> datas = new List<KeyValuePair<float, HelpItem>>();
-            string preparedText = UmaMusumeLibrary.PrepareText(text);
+            string preparedText = EventManager.PrepareText(text);
 
             foreach (var item in TazunaHelpData)
             {
@@ -60,14 +60,14 @@ namespace UmaMusumeDBBrowser
 
         public void LoadLibrary(string path)
         {
-            var res = JsonConvert.DeserializeObject<TazunaLibrary>(File.ReadAllText(path));
+            var res = JsonConvert.DeserializeObject<TazunaManager>(File.ReadAllText(path));
             TazunaHelpData = new List<HelpItem>(res.TazunaHelpData);
             res.TazunaHelpData.Clear();
             res = null;
 
             foreach (var item in TazunaHelpData)
             {
-                item.OriginalToCheck = UmaMusumeLibrary.PrepareText(item.Original);
+                item.OriginalToCheck = EventManager.PrepareText(item.Original);
             }
         }
 

@@ -150,6 +150,18 @@
       "PartName": "Tazuna help after race",
       "DataType": 6,
       "ImageName": "TazunaAfterHelp.bmp"
+    },
+    {
+      "PartName": "SFactor",
+      "DataType": 7,
+      "ImageName": "GenWindow.bmp",
+      "SubGameParts": [
+        {
+          "PartName": "SFactorIPart",
+          "DataType": 7,
+          "ImageName": "GenWindowIPart.bmp"
+        }
+      ]
     }
 
   ]

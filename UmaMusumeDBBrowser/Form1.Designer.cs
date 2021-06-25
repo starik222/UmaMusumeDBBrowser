@@ -41,11 +41,16 @@ namespace UmaMusumeDBBrowser
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.saveColorSchemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.перевестиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заменаСИспользованиемRegexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -66,7 +71,10 @@ namespace UmaMusumeDBBrowser
             this.toolStripButton4,
             this.toolStripButton6,
             this.toolStripButton5,
-            this.toolStripButton7});
+            this.toolStripButton7,
+            this.toolStripDropDownButton1,
+            this.toolStripComboBox2,
+            this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -158,6 +166,39 @@ namespace UmaMusumeDBBrowser
             this.toolStripButton7.Text = "Load from csv";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveColorSchemeToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton1.Text = "DebugItems";
+            // 
+            // saveColorSchemeToolStripMenuItem
+            // 
+            this.saveColorSchemeToolStripMenuItem.Name = "saveColorSchemeToolStripMenuItem";
+            this.saveColorSchemeToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.saveColorSchemeToolStripMenuItem.Text = "SaveColorScheme";
+            this.saveColorSchemeToolStripMenuItem.Click += new System.EventHandler(this.saveColorSchemeToolStripMenuItem_Click);
+            // 
+            // toolStripComboBox2
+            // 
+            this.toolStripComboBox2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.toolStripComboBox2.Name = "toolStripComboBox2";
+            this.toolStripComboBox2.Size = new System.Drawing.Size(90, 25);
+            this.toolStripComboBox2.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox2_SelectedIndexChanged);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(81, 22);
+            this.toolStripLabel2.Text = "ColorScheme:";
+            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -201,16 +242,24 @@ namespace UmaMusumeDBBrowser
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.перевестиToolStripMenuItem});
+            this.перевестиToolStripMenuItem,
+            this.заменаСИспользованиемRegexToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(133, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(313, 70);
             // 
             // перевестиToolStripMenuItem
             // 
             this.перевестиToolStripMenuItem.Name = "перевестиToolStripMenuItem";
-            this.перевестиToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.перевестиToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.перевестиToolStripMenuItem.Text = "Перевести";
             this.перевестиToolStripMenuItem.Click += new System.EventHandler(this.перевестиToolStripMenuItem_Click);
+            // 
+            // заменаСИспользованиемRegexToolStripMenuItem
+            // 
+            this.заменаСИспользованиемRegexToolStripMenuItem.Name = "заменаСИспользованиемRegexToolStripMenuItem";
+            this.заменаСИспользованиемRegexToolStripMenuItem.Size = new System.Drawing.Size(312, 22);
+            this.заменаСИспользованиемRegexToolStripMenuItem.Text = "Замена в колонке с использованием Regex";
+            this.заменаСИспользованиемRegexToolStripMenuItem.Click += new System.EventHandler(this.заменаСИспользованиемRegexToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -253,6 +302,11 @@ namespace UmaMusumeDBBrowser
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         public System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem saveColorSchemeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripMenuItem заменаСИспользованиемRegexToolStripMenuItem;
     }
 }
 

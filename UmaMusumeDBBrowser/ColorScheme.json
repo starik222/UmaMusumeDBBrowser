@@ -1,0 +1,113 @@
+//if need rgb, use format "255, 255, 255"
+{
+  "Items": [
+    {
+      "SchemeName": "Classic",
+      "ButtonStyle": {
+        "BackColor": "Transparent",
+        "ForeColor": "ControlText"
+      },
+      "TextBoxStyle": {
+        "BackColor": "Window",
+        "ForeColor": "ControlText"
+      },
+      "FormStyle": {
+        "BackColor": "Window",
+        "ForeColor": "ControlText"
+      },
+      "GrigStyle": {
+        "BackColor": "Window",
+        "ForeColor": "ControlText",
+        "GridBackColor": "AppWorkspace"
+      },
+      "TabControlStyle": {
+        "BackColor": "Window",
+        "ForeColor": "ControlText"
+      },
+      "ToolStripStyle": {
+        "BackColor": "Window",
+        "ForeColor": "ControlText"
+      },
+      "LabelStyle": {
+        "BackColor": "Window",
+        "ForeColor": "ControlText"
+      },
+      "OtherStyle": {
+        "BackColor": "Window",
+        "ForeColor": "ControlText"
+      }
+    },
+    {
+      "SchemeName": "Dark",
+      "ButtonStyle": {
+        "BackColor": "Black",
+        "ForeColor": "White"
+      },
+      "TextBoxStyle": {
+        "BackColor": "Black",
+        "ForeColor": "White"
+      },
+      "FormStyle": {
+        "BackColor": "Black",
+        "ForeColor": "White"
+      },
+      "GrigStyle": {
+        "BackColor": "Black",
+        "ForeColor": "White",
+        "GridBackColor": "Black"
+      },
+      "TabControlStyle": {
+        "BackColor": "Black",
+        "ForeColor": "White"
+      },
+      "ToolStripStyle": {
+        "BackColor": "Black",
+        "ForeColor": "White"
+      },
+      "LabelStyle": {
+        "BackColor": "Black",
+        "ForeColor": "White"
+      },
+      "OtherStyle": {
+        "BackColor": "Black",
+        "ForeColor": "White"
+      }
+    },
+    {
+      "SchemeName": "Gray",
+      "ButtonStyle": {
+        "BackColor": "Transparent",
+        "ForeColor": "ControlText"
+      },
+      "TextBoxStyle": {
+        "BackColor": "Control",
+        "ForeColor": "ControlText"
+      },
+      "FormStyle": {
+        "BackColor": "Control",
+        "ForeColor": "ControlText"
+      },
+      "GrigStyle": {
+        "BackColor": "Control",
+        "ForeColor": "ControlText",
+        "GridBackColor": "AppWorkspace"
+      },
+      "TabControlStyle": {
+        "BackColor": "Control",
+        "ForeColor": "ControlText"
+      },
+      "ToolStripStyle": {
+        "BackColor": "Control",
+        "ForeColor": "ControlText"
+      },
+      "LabelStyle": {
+        "BackColor": "Control",
+        "ForeColor": "ControlText"
+      },
+      "OtherStyle": {
+        "BackColor": "Control",
+        "ForeColor": "ControlText"
+      }
+    }
+  ]
+}

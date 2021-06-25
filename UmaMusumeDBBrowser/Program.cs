@@ -25,6 +25,8 @@ namespace UmaMusumeDBBrowser
             tools = new TextTool(Application.StartupPath);
             TessManager = new TesseractManager();
             IconDB = new IconManager(Application.StartupPath);
+            ColorManager = new ColorSchemeManager();
+            ColorManager.Load(Path.Combine(Application.StartupPath, "ColorScheme.json"));
             string testDbPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Appdata\\LocalLow\\Cygames\\umamusume\\master\\master.mdb";
             if (File.Exists(testDbPath))
                 DbPath = testDbPath;
@@ -46,6 +48,8 @@ namespace UmaMusumeDBBrowser
         public static IconManager IconDB;
 
         public static string DbPath;
+
+        public static ColorSchemeManager ColorManager;
 
 
 

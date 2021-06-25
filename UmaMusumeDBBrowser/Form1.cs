@@ -19,6 +19,37 @@ namespace UmaMusumeDBBrowser
         public Form1()
         {
             InitializeComponent();
+
+
+            foreach (var item in Program.ColorManager.Items)
+            {
+                toolStripComboBox2.Items.Add(item.SchemeName);
+            }
+            string selectedScheme = (string)Properties.Settings.Default["SelectedScheme"];
+            if (!string.IsNullOrWhiteSpace(selectedScheme))
+            {
+                if (toolStripComboBox2.Items.Contains(selectedScheme))
+                {
+                    toolStripComboBox2.SelectedItem = selectedScheme;
+                    Program.ColorManager.SelectScheme(selectedScheme);
+                }
+            }
+            else if (toolStripComboBox2.Items.Count > 0)
+            {
+                toolStripComboBox2.SelectedIndex = 0;
+                Program.ColorManager.SelectScheme((string)toolStripComboBox1.SelectedItem);
+            }
+
+            if (Program.ColorManager.SelectedScheme != null)
+                Program.ColorManager.ChangeColorSchemeInConteiner(Controls, Program.ColorManager.SelectedScheme);
+
+            Program.ColorManager.SchemeChanded += ColorManager_SchemeChanded;
+        }
+
+        private void ColorManager_SchemeChanded(object sender, EventArgs e)
+        {
+            if (Program.ColorManager.SelectedScheme != null)
+                Program.ColorManager.ChangeColorSchemeInConteiner(Controls, Program.ColorManager.SelectedScheme);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,6 +58,7 @@ namespace UmaMusumeDBBrowser
             {
                 toolStripButton7.Visible = false;
                 toolStripButton5.Visible = false;
+                toolStripDropDownButton1.Visible = false;
             }
             Text += " ver. " + Application.ProductVersion;
             Program.TableDisplaySettings = new SettingsLoader().LoadSettings();
@@ -42,14 +74,13 @@ namespace UmaMusumeDBBrowser
                 else if (toolStripComboBox1.Items.Count > 0)
                     toolStripComboBox1.SelectedIndex = 0;
             }
-
-
             foreach (var item in Program.TableDisplaySettings)
             {
                 listBox1.Items.Add(item);
             }
 
-
+            replace_regex = new Form_regex_replace();
+            replace_regex.tools = Program.tools;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,6 +96,7 @@ namespace UmaMusumeDBBrowser
         private TableSettings currentTableSettings = null;
         private DataTable currentTable = null;
         private string selectedLanguages = null;
+        Form_regex_replace replace_regex;
 
         public void LoadTableByText(string text)
         {
@@ -371,7 +403,7 @@ namespace UmaMusumeDBBrowser
 
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
-            Form_GameRecognizer form_GameRecognizer = new Form_GameRecognizer();
+            Form_GameRecognizer form_GameRecognizer = new Form_GameRecognizer(toolStripComboBox1.SelectedItem.ToString());
             //form_GameRecognizer.Owner = this;
             form_GameRecognizer.parentForm = this;
             toolStripComboBox1.Enabled = false;
@@ -443,6 +475,58 @@ namespace UmaMusumeDBBrowser
                 }
             }
 
+        }
+
+        private void saveColorSchemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorSchemeManager colorSchemeManager = new ColorSchemeManager();
+            colorSchemeManager.Items.Add(ColorSchemeManager.ColorScheme.GetDefaultColorScheme());
+            colorSchemeManager.Items.Add(ColorSchemeManager.ColorScheme.GetDarkDefaultColorScheme());
+            colorSchemeManager.Save("testScheme.json");
+            colorSchemeManager.Load("testScheme.json");
+        }
+
+        private void toolStripComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.ColorManager.SelectScheme((string)toolStripComboBox2.SelectedItem);
+            Properties.Settings.Default["SelectedScheme"] = (string)toolStripComboBox2.SelectedItem;
+            Properties.Settings.Default.Save();
+        }
+
+        private void заменаСИспользованиемRegexToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (replace_regex == null || replace_regex.IsDisposed)
+            {
+                replace_regex = new Form_regex_replace();
+                replace_regex.tools = Program.tools;
+            }
+            if (dataGridView1.SelectedCells.Count == 0)
+                return;
+            int cIndex = dataGridView1.SelectedCells[0].ColumnIndex;
+            string cName = dataGridView1.Columns[cIndex].Name;
+            if (currentTableSettings.TextTypeAndName.FindIndex(a => a.Value.Equals(cName)) != -1)
+            {
+                if (dataGridView1.SelectedCells[0].Value != DBNull.Value && !string.IsNullOrWhiteSpace((string)dataGridView1.SelectedCells[0].Value))
+                {
+                    replace_regex.SetOriginalString((string)dataGridView1.SelectedCells[0].Value);
+                    if (replace_regex.ShowDialog() == DialogResult.OK)
+                    {
+                        for (int i = 0; i < dataGridView1.RowCount; i++)
+                        {
+                            if (dataGridView1[cIndex, i].Value != DBNull.Value && !string.IsNullOrWhiteSpace((string)dataGridView1[cIndex, i].Value))
+                            {
+                                string origText = (string)dataGridView1[cIndex, i].Value;
+                                string replText = replace_regex.ReplaceString(origText, true);
+                                if (replText.Equals(origText))
+                                    continue;
+                                dataGridView1[cName + "_trans", i].Value = replText;
+                            }
+                        }
+                    }
+                }
+
+
+            }
         }
     }
 }

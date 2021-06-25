@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 
 namespace UmaMusumeDBBrowser
 {
-    public class UmaMusumeLibrary
+    public class EventManager
     {
         //public List<string> CardList { get; private set; }
 
@@ -24,7 +24,7 @@ namespace UmaMusumeDBBrowser
         private SortedDictionary<int, List<KeyValuePair<int, StringData>>> optionListByNameLen;
 
 
-        public UmaMusumeLibrary()
+        public EventManager()
         {
             EventList = new List<EventData>();
             eventListByNameLen = new SortedDictionary<int, List<KeyValuePair<int, StringData>>>();
@@ -66,7 +66,7 @@ namespace UmaMusumeDBBrowser
 
         public void LoadLibrary(string path)
         {
-            var res = JsonConvert.DeserializeObject<UmaMusumeLibrary> (File.ReadAllText(path));
+            var res = JsonConvert.DeserializeObject<EventManager> (File.ReadAllText(path));
             EventList = new List<EventData>(res.EventList);
             res.EventList.Clear();
             res = null;

@@ -59,6 +59,26 @@ namespace UmaMusumeDBBrowser
                 item.ImageKey = imageList.Images.Keys[i];
                 this.listView1.Items.Add(item);
             }
+
+            SetColorScheme();
+            Program.ColorManager.SchemeChanded += ColorManager_SchemeChanded;
+        }
+
+
+        private void ColorManager_SchemeChanded(object sender, EventArgs e)
+        {
+            SetColorScheme();
+        }
+
+        private void SetColorScheme()
+        {
+            if (Program.ColorManager.SelectedScheme != null)
+            {
+                BackColor = Program.ColorManager.SelectedScheme.FormStyle.BackColor;
+                ForeColor = Program.ColorManager.SelectedScheme.FormStyle.ForeColor;
+                Program.ColorManager.ChangeColorSchemeInConteiner(Controls, Program.ColorManager.SelectedScheme);
+
+            }
         }
 
 

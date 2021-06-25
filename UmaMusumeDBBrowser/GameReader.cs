@@ -28,14 +28,10 @@ namespace UmaMusumeDBBrowser
         //private Image<Bgr, byte> lastImage = null;
         private GameDataType lastDataType = GameDataType.NotFound;
         private List<SkillManager.SkillData> lastSkillResult;
-
-        private UmaMusumeLibrary library;
-        private SkillManager skManager;
+        private AllLibraryManager libraryManager;
         private GameSettings settings;
         private CancellationTokenSource tokenSource;
         private string cardName = null;
-        private TazunaLibrary tazunaLibrary;
-
         private List<NAMES> charReplaceDictonary;
         private GameType gameType;
         private IntPtr gameHandle;
@@ -43,16 +39,14 @@ namespace UmaMusumeDBBrowser
         private const float optionsConfidence = 0.6f;
 
 
-        public GameReader(GameType gameWindowType, UmaMusumeLibrary umaMusumeLibrary, TazunaLibrary tazunaHelpLibrary, SkillManager skillManager, GameSettings gameSettings, List<NAMES> replaceChars = null)
+        public GameReader(GameType gameWindowType, AllLibraryManager libManager, GameSettings gameSettings, List<NAMES> replaceChars = null)
         {
+            libraryManager = libManager;
             gameType = gameWindowType;
-            library = umaMusumeLibrary;
-            skManager = skillManager;
             settings = gameSettings;
             charReplaceDictonary = replaceChars;
             lastSkillResult = new List<SkillManager.SkillData>();
             gameHandle = IntPtr.Zero;
-            tazunaLibrary = tazunaHelpLibrary;
 
         }
 
@@ -220,6 +214,18 @@ namespace UmaMusumeDBBrowser
                             }
                             break;
                         }
+                    case GameDataType.GenWindow:
+                        {
+                            if (lastDataType == GameDataType.GenWindow)
+                                goto Exit;
+                            var result = GetSFactorList(currentImage);
+                            if (result.Count > 0)
+                            {
+                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = result });
+                            }
+                            lastDataType = GameDataType.GenWindow;
+                            break;
+                        }
                     default:
                         {
                             DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = "Other part" });
@@ -253,7 +259,7 @@ namespace UmaMusumeDBBrowser
                 }
                 tempText = Program.TessManager.GetTextSingleLine(warningWindow);
                 warningWindow.Dispose();
-                var warnRes = tazunaLibrary.FindHelpItemByDescDice(tempText, TazunaLibrary.HelpType.AfterRaceWarning);
+                var warnRes = libraryManager.TazunaLibrary.FindHelpItemByDescDice(tempText, TazunaManager.HelpType.AfterRaceWarning);
                 if (warnRes != null)
                     warningText = warnRes.Translations;
             }
@@ -268,7 +274,7 @@ namespace UmaMusumeDBBrowser
             tempText = CorrectText(tempText);
             helpWindow.Dispose();
 
-            var res = tazunaLibrary.FindHelpItemByDescDice(tempText, TazunaLibrary.HelpType.AfterRaceDesc);
+            var res = libraryManager.TazunaLibrary.FindHelpItemByDescDice(tempText, TazunaManager.HelpType.AfterRaceDesc);
             if (res != null)
             {
                 descText =  res.Translations;
@@ -287,17 +293,14 @@ namespace UmaMusumeDBBrowser
             return text;
         }
 
-        private List<SkillManager.SkillData> GetSkillList(Image<Bgr, byte> img)
+        private List<Rectangle> GetGamePartsRects(Image<Gray, byte> grayImg, List<GameSettings.GamePart> parts, double confid = 0.58)
         {
-            Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
-            //Поиск контуров всех кнопок понижения.
             double minVal = 0, maxVal = 0;
             Point minLoc = new Point(), maxLoc = new Point();
             List<Rectangle> partsLocInfo = new List<Rectangle>();
-            var subParts = settings.GameParts.Find(a => a.PartName.Equals("SkillList"))?.SubGameParts;
-            List<SkillManager.SkillData> skillDatas = new List<SkillManager.SkillData>();
 
-            foreach (var item in subParts)
+
+            foreach (var item in parts)
             {
                 Mat imgOut = new Mat();
                 CvInvoke.MatchTemplate(grayImg, item.Image, imgOut, TemplateMatchingType.CcoeffNormed);
@@ -307,7 +310,7 @@ namespace UmaMusumeDBBrowser
                 {
                     CvInvoke.MinMaxLoc(imgOut, ref minVal, ref maxVal, ref minLoc, ref maxLoc, general_mask);
 
-                    if (maxVal > 0.58)
+                    if (maxVal > confid)
                     {
                         Rectangle rectangle = new Rectangle(maxLoc, item.Image.Size);
                         partsLocInfo.Add(rectangle);
@@ -338,8 +341,157 @@ namespace UmaMusumeDBBrowser
                 general_mask.Dispose();
                 imgOut.Dispose();
             }
-            //Создание рабочих контуров
             partsLocInfo.Sort((a, b) => a.Y.CompareTo(b.Y));
+            return partsLocInfo;
+
+        }
+
+
+        private List<FactorManager.FactorData> GetSFactorList(Image<Bgr, byte> img)
+        {
+            Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
+            var subParts = settings.GameParts.Find(a => a.PartName.Equals("SFactor"))?.SubGameParts;
+            List<FactorManager.FactorData> factorDatas = new List<FactorManager.FactorData>();
+            if (subParts == null || subParts.Count == 0)
+                return factorDatas;
+            List<Rectangle> partsLocInfo = GetGamePartsRects(grayImg, subParts, 0.65);
+            for (int i = 0; i < partsLocInfo.Count; i++)
+            {
+                //исправление координат
+                Rectangle partRect = partsLocInfo[i];
+                partRect.X -= 468;
+                partRect.Width = 335;
+                partRect.Height += 2;
+                //---
+                Mat textMat = new Mat(img.Mat, partRect);
+                Mat mask = new Mat();
+                Mat hsvMat = new Mat();
+                Mat resMat = new Mat();
+                CvInvoke.Resize(textMat, textMat, new Size(), 2, 2);
+
+                bool needCorrect = false;
+                bool isNext = false;
+            nextTry:
+                if (!needCorrect)
+                {
+                    
+                    resMat = textMat.Clone();
+                    if (i < 3)
+                        CvInvoke.BitwiseNot(resMat, resMat);
+                }
+                else
+                {
+                    MCvScalar minS = new MCvScalar();
+                    MCvScalar maxS = new MCvScalar();
+                    if (i < 3)
+                    {
+                        //CvInvoke.BitwiseNot(textMat, textMat);
+                        if (!isNext)
+                        {
+                            minS = new MCvScalar(0, 0, 233);
+                            maxS = new MCvScalar(185, 65, 255);
+                        }
+                        else
+                        {
+                            minS = new MCvScalar(0, 0, 239);
+                            maxS = new MCvScalar(171, 55, 255);
+                        }
+                    }
+                    else
+                    {
+                        if (!isNext)
+                        {
+                            minS = new MCvScalar(12, 45, 70);
+                            maxS = new MCvScalar(13, 218, 204);
+                        }
+                        else
+                        {
+                            minS = new MCvScalar(12, 107, 120);
+                            maxS = new MCvScalar(13, 210, 154);
+                        }
+                    }
+
+                    CvInvoke.CvtColor(textMat, hsvMat, ColorConversion.Bgr2Hsv);
+                    
+                    CvInvoke.InRange(hsvMat, new ScalarArray(minS), new ScalarArray(maxS), mask);
+                    CvInvoke.BitwiseNot(mask, mask);
+                    resMat = textMat.Clone();
+                    if (i < 3)
+                    {
+                        CvInvoke.BitwiseNot(resMat, resMat);
+                    }
+                    resMat.SetTo(new MCvScalar(255, 255, 255), mask);
+                }
+
+
+                if (Program.IsDebug)
+                {
+                    DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = resMat.ToBitmap() });
+                }
+
+                string text = Program.TessManager.GetTextSingleLine(resMat);
+                if (!string.IsNullOrWhiteSpace(text))
+                {
+                    var res = libraryManager.FactorLibrary.FindFactorByNameDiceAlg(text);
+                    if (res.Count == 1)
+                        factorDatas.Add(res[0].Value);
+                    else if (res.Count > 1)
+                    {
+                        var s = GetItemWithMaxConfidence<FactorManager.FactorData>(res);
+                        if (s != null)
+                            factorDatas.Add(s);
+                    }
+                    else
+                    {
+                        if (!needCorrect)
+                        {
+                            needCorrect = true;
+                            goto nextTry;
+                        }
+                        else if (!isNext)
+                        {
+                            isNext = true;
+                            goto nextTry;
+                        }
+                    }
+                }
+                else
+                {
+                    if (!needCorrect)
+                    {
+                        needCorrect = true;
+                        goto nextTry;
+                    }
+                    else if (!isNext)
+                    {
+                        isNext = true;
+                        goto nextTry;
+                    }
+                }
+                textMat.Dispose();
+                resMat.Dispose();
+                hsvMat.Dispose();
+                mask.Dispose();
+            }
+            grayImg.Dispose();
+            return factorDatas;
+        }
+
+        private List<SkillManager.SkillData> GetSkillList(Image<Bgr, byte> img)
+        {
+            Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
+            //Поиск контуров всех кнопок понижения.
+            
+            var subParts = settings.GameParts.Find(a => a.PartName.Equals("SkillList"))?.SubGameParts;
+            List<SkillManager.SkillData> skillDatas = new List<SkillManager.SkillData>();
+            if (subParts == null || subParts.Count == 0)
+            {
+                grayImg.Dispose();
+                return skillDatas;
+            }
+            List<Rectangle> partsLocInfo = GetGamePartsRects(grayImg, subParts);
+            //Создание рабочих контуров
+
             foreach (var item in partsLocInfo)
             {
                 if (item.Y < (settings.GameElements.SkillListWindow.Y + 26))//исключение первого умения, если его название обрезано.
@@ -371,23 +523,23 @@ namespace UmaMusumeDBBrowser
 
                 string text = Program.TessManager.GetTextSingleLine(resMat);
 
-                var res = skManager.FindSkillByName(text, true, 0.8f);
+                var res = libraryManager.SkillLibrary.FindSkillByName(text, true, 0.8f);
                 if (res.Count == 1)
                     skillDatas.Add(res[0].Value);
                 else if (res.Count > 1)
                 {
-                    var s = GetSkillWithMaxConfidence(res);
+                    var s = GetItemWithMaxConfidence<SkillManager.SkillData>(res);
                     if (s != null)
                         skillDatas.Add(s);
                 }
                 else if (res.Count == 0 && !string.IsNullOrWhiteSpace(text))
                 {
-                    res = skManager.FindEventByNameDiceAlg(text);
+                    res = libraryManager.SkillLibrary.FindEventByNameDiceAlg(text);
                     if (res.Count == 1)
                         skillDatas.Add(res[0].Value);
                     else if (res.Count > 1)
                     {
-                        var s = GetSkillWithMaxConfidence(res);
+                        var s = GetItemWithMaxConfidence<SkillManager.SkillData>(res);
                         if (s != null)
                             skillDatas.Add(s);
                     }
@@ -408,12 +560,13 @@ namespace UmaMusumeDBBrowser
                 hsvMat.Dispose();
                 mask.Dispose();
             }
+            grayImg.Dispose();
             return skillDatas;
 
 
         }
 
-        private SkillManager.SkillData GetSkillWithMaxConfidence(List<KeyValuePair<float, SkillManager.SkillData>> datas)
+        private T GetItemWithMaxConfidence<T>(List<KeyValuePair<float, T>> datas)
         {
             float c = -1;
             int index = -1;
@@ -426,7 +579,7 @@ namespace UmaMusumeDBBrowser
                 }
             }
             if (index == -1)
-                return null;
+                return default(T);
             return datas[index].Value;
         }
 
@@ -436,7 +589,7 @@ namespace UmaMusumeDBBrowser
             return Regex.Replace(text, pattern, "");
         }
 
-        private UmaMusumeLibrary.EventData GetEventData(Image<Bgr, byte> img, Rectangle partInfo)
+        private EventManager.EventData GetEventData(Image<Bgr, byte> img, Rectangle partInfo)
         {
             int offset = 0;
             if (IsEventNameIcon(img.Mat))
@@ -459,16 +612,16 @@ namespace UmaMusumeDBBrowser
             text = CorrectText(text);
             //text = DeleteNumbers(text);
             //Пробуем искать по имени.
-            var eventData = library.FindEventByName(text, true);
+            var eventData = libraryManager.EventLibrary.FindEventByName(text, true);
             if (eventData.Count == 0)
             {
                 string text2 = Program.TessManager.GetTextSingleLine(threshMat);
                 text2 = CorrectText(text2);
-                eventData = library.FindEventByName(text2, true);
+                eventData = libraryManager.EventLibrary.FindEventByName(text2, true);
             }
             if (eventData.Count == 0)
             {
-                eventData = library.FindEventByNameDiceAlg(text);
+                eventData = libraryManager.EventLibrary.FindEventByNameDiceAlg(text);
             }
 
 
@@ -486,7 +639,7 @@ namespace UmaMusumeDBBrowser
                 Rectangle textRect = new Rectangle(textStartPoint, textSize);
                 text = GetOptionText(img.Mat, textRect, isNext);
                 text = CorrectText(text);
-                text = UmaMusumeLibrary.PrepareText(text);
+                text = EventManager.PrepareText(text);
                 if (eventData.Count > 1)
                 {
                     var res = eventData.Find(a => a.ContainsOptionDice(text, optionsConfidence));
@@ -501,7 +654,7 @@ namespace UmaMusumeDBBrowser
                         textRect.Y += 90;
                         text = GetOptionText(img.Mat, textRect, isNext);
                         text = CorrectText(text);
-                        text = UmaMusumeLibrary.PrepareText(text);
+                        text = EventManager.PrepareText(text);
                         var res2 = eventData.Find(a => a.ContainsOptionDice(text, optionsConfidence));
                         //var res2 = eventData.Find(a => a.ContainsOption(text, true));
                         //if (res2 == null)
@@ -520,7 +673,7 @@ namespace UmaMusumeDBBrowser
                 }
                 else
                 {
-                    var res = library.FindEventByOptionsDiceAlg(text, optionsConfidence);
+                    var res = libraryManager.EventLibrary.FindEventByOptionsDiceAlg(text, optionsConfidence);
                     //var res = library.FindEventByOption(text, true);
                     //if (res.Count == 0)
                     //{
@@ -536,8 +689,8 @@ namespace UmaMusumeDBBrowser
                         textRect.Y += 90;
                         text = GetOptionText(img.Mat, textRect, isNext);
                         text = CorrectText(text);
-                        text = UmaMusumeLibrary.PrepareText(text);
-                        res = library.FindEventByOptionsDiceAlg(text, optionsConfidence);
+                        text = EventManager.PrepareText(text);
+                        res = libraryManager.EventLibrary.FindEventByOptionsDiceAlg(text, optionsConfidence);
                         //res = library.FindEventByOption(text, true);
                         //if (res.Count == 0)
                         //{
@@ -563,7 +716,7 @@ namespace UmaMusumeDBBrowser
                         textRect.Y += 90;
                         text = GetOptionText(img.Mat, textRect, isNext);
                         text = CorrectText(text);
-                        text = UmaMusumeLibrary.PrepareText(text);
+                        text = EventManager.PrepareText(text);
                         var res2 = res.Find(a => a.ContainsOptionDice(text, optionsConfidence));
                         //var res2 = res.Find(a => a.ContainsOption(text, true));
                         //if (res2 == null)
@@ -734,6 +887,7 @@ namespace UmaMusumeDBBrowser
             UmaInfo = 4,
             UmaSkillList = 5,
             TazunaAfterHelp = 6,
+            GenWindow = 7,
             GameNotFound = -1,
             NotFound = -2,
             DebugImage = -3

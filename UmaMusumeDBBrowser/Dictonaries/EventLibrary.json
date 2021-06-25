@@ -1020,29 +1020,6 @@
       "CardName": "【Nevertheless】ナリタタイシン"
     },
     {
-      "EventName": "モヤつく気持ちは自主トレで？",
-      "EventNameToCheck": "モヤつく気持ちは自主トレで",
-      "EventOptionsList": [
-        {
-          "Option": "上選択肢",
-          "OptionToCheck": "上選択肢",
-          "Effect": "Энергия-15\nИнтеллект+10"
-        },
-        {
-          "Option": "中選択肢",
-          "OptionToCheck": "中選択肢",
-          "Effect": "＜Вариант 1＞\nЭнергия-10\nSkill point+25"
-        },
-        {
-          "Option": "下選択肢",
-          "OptionToCheck": "下選択肢",
-          "Effect": "＜Вариант 1＞\nЭнергия-15\nМотивация+\nСлучайные 2 характеристики+15？\n＜Вариант 2＞\nЭнергия-15\nСила воли+10"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【Nevertheless】ナリタタイシン"
-    },
-    {
       "EventName": "後日レポート提出済",
       "EventNameToCheck": "後日レポート提出済",
       "EventOptionsList": [
@@ -5221,7 +5198,7 @@
         {
           "Option": "日本一の技術を身につけよう！",
           "OptionToCheck": "日本一の技術を身につけよう",
-          "Effect": "スキル+Pt20"
+          "Effect": "Skill point+20"
         }
       ],
       "Type": 0,
@@ -19992,7 +19969,7 @@
         {
           "Option": "トレーニング教本がよさそう",
           "OptionToCheck": "トレーニング教本がよさそう",
-          "Effect": "練習上手○\nУровень отношений+4"
+          "Effect": "「練習上手○」\nУровень отношений+4"
         }
       ],
       "Type": 1,
@@ -20570,6 +20547,761 @@
       ],
       "Type": 0,
       "CardName": "[あおぐもサミング]セイウンスカイ"
+    },
+    {
+      "EventName": "モヤつく気持ちは自主トレで？",
+      "EventNameToCheck": "モヤつく気持ちは自主トレで",
+      "EventOptionsList": [
+        {
+          "Option": "じゃあ代わりにゆっくり休もうか",
+          "OptionToCheck": "じゃあ代わりにゆっくり休もうか",
+          "Effect": "Энергия-15\nИнтеллект+10"
+        },
+        {
+          "Option": "ほどほどになら大丈夫だ！",
+          "OptionToCheck": "ほどほどになら大丈夫だ",
+          "Effect": "＜Вариант 1＞\nЭнергия-10\nSkill point+25"
+        },
+        {
+          "Option": "いや、思う存分やろう！",
+          "OptionToCheck": "いや、思う存分やろう",
+          "Effect": "＜Вариант 1＞\nЭнергия-15\nМотивация+\nСлучайные 2 характеристики+15？\n＜Вариант 2＞\nЭнергия-15\nСила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Nevertheless】ナリタタイシン"
+    },
+    {
+      "EventName": "晴天の攻防",
+      "EventNameToCheck": "晴天の攻防",
+      "EventOptionsList": [
+        {
+          "Option": "無理やりにでも連れていく",
+          "OptionToCheck": "無理やりにでも連れていく",
+          "Effect": "Успех:\nСкорость+20\nПровал:\nМотивация-\nСкорость+5"
+        },
+        {
+          "Option": "満足するまで休ませる",
+          "OptionToCheck": "満足するまで休ませる",
+          "Effect": "Успех:\nЭнергия+20\n「深呼吸」 подсказки Lv +1\nПровал:\nЭнергия+10\n「なまけ癖」"
+        },
+        {
+          "Option": "そこそこ休んでからトレーニングする",
+          "OptionToCheck": "そこそこ休んでからトレーニングする",
+          "Effect": "Энергия+5\nСкорость+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "お香でおやすみ",
+      "EventNameToCheck": "お香でおやすみ",
+      "EventOptionsList": [
+        {
+          "Option": "遊んでいたかも……",
+          "OptionToCheck": "遊んでいたかも",
+          "Effect": "Интеллект+20"
+        },
+        {
+          "Option": "真剣に選んでた",
+          "OptionToCheck": "真剣に選んでた",
+          "Effect": "Выносливость+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "ネコの名人",
+      "EventNameToCheck": "ネコの名人",
+      "EventOptionsList": [
+        {
+          "Option": "ずいぶん好かれてるんだな",
+          "OptionToCheck": "ずいぶん好かれてるんだな",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "・・・俺も触っていいか？",
+          "OptionToCheck": "俺も触っていいか",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "策士VS王",
+      "EventNameToCheck": "策士VS王",
+      "EventOptionsList": [
+        {
+          "Option": "不屈の精神は手強いな",
+          "OptionToCheck": "不屈の精神は手強いな",
+          "Effect": "Сила воли+20"
+        },
+        {
+          "Option": "プライドの高さが弱点だな",
+          "OptionToCheck": "プライドの高さが弱点だな",
+          "Effect": "Скорость+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "闇の仕事？",
+      "EventNameToCheck": "闇の仕事",
+      "EventOptionsList": [
+        {
+          "Option": "セイウンスカイの後を追う",
+          "OptionToCheck": "セイウンスカイの後を追う",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "現場を押さえて強行突入！",
+          "OptionToCheck": "現場を押さえて強行突入",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "曇りのち・・・",
+      "EventNameToCheck": "曇りのち",
+      "EventOptionsList": [
+        {
+          "Option": "よかったよかった",
+          "OptionToCheck": "よかったよかった",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "その誘惑の犯人は",
+          "OptionToCheck": "その誘惑の犯人は",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "誰がために君は走る",
+      "EventNameToCheck": "誰がために君は走る",
+      "EventOptionsList": [
+        {
+          "Option": "ありがとう",
+          "OptionToCheck": "ありがとう",
+          "Effect": "Выносливость+20\nСлучайно 「愛嬌」"
+        },
+        {
+          "Option": "俺ももっと頑張らないとな！",
+          "OptionToCheck": "俺ももっと頑張らないとな",
+          "Effect": "Сила+20\nСлучайно 「愛嬌」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "お昼寝マイスター",
+      "EventNameToCheck": "お昼寝マイスター",
+      "EventOptionsList": [
+        {
+          "Option": "これ以上寝ちゃダメだ！",
+          "OptionToCheck": "これ以上寝ちゃダメだ",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "俺が代わりに試す！",
+          "OptionToCheck": "俺が代わりに試す",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "ネコとの散歩",
+      "EventNameToCheck": "ネコとの散歩",
+      "EventOptionsList": [
+        {
+          "Option": "上には上があるな・・・",
+          "OptionToCheck": "上には上があるな",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "シロは大丈夫かな？",
+          "OptionToCheck": "シロは大丈夫かな",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "セイちゃん脱出作戦",
+      "EventNameToCheck": "セイちゃん脱出作戦",
+      "EventOptionsList": [
+        {
+          "Option": "相手を引っかけてみるか・・・",
+          "OptionToCheck": "相手を引っかけてみるか",
+          "Effect": "Скорость+10\nSkill point+15"
+        },
+        {
+          "Option": "逃げを使っていこう",
+          "OptionToCheck": "逃げを使っていこう",
+          "Effect": "「差しけん制」 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "ネコとの別れ",
+      "EventNameToCheck": "ネコとの別れ",
+      "EventOptionsList": [
+        {
+          "Option": "2度と会えないわけじゃない",
+          "OptionToCheck": "2度と会えないわけじゃない",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "シロが聞いてくれてよかったな",
+          "OptionToCheck": "シロが聞いてくれてよかったな",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "・・・にゃ～！",
+          "OptionToCheck": "にゃ",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "検証～ネコ語は実在するのか？",
+      "EventNameToCheck": "検証ネコ語は実在するのか",
+      "EventOptionsList": [
+        {
+          "Option": "セイウンスカイの本気も見たい",
+          "OptionToCheck": "セイウンスカイの本気も見たい",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "まずは基本を教えてあげたら",
+          "OptionToCheck": "まずは基本を教えてあげたら",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "外でもくつろぎ上手？",
+      "EventNameToCheck": "外でもくつろぎ上手",
+      "EventOptionsList": [
+        {
+          "Option": "食べすぎに注意！",
+          "OptionToCheck": "食べすぎに注意",
+          "Effect": "Энергия+10\nSkill point+5"
+        },
+        {
+          "Option": "止まらなくなるよね",
+          "OptionToCheck": "止まらなくなるよね",
+          "Effect": "Энергия+30\nSkill point+10\nНебольшой шанс \nСкорость‐5\nСила+5\n「太り気味」になる"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【あおぐもサミング】セイウンスカイ"
+    },
+    {
+      "EventName": "ヒシアマ姐さんの山菜採り",
+      "EventNameToCheck": "ヒシアマ姐さんの山菜採り",
+      "EventOptionsList": [
+        {
+          "Option": "ヒシアマの料理の腕は美浦寮最強だからな",
+          "OptionToCheck": "ヒシアマの料理の腕は美浦寮最強だからな",
+          "Effect": "Сила+10\nSkill point+15"
+        },
+        {
+          "Option": "日没前にラストスパートかけて探したもんな",
+          "OptionToCheck": "日没前にラストスパートかけて探したもんな",
+          "Effect": "「末脚」 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "炎の思い出",
+      "EventNameToCheck": "炎の思い出",
+      "EventOptionsList": [
+        {
+          "Option": "火加減",
+          "OptionToCheck": "火加減",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "食材選び",
+          "OptionToCheck": "食材選び",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "手も足も出せない相手……！？",
+      "EventNameToCheck": "手も足も出せない相手",
+      "EventOptionsList": [
+        {
+          "Option": "タイマン張れたらいいんだな？",
+          "OptionToCheck": "タイマン張れたらいいんだな",
+          "Effect": "Сила+20"
+        },
+        {
+          "Option": "あとは俺に任せて",
+          "OptionToCheck": "あとは俺に任せて",
+          "Effect": "Сила воли+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "ヒシアマ姐さんの裁縫テク",
+      "EventNameToCheck": "ヒシアマ姐さんの裁縫テク",
+      "EventOptionsList": [
+        {
+          "Option": "わかった、豪快に頼む",
+          "OptionToCheck": "わかった、豪快に頼む",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "時間がかかっても自分でやるよ",
+          "OptionToCheck": "時間がかかっても自分でやるよ",
+          "Effect": "Выносливость+5\nСила воли+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "ヒシアマ寮長の朝ご飯",
+      "EventNameToCheck": "ヒシアマ寮長の朝ご飯",
+      "EventOptionsList": [
+        {
+          "Option": "素早く食べられて変わった形のおにぎりは？",
+          "OptionToCheck": "素早く食べられて変わった形のおにぎりは",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "パワフルな彩りのサンドウィッチは？",
+          "OptionToCheck": "パワフルな彩りのサンドウィッチは",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "友か、好敵手か",
+      "EventNameToCheck": "友か、好敵手か",
+      "EventOptionsList": [
+        {
+          "Option": "大声で気合いを入れる",
+          "OptionToCheck": "大声で気合いを入れる",
+          "Effect": "Сила+20"
+        },
+        {
+          "Option": "本を参考にしてみる",
+          "OptionToCheck": "本を参考にしてみる",
+          "Effect": "Интеллект+20\nСлучайно 「練習上手○」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "ヒシアマ姐さんの特等席",
+      "EventNameToCheck": "ヒシアマ姐さんの特等席",
+      "EventOptionsList": [
+        {
+          "Option": "ありがとう、ヒシアマらしいな",
+          "OptionToCheck": "ありがとう、ヒシアマらしいな",
+          "Effect": "Скорость+5\nСила+5"
+        },
+        {
+          "Option": "意外とロマンチストなんだな",
+          "OptionToCheck": "意外とロマンチストなんだな",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "タイマン！スケバン！勝負服！",
+      "EventNameToCheck": "タイマンスケバン勝負服",
+      "EventOptionsList": [
+        {
+          "Option": "マリンっぽく敬礼",
+          "OptionToCheck": "マリンっぽく敬礼",
+          "Effect": "Сила+20"
+        },
+        {
+          "Option": "スケバンっぽくしゃがむ",
+          "OptionToCheck": "スケバンっぽくしゃがむ",
+          "Effect": "Выносливость+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "ヒシアマ姐さんと芸術",
+      "EventNameToCheck": "ヒシアマ姐さんと芸術",
+      "EventOptionsList": [
+        {
+          "Option": "作品のモデルになれるような走りをしよう",
+          "OptionToCheck": "作品のモデルになれるような走りをしよう",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "もっと色んなことに触れていこう",
+          "OptionToCheck": "もっと色んなことに触れていこう",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "クールでホットな姉妹",
+      "EventNameToCheck": "クールでホットな姉妹",
+      "EventOptionsList": [
+        {
+          "Option": "クールなテクニック",
+          "OptionToCheck": "クールなテクニック",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "ホットな勝負魂",
+          "OptionToCheck": "ホットな勝負魂",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "情熱は激流のごとく",
+      "EventNameToCheck": "情熱は激流のごとく",
+      "EventOptionsList": [
+        {
+          "Option": "食材をブッ倒す気迫！",
+          "OptionToCheck": "食材をブッ倒す気迫",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "思いやりファースト",
+          "OptionToCheck": "思いやりファースト",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "ごめん、わからない！",
+          "OptionToCheck": "ごめん、わからない",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "レース勝利！",
+      "EventNameToCheck": "レース勝利",
+      "EventOptionsList": [
+        {
+          "Option": "いい走りで興奮した！",
+          "OptionToCheck": "いい走りで興奮した",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+5～+10\nSkill point+35/+45\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "強敵に備えてもっと鍛えよう！",
+          "OptionToCheck": "強敵に備えてもっと鍛えよう",
+          "Effect": "Энергия-5/-20/-30\nСлучайно 1 характеристика+5～+10\nSkill point+35/+45\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "初詣",
+      "EventNameToCheck": "初詣",
+      "EventOptionsList": [
+        {
+          "Option": "選択肢上",
+          "OptionToCheck": "選択肢上",
+          "Effect": "Энергия+30"
+        },
+        {
+          "Option": "選択肢中",
+          "OptionToCheck": "選択肢中",
+          "Effect": "Все характеристики+5"
+        },
+        {
+          "Option": "選択肢下",
+          "OptionToCheck": "選択肢下",
+          "Effect": "Skill point+35"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "うどんでも打ってみる？",
+          "OptionToCheck": "うどんでも打ってみる",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "少しゆっくりしよう",
+          "OptionToCheck": "少しゆっくりしよう",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "正月遊びをしてみよう！",
+          "OptionToCheck": "正月遊びをしてみよう",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "追加の自主トレ",
+      "EventNameToCheck": "追加の自主トレ",
+      "EventOptionsList": [
+        {
+          "Option": "ぜひ手伝ってあげて",
+          "OptionToCheck": "ぜひ手伝ってあげて",
+          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с директором+5"
+        },
+        {
+          "Option": "何か掴むまで見守ってあげよう",
+          "OptionToCheck": "何か掴むまで見守ってあげよう",
+          "Effect": "Энергия+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "全力を出せば勝てる！",
+          "OptionToCheck": "全力を出せば勝てる",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "ここは冷静にいこう！",
+          "OptionToCheck": "ここは冷静にいこう",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "お大事に！",
+      "EventNameToCheck": "お大事に",
+      "EventOptionsList": [
+        {
+          "Option": "心配だから手当てさせて",
+          "OptionToCheck": "心配だから手当てさせて",
+          "Effect": "Мотивация-\nСила-5（1 характеристика）\nСлучайно 「練習ベタ」"
+        },
+        {
+          "Option": "気を引き締めて練習しよう",
+          "OptionToCheck": "気を引き締めて練習しよう",
+          "Effect": "Мотивация-\nСлучайно 1 характеристика-10\n「練習ベタ」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "夏合宿（2年目）にて",
+      "EventNameToCheck": "夏合宿2年目にて",
+      "EventOptionsList": [
+        {
+          "Option": "筋力を上げよう！",
+          "OptionToCheck": "筋力を上げよう",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "根性をさらにつけよう！",
+          "OptionToCheck": "根性をさらにつけよう",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "無茶は厳禁！",
+      "EventNameToCheck": "無茶は厳禁",
+      "EventOptionsList": [
+        {
+          "Option": "選択肢上",
+          "OptionToCheck": "選択肢上",
+          "Effect": "Провал:\n└Мотивация-1\n└Последний тип тренировки-5～10\n└Случайно 「練習ベタ」\nУспех:\n└「練習上手○」"
+        },
+        {
+          "Option": "選択肢下",
+          "OptionToCheck": "選択肢下",
+          "Effect": "Провал:\n└Мотивация-1\n└Последний тип тренировки-5～10\n└Случайно 「練習ベタ」\nУспех:\n└「練習上手○」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "スイーツの魔法？",
+      "EventNameToCheck": "スイーツの魔法",
+      "EventOptionsList": [
+        {
+          "Option": "食べ過ぎると逆効果じゃない？",
+          "OptionToCheck": "食べ過ぎると逆効果じゃない",
+          "Effect": "Энергия+10\nSkill point+5"
+        },
+        {
+          "Option": "いっぱい食べてテスト頑張れ！",
+          "OptionToCheck": "いっぱい食べてテスト頑張れ",
+          "Effect": "Энергия+30\nSkill point+10\nНебольшой шанс \nСкорость-5\nСила+5\n「太り気味」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
+    },
+    {
+      "EventName": "誰だろうと風紀は絶対っス!",
+      "EventNameToCheck": "誰だろうと風紀は絶対っス",
+      "EventOptionsList": [
+        {
+          "Option": "とにかく、これで安心だね",
+          "OptionToCheck": "とにかく、これで安心だね",
+          "Effect": "Максимум энергии+4\nЭнергия-10\nВыносливость+10\nСила+10\nСила воли+5\n「末脚」 умение Lv+1\nУровень отношений+"
+        },
+        {
+          "Option": "名コンビだったね",
+          "OptionToCheck": "名コンビだったね",
+          "Effect": "Энергия-10\nМотивация+\nВыносливость+5\nСила+5\nУровень отношений+5"
+        },
+        {
+          "Option": "‥‥‥もし霊がビビらなかったら?",
+          "OptionToCheck": "‥‥‥もし霊がビビらなかったら",
+          "Effect": "<Окончание>\n※Окончание события\nЭнергия+30\n「差しためらい」 умение Lv+1"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［Head-on fight！］バンブーメモリー"
+    },
+    {
+      "EventName": "ライバル、打倒っス!",
+      "EventNameToCheck": "ライバル、打倒っス",
+      "EventOptionsList": [
+        {
+          "Option": "ライバル多すぎ!?",
+          "OptionToCheck": "ライバル多すぎ",
+          "Effect": "Сила воли+10\nУровень отношений+5"
+        },
+        {
+          "Option": "とにかく連勝あるのみ!",
+          "OptionToCheck": "とにかく連勝あるのみ",
+          "Effect": "Максимум энергии+4\nЭнергия-5\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［Head-on fight！］バンブーメモリー"
+    },
+    {
+      "EventName": "トラブル、上等っス!",
+      "EventNameToCheck": "トラブル、上等っス",
+      "EventOptionsList": [
+        {
+          "Option": "風紀を守るのは大変だね",
+          "OptionToCheck": "風紀を守るのは大変だね",
+          "Effect": "Выносливость+5\nСила воли+5\nУровень отношений+5"
+        },
+        {
+          "Option": "現場に急行!",
+          "OptionToCheck": "現場に急行",
+          "Effect": "Энергия-10\n「根幹距離」 умение Lv+1\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［Head-on fight！］バンブーメモリー"
+    },
+    {
+      "EventName": "ココ掘れ、ウインディ",
+      "EventNameToCheck": "ココ掘れ、ウインディ",
+      "EventOptionsList": [
+        {
+          "Option": "あとは子分に任せてほしい",
+          "OptionToCheck": "あとは子分に任せてほしい",
+          "Effect": "Скорость+10\nУровень отношений+5"
+        },
+        {
+          "Option": "とことん頑張ろう!",
+          "OptionToCheck": "とことん頑張ろう",
+          "Effect": "Энергия-5\nSkill point+30\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［／／／WARNING GATE／／／］シンコウウインディ"
+    },
+    {
+      "EventName": "ガブッと、撲滅!",
+      "EventNameToCheck": "ガブッと、撲滅",
+      "EventOptionsList": [
+        {
+          "Option": "早く素直になろう!",
+          "OptionToCheck": "早く素直になろう",
+          "Effect": "Мотивация+\nСкорость+3\nУровень отношений+"
+        },
+        {
+          "Option": "疲れ、減らしてあげなよ",
+          "OptionToCheck": "疲れ、減らしてあげなよ",
+          "Effect": "Энергия+10\nSkill point+5\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［／／／WARNING GATE／／／］シンコウウインディ"
+    },
+    {
+      "EventName": "カブッと、突撃！",
+      "EventNameToCheck": "カブッと、突撃",
+      "EventOptionsList": [
+        {
+          "Option": "言った通りになったな",
+          "OptionToCheck": "言った通りになったな",
+          "Effect": "Skill point+15\nУровень отношений+5"
+        },
+        {
+          "Option": "負けを認める？",
+          "OptionToCheck": "負けを認める",
+          "Effect": "Скорость+3\n「負けん気」 умение Lv+1\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［／／／WARNING GATE／／／］シンコウウインディ"
     }
   ]
 }

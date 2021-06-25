@@ -19,6 +19,66 @@ namespace UmaMusumeDBBrowser
         private delegate void HeightDelegate(Control control, int Height);
         private delegate void ImageDelegate(PictureBox control, Image img);
 
+        private delegate void GrigDelegate(DataGridView gridView, object val);
+        private delegate void GrigColDelegate(DataGridView gridView, string cName, object val);
+        private delegate void GrigRowDelegate(DataGridView gridView, int rowIndex, object val);
+
+        public static void SetGridDataSource(DataGridView gridView, object val)
+        {
+            if (gridView.InvokeRequired)
+            {
+                var d = new GrigDelegate(SetGridDataSource);
+                gridView.Invoke(d, new object[] { gridView, val });
+            }
+            else
+                gridView.DataSource = val;
+        }
+
+
+        public static void SetGridRowBackColor(DataGridView gridView, int rowIndex, object val)
+        {
+            if (gridView.InvokeRequired)
+            {
+                var d = new GrigRowDelegate(SetGridRowBackColor);
+                gridView.Invoke(d, new object[] { gridView, rowIndex, val });
+            }
+            else
+                gridView.Rows[rowIndex].DefaultCellStyle.BackColor = (Color)val;
+        }
+
+        public static void SetGridRowForeColor(DataGridView gridView, int rowIndex, object val)
+        {
+            if (gridView.InvokeRequired)
+            {
+                var d = new GrigRowDelegate(SetGridRowForeColor);
+                gridView.Invoke(d, new object[] { gridView, rowIndex, val });
+            }
+            else
+                gridView.Rows[rowIndex].DefaultCellStyle.ForeColor = (Color)val;
+        }
+
+        public static void SetGridColumnVisible(DataGridView gridView, string cName, object val)
+        {
+            if (gridView.InvokeRequired)
+            {
+                var d = new GrigColDelegate(SetGridColumnVisible);
+                gridView.Invoke(d, new object[] { gridView, cName, val });
+            }
+            else
+                gridView.Columns[cName].Visible = (bool)val;
+        }
+
+        public static void SetGridColumnSizeMode(DataGridView gridView, string cName, object val)
+        {
+            if (gridView.InvokeRequired)
+            {
+                var d = new GrigColDelegate(SetGridColumnSizeMode);
+                gridView.Invoke(d, new object[] { gridView, cName, val });
+            }
+            else
+                gridView.Columns[cName].AutoSizeMode = (DataGridViewAutoSizeColumnMode)val;
+        }
+
 
         public static void SetTextToControl(Control textBox, string text)
         {

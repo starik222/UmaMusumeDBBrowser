@@ -20,6 +20,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using Translator;
+using Translator.IO;
 
 namespace UmaMusumeDBBrowser
 {
@@ -29,34 +30,45 @@ namespace UmaMusumeDBBrowser
         private List<NAMES> skillTransDictonary;
         private Color[] optionColors;
         private delegate void TabDelegate(TabPage tabPage);
-        private UmaMusumeLibrary library;
+        private AllLibraryManager libManager;
         private GameSettings settings;
         private GameReader gameReader;
         public Form1 parentForm = null;
         private EventControlManager controlManager;
         private SkillControlManager skillControlManager;
-        private SkillManager skillManager;
-        private TazunaLibrary tazunaLibrary;
         private string skillIconPath = null;
 
-        public Form_GameRecognizer()
+        public Form_GameRecognizer(string lang)
         {
             InitializeComponent();
-            library = new UmaMusumeLibrary();
-            library.LoadLibrary(Path.Combine(Program.DictonariesDir, "EventLibrary.json"));
-            skillManager = new SkillManager();
-            skillManager.FillData();
-            tazunaLibrary = new TazunaLibrary();
-            tazunaLibrary.LoadLibrary(Path.Combine(Program.DictonariesDir, "TazunaLibrary.json"));
+            libManager = new AllLibraryManager();
+            libManager.FactorLibrary.FillTransDict(Path.Combine(Program.DictonariesDir, "succession_factor" + "_" + lang + ".txt"));
+            libManager.FillData();
             settings = JsonConvert.DeserializeObject<GameSettings>(File.ReadAllText(Path.Combine(Program.DictonariesDir, "GameParams.json")));
             LoadImagesToSettings();
             var repDict = Program.TransDict.LoadDictonary(Path.Combine(Program.DictonariesDir, "ReplaceChars.txt"));
-            gameReader = new GameReader(GameReader.GameType.DMM, library, tazunaLibrary, skillManager, settings, repDict);
+            gameReader = new GameReader(GameReader.GameType.DMM, libManager, settings, repDict);
             gameReader.DataChanged += GameReader_DataChanged;
-            //comboBox1.Items.AddRange(library.GetCardNameList());
+            SetColorScheme();
+            //tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
+            Program.ColorManager.SchemeChanded += ColorManager_SchemeChanded;
+           
         }
 
+        private void SetColorScheme()
+        {
+            if (Program.ColorManager.SelectedScheme != null)
+            {
+                BackColor = Program.ColorManager.SelectedScheme.FormStyle.BackColor;
+                ForeColor = Program.ColorManager.SelectedScheme.FormStyle.ForeColor;
+                Program.ColorManager.ChangeColorSchemeInConteiner(Controls, Program.ColorManager.SelectedScheme);
+            }
+        }
 
+        private void ColorManager_SchemeChanded(object sender, EventArgs e)
+        {
+            SetColorScheme();
+        }
 
         private void SelectTab(TabPage tabPage)
         {
@@ -98,8 +110,8 @@ namespace UmaMusumeDBBrowser
                         SelectTab(tabPage2);
                         if (gameDataArgs.DataClass != null)
                         {
-                            Extensions.SetTextToControl(label1, "Event found: " + ((UmaMusumeLibrary.EventData)gameDataArgs.DataClass).EventName);
-                            ShowEventData((UmaMusumeLibrary.EventData)gameDataArgs.DataClass);
+                            Extensions.SetTextToControl(label1, "Event found: " + ((EventManager.EventData)gameDataArgs.DataClass).EventName);
+                            ShowEventData((EventManager.EventData)gameDataArgs.DataClass);
                         }
                         else
                         {
@@ -117,6 +129,13 @@ namespace UmaMusumeDBBrowser
                         SelectTab(tabPage4);
                         SetSkills((List<SkillManager.SkillData>)gameDataArgs.DataClass);
                         Extensions.SetTextToControl(label1, "Skill list");
+                        break;
+                    }
+                case GameReader.GameDataType.GenWindow:
+                    {
+                        SelectTab(tabPage6);
+                        SetFactors((List<FactorManager.FactorData>)gameDataArgs.DataClass);
+                        Extensions.SetTextToControl(label1, "Щелкните дважды на ячейку для открытия описания умения (если оно есть в тексте).");
                         break;
                     }
                 case GameReader.GameDataType.TazunaAfterHelp:
@@ -163,6 +182,56 @@ namespace UmaMusumeDBBrowser
 
         }
 
+        private void SetFactors(List<FactorManager.FactorData> datas)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("FactorType", typeof(FactorManager.FactorType));
+            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("NameTrans", typeof(string));
+            dt.Columns.Add("Desc", typeof(string));
+            dt.Columns.Add("DescTrans", typeof(string));
+
+            foreach (var item in datas)
+            {
+                dt.Rows.Add(item.FactorType, item.Name, item.NameTrans, item.Desc, item.DescTrans);
+            }
+
+            Extensions.SetGridDataSource(dataGridView2, dt);
+            Extensions.SetGridColumnVisible(dataGridView2, "FactorType", false);
+            //Extensions.SetGridColumnVisible(dataGridView2, "NameToCheck", false);
+            //Extensions.SetGridColumnVisible(dataGridView2, "FactorType", false);
+            Extensions.SetGridColumnSizeMode(dataGridView2, "Name", DataGridViewAutoSizeColumnMode.NotSet);
+            Extensions.SetGridColumnSizeMode(dataGridView2, "NameTrans", DataGridViewAutoSizeColumnMode.NotSet);
+            Extensions.SetGridColumnSizeMode(dataGridView2, "Desc", DataGridViewAutoSizeColumnMode.Fill);
+            Extensions.SetGridColumnSizeMode(dataGridView2, "DescTrans", DataGridViewAutoSizeColumnMode.Fill);
+
+            for (int i = 0; i < dataGridView2.RowCount; i++)
+            {
+                if ((FactorManager.FactorType)dataGridView2["FactorType", i].Value == FactorManager.FactorType.Characteristics)
+                {
+                    Extensions.SetGridRowBackColor(dataGridView2, i, Color.FromArgb(0x34, 0xb6, 0xf4));
+                    Extensions.SetGridRowForeColor(dataGridView2, i, SystemColors.ControlText);
+                }
+                else if ((FactorManager.FactorType)dataGridView2["FactorType", i].Value == FactorManager.FactorType.Suitability)
+                {
+                    Extensions.SetGridRowBackColor(dataGridView2, i, Color.FromArgb(0xff, 0x75, 0xb0));
+                    Extensions.SetGridRowForeColor(dataGridView2, i, SystemColors.ControlText);
+                }
+                else if ((FactorManager.FactorType)dataGridView2["FactorType", i].Value == FactorManager.FactorType.ParentSkill)
+                {
+                    Extensions.SetGridRowBackColor(dataGridView2, i, Color.FromArgb(0x91, 0xcf, 0x2e));
+                    Extensions.SetGridRowForeColor(dataGridView2, i, SystemColors.ControlText);
+                }
+                else
+                {
+                    if (Program.ColorManager.SelectedScheme != null) {
+                        Extensions.SetGridRowBackColor(dataGridView2, i, Program.ColorManager.SelectedScheme.GrigStyle.BackColor);
+                        Extensions.SetGridRowForeColor(dataGridView2, i, Program.ColorManager.SelectedScheme.GrigStyle.ForeColor);
+                    }
+                }
+            }
+        }
+
         private void SetSkills(List<SkillManager.SkillData> datas)
         {
             for (int i = 0; i < 4; i++)
@@ -202,16 +271,17 @@ namespace UmaMusumeDBBrowser
         private void CreateRichTextBoxes()
         {
             controlManager = new EventControlManager(textBox1);
-            textBox1.BackColor = Color.White;
+            //textBox1.BackColor = Color.White;
             controlManager.AddOption(textBox2);
             controlManager.AddOption(textBox3);
             controlManager.AddOption(textBox4);
             controlManager.AddOption(textBox5);
             controlManager.AddOption(textBox6);
             Font rcFont = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 1);
+            controlManager.SetOptionsColor(optionColors);
             for (int i = 0; i < 5; i++)
             {
-                controlManager.Options[i].BackColor = optionColors[i];
+                //controlManager.Options[i].BackColor = optionColors[i];
                 CustomRichTextBox customRichTextBox = new CustomRichTextBox();
                 customRichTextBox.Font = rcFont;
                 customRichTextBox.LinkClicked += CustomRichTextBox_LinkClicked;
@@ -220,13 +290,18 @@ namespace UmaMusumeDBBrowser
                 customRichTextBox.Dock = DockStyle.Fill;
                 customRichTextBox.ScrollBars = RichTextBoxScrollBars.Vertical;
                 customRichTextBox.ReadOnly = true;
+                if (Program.ColorManager.SelectedScheme != null)
+                {
+                    customRichTextBox.BackColor = Program.ColorManager.SelectedScheme.TextBoxStyle.BackColor;
+                    customRichTextBox.ForeColor = Program.ColorManager.SelectedScheme.TextBoxStyle.ForeColor;
+                }
                 tableLayoutPanel1.Controls.Add(customRichTextBox, 1, i);
                 controlManager.AddEffect(customRichTextBox);
             }
 
         }
 
-        private void ShowEventData(UmaMusumeLibrary.EventData eventData)
+        private void ShowEventData(EventManager.EventData eventData)
         {
             controlManager.SetVisibleFirst(eventData.EventOptionsList.Count);
             controlManager.SetEventName(eventData.EventName);
@@ -385,6 +460,64 @@ namespace UmaMusumeDBBrowser
         private void button2_Click(object sender, EventArgs e)
         {
             UpdateProcessList();
+        }
+
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            
+            TabPage page = tabControl1.TabPages[e.Index];
+            Color backColor = Color.Transparent;
+            Color foreColor = SystemColors.ControlText;
+            if (Program.ColorManager.SelectedScheme != null)
+            {
+                backColor = Program.ColorManager.SelectedScheme.OtherStyle.BackColor;
+                foreColor = Program.ColorManager.SelectedScheme.OtherStyle.ForeColor;
+            }
+            e.Graphics.FillRectangle(new SolidBrush(backColor), e.Bounds);
+
+            Rectangle paddedBounds = e.Bounds;
+            int yOffset = (e.State == DrawItemState.Selected) ? -2 : 1;
+            paddedBounds.Offset(1, yOffset);
+            TextRenderer.DrawText(e.Graphics, page.Text, Font, paddedBounds, foreColor);
+            e.DrawFocusRectangle();
+        }
+
+        private void tabPage1_BackColorChanged(object sender, EventArgs e)
+        {
+            if (tabPage1.BackColor == Color.Transparent || tabPage1.BackColor == SystemColors.Window)
+            {
+                panelTempFix.Visible = false;
+            }
+            else
+                panelTempFix.Visible = true;
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == -1 || e.RowIndex == -1)
+                return;
+            if (dataGridView2[e.ColumnIndex, e.RowIndex].Value == DBNull.Value)
+                return;
+            string text = (string)dataGridView2[e.ColumnIndex, e.RowIndex].Value;
+
+            if (text.Contains('【'))
+            {
+                text = text.GetBetween("【", "】");
+            }
+            else if (text.Contains('「'))
+            {
+                text = text.GetBetween("「", "」");
+            }
+            else if (text.Contains('『'))
+            {
+                text = text.GetBetween("『", "』");
+            }
+            else
+                return;
+            parentForm.LoadTableByText(text);
+            if (parentForm.WindowState == FormWindowState.Minimized)
+                parentForm.WindowState = FormWindowState.Normal;
+            parentForm.Activate();
         }
     }
 }

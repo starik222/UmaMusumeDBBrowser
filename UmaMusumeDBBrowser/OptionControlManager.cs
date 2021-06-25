@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,8 @@ namespace UmaMusumeDBBrowser
 
         private List<int> richTextBoxesHeight;
 
-
+        private Color[] optionsColor;
+        private bool isNeedChangeBackColor = true;
 
         public EventControlManager(TextBox eventNameTextBox)
         {
@@ -28,7 +30,31 @@ namespace UmaMusumeDBBrowser
 
         public void AddOption(TextBox textBox)
         {
+            textBox.BackColorChanged += TextBox_BackColorChanged;
             Options.Add(textBox);
+        }
+
+        private void TextBox_BackColorChanged(object sender, EventArgs e)
+        {
+            if (isNeedChangeBackColor)
+                SetOptionsColorInternal();
+        }
+
+        public void SetOptionsColor(Color[] colors)
+        {
+            optionsColor = colors;
+            SetOptionsColorInternal();
+        }
+
+        public void SetOptionsColorInternal()
+        {
+            isNeedChangeBackColor = false;
+            for (int i = 0; i < Options.Count && i < optionsColor.Length; i++)
+            {
+                Options[i].BackColor = optionsColor[i];
+                Options[i].ForeColor = SystemColors.ControlText;
+            }
+            isNeedChangeBackColor = true;
         }
 
         public void AddEffect(CustomRichTextBox richTextBox)
