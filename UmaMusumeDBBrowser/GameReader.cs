@@ -97,7 +97,7 @@ namespace UmaMusumeDBBrowser
 
         private void Processed(int periodMillisec, CancellationToken token)
         {
-
+            bool isVertical = true;
             Image<Bgr, byte> currentImage = null;
             //Image<Bgr, byte> currentImageGray = null;
             while (!token.IsCancellationRequested)
@@ -141,16 +141,18 @@ namespace UmaMusumeDBBrowser
                 Size normalSize = new Size();
                 if (origImg.Width < origImg.Height)
                 {
+                    isVertical = true;
                     normalSize.Width = settings.GameNormalSize.Vertical.Width;
                     normalSize.Height = settings.GameNormalSize.Vertical.Height;
                 }
                 else
                 {
+                    isVertical = false;
                     normalSize.Width = settings.GameNormalSize.Horizontal.Width;
                     normalSize.Height = settings.GameNormalSize.Horizontal.Height;
                 }
                 currentImage = ImageManager.PrepareImage((Bitmap)origImg, normalSize);
-                var dataType = DetectDataType(currentImage);
+                var dataType = DetectDataType(currentImage, isVertical);
                 if (dataType.type == GameDataType.NotFound)
                 {
                     DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.NotFound, DataClass = "Any game parts not found!" });
@@ -761,13 +763,15 @@ namespace UmaMusumeDBBrowser
             return text;
         }
 
-        private (GameDataType type, Rectangle PartInfo) DetectDataType(Image<Bgr, byte> img)
+        private (GameDataType type, Rectangle PartInfo) DetectDataType(Image<Bgr, byte> img, bool IsVertical)
         {
             Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
             double[] minVal, maxVal;
             Point[] minLoc, maxLoc;
             foreach (var item in settings.GameParts)
             {
+                if (item.VerticalState != IsVertical)
+                    continue;
                 Mat imgOut = new Mat();
                 CvInvoke.MatchTemplate(grayImg, item.Image, imgOut, TemplateMatchingType.CcoeffNormed);
                 imgOut.MinMax(out minVal, out maxVal, out minLoc, out maxLoc);

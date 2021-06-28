@@ -55,6 +55,7 @@ namespace UmaMusumeDBBrowser
         public class GamePart
         {
             public string PartName { get; set; }
+            public bool VerticalState { get; set; }
             public GameReader.GameDataType DataType { get; set; }
             public string ImageName { get; set; }
             public Emgu.CV.Image<Emgu.CV.Structure.Gray, byte> Image { get; set; } = null;

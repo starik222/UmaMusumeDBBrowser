@@ -5,8 +5,8 @@
       "Height": 1045
     },
     "Horizontal": {
-      "Width": 1010,
-      "Height": 568
+      "Width": 1434,
+      "Height": 807
     }
   },
   "BlueStacksPanel": {
@@ -106,21 +106,25 @@
   "GameParts": [
     {
       "PartName": "TrainingEvent2",
+      "VerticalState": true,
       "DataType": 1,
       "ImageName": "EventOption.bmp"
     },
     {
       "PartName": "Select current race",
+      "VerticalState": true,
       "DataType": 2,
       "ImageName": "SelectCurrentRace.bmp"
     },
     {
       "PartName": "MainTraining",
+      "VerticalState": true,
       "DataType": 0,
       "ImageName": "MainTraining.bmp"
     },
     {
       "PartName": "MainTraining preRace",
+      "VerticalState": true,
       "DataType": 0,
       "ImageName": "PreRace.bmp"
     },
@@ -131,16 +135,19 @@
     //},
     {
       "PartName": "UmaInfo",
+      "VerticalState": true,
       "DataType": 0,
       "ImageName": "UmaInfo.bmp"
     },
     {
       "PartName": "SkillList",
+      "VerticalState": true,
       "DataType": 5,
       "ImageName": "SkillList1.bmp",
       "SubGameParts": [
         {
           "PartName": "disableSkill",
+          "VerticalState": true,
           "DataType": 5,
           "ImageName": "disableSkill.bmp"
         }
@@ -148,16 +155,19 @@
     },
     {
       "PartName": "Tazuna help after race",
+      "VerticalState": true,
       "DataType": 6,
       "ImageName": "TazunaAfterHelp.bmp"
     },
     {
       "PartName": "SFactor",
+      "VerticalState": true,
       "DataType": 7,
       "ImageName": "GenWindow.bmp",
       "SubGameParts": [
         {
           "PartName": "SFactorIPart",
+          "VerticalState": true,
           "DataType": 7,
           "ImageName": "GenWindowIPart.bmp"
         }

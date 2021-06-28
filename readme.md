@@ -17,6 +17,7 @@ UmaMusumeDBBrowser предназначена для просмотра базы данных игры Uma Musume Prett
 ![](https://user-images.githubusercontent.com/1236582/120617648-83bf1f80-c484-11eb-9809-45f068aad643.png)
 ![](https://user-images.githubusercontent.com/1236582/120617746-9b96a380-c484-11eb-997a-082388f2376e.png)
 ![](https://user-images.githubusercontent.com/1236582/120617799-a7826580-c484-11eb-86c7-0eb3a0ddf1f9.png)
+![](https://user-images.githubusercontent.com/1236582/123568506-b394e500-d7ee-11eb-823b-26f3d70a0046.png)
 
 ## Редактирование отображаемых таблиз из БД
 Настройки по отображаемым в программе таблицам хранятся в файле [Settings.ini](https://github.com/starik222/UmaMusumeDBBrowser/blob/master/UmaMusumeDBBrowser/Settings.ini).
