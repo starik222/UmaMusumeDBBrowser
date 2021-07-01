@@ -21302,6 +21302,299 @@
       ],
       "Type": 1,
       "CardName": "［／／／WARNING GATE／／／］シンコウウインディ"
+    },
+    {
+      "EventName": "熱！伝！導！",
+      "EventNameToCheck": "熱伝導",
+      "EventOptionsList": [
+        {
+          "Option": "語るより行動で示すんだ！",
+          "OptionToCheck": "語るより行動で示すんだ",
+          "Effect": "Сила+20"
+        },
+        {
+          "Option": "衣装のように熱いものを持っている",
+          "OptionToCheck": "衣装のように熱いものを持っている",
+          "Effect": "Мотивация+1\nИнтеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ククルカン・モンク】エルコンドルパサー"
+    },
+    {
+      "EventName": "過去からの挑戦状！",
+      "EventNameToCheck": "過去からの挑戦状",
+      "EventOptionsList": [
+        {
+          "Option": "みんなのためにも用意し直そう！",
+          "OptionToCheck": "みんなのためにも用意し直そう",
+          "Effect": "Скорость+10\nСила+10\nСлучайно 「愛嬌○」"
+        },
+        {
+          "Option": "砂糖を入れて甘くしようか・・・・・",
+          "OptionToCheck": "砂糖を入れて甘くしようか",
+          "Effect": "「臨機応変」 умение Lv+2\nСлучайно 「愛嬌○」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ククルカン・モンク】エルコンドルパサー"
+    },
+    {
+      "EventName": "衣装に宿る熱き炎！",
+      "EventNameToCheck": "衣装に宿る熱き炎",
+      "EventOptionsList": [
+        {
+          "Option": "着物で冷静さを身に纏おう",
+          "OptionToCheck": "着物で冷静さを身に纏おう",
+          "Effect": "「ウマ込み冷静」 умение Lv+2"
+        },
+        {
+          "Option": "道着を着て修行！",
+          "OptionToCheck": "道着を着て修行",
+          "Effect": "Скорость+7\nСила+7\nСила воли+7"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ククルカン・モンク】エルコンドルパサー"
+    },
+    {
+      "EventName": "レース敗北",
+      "EventNameToCheck": "レース敗北",
+      "EventOptionsList": [
+        {
+          "Option": "次は圧勝しよう",
+          "OptionToCheck": "次は圧勝しよう",
+          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "いつもの調子はどうしたの？",
+          "OptionToCheck": "いつもの調子はどうしたの",
+          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ククルカン・モンク】エルコンドルパサー"
+    },
+    {
+      "EventName": "永劫続く追撃【エンドレスマイターン】",
+      "EventNameToCheck": "永劫続く追撃【エンドレスマイターン】",
+      "EventOptionsList": [
+        {
+          "Option": "さすが、最高のサポートだ",
+          "OptionToCheck": "さすが、最高のサポートだ",
+          "Effect": "「鋭い眼光」 умение Lv2を獲得"
+        },
+        {
+          "Option": "サポートというか、攻撃のような…",
+          "OptionToCheck": "サポートというか、攻撃のような",
+          "Effect": "Скорость+10\nSkill point+15"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【セイントジェード・ヒーラー】グラスワンダー"
+    },
+    {
+      "EventName": "邂逅する想慕【ミラージュメモリー】",
+      "EventNameToCheck": "邂逅する想慕【ミラージュメモリー】",
+      "EventOptionsList": [
+        {
+          "Option": "頑張った成果だな",
+          "OptionToCheck": "頑張った成果だな",
+          "Effect": "Сила воли+10\nИнтеллект+10"
+        },
+        {
+          "Option": "アンコール行っちゃう？",
+          "OptionToCheck": "アンコール行っちゃう",
+          "Effect": "Выносливость+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【セイントジェード・ヒーラー】グラスワンダー"
+    },
+    {
+      "EventName": "たゆまぬ気魂【バトルクライ】",
+      "EventNameToCheck": "たゆまぬ気魂【バトルクライ】",
+      "EventOptionsList": [
+        {
+          "Option": "これからも勇気を与える走りをしよう",
+          "OptionToCheck": "これからも勇気を与える走りをしよう",
+          "Effect": "Мотивация+\nСила+10"
+        },
+        {
+          "Option": "次は、俺にも魔法をかけてほしいな",
+          "OptionToCheck": "次は、俺にも魔法をかけてほしいな",
+          "Effect": "Энергия+15"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【セイントジェード・ヒーラー】グラスワンダー"
+    },
+    {
+      "EventName": "レイニー・ピックアップ！",
+      "EventNameToCheck": "レイニーピックアップ",
+      "EventOptionsList": [
+        {
+          "Option": "迎えに来てくれてありがとう",
+          "OptionToCheck": "迎えに来てくれてありがとう",
+          "Effect": "Skill point+30"
+        },
+        {
+          "Option": "あの時はしぶしぶ買ってたけどね",
+          "OptionToCheck": "あの時はしぶしぶ買ってたけどね",
+          "Effect": "Сила+5\nИнтеллект+5"
+        },
+        {
+          "Option": "貸しが出来ちゃったな",
+          "OptionToCheck": "貸しが出来ちゃったな",
+          "Effect": "Скорость+5\nСила воли+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ワイルド・フロンティア】タイキシャトル"
+    },
+    {
+      "EventName": "なかよし☆こよしちゃん〜探求編",
+      "EventNameToCheck": "なかよし☆こよしちゃん〜探求編",
+      "EventOptionsList": [
+        {
+          "Option": "たしかに『素敵な子』だね!",
+          "OptionToCheck": "たしかに素敵な子だね",
+          "Effect": "Skill point+10~Уровень отношений+5"
+        },
+        {
+          "Option": "お、落ち着いて",
+          "OptionToCheck": "お、落ち着いて",
+          "Effect": "Мотивация+\nУровень отношений-5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［祝福はフーガ］ミホノブルボン"
+    },
+    {
+      "EventName": "いきなりマーダーミステリー!",
+      "EventNameToCheck": "いきなりマーダーミステリー",
+      "EventOptionsList": [
+        {
+          "Option": "セイウンスカイは夕食時も清掃を？",
+          "OptionToCheck": "セイウンスカイは夕食時も清掃を",
+          "Effect": "Интеллект+5\nSkill point+5\nУровень отношений+5"
+        },
+        {
+          "Option": "茶碗蒸し、美味しそうなのにね‥‥‥",
+          "OptionToCheck": "茶碗蒸し、美味しそうなのにね‥‥‥",
+          "Effect": "Энергия+10\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［明日は全国的に赤でしょう♪］セイウンスカイ"
+    },
+    {
+      "EventName": "いきなりマーダーミステリー!",
+      "EventNameToCheck": "いきなりマーダーミステリー",
+      "EventOptionsList": [
+        {
+          "Option": "掃除用具を持ってたとか",
+          "OptionToCheck": "掃除用具を持ってたとか",
+          "Effect": "Интеллект+5\n「先行の駆け引き」 умение Lv+1\nУровень отношений+5"
+        },
+        {
+          "Option": "というか、本当にただの清掃員‥‥‥？",
+          "OptionToCheck": "というか、本当にただの清掃員‥‥‥",
+          "Effect": "Энергия+5\nSkill point+10\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［明日は全国的に赤でしょう♪］セイウンスカイ"
+    },
+    {
+      "EventName": "いきなりマーダーミステリー!",
+      "EventNameToCheck": "いきなりマーダーミステリー",
+      "EventOptionsList": [
+        {
+          "Option": "セイウンスカイが犯人",
+          "OptionToCheck": "セイウンスカイが犯人",
+          "Effect": "Успех:\nИнтеллект+10\n「先陣の心得」 умение Lv+3\nУровень отношений+5\nПровал:\nИнтеллект+5\n「先陣の心得」 умение Lv+1"
+        },
+        {
+          "Option": "グラスワンダーが犯人",
+          "OptionToCheck": "グラスワンダーが犯人",
+          "Effect": "Энергия+10\nВыносливость+10\nSkill point+15"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［明日は全国的に赤でしょう♪］セイウンスカイ"
+    },
+    {
+      "EventName": "魅惑の招待状",
+      "EventNameToCheck": "魅惑の招待状",
+      "EventOptionsList": [
+        {
+          "Option": "視線を奪うダンスの特訓",
+          "OptionToCheck": "視線を奪うダンスの特訓",
+          "Effect": "Сила+10\nУровень отношений+5"
+        },
+        {
+          "Option": "究極の衣装を用意する",
+          "OptionToCheck": "究極の衣装を用意する",
+          "Effect": "Сила воли+10\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［今宵、円舞曲にのせて］キングヘイロー"
+    },
+    {
+      "EventName": "舞踏家のプライド",
+      "EventNameToCheck": "舞踏家のプライド",
+      "EventOptionsList": [
+        {
+          "Option": "ブラボー!ブラボー!",
+          "OptionToCheck": "ブラボーブラボー",
+          "Effect": "Энергия-5\nВыносливость+10\nСила+5\nSkill point+5\nУровень отношений+5"
+        },
+        {
+          "Option": "そろそろ寮の門限だよ",
+          "OptionToCheck": "そろそろ寮の門限だよ",
+          "Effect": "Энергия+15\nSkill point+5\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［今宵、円舞曲にのせて］キングヘイロー"
+    },
+    {
+      "EventName": "ゴルシ様、城を建てる",
+      "EventNameToCheck": "ゴルシ様、城を建てる",
+      "EventOptionsList": [
+        {
+          "Option": "資金を集めるとか……？",
+          "OptionToCheck": "資金を集めるとか",
+          "Effect": "Максимум энергии+4\nУровень отношений+5"
+        },
+        {
+          "Option": "城に使えそうなものを探すとか？",
+          "OptionToCheck": "城に使えそうなものを探すとか",
+          "Effect": "Скорость+10\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［ウマ王伝説・最強になった件］ゴールドシップ"
+    },
+    {
+      "EventName": "ゴルシ様、配下を揃える",
+      "EventNameToCheck": "ゴルシ様、配下を揃える",
+      "EventOptionsList": [
+        {
+          "Option": "し、四天王？",
+          "OptionToCheck": "し、四天王",
+          "Effect": "Успех:\nЭнергия-10\nСкорость+10\nВыносливость+10\n「内的体験」 умение Lv+3\nУровень отношений+5\nПровал:\nЭнергия-10\nСкорость+5\nВыносливость+5\n「内弁慶」 умение Lv+3\nУровень отношений+5"
+        },
+        {
+          "Option": "さっぱりわからない……",
+          "OptionToCheck": "さっぱりわからない",
+          "Effect": "Энергия+10\n「おひとり様○」 умение Lv+1"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［ウマ王伝説・最強になった件］ゴールドシップ"
     }
   ]
 }
