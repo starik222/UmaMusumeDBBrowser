@@ -596,7 +596,7 @@ namespace UmaMusumeDBBrowser
             int offset = 0;
             if (IsEventNameIcon(img.Mat))
             {
-                offset = settings.GameElements.EventNameIconBounds.Width + 5;
+                offset = settings.GameElements.EventNameIconBounds.Width + 7;
             }
             Mat mat = new Mat(img.Mat, new Rectangle(settings.GameElements.EventNameBounds.X + offset, settings.GameElements.EventNameBounds.Y,
                 settings.GameElements.EventNameBounds.Width, settings.GameElements.EventNameBounds.Height));

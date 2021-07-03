@@ -39,5 +39,7 @@ UmaMusumeDBBrowser предназначена для просмотра базы данных игры Uma Musume Prett
 
 [Microsoft.Office.Interop.Excel](https://www.nuget.org/packages/Microsoft.Office.Interop.Excel/15.0.4795.1000)
 
+[Translator](https://github.com/starik222/Translator)
+
 ## Отказ от ответственности
 Автор не несет никакой ответственности за действия выполняемые программой. Пользователь совершает все действия на свой страх и риск.
