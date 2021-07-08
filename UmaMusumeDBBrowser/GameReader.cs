@@ -28,6 +28,7 @@ namespace UmaMusumeDBBrowser
         //private Image<Bgr, byte> lastImage = null;
         private GameDataType lastDataType = GameDataType.NotFound;
         private List<SkillManager.SkillData> lastSkillResult;
+        private List<FactorManager.FactorData> lastGenResult;
         private AllLibraryManager libraryManager;
         private GameSettings settings;
         private CancellationTokenSource tokenSource;
@@ -46,6 +47,7 @@ namespace UmaMusumeDBBrowser
             settings = gameSettings;
             charReplaceDictonary = replaceChars;
             lastSkillResult = new List<SkillManager.SkillData>();
+            lastGenResult = new List<FactorManager.FactorData>();
             gameHandle = IntPtr.Zero;
 
         }
@@ -116,7 +118,7 @@ namespace UmaMusumeDBBrowser
                 //    continue;
                 //}
                 Image origImg = WindowManager.CaptureWindow(gameHandle);
-                if (origImg.Width <= 1 || origImg.Height <= 1)
+                if (origImg == null || origImg.Width <= 1 || origImg.Height <= 1)
                     goto Exit;
                 if (gameType == GameType.BluestacksV4)
                 {
@@ -190,7 +192,7 @@ namespace UmaMusumeDBBrowser
                         {
                             if (lastDataType == GameDataType.TazunaAfterHelp)
                                 goto Exit;
-                            if (dataType.PartInfo.Y > (settings.GameElements.TazunaAfterHelpWindow.Y + settings.GameElements.TazunaAfterHelpWindow.Height))
+                            if (dataType.PartInfo.Y > (settings.GameTypeElements[gameType].TazunaAfterHelpWindow.Y + settings.GameTypeElements[gameType].TazunaAfterHelpWindow.Height))
                                 goto Exit;
                             var result = GetTazunaAfterHelp(currentImage, dataType.PartInfo);
 
@@ -206,26 +208,25 @@ namespace UmaMusumeDBBrowser
                             lastDataType = GameDataType.TazunaAfterHelp;
                             break;
                         }
+                    case GameDataType.SkillDetailView:
                     case GameDataType.UmaSkillList:
                         {
-                            var result = GetSkillList(currentImage);
+                            var result = GetSkillList(currentImage, dataType.PartInfo, dataType.type);
                             if (result.Count > 0 && !result.Equals(lastSkillResult))
                             {
-                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = result });
+                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.UmaSkillList, DataClass = result });
                                 lastSkillResult = result;
                             }
                             break;
                         }
                     case GameDataType.GenWindow:
                         {
-                            if (lastDataType == GameDataType.GenWindow)
-                                goto Exit;
-                            var result = GetSFactorList(currentImage);
-                            if (result.Count > 0)
+                            var result = GetSFactorList(currentImage, dataType.type);
+                            if (result.Count > 0 && !EqualFactorList(result, lastGenResult))
                             {
                                 DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = result });
+                                lastGenResult = result;
                             }
-                            lastDataType = GameDataType.GenWindow;
                             break;
                         }
                     default:
@@ -243,17 +244,29 @@ namespace UmaMusumeDBBrowser
             }
         }
 
+        private bool EqualFactorList(List<FactorManager.FactorData> list1, List<FactorManager.FactorData> list2)
+        {
+            if (list1.Count != list2.Count)
+                return false;
+            for (int i = 0; i < list1.Count; i++)
+            {
+                if (list1[i].Id != list2[i].Id)
+                    return false;
+            }
+            return true;
+        }
+
 
         private (string desc, string warning) GetTazunaAfterHelp(Image<Bgr, byte> img, Rectangle partInfo)
         {
             string warningText = null;
             string descText = null;
             string tempText = null;
-            Rectangle tazunaHelpWindowRect = settings.GameElements.TazunaAfterHelpWindow.GetRectangle();
+            Rectangle tazunaHelpWindowRect = settings.GameTypeElements[gameType].TazunaAfterHelpWindow.GetRectangle();
             if (IsTazunaHelpWarning(img.Mat))
             {
                 tazunaHelpWindowRect.Y += 4;
-                Mat warningWindow = new Mat(img.Mat, settings.GameElements.TazunaWarningWindow.GetRectangle());
+                Mat warningWindow = new Mat(img.Mat, settings.GameTypeElements[gameType].TazunaWarningWindow.GetRectangle());
                 CvInvoke.CvtColor(warningWindow, warningWindow, ColorConversion.Bgr2Gray);
                 if (Program.IsDebug)
                 {
@@ -349,7 +362,7 @@ namespace UmaMusumeDBBrowser
         }
 
 
-        private List<FactorManager.FactorData> GetSFactorList(Image<Bgr, byte> img)
+        private List<FactorManager.FactorData> GetSFactorList(Image<Bgr, byte> img, GameDataType dataType)
         {
             Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
             var subParts = settings.GameParts.Find(a => a.PartName.Equals("SFactor"))?.SubGameParts;
@@ -365,97 +378,93 @@ namespace UmaMusumeDBBrowser
                 partRect.Width = 335;
                 partRect.Height += 2;
                 //---
-                Mat textMat = new Mat(img.Mat, partRect);
-                Mat mask = new Mat();
-                Mat hsvMat = new Mat();
-                Mat resMat = new Mat();
-                CvInvoke.Resize(textMat, textMat, new Size(), 2, 2);
+                var result = GetFactorFromPart(img, partRect, i);
+            }
+            grayImg.Dispose();
+            return factorDatas;
+        }
 
-                bool needCorrect = false;
-                bool isNext = false;
-            nextTry:
-                if (!needCorrect)
+
+        private FactorManager.FactorData GetFactorFromPart(Image<Bgr, byte> img, Rectangle partRect, int partPosition=0)
+        {
+            FactorManager.FactorData factorData = new FactorManager.FactorData();
+            Mat textMat = new Mat(img.Mat, partRect);
+            Mat mask = new Mat();
+            Mat hsvMat = new Mat();
+            Mat resMat = new Mat();
+            CvInvoke.Resize(textMat, textMat, new Size(), 2, 2);
+
+            bool needCorrect = false;
+            bool isNext = false;
+        nextTry:
+            if (!needCorrect)
+            {
+
+                resMat = textMat.Clone();
+                if (partPosition < 3)
+                    CvInvoke.BitwiseNot(resMat, resMat);
+            }
+            else
+            {
+                MCvScalar minS = new MCvScalar();
+                MCvScalar maxS = new MCvScalar();
+                if (partPosition < 3)
                 {
-                    
-                    resMat = textMat.Clone();
-                    if (i < 3)
-                        CvInvoke.BitwiseNot(resMat, resMat);
+                    //CvInvoke.BitwiseNot(textMat, textMat);
+                    if (!isNext)
+                    {
+                        minS = new MCvScalar(0, 0, 233);
+                        maxS = new MCvScalar(185, 65, 255);
+                    }
+                    else
+                    {
+                        minS = new MCvScalar(0, 0, 239);
+                        maxS = new MCvScalar(170, 24, 255);
+                    }
                 }
                 else
                 {
-                    MCvScalar minS = new MCvScalar();
-                    MCvScalar maxS = new MCvScalar();
-                    if (i < 3)
+                    if (!isNext)
                     {
-                        //CvInvoke.BitwiseNot(textMat, textMat);
-                        if (!isNext)
-                        {
-                            minS = new MCvScalar(0, 0, 233);
-                            maxS = new MCvScalar(185, 65, 255);
-                        }
-                        else
-                        {
-                            minS = new MCvScalar(0, 0, 239);
-                            maxS = new MCvScalar(171, 55, 255);
-                        }
+                        minS = new MCvScalar(12, 45, 70);
+                        maxS = new MCvScalar(13, 218, 204);
                     }
                     else
                     {
-                        if (!isNext)
-                        {
-                            minS = new MCvScalar(12, 45, 70);
-                            maxS = new MCvScalar(13, 218, 204);
-                        }
-                        else
-                        {
-                            minS = new MCvScalar(12, 107, 120);
-                            maxS = new MCvScalar(13, 210, 154);
-                        }
+                        minS = new MCvScalar(12, 107, 120);
+                        maxS = new MCvScalar(13, 210, 154);
                     }
-
-                    CvInvoke.CvtColor(textMat, hsvMat, ColorConversion.Bgr2Hsv);
-                    
-                    CvInvoke.InRange(hsvMat, new ScalarArray(minS), new ScalarArray(maxS), mask);
-                    CvInvoke.BitwiseNot(mask, mask);
-                    resMat = textMat.Clone();
-                    if (i < 3)
-                    {
-                        CvInvoke.BitwiseNot(resMat, resMat);
-                    }
-                    resMat.SetTo(new MCvScalar(255, 255, 255), mask);
                 }
 
+                CvInvoke.CvtColor(textMat, hsvMat, ColorConversion.Bgr2Hsv);
 
-                if (Program.IsDebug)
+                CvInvoke.InRange(hsvMat, new ScalarArray(minS), new ScalarArray(maxS), mask);
+                CvInvoke.BitwiseNot(mask, mask);
+                resMat = textMat.Clone();
+                if (partPosition < 3)
                 {
-                    DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = resMat.ToBitmap() });
+                    CvInvoke.BitwiseNot(resMat, resMat);
                 }
+                resMat.SetTo(new MCvScalar(255, 255, 255), mask);
+            }
 
-                string text = Program.TessManager.GetTextSingleLine(resMat);
-                if (!string.IsNullOrWhiteSpace(text))
+
+            if (Program.IsDebug)
+            {
+                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = resMat.ToBitmap() });
+            }
+
+            string text = Program.TessManager.GetTextSingleLine(resMat);
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                var res = libraryManager.FactorLibrary.FindFactorByNameDiceAlg(text, 0.3f);
+                if (res.Count == 1)
+                    factorData = res[0].Value;
+                else if (res.Count > 1)
                 {
-                    var res = libraryManager.FactorLibrary.FindFactorByNameDiceAlg(text);
-                    if (res.Count == 1)
-                        factorDatas.Add(res[0].Value);
-                    else if (res.Count > 1)
-                    {
-                        var s = GetItemWithMaxConfidence<FactorManager.FactorData>(res);
-                        if (s != null)
-                            factorDatas.Add(s);
-                    }
-                    else
-                    {
-                        if (!needCorrect)
-                        {
-                            needCorrect = true;
-                            goto nextTry;
-                        }
-                        else if (!isNext)
-                        {
-                            isNext = true;
-                            goto nextTry;
-                        }
-                    }
+                    var s = GetItemWithMaxConfidence<FactorManager.FactorData>(res);
+                    if (s != null)
+                        factorData = s;
                 }
                 else
                 {
@@ -470,102 +479,163 @@ namespace UmaMusumeDBBrowser
                         goto nextTry;
                     }
                 }
-                textMat.Dispose();
-                resMat.Dispose();
-                hsvMat.Dispose();
-                mask.Dispose();
             }
-            grayImg.Dispose();
-            return factorDatas;
+            else
+            {
+                if (!needCorrect)
+                {
+                    needCorrect = true;
+                    goto nextTry;
+                }
+                else if (!isNext)
+                {
+                    isNext = true;
+                    goto nextTry;
+                }
+            }
+            textMat.Dispose();
+            resMat.Dispose();
+            hsvMat.Dispose();
+            mask.Dispose();
+
+            return factorData;
         }
 
-        private List<SkillManager.SkillData> GetSkillList(Image<Bgr, byte> img)
+        private List<SkillManager.SkillData> GetSkillList(Image<Bgr, byte> img, Rectangle gamePart, GameDataType dataType)
         {
-            Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
-            //Поиск контуров всех кнопок понижения.
-            
-            var subParts = settings.GameParts.Find(a => a.PartName.Equals("SkillList"))?.SubGameParts;
             List<SkillManager.SkillData> skillDatas = new List<SkillManager.SkillData>();
-            if (subParts == null || subParts.Count == 0)
+            if (dataType == GameDataType.UmaSkillList)
             {
+                Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
+                //Поиск контуров всех кнопок понижения.
+
+                var subParts = settings.GameParts.Find(a => a.PartName.Equals("SkillList"))?.SubGameParts;
+
+                if (subParts == null || subParts.Count == 0)
+                {
+                    grayImg.Dispose();
+                    return skillDatas;
+                }
+                List<Rectangle> partsLocInfo = GetGamePartsRects(grayImg, subParts);
+                //Создание рабочих контуров
+                foreach (var item in partsLocInfo)
+                {
+                    if (item.Y < (settings.GameTypeElements[gameType].SkillListWindow.Y + settings.GameTypeElements[gameType].SkillNameCorrectBounds.Y))//исключение первого умения, если его название обрезано.
+                        continue;
+                    Rectangle textCountor = new Rectangle(item.X - settings.GameTypeElements[gameType].SkillListWindow.Width,
+                        item.Y - settings.GameTypeElements[gameType].SkillNameCorrectBounds.Y, settings.GameTypeElements[gameType].SkillNameCorrectBounds.Width,
+                        settings.GameTypeElements[gameType].SkillNameCorrectBounds.Height);
+                    var result = GetSkillDataFromCountor(img, textCountor);
+                    if (result != null)
+                        skillDatas.Add(result);
+                }
                 grayImg.Dispose();
-                return skillDatas;
             }
-            List<Rectangle> partsLocInfo = GetGamePartsRects(grayImg, subParts);
-            //Создание рабочих контуров
-
-            foreach (var item in partsLocInfo)
+            else if (dataType == GameDataType.SkillDetailView)
             {
-                if (item.Y < (settings.GameElements.SkillListWindow.Y + 26))//исключение первого умения, если его название обрезано.
-                    continue;
-                Rectangle textCountor = new Rectangle(item.X - settings.GameElements.SkillListWindow.Width, item.Y - 26, settings.GameElements.SkillListWindow.Width - 10, 23);
-                if (Program.IsDebug)
+                Mat hsvImage = new Mat();
+                CvInvoke.CvtColor(img, hsvImage, ColorConversion.Bgr2Hsv);
+                Mat txtImg = new Mat();
+                CvInvoke.InRange(hsvImage, new ScalarArray(new MCvScalar(12, 63, 111)), new ScalarArray(new MCvScalar(13, 211, 206)), txtImg);
+                VectorOfVectorOfPoint countors = new VectorOfVectorOfPoint();
+                Mat hierarhy = new Mat();
+                CvInvoke.FindContours(txtImg, countors, hierarhy, RetrType.List, ChainApproxMethod.ChainApproxSimple);
+                int x = int.MaxValue, y = int.MaxValue;
+                for (int i = 0; i < countors.Size; i++)
                 {
-                    DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = (new Mat(img.Mat, textCountor)).ToBitmap() });
+                    using (VectorOfPoint vp = countors[i])
+                    {
+                        Rectangle rect = CvInvoke.BoundingRectangle(vp);
+                        if (rect.Y < gamePart.Y)
+                            continue;
+                        if (rect.Height < 5)
+                            continue;
+                        if (rect.X < x)
+                            x = rect.X;
+                        if (rect.Y < y)
+                            y = rect.Y;
+                    }
                 }
+                hierarhy.Dispose();
+                countors.Dispose();
+                txtImg.Dispose();
+                hsvImage.Dispose();
 
-                Mat textMat = new Mat(img.Mat, textCountor);
-                CvInvoke.Resize(textMat, textMat, new Size(), 2, 2);
-                Mat mask = new Mat();
-                Mat hsvMat = new Mat();
-                CvInvoke.CvtColor(textMat, hsvMat, ColorConversion.Bgr2Hsv);
-                bool isNext = false;
-                MCvScalar minS = new MCvScalar(10, 45, 70);
-                MCvScalar maxS = new MCvScalar(13, 218, 204);
-            nextTry:
-                CvInvoke.InRange(hsvMat, new ScalarArray(minS), new ScalarArray(maxS), mask);
-                CvInvoke.BitwiseNot(mask, mask);
-                Mat resMat = textMat.Clone();
-                resMat.SetTo(new MCvScalar(255, 255, 255), mask);
+                Rectangle textRect = new Rectangle(x - 4, y - 4, 270, 26);
+                var result = GetSkillDataFromCountor(img, textRect);
+                if (result != null)
+                    skillDatas.Add(result);
+            }
+            return skillDatas;
+        }
 
-                if (Program.IsDebug)
-                {
-                    DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = textMat.ToBitmap() });
-                }
 
-                string text = Program.TessManager.GetTextSingleLine(resMat);
+        private SkillManager.SkillData GetSkillDataFromCountor(Image<Bgr, byte> img, Rectangle textCountor)
+        {
+            SkillManager.SkillData skillData = null;
+            if (Program.IsDebug)
+            {
+                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = (new Mat(img.Mat, textCountor)).ToBitmap() });
+            }
 
-                var res = libraryManager.SkillLibrary.FindSkillByName(text, true, 0.8f);
+            Mat textMat = new Mat(img.Mat, textCountor);
+            CvInvoke.Resize(textMat, textMat, new Size(), 2, 2);
+            Mat mask = new Mat();
+            Mat hsvMat = new Mat();
+            CvInvoke.CvtColor(textMat, hsvMat, ColorConversion.Bgr2Hsv);
+            bool isNext = false;
+            MCvScalar minS = new MCvScalar(10, 45, 70);
+            MCvScalar maxS = new MCvScalar(13, 218, 204);
+        nextTry:
+            CvInvoke.InRange(hsvMat, new ScalarArray(minS), new ScalarArray(maxS), mask);
+            CvInvoke.BitwiseNot(mask, mask);
+            Mat resMat = textMat.Clone();
+            resMat.SetTo(new MCvScalar(255, 255, 255), mask);
+
+            if (Program.IsDebug)
+            {
+                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = textMat.ToBitmap() });
+            }
+
+            string text = Program.TessManager.GetTextSingleLine(resMat);
+
+            var res = libraryManager.SkillLibrary.FindSkillByName(text, true, 0.8f);
+            if (res.Count == 1)
+                skillData = res[0].Value;
+            else if (res.Count > 1)
+            {
+                var s = GetItemWithMaxConfidence<SkillManager.SkillData>(res);
+                if (s != null)
+                    skillData = s;
+            }
+            else if (res.Count == 0 && !string.IsNullOrWhiteSpace(text))
+            {
+                res = libraryManager.SkillLibrary.FindEventByNameDiceAlg(text);
                 if (res.Count == 1)
-                    skillDatas.Add(res[0].Value);
+                    skillData = res[0].Value;
                 else if (res.Count > 1)
                 {
                     var s = GetItemWithMaxConfidence<SkillManager.SkillData>(res);
                     if (s != null)
-                        skillDatas.Add(s);
+                        skillData = s;
                 }
-                else if (res.Count == 0 && !string.IsNullOrWhiteSpace(text))
-                {
-                    res = libraryManager.SkillLibrary.FindEventByNameDiceAlg(text);
-                    if (res.Count == 1)
-                        skillDatas.Add(res[0].Value);
-                    else if (res.Count > 1)
-                    {
-                        var s = GetItemWithMaxConfidence<SkillManager.SkillData>(res);
-                        if (s != null)
-                            skillDatas.Add(s);
-                    }
-                }
-
-
-
-                if(res.Count == 0 && !isNext)
-                {
-                    resMat.Dispose();
-                    minS = new MCvScalar(10, 67, 75);
-                    maxS = new MCvScalar(14, 212, 162);
-                    isNext = true;
-                    goto nextTry;
-                }
-                resMat.Dispose();
-                textMat.Dispose();
-                hsvMat.Dispose();
-                mask.Dispose();
             }
-            grayImg.Dispose();
-            return skillDatas;
 
 
+
+            if (res.Count == 0 && !isNext)
+            {
+                resMat.Dispose();
+                minS = new MCvScalar(10, 67, 75);
+                maxS = new MCvScalar(14, 212, 162);
+                isNext = true;
+                goto nextTry;
+            }
+            resMat.Dispose();
+            textMat.Dispose();
+            hsvMat.Dispose();
+            mask.Dispose();
+            return skillData;
         }
 
         private T GetItemWithMaxConfidence<T>(List<KeyValuePair<float, T>> datas)
@@ -596,10 +666,10 @@ namespace UmaMusumeDBBrowser
             int offset = 0;
             if (IsEventNameIcon(img.Mat))
             {
-                offset = settings.GameElements.EventNameIconBounds.Width + 7;
+                offset = settings.GameTypeElements[gameType].EventNameIconBounds.Width + 7;
             }
-            Mat mat = new Mat(img.Mat, new Rectangle(settings.GameElements.EventNameBounds.X + offset, settings.GameElements.EventNameBounds.Y,
-                settings.GameElements.EventNameBounds.Width, settings.GameElements.EventNameBounds.Height));
+            Mat mat = new Mat(img.Mat, new Rectangle(settings.GameTypeElements[gameType].EventNameBounds.X + offset, settings.GameTypeElements[gameType].EventNameBounds.Y,
+                settings.GameTypeElements[gameType].EventNameBounds.Width, settings.GameTypeElements[gameType].EventNameBounds.Height));
             Mat invertedMat = new Mat();
             CvInvoke.CvtColor(mat, mat, ColorConversion.Bgr2Gray);
             CvInvoke.BitwiseNot(mat, invertedMat);
@@ -807,7 +877,7 @@ namespace UmaMusumeDBBrowser
 
         private (int minVal, int maxVal) GetEventNameBackMinMax(Mat img)
         {
-            Rectangle testBackRect = settings.GameElements.EventNameIconBounds.GetRectangle();
+            Rectangle testBackRect = settings.GameTypeElements[gameType].EventNameIconBounds.GetRectangle();
             testBackRect.Height = 6;
             testBackRect.X += 35;
             double minVal = 0, maxVal = 0;
@@ -824,7 +894,7 @@ namespace UmaMusumeDBBrowser
 
         private bool IsTazunaHelpWarning(Mat img)
         {
-            Rectangle testBackRect = settings.GameElements.TazunaWarningTestRect.GetRectangle();
+            Rectangle testBackRect = settings.GameTypeElements[gameType].TazunaWarningTestRect.GetRectangle();
             double minVal = 0, maxVal = 0;
             Point minLoc = new Point(), maxLoc = new Point();
             Mat backForTest = new Mat(img, testBackRect);
@@ -842,7 +912,7 @@ namespace UmaMusumeDBBrowser
         private bool IsEventNameIcon(Mat img)
         {
             bool result = false;
-            Rectangle iconPartRect = settings.GameElements.EventNameIconBounds.GetRectangle();
+            Rectangle iconPartRect = settings.GameTypeElements[gameType].EventNameIconBounds.GetRectangle();
             iconPartRect.Height = 6;
             Rectangle testBackRect = iconPartRect;
             testBackRect.X += 35;
@@ -892,6 +962,8 @@ namespace UmaMusumeDBBrowser
             UmaSkillList = 5,
             TazunaAfterHelp = 6,
             GenWindow = 7,
+            SkillDetailView = 8,
+            FactorDetailView = 9,
             GameNotFound = -1,
             NotFound = -2,
             DebugImage = -3

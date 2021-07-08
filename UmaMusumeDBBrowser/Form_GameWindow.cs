@@ -71,7 +71,21 @@ namespace UmaMusumeDBBrowser
             Image<Gray, byte> imageGray = ImageManager.PrepareImageGray((Bitmap)pictureBox1.Image, new Size(588, 1045));
             Image<Gray, byte> template = (new Image<Bgr, byte>(openFileDialog.FileName)).Convert<Gray, byte>();
             Mat mat = new Mat();
-            CvInvoke.MatchTemplate(imageGray, template, mat, TemplateMatchingType.CcoeffNormed);
+            if (MessageBox.Show("Выбрать файл с маской?", "выбор маски", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (openFileDialog.ShowDialog() != DialogResult.OK)
+                    return;
+                Mat searchMask = new Mat(openFileDialog.FileName, ImreadModes.Grayscale);
+                //CvInvoke.BitwiseNot(searchMask, searchMask);
+                CvInvoke.Threshold(searchMask, searchMask, 128, 255, ThresholdType.Binary);
+                CvInvoke.MatchTemplate(imageGray, template, mat, TemplateMatchingType.CcoeffNormed, searchMask);
+            }
+            else
+            {
+                CvInvoke.MatchTemplate(imageGray, template, mat, TemplateMatchingType.CcoeffNormed);
+            }
+            
+            //CvInvoke.MatchTemplate(imageGray, template, mat, TemplateMatchingType.CcoeffNormed);
             //CvInvoke.Normalize(mat, mat, 0, 1, NormType.MinMax, DepthType.Default);
             double minVal=0, maxVal=0;
             Point minLoc = new Point(), maxLoc = new Point();
@@ -168,6 +182,37 @@ namespace UmaMusumeDBBrowser
             int imagePixelCount = thresImage.Rows * thresImage.Cols;
             float whiteRatio = (float)(whiteCount) / (float)imagePixelCount;
             return whiteRatio;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Image<Bgr, byte> image = ImageManager.PrepareImage((Bitmap)pictureBox1.Image, new Size(588, 1045));
+
+            Mat hsvImage = new Mat();
+            CvInvoke.CvtColor(image, hsvImage, ColorConversion.Bgr2Hsv);
+            Mat txtImg = new Mat();
+            CvInvoke.InRange(hsvImage, new ScalarArray(new MCvScalar(12, 63, 111)), new ScalarArray(new MCvScalar(13, 211, 206)), txtImg);
+            VectorOfVectorOfPoint vvp = new VectorOfVectorOfPoint();
+            Mat hierarhy = new Mat();
+            CvInvoke.FindContours(txtImg, vvp, hierarhy, RetrType.List, ChainApproxMethod.ChainApproxSimple);
+            int x = int.MaxValue, y = int.MaxValue;
+            for (int i = 0; i < vvp.Size; i++)
+            {
+                using (VectorOfPoint vp = vvp[i])
+                {
+                    Rectangle rect = CvInvoke.BoundingRectangle(vp);
+                    if (rect.Height < 5)
+                        continue;
+                    if (rect.X < x)
+                        x = rect.X;
+                    if (rect.Y < y)
+                        y = rect.Y;
+                }
+            }
+            CvInvoke.Rectangle(image, new Rectangle(x-4, y-4, 350, 26), new MCvScalar(255, 50, 100));
+
+            //CvInvoke.DrawContours(image, vvp, -1, new MCvScalar(255, 0, 255), 1);
+            pictureBox1.Image = image.ToBitmap();
         }
     }
 }

@@ -24,22 +24,42 @@ namespace UmaMusumeDBBrowser
         }
         public static Image CaptureWindow(IntPtr handle)
         {
-            IntPtr hdcSrc = User32.GetWindowDC(IntPtr.Zero);
-            User32.RECT windowRect = new User32.RECT();
-            User32.GetClientRect(handle, ref windowRect);
-            User32.MapWindowPoints(handle, IntPtr.Zero, ref windowRect, 2);
-            int width = windowRect.Right - windowRect.Left;
-            int height = windowRect.Bottom - windowRect.Top;
-            IntPtr hdcDest = GDI32.CreateCompatibleDC(hdcSrc);
-            IntPtr hBitmap = GDI32.CreateCompatibleBitmap(hdcSrc, width, height);
-            IntPtr hOld = GDI32.SelectObject(hdcDest, hBitmap);
-            GDI32.BitBlt(hdcDest, 0, 0, width, height, hdcSrc, windowRect.Left, windowRect.Top, GDI32.SRCCOPY);
-            GDI32.SelectObject(hdcDest, hOld);
-            GDI32.DeleteDC(hdcDest);
-            User32.ReleaseDC(handle, hdcSrc);
-            Image img = Image.FromHbitmap(hBitmap);
-            GDI32.DeleteObject(hBitmap);
-            return img;
+            try
+            {
+                IntPtr hdcSrc = User32.GetWindowDC(IntPtr.Zero);
+                if (hdcSrc == IntPtr.Zero)
+                    return null;
+                User32.RECT windowRect = new User32.RECT();
+                User32.GetClientRect(handle, ref windowRect);
+                User32.MapWindowPoints(handle, IntPtr.Zero, ref windowRect, 2);
+                int width = windowRect.Right - windowRect.Left;
+                int height = windowRect.Bottom - windowRect.Top;
+                if (width <= 0 || height <= 0)
+                {
+                    User32.ReleaseDC(handle, hdcSrc);
+                    return null;
+                }
+                IntPtr hdcDest = GDI32.CreateCompatibleDC(hdcSrc);
+                IntPtr hBitmap = GDI32.CreateCompatibleBitmap(hdcSrc, width, height);
+                if (hBitmap == IntPtr.Zero)
+                {
+                    GDI32.DeleteDC(hdcDest);
+                    User32.ReleaseDC(handle, hdcSrc);
+                    return null;
+                }
+                IntPtr hOld = GDI32.SelectObject(hdcDest, hBitmap);
+                GDI32.BitBlt(hdcDest, 0, 0, width, height, hdcSrc, windowRect.Left, windowRect.Top, GDI32.SRCCOPY);
+                GDI32.SelectObject(hdcDest, hOld);
+                GDI32.DeleteDC(hdcDest);
+                User32.ReleaseDC(handle, hdcSrc);
+                Image img = Image.FromHbitmap(hBitmap);
+                GDI32.DeleteObject(hBitmap);
+                return img;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
         public static void CaptureWindowToFile(IntPtr handle, string filename, ImageFormat format)
         {

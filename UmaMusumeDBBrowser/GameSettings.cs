@@ -17,7 +17,7 @@ namespace UmaMusumeDBBrowser
     {
         public GameSize GameNormalSize { get; set; }
         public BSPanel BlueStacksPanel { get; set; }
-        public Elements GameElements { get; set; }
+        public GameElements GameTypeElements { get; set; }
         public List<GamePart> GameParts { get; set; }
 
 
@@ -33,6 +33,22 @@ namespace UmaMusumeDBBrowser
             public Rect Ver5 { get; set; }
         }
 
+        public class GameElements
+        {
+            public Elements this[GameReader.GameType type]
+            {
+                get
+                {
+                    if (type == GameReader.GameType.DMM)
+                        return DmmElements;
+                    else
+                        return MobileElements;
+                }
+            }
+            public Elements DmmElements { get; set; }
+            public Elements MobileElements { get; set; }
+        }
+
         public class Elements
         {
             
@@ -46,6 +62,7 @@ namespace UmaMusumeDBBrowser
             public Rect CurrentMenuBounds { get; set; }
             public Rect BackButtonBounds { get; set; }
             public Rect SkillListWindow { get; set; }
+            public Rect SkillNameCorrectBounds { get; set; }
             public Rect TazunaAfterHelpWindow { get; set; }
             public Rect TazunaWarningTestRect { get; set; }
             public Rect TazunaWarningWindow { get; set; }
