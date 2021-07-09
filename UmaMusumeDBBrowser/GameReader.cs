@@ -219,12 +219,13 @@ namespace UmaMusumeDBBrowser
                             }
                             break;
                         }
+                    case GameDataType.FactorDetailView:
                     case GameDataType.GenWindow:
                         {
                             var result = GetSFactorList(currentImage, dataType.type);
                             if (result.Count > 0 && !EqualFactorList(result, lastGenResult))
                             {
-                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = result });
+                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.GenWindow, DataClass = result });
                                 lastGenResult = result;
                             }
                             break;
@@ -362,32 +363,110 @@ namespace UmaMusumeDBBrowser
         }
 
 
+        private Rectangle GetGamePartRect(Image<Gray, byte> grayImg, GameSettings.GamePart part, double confid = 0.58)
+        {
+            double minVal = 0, maxVal = 0;
+            Point minLoc = new Point(), maxLoc = new Point();
+            List<Rectangle> partsLocInfo = new List<Rectangle>();
+
+            Mat imgOut = new Mat();
+            CvInvoke.MatchTemplate(grayImg, part.Image, imgOut, TemplateMatchingType.CcoeffNormed);
+            CvInvoke.MinMaxLoc(imgOut, ref minVal, ref maxVal, ref minLoc, ref maxLoc);
+            Rectangle rectangle = new Rectangle(maxLoc, part.Image.Size);
+            imgOut.Dispose();
+
+            return rectangle;
+
+        }
+
+
         private List<FactorManager.FactorData> GetSFactorList(Image<Bgr, byte> img, GameDataType dataType)
         {
-            Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
-            var subParts = settings.GameParts.Find(a => a.PartName.Equals("SFactor"))?.SubGameParts;
             List<FactorManager.FactorData> factorDatas = new List<FactorManager.FactorData>();
-            if (subParts == null || subParts.Count == 0)
-                return factorDatas;
-            List<Rectangle> partsLocInfo = GetGamePartsRects(grayImg, subParts, 0.65);
-            for (int i = 0; i < partsLocInfo.Count; i++)
+            Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
+            if (dataType == GameDataType.GenWindow)
             {
-                //исправление координат
-                Rectangle partRect = partsLocInfo[i];
-                partRect.X -= 468;
-                partRect.Width = 335;
-                partRect.Height += 2;
-                //---
-                var result = GetFactorFromPart(img, partRect, i);
+                var subParts = settings.GameParts.Find(a => a.PartName.Equals("SFactor"))?.SubGameParts;
+                if (subParts == null || subParts.Count == 0)
+                    return factorDatas;
+                List<Rectangle> partsLocInfo = GetGamePartsRects(grayImg, subParts, 0.65);
+                for (int i = 0; i < partsLocInfo.Count; i++)
+                {
+                    //исправление координат
+                    Rectangle partRect = partsLocInfo[i];
+                    partRect.X -= 468;
+                    partRect.Width = 335;
+                    partRect.Height += 2;
+                    //---
+                    var result = GetFactorFromPart(img, partRect, i);
+                    if (result != null)
+                        factorDatas.Add(result);
+                }
+            }
+            else if (dataType == GameDataType.FactorDetailView)
+            {
+                var subParts = settings.GameParts.Find(a => a.PartName.Equals(dataType.ToString()))?.SubGameParts;
+                if (subParts == null || subParts.Count == 0)
+                    return factorDatas;
+                var partRect = GetGamePartsRects(grayImg, subParts).FirstOrDefault();
+                partRect.X -= 410;
+                partRect.Y -= 2;
+                partRect.Width = 315;
+                partRect.Height = 26;
+
+                int factorIndex = GetFactorIndex(img, partRect);
+
+                var result = GetFactorFromPart(img, partRect, factorIndex);
+                if (result != null)
+                    factorDatas.Add(result);
             }
             grayImg.Dispose();
             return factorDatas;
         }
 
+        private int GetFactorIndex(Image<Bgr, byte> img, Rectangle bounds)
+        {
+            int index = 3;
+            Mat namePart = new Mat(img.Mat, bounds);
+            Mat hsvImg = new Mat();
+            CvInvoke.CvtColor(namePart, hsvImg, ColorConversion.Bgr2Hsv);
+            //index 0
+            Mat mask = new Mat();
+            CvInvoke.InRange(hsvImg, new ScalarArray(new MCvScalar(98, 0, 0)), new ScalarArray(new MCvScalar(103, 255, 255)), mask);
+            var ratio = ImageWhiteRatio(mask);
+            if (ratio > 0.7)
+            {
+                index = 0;
+                goto exit;
+            }
+            //index 1
+            CvInvoke.InRange(hsvImg, new ScalarArray(new MCvScalar(165, 0, 0)), new ScalarArray(new MCvScalar(169, 255, 255)), mask);
+            ratio = ImageWhiteRatio(mask);
+            if (ratio > 0.7)
+            {
+                index = 1;
+                goto exit;
+            }
+            //index 2
+            CvInvoke.InRange(hsvImg, new ScalarArray(new MCvScalar(38, 0, 0)), new ScalarArray(new MCvScalar(50, 255, 255)), mask);
+            ratio = ImageWhiteRatio(mask);
+            if (ratio > 0.7)
+            {
+                index = 2;
+                goto exit;
+            }
+
+        exit:
+            mask.Dispose();
+            hsvImg.Dispose();
+            namePart.Dispose();
+            return index;
+        }
+
 
         private FactorManager.FactorData GetFactorFromPart(Image<Bgr, byte> img, Rectangle partRect, int partPosition=0)
         {
-            FactorManager.FactorData factorData = new FactorManager.FactorData();
+            FactorManager.FactorData factorData = null;
             Mat textMat = new Mat(img.Mat, partRect);
             Mat mask = new Mat();
             Mat hsvMat = new Mat();

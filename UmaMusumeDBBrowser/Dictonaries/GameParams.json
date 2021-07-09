@@ -274,6 +274,12 @@
       "ImageName": "SkillDetailView.bmp"
     },
     {
+      "PartName": "SkillDetailView2",
+      "VerticalState": true,
+      "DataType": 8,
+      "ImageName": "CardEventSkillTitle.bmp"
+    },
+    {
       "PartName": "FactorDetailView",
       "VerticalState": true,
       "DataType": 9,
