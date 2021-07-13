@@ -629,6 +629,8 @@ namespace UmaMusumeDBBrowser
                             continue;
                         if (rect.Height < 5)
                             continue;
+                        if (rect.X < 50)
+                            continue;
                         if (rect.X < x)
                             x = rect.X;
                         if (rect.Y < y)
@@ -641,6 +643,10 @@ namespace UmaMusumeDBBrowser
                 hsvImage.Dispose();
 
                 Rectangle textRect = new Rectangle(x - 4, y - 4, 270, 26);
+                if (textRect.X < 0)
+                    textRect.X = 0;
+                if (textRect.Y < 0)
+                    textRect.Y = 0;
                 var result = GetSkillDataFromCountor(img, textRect);
                 if (result != null)
                     skillDatas.Add(result);

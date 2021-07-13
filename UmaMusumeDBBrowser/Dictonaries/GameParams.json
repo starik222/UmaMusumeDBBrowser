@@ -168,14 +168,14 @@
       "SkillListWindow": {
         "x": 106,
         "y": 383,
-        "width": 300,
+        "width": 298,
         "height": 454
       },
       "SkillNameCorrectBounds": {
-        "x": 300,
-        "y": 26,
+        "x": 298,
+        "y": 37,
         "width": 290,
-        "height": 23
+        "height": 24
       },
       "TazunaAfterHelpWindow": {
         "x": 117,

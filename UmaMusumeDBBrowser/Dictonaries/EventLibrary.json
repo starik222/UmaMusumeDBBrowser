@@ -1657,24 +1657,6 @@
       "CardName": "【pf.Victory formula...】ビワハヤヒデ"
     },
     {
-      "EventName": "レース敗北",
-      "EventNameToCheck": "レース敗北",
-      "EventOptionsList": [
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        },
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【pf.Victory formula...】ビワハヤヒデ"
-    },
-    {
       "EventName": "磨いて☆DIAMOND",
       "EventNameToCheck": "磨いて☆DIAMOND",
       "EventOptionsList": [
@@ -2068,24 +2050,6 @@
       "CardName": "【あぶそりゅーと☆LOVE】スマートファルコン"
     },
     {
-      "EventName": "レース敗北",
-      "EventNameToCheck": "レース敗北",
-      "EventOptionsList": [
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        },
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【あぶそりゅーと☆LOVE】スマートファルコン"
-    },
-    {
       "EventName": "覚悟と使命の証",
       "EventNameToCheck": "覚悟と使命の証",
       "EventOptionsList": [
@@ -2432,24 +2396,6 @@
           "Option": "もっと実力をつけよう",
           "OptionToCheck": "もっと実力をつけよう",
           "Effect": "Энергия-10/-30\nСлучайно 1 характеристика+2～+8\nSkill point+20～+45\nСлучайно Советы по навыкам и гоночной трассе"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【エレガンス・ライン】メジロマックイーン"
-    },
-    {
-      "EventName": "レース敗北",
-      "EventNameToCheck": "レース敗北",
-      "EventOptionsList": [
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        },
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
         }
       ],
       "Type": 0,
@@ -2820,24 +2766,6 @@
           "Option": "もっと実力をつけよう",
           "OptionToCheck": "もっと実力をつけよう",
           "Effect": "Энергия-10/-30\nСлучайно 1 характеристика+2～+8\nSkill point+20～+45\nСлучайно Советы по навыкам и гоночной трассе"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【エンド・オブ・スカイ】メジロマックイーン"
-    },
-    {
-      "EventName": "レース敗北",
-      "EventNameToCheck": "レース敗北",
-      "EventOptionsList": [
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        },
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
         }
       ],
       "Type": 0,
@@ -4894,24 +4822,6 @@
       "CardName": "【スターライトビート】オグリキャップ"
     },
     {
-      "EventName": "追加の自主トレ",
-      "EventNameToCheck": "追加の自主トレ",
-      "EventOptionsList": [
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с директором+5"
-        },
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия+5"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【スターライトビート】オグリキャップ"
-    },
-    {
       "EventName": "食いしん坊は伊達じゃない",
       "EventNameToCheck": "食いしん坊は伊達じゃない",
       "EventOptionsList": [
@@ -4924,24 +4834,6 @@
           "Option": "腹が減っては力が出ない！",
           "OptionToCheck": "腹が減っては力が出ない",
           "Effect": "Энергия+30\nSkill point+10\nНебольшой шанс \nСкорость-5\nСила+5\n「太り気味」"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【スターライトビート】オグリキャップ"
-    },
-    {
-      "EventName": "お大事に！",
-      "EventNameToCheck": "お大事に",
-      "EventOptionsList": [
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Провал:\n└Мотивация-1\n└Последний тип тренировки-5～10\n└Случайно 「練習ベタ」\nУспех:\n└「練習上手○」"
-        },
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Тоже самое"
         }
       ],
       "Type": 0,
@@ -5348,24 +5240,6 @@
           "Option": "失敗をバネにしよう",
           "OptionToCheck": "失敗をバネにしよう",
           "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【スペシャルドリーマー】スペシャルウィーク"
-    },
-    {
-      "EventName": "お大事に！",
-      "EventNameToCheck": "お大事に",
-      "EventOptionsList": [
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Провал:\n└Мотивация-1\n└Последний тип тренировки-5～10\n└Случайно 「練習ベタ」\nУспех:\n└「練習上手○」"
-        },
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Тоже самое"
         }
       ],
       "Type": 0,
@@ -7047,24 +6921,6 @@
       "CardName": "【フォーミュラオブルージュ】マルゼンスキー"
     },
     {
-      "EventName": "レース敗北",
-      "EventNameToCheck": "レース敗北",
-      "EventOptionsList": [
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        },
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【フォーミュラオブルージュ】マルゼンスキー"
-    },
-    {
       "EventName": "思い出の味でフィーバー☆",
       "EventNameToCheck": "思い出の味でフィーバー☆",
       "EventOptionsList": [
@@ -7164,8 +7020,8 @@
           "Effect": "Энергия-10\nСила воли+20"
         },
         {
-          "Option": "ミノブルボンの走り方をもっと観察しよう",
-          "OptionToCheck": "ミノブルボンの走り方をもっと観察しよう",
+          "Option": "ミホノブルボンの走り方をもっと観察しよう",
+          "OptionToCheck": "ミホノブルボンの走り方をもっと観察しよう",
           "Effect": "Энергия+5\nSkill point+15"
         }
       ],
@@ -10048,24 +9904,6 @@
       "CardName": "【マーマリングストリーム】スーパークリーク"
     },
     {
-      "EventName": "焦らずにいきましょう",
-      "EventNameToCheck": "焦らずにいきましょう",
-      "EventOptionsList": [
-        {
-          "Option": "今はまだ甘えるくらいでいい",
-          "OptionToCheck": "今はまだ甘えるくらいでいい",
-          "Effect": "Сила воли+20\nСлучайно 「注目株」"
-        },
-        {
-          "Option": "間違いない",
-          "OptionToCheck": "間違いない",
-          "Effect": "Выносливость+10\nСила+10\nСлучайно 「注目株」"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【マーマリングストリーム】スーパークリーク"
-    },
-    {
       "EventName": "1日体験☆陶芸教室",
       "EventNameToCheck": "1日体験☆陶芸教室",
       "EventOptionsList": [
@@ -11520,24 +11358,6 @@
       "CardName": "【岩穿つ青】グラスワンダー"
     },
     {
-      "EventName": "レース敗北",
-      "EventNameToCheck": "レース敗北",
-      "EventOptionsList": [
-        {
-          "Option": "帰り道で反省会だね",
-          "OptionToCheck": "帰り道で反省会だね",
-          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        },
-        {
-          "Option": "今日はいったん休もう",
-          "OptionToCheck": "今日はいったん休もう",
-          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【岩穿つ青】グラスワンダー"
-    },
-    {
       "EventName": "夏合宿（2年目）にて",
       "EventNameToCheck": "夏合宿2年目にて",
       "EventOptionsList": [
@@ -12295,24 +12115,6 @@
           "Option": "止める",
           "OptionToCheck": "止める",
           "Effect": "Энергия+5"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【tach-nology】アグネスタキオン"
-    },
-    {
-      "EventName": "お大事に！",
-      "EventNameToCheck": "お大事に",
-      "EventOptionsList": [
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Провал:\n└Мотивация-1\n└Последний тип тренировки-5～10\n└Случайно 「練習ベタ」\nУспех:\n└「練習上手○」"
-        },
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Тоже самое"
         }
       ],
       "Type": 0,
@@ -13516,24 +13318,6 @@
       "CardName": "【サクラ、すすめ！】サクラバクシンオー"
     },
     {
-      "EventName": "レース敗北",
-      "EventNameToCheck": "レース敗北",
-      "EventOptionsList": [
-        {
-          "Option": "失敗は悪いことじゃない",
-          "OptionToCheck": "失敗は悪いことじゃない",
-          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        },
-        {
-          "Option": "学級委員長しっかり！",
-          "OptionToCheck": "学級委員長しっかり",
-          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【サクラ、すすめ！】サクラバクシンオー"
-    },
-    {
       "EventName": "お大事に！",
       "EventNameToCheck": "お大事に",
       "EventOptionsList": [
@@ -13862,24 +13646,6 @@
           "Option": "負けないようにもっと鍛えないとな！",
           "OptionToCheck": "負けないようにもっと鍛えないとな",
           "Effect": "Энергия-10/-30\nСлучайно 1 характеристика+2～+8\nSkill point+20～+45\nСлучайно Советы по навыкам и гоночной трассе"
-        }
-      ],
-      "Type": 0,
-      "CardName": "【ストレート・ライン】メジロライアン"
-    },
-    {
-      "EventName": "レース敗北",
-      "EventNameToCheck": "レース敗北",
-      "EventOptionsList": [
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
-        },
-        {
-          "Option": "",
-          "OptionToCheck": "",
-          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
         }
       ],
       "Type": 0,
@@ -15905,29 +15671,6 @@
           "Option": "オバケに待ち伏せされてるかもイベント終了",
           "OptionToCheck": "オバケに待ち伏せされてるかもイベント終了",
           "Effect": "Энергия+20"
-        }
-      ],
-      "Type": 1,
-      "CardName": "［ターボエンジン全開宣言！］ツインターボ"
-    },
-    {
-      "EventName": "捕まらないもん！",
-      "EventNameToCheck": "捕まらないもん",
-      "EventOptionsList": [
-        {
-          "Option": "よし、行ってこい！成功",
-          "OptionToCheck": "よし、行ってこい成功",
-          "Effect": "Скорость+15\nУровень отношений+5\n「先頭プライド」 умение Lv+3"
-        },
-        {
-          "Option": "よし、行ってこい！失敗",
-          "OptionToCheck": "よし、行ってこい失敗",
-          "Effect": "Энергия-10\nСкорость+10"
-        },
-        {
-          "Option": "ここは我慢だよイベント終了",
-          "OptionToCheck": "ここは我慢だよイベント終了",
-          "Effect": "Энергия+25"
         }
       ],
       "Type": 1,
@@ -21191,29 +20934,6 @@
       "CardName": "【アマゾネス・ラピス】ヒシアマゾン"
     },
     {
-      "EventName": "誰だろうと風紀は絶対っス!",
-      "EventNameToCheck": "誰だろうと風紀は絶対っス",
-      "EventOptionsList": [
-        {
-          "Option": "とにかく、これで安心だね",
-          "OptionToCheck": "とにかく、これで安心だね",
-          "Effect": "Максимум энергии+4\nЭнергия-10\nВыносливость+10\nСила+10\nСила воли+5\n「末脚」 умение Lv+1\nУровень отношений+"
-        },
-        {
-          "Option": "名コンビだったね",
-          "OptionToCheck": "名コンビだったね",
-          "Effect": "Энергия-10\nМотивация+\nВыносливость+5\nСила+5\nУровень отношений+5"
-        },
-        {
-          "Option": "‥‥‥もし霊がビビらなかったら?",
-          "OptionToCheck": "‥‥‥もし霊がビビらなかったら",
-          "Effect": "<Окончание>\n※Окончание события\nЭнергия+30\n「差しためらい」 умение Lv+1"
-        }
-      ],
-      "Type": 1,
-      "CardName": "［Head-on fight！］バンブーメモリー"
-    },
-    {
       "EventName": "ライバル、打倒っス!",
       "EventNameToCheck": "ライバル、打倒っス",
       "EventOptionsList": [
@@ -21595,6 +21315,566 @@
       ],
       "Type": 1,
       "CardName": "［ウマ王伝説・最強になった件］ゴールドシップ"
+    },
+    {
+      "EventName": "What a wonderful stage！",
+      "EventNameToCheck": "What a wonderful stage",
+      "EventOptionsList": [
+        {
+          "Option": "せっかくだから並んでこようかな",
+          "OptionToCheck": "せっかくだから並んでこようかな",
+          "Effect": "Выносливость+20"
+        },
+        {
+          "Option": "このまま見守るよ",
+          "OptionToCheck": "このまま見守るよ",
+          "Effect": "Скорость+10\nСила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "my dear sister.",
+      "EventNameToCheck": "my dear sister",
+      "EventOptionsList": [
+        {
+          "Option": "ならフジのことは俺が守る！",
+          "OptionToCheck": "ならフジのことは俺が守る",
+          "Effect": "Сила+20"
+        },
+        {
+          "Option": "確かに姉妹に見えなくもないな",
+          "OptionToCheck": "確かに姉妹に見えなくもないな",
+          "Effect": "Интеллект+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "A Quiet Moment",
+      "EventNameToCheck": "A Quiet Moment",
+      "EventOptionsList": [
+        {
+          "Option": "俺にくらいは甘えてほしいな",
+          "OptionToCheck": "俺にくらいは甘えてほしいな",
+          "Effect": "Сила воли+20"
+        },
+        {
+          "Option": "困った時はお互い様だ！",
+          "OptionToCheck": "困った時はお互い様だ",
+          "Effect": "Выносливость+20\nСлучайно 「練習上手○」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "舞台袖の一幕",
+      "EventNameToCheck": "舞台袖の一幕",
+      "EventOptionsList": [
+        {
+          "Option": "いろいろ弱点を教えてもらった",
+          "OptionToCheck": "いろいろ弱点を教えてもらった",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "公演の楽しみ方を教えてもらっただけ",
+          "OptionToCheck": "公演の楽しみ方を教えてもらっただけ",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "星を見上げて",
+      "EventNameToCheck": "星を見上げて",
+      "EventOptionsList": [
+        {
+          "Option": "次は本物の星を観に行こう",
+          "OptionToCheck": "次は本物の星を観に行こう",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "一緒ならなんだって特別さ",
+          "OptionToCheck": "一緒ならなんだって特別さ",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "愛した日々に悔いはない",
+      "EventNameToCheck": "愛した日々に悔いはない",
+      "EventOptionsList": [
+        {
+          "Option": "『ミュージカルと演劇の軌跡』",
+          "OptionToCheck": "ミュージカルと演劇の軌跡",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "『アングラ演劇のススメ』",
+          "OptionToCheck": "アングラ演劇のススメ",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "2大スター競演",
+      "EventNameToCheck": "2大スター競演",
+      "EventOptionsList": [
+        {
+          "Option": "あえてのヒロイン！",
+          "OptionToCheck": "あえてのヒロイン",
+          "Effect": "Сила воли+10\nSkill point+15"
+        },
+        {
+          "Option": "物語を盛り上げる語り部",
+          "OptionToCheck": "物語を盛り上げる語り部",
+          "Effect": "「かく乱」 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "君のためだけ",
+      "EventNameToCheck": "君のためだけ",
+      "EventOptionsList": [
+        {
+          "Option": "フジキセキを抱いて1階へ飛び下りる",
+          "OptionToCheck": "フジキセキを抱いて1階へ飛び下りる",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "囮になる",
+          "OptionToCheck": "囮になる",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "人生最大の幸福とは",
+      "EventNameToCheck": "人生最大の幸福とは",
+      "EventOptionsList": [
+        {
+          "Option": "とりあえず飲み物を渡す",
+          "OptionToCheck": "とりあえず飲み物を渡す",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "タオルを渡す",
+          "OptionToCheck": "タオルを渡す",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "急いで替えのシャツを買いに行く",
+          "OptionToCheck": "急いで替えのシャツを買いに行く",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "秀麗なる門番",
+      "EventNameToCheck": "秀麗なる門番",
+      "EventOptionsList": [
+        {
+          "Option": "\"女傑\"!ヒシアマゾン風に!!",
+          "OptionToCheck": "\"女傑\"ヒシアマゾン風に",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "\"女帝\"エアグルーヴ風に",
+          "OptionToCheck": "\"女帝\"エアグルーヴ風に",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "第一幕　スマイル",
+      "EventNameToCheck": "第一幕　スマイル",
+      "EventOptionsList": [
+        {
+          "Option": "三冠路線",
+          "OptionToCheck": "三冠路線",
+          "Effect": "Сила воли+10\n※ Подтвержденные целевые гонки 「日本ダービー」「菊花賞」"
+        },
+        {
+          "Option": "マイル路線",
+          "OptionToCheck": "マイル路線",
+          "Effect": "Сила+10\n※ Подтвержденные целевые гонки「NHKマイルC」「マイルCS」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "＠DREAM_MAKER",
+      "EventNameToCheck": "＠DREAM_MAKER",
+      "EventOptionsList": [
+        {
+          "Option": "見る専かなぁ",
+          "OptionToCheck": "見る専かなぁ",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "記録のためのブログなら……",
+          "OptionToCheck": "記録のためのブログなら",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "息をつかずに、外郎売",
+          "OptionToCheck": "息をつかずに、外郎売",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "アクロバティック・「Make debut!」",
+          "OptionToCheck": "アクロバティックMake debut",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "器用さが肝心・傘回し",
+          "OptionToCheck": "器用さが肝心傘回し",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "初詣",
+      "EventNameToCheck": "初詣",
+      "EventOptionsList": [
+        {
+          "Option": "今日はちゃんと休もう",
+          "OptionToCheck": "今日はちゃんと休もう",
+          "Effect": "Энергия+30"
+        },
+        {
+          "Option": "新春マラソンに参加しよう",
+          "OptionToCheck": "新春マラソンに参加しよう",
+          "Effect": "Все характеристики+5"
+        },
+        {
+          "Option": "出走予定レースの下調べをしよう！",
+          "OptionToCheck": "出走予定レースの下調べをしよう",
+          "Effect": "Skill point+35"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "最高のダンス",
+          "OptionToCheck": "最高のダンス",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "調和のとれたパフォーマンス",
+          "OptionToCheck": "調和のとれたパフォーマンス",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "追加の自主トレ",
+      "EventNameToCheck": "追加の自主トレ",
+      "EventOptionsList": [
+        {
+          "Option": "いいよ！",
+          "OptionToCheck": "いいよ",
+          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с директором+5"
+        },
+        {
+          "Option": "英気を養おう！",
+          "OptionToCheck": "英気を養おう",
+          "Effect": "Энергия+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "夏合宿（2年目）にて",
+      "EventNameToCheck": "夏合宿2年目にて",
+      "EventOptionsList": [
+        {
+          "Option": "抱えてもらう",
+          "OptionToCheck": "抱えてもらう",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "近道の急坂を通って帰る",
+          "OptionToCheck": "近道の急坂を通って帰る",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "愛情はほどほどに……",
+      "EventNameToCheck": "愛情はほどほどに",
+      "EventOptionsList": [
+        {
+          "Option": "ひと口だけにしておこう",
+          "OptionToCheck": "ひと口だけにしておこう",
+          "Effect": "Энергия+10\nSkill point+5"
+        },
+        {
+          "Option": "ありがたくいただこう",
+          "OptionToCheck": "ありがたくいただこう",
+          "Effect": "Энергия+30\nSkill point+10\nНебольшой шанс \nСкорость-5\nСила+5\n「太り気味」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "レース勝利！",
+      "EventNameToCheck": "レース勝利",
+      "EventOptionsList": [
+        {
+          "Option": "選択肢上",
+          "OptionToCheck": "選択肢上",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+5～+10\nSkill point+35/+45\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "選択肢下",
+          "OptionToCheck": "選択肢下",
+          "Effect": "Энергия-5/-20/-30\nСлучайно 1 характеристика+5～+10\nSkill point+35/+45\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "お大事に！",
+      "EventNameToCheck": "お大事に",
+      "EventOptionsList": [
+        {
+          "Option": "選択肢上",
+          "OptionToCheck": "選択肢上",
+          "Effect": "Провал:\n└Мотивация-1\n└Последний тип тренировки-5～10\n└Случайно 「練習ベタ」\nУспех:\n└「練習上手○」"
+        },
+        {
+          "Option": "選択肢下",
+          "OptionToCheck": "選択肢下",
+          "Effect": "Тоже самое"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【シューティンスタァ・ルヴゥ】フジキセキ"
+    },
+    {
+      "EventName": "焦らずにいきましょう",
+      "EventNameToCheck": "焦らずにいきましょう",
+      "EventOptionsList": [
+        {
+          "Option": "間違いない",
+          "OptionToCheck": "間違いない",
+          "Effect": "Сила воли+20\nСлучайно 「注目株」"
+        },
+        {
+          "Option": "今はまだ甘えるくらいでいい",
+          "OptionToCheck": "今はまだ甘えるくらいでいい",
+          "Effect": "Выносливость+10\nСила+10\nСлучайно 「注目株」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【マーマリングストリーム】スーパークリーク"
+    },
+    {
+      "EventName": "レース敗北",
+      "EventNameToCheck": "レース敗北",
+      "EventOptionsList": [
+        {
+          "Option": "今日はいったん休もう",
+          "OptionToCheck": "今日はいったん休もう",
+          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "帰り道で反省会だね",
+          "OptionToCheck": "帰り道で反省会だね",
+          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【岩穿つ青】グラスワンダー"
+    },
+    {
+      "EventName": "レース敗北",
+      "EventNameToCheck": "レース敗北",
+      "EventOptionsList": [
+        {
+          "Option": "学級委員長しっかり！",
+          "OptionToCheck": "学級委員長しっかり",
+          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "失敗は悪いことじゃない",
+          "OptionToCheck": "失敗は悪いことじゃない",
+          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【サクラ、すすめ！】サクラバクシンオー"
+    },
+    {
+      "EventName": "捕まらないもん！",
+      "EventNameToCheck": "捕まらないもん",
+      "EventOptionsList": [
+        {
+          "Option": "よし、行ってこい！",
+          "OptionToCheck": "よし、行ってこい",
+          "Effect": "Успех:\n<Продолжение события>\nСкорость+15\nУровень отношений+5\n「先頭プライド」 умение Lv+3\nПровал:\nЭнергия-10\nСкорость+10"
+        },
+        {
+          "Option": "ここは我慢だよ",
+          "OptionToCheck": "ここは我慢だよ",
+          "Effect": "<Прекращение события>\nЭнергия+25"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［ターボエンジン全開宣言！］ツインターボ"
+    },
+    {
+      "EventName": "誰だろうと風紀は絶対っス!",
+      "EventNameToCheck": "誰だろうと風紀は絶対っス",
+      "EventOptionsList": [
+        {
+          "Option": "とにかく、これで安心だね",
+          "OptionToCheck": "とにかく、これで安心だね",
+          "Effect": "Успех:\nМаксимум энергии+4\nЭнергия-10\nВыносливость+10\nСила+10\nСила воли+5\n「末脚」 умение Lv+1\nУровень отношений+5\nПровал:\nЭнергия-20\nВыносливость+10\nСила+10\nСила воли+5\nУровень отношений+5\nПровал 2\nЭнергия-20\nВыносливость+10\nСила воли+10\n「空回り」"
+        },
+        {
+          "Option": "名コンビだったね",
+          "OptionToCheck": "名コンビだったね",
+          "Effect": "Энергия-10\nМотивация+\nВыносливость+5\nСила+5\nУровень отношений+5"
+        },
+        {
+          "Option": "‥‥‥もし霊がビビらなかったら?",
+          "OptionToCheck": "‥‥‥もし霊がビビらなかったら",
+          "Effect": "<Прекращение события>\nЭнергия+30\n「差しためらい」 умение Lv+1"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［Head-on fight！］バンブーメモリー"
+    },
+    {
+      "EventName": "どぎまぎアフターヌーンティー！",
+      "EventNameToCheck": "どぎまぎアフターヌーンティー",
+      "EventOptionsList": [
+        {
+          "Option": "貴方たちで分け合えば食べきれる!",
+          "OptionToCheck": "貴方たちで分け合えば食べきれる",
+          "Effect": "Энергия+10\nМотивация+"
+        },
+        {
+          "Option": "テイクアウトにする?",
+          "OptionToCheck": "テイクアウトにする",
+          "Effect": "※Прекращение события\nИнтеллект+10\nSkill point+15\n「先行のコツ○」 умение Lv+3"
+        }
+      ],
+      "Type": 1,
+      "CardName": "[爽快!ウィニングショット!]メジロライアン"
+    },
+    {
+      "EventName": "みんなで作る特性ドリンク♪",
+      "EventNameToCheck": "みんなで作る特性ドリンク",
+      "EventOptionsList": [
+        {
+          "Option": "それだけ2人が好きってことなんだな",
+          "OptionToCheck": "それだけ2人が好きってことなんだな",
+          "Effect": "Успех:\nЭнергия+10\nСкорость+5\nИнтеллект+5\nSkill point+10\nПровал:\nИнтеллект+10"
+        },
+        {
+          "Option": "ライバルをよくチェックしてるんだな",
+          "OptionToCheck": "ライバルをよくチェックしてるんだな",
+          "Effect": "Мотивация+\nСкорость+10"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［その心に吹きすさぶ］メジロアルダン"
+    },
+    {
+      "EventName": "硝子の少女は学びたい",
+      "EventNameToCheck": "硝子の少女は学びたい",
+      "EventOptionsList": [
+        {
+          "Option": "『3分で出来る！健康アスリートレシピ』",
+          "OptionToCheck": "3分で出来る健康アスリートレシピ",
+          "Effect": "Скорость+10\nУровень отношений+5"
+        },
+        {
+          "Option": "『脳を変える快眠のコツ』",
+          "OptionToCheck": "脳を変える快眠のコツ",
+          "Effect": "Энергия+10\nИнтеллект+5\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［その心に吹きすさぶ］メジロアルダン"
+    },
+    {
+      "EventName": "硝子の少女は遊びたい",
+      "EventNameToCheck": "硝子の少女は遊びたい",
+      "EventOptionsList": [
+        {
+          "Option": "『かるた』なんてどう？",
+          "OptionToCheck": "かるたなんてどう",
+          "Effect": "Скорость+10\nИнтеллект+10\nУровень отношений+5"
+        },
+        {
+          "Option": "ウマトックに映え動画をアップとか？",
+          "OptionToCheck": "ウマトックに映え動画をアップとか",
+          "Effect": "「先行ためらい」 умение Lv+1\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［その心に吹きすさぶ］メジロアルダン"
+    },
+    {
+      "EventName": "どうすれば",
+      "EventNameToCheck": "どうすれば",
+      "EventOptionsList": [
+        {
+          "Option": "一緒に併走してあげるのは？",
+          "OptionToCheck": "一緒に併走してあげるのは",
+          "Effect": "Скорость+5\nВыносливость+5\nИнтеллект+5\nУровень отношений+5"
+        },
+        {
+          "Option": "その左回りにコツが隠されてるのかも",
+          "OptionToCheck": "その左回りにコツが隠されてるのかも",
+          "Effect": "「左回り○」 умение Lv+1\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［トレセン学園］サイレンススズカ"
     }
   ]
 }

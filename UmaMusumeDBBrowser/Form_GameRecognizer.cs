@@ -401,6 +401,8 @@ namespace UmaMusumeDBBrowser
                 if (skillControlManager.SkillId[i] != -1)
                     ids.Add(skillControlManager.SkillId[i]);
             }
+            if (ids.Count == 0)
+                MessageBox.Show("Skill list is empty.");
             parentForm.LoadTableByIds("skill_data", ids);
             if (parentForm.WindowState == FormWindowState.Minimized)
                 parentForm.WindowState = FormWindowState.Normal;

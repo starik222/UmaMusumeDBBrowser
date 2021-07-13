@@ -136,7 +136,7 @@ namespace UmaMusumeDBBrowser
             Mat hsvImage = new Mat();
             CvInvoke.CvtColor(image, hsvImage, ColorConversion.Bgr2Hsv);
             Mat txtImg = new Mat();
-            CvInvoke.InRange(hsvImage, new ScalarArray(new MCvScalar(24, 70, 40)), new ScalarArray(new MCvScalar(26, 150, 100)), txtImg);
+            CvInvoke.InRange(hsvImage, new ScalarArray(new MCvScalar(12, 63, 111)), new ScalarArray(new MCvScalar(13, 211, 206)), txtImg);
 
 
             pictureBox1.Image = txtImg.ToBitmap();
