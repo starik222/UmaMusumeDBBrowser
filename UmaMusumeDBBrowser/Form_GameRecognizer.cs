@@ -370,6 +370,8 @@ namespace UmaMusumeDBBrowser
                     if(!gameReader.SetWindowInfo(GameReader.GameType.BluestacksV5, handle))
                         goto gameNotFound;
                 }
+                gameReader.BsTopPanelVisible = !checkBox2.Checked;
+                gameReader.BsRightPanelVisible = !checkBox3.Checked;
             }
             gameReader.StartAsync(/*(string)comboBox1.SelectedItem,*/ (int)numericUpDown1.Value * 1000);
             IsReaderStarted(true);
@@ -451,6 +453,8 @@ namespace UmaMusumeDBBrowser
             dataGridView1.Visible = v;
             label5.Visible = v;
             button2.Visible = v;
+            checkBox2.Visible = v;
+            checkBox3.Visible = v;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

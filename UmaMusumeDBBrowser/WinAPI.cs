@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -41,7 +42,48 @@ namespace UmaMusumeDBBrowser
     /// </summary>
     public class User32
     {
+        public const UInt32 WM_GETTEXT = 0x000D;
+        public const UInt32 WM_GETTEXTLENGTH = 0x000E;
 
+        public delegate bool EnumWindowProc(IntPtr hWnd, IntPtr parameter);
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct WINDOWINFO
+        {
+            public uint cbSize;
+            public RECT rcWindow;
+            public RECT rcClient;
+            public uint dwStyle;
+            public uint dwExStyle;
+            public uint dwWindowStatus;
+            public uint cxWindowBorders;
+            public uint cyWindowBorders;
+            public ushort atomWindowType;
+            public ushort wCreatorVersion;
+
+            public WINDOWINFO(Boolean? filler) : this()   // Allows automatic initialization of "cbSize" with "new WINDOWINFO(null/true/false)".
+            {
+                cbSize = (UInt32)(Marshal.SizeOf(typeof(WINDOWINFO)));
+            }
+        }
+
+        public delegate bool EnumedWindow(IntPtr handleWindow, ArrayList handles);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool EnumWindows(EnumedWindow lpEnumFunc, ArrayList lParam);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, [Out] StringBuilder lParam);
+        [return: MarshalAs(UnmanagedType.Bool)]
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern bool GetWindowInfo(IntPtr hwnd, ref WINDOWINFO pwi);
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool EnumChildWindows(IntPtr window, EnumWindowProc callback, IntPtr i);
+        [DllImport("user32")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool EnumChildWindows(IntPtr window, EnumedWindow callback, ArrayList lParam);
         [DllImport("user32.dll")]
         public static extern IntPtr GetDesktopWindow();
         [DllImport("user32.dll")]

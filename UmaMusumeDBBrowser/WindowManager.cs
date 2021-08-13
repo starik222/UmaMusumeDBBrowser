@@ -4,6 +4,9 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.Data;
+using System.Collections.Generic;
+using System.Text;
+using System.Collections;
 
 namespace UmaMusumeDBBrowser
 {
@@ -143,6 +146,73 @@ namespace UmaMusumeDBBrowser
                 return null;
             }
         }
+
+        public static List<IntPtr> GetChildWindows(IntPtr parent)
+        {
+            List<IntPtr> result = new List<IntPtr>();
+            GCHandle listHandle = GCHandle.Alloc(result);
+            try
+            {
+                User32.EnumWindowProc childProc = new User32.EnumWindowProc(EnumWindow);
+                User32.EnumChildWindows(parent, childProc, GCHandle.ToIntPtr(listHandle));
+            }
+            finally
+            {
+                if (listHandle.IsAllocated)
+                    listHandle.Free();
+            }
+            return result;
+        }
+
+        private static bool EnumWindow(IntPtr handle, IntPtr pointer)
+        {
+            GCHandle gch = GCHandle.FromIntPtr(pointer);
+            List<IntPtr> list = gch.Target as List<IntPtr>;
+            if (list == null)
+            {
+                throw new InvalidCastException("GCHandle Target could not be cast as List<IntPtr>");
+            }
+            list.Add(handle);
+            return true;
+        }
+
+        public static User32.WINDOWINFO GetWindowInfo(IntPtr handle)
+        {
+            User32.WINDOWINFO info = new User32.WINDOWINFO();
+            info.cbSize = (uint)Marshal.SizeOf(info);
+            User32.GetWindowInfo(handle, ref info);
+            return info;
+        }
+
+        public static string GetWindowTextRaw(IntPtr hwnd)
+        {
+            // Allocate correct string length first
+            int length = (int)User32.SendMessage(hwnd, User32.WM_GETTEXTLENGTH, IntPtr.Zero, IntPtr.Zero);
+            StringBuilder sb = new StringBuilder(length + 1);
+            User32.SendMessage(hwnd, User32.WM_GETTEXT, (IntPtr)sb.Capacity, sb);
+            return sb.ToString();
+        }
+
+        public static ArrayList GetAllWindows()
+        {
+            var windowHandles = new ArrayList();
+            User32.EnumedWindow callBackPtr = GetWindowHandle;
+            User32.EnumWindows(callBackPtr, windowHandles);
+
+            //foreach (IntPtr windowHandle in windowHandles.ToArray())
+            //{
+            //    User32.EnumChildWindows(windowHandle, callBackPtr, windowHandles);
+            //}
+
+            return windowHandles;
+        }
+
+        private static bool GetWindowHandle(IntPtr windowHandle, ArrayList windowHandles)
+        {
+            windowHandles.Add(windowHandle);
+            return true;
+        }
+
 
     }
 }

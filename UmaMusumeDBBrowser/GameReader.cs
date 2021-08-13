@@ -37,6 +37,9 @@ namespace UmaMusumeDBBrowser
         private GameType gameType;
         private IntPtr gameHandle;
 
+        public bool BsTopPanelVisible { get; set; } = true;
+        public bool BsRightPanelVisible { get; set; } = true;
+
         private const float optionsConfidence = 0.6f;
 
 
@@ -122,8 +125,9 @@ namespace UmaMusumeDBBrowser
                     goto Exit;
                 if (gameType == GameType.BluestacksV4)
                 {
-                    Rectangle rectangle = new Rectangle(settings.BlueStacksPanel.Ver4.X, settings.BlueStacksPanel.Ver4.Height, origImg.Width - settings.BlueStacksPanel.Ver4.X - settings.BlueStacksPanel.Ver4.Width,
-                        origImg.Height - settings.BlueStacksPanel.Ver4.Y - settings.BlueStacksPanel.Ver4.Height);
+                    Rectangle rectangle = new Rectangle(settings.BlueStacksPanel.Ver4.X, settings.BlueStacksPanel.Ver4.Height, origImg.Width - settings.BlueStacksPanel.Ver4.X - (BsRightPanelVisible ? settings.BlueStacksPanel.Ver4.Width : settings.BlueStacksPanel.Ver4.X),
+                        origImg.Height - settings.BlueStacksPanel.Ver4.Y - (BsTopPanelVisible ? settings.BlueStacksPanel.Ver4.Height : settings.BlueStacksPanel.Ver4.Y));
+
                     if (rectangle.Width <= 0 || rectangle.Height <= 0 || rectangle.X <= 0 || rectangle.Y <= 0)
                     {
                         goto Exit;
@@ -132,8 +136,8 @@ namespace UmaMusumeDBBrowser
                 }
                 else if (gameType == GameType.BluestacksV5)
                 {
-                    Rectangle rectangle = new Rectangle(settings.BlueStacksPanel.Ver5.X, settings.BlueStacksPanel.Ver5.Height, origImg.Width - settings.BlueStacksPanel.Ver5.X - settings.BlueStacksPanel.Ver5.Width,
-                        origImg.Height - settings.BlueStacksPanel.Ver5.Y - settings.BlueStacksPanel.Ver5.Height);
+                    Rectangle rectangle = new Rectangle(settings.BlueStacksPanel.Ver5.X, settings.BlueStacksPanel.Ver5.Height, origImg.Width - settings.BlueStacksPanel.Ver5.X - (BsRightPanelVisible ? settings.BlueStacksPanel.Ver5.Width : settings.BlueStacksPanel.Ver5.X),
+                        origImg.Height - settings.BlueStacksPanel.Ver5.Y - (BsTopPanelVisible ? settings.BlueStacksPanel.Ver5.Height : settings.BlueStacksPanel.Ver5.Y));
                     if (rectangle.Width <= 0 || rectangle.Height <= 0 || rectangle.X <= 0 || rectangle.Y <= 0)
                     {
                         goto Exit;

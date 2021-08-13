@@ -91,6 +91,8 @@ namespace UmaMusumeDBBrowser
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTempFix = new System.Windows.Forms.Panel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -144,6 +146,8 @@ namespace UmaMusumeDBBrowser
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.checkBox3);
+            this.tabPage1.Controls.Add(this.checkBox2);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.label5);
@@ -832,6 +836,28 @@ namespace UmaMusumeDBBrowser
             this.panelTempFix.Size = new System.Drawing.Size(297, 29);
             this.panelTempFix.TabIndex = 4;
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(132, 14);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(107, 30);
+            this.checkBox2.TabIndex = 12;
+            this.checkBox2.Text = "Верхняя панель\r\nскрыта";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.Visible = false;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(132, 43);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(108, 30);
+            this.checkBox3.TabIndex = 12;
+            this.checkBox3.Text = "Боковая панель\r\nскрыта";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.Visible = false;
+            // 
             // Form_GameRecognizer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -946,5 +972,7 @@ namespace UmaMusumeDBBrowser
         private System.Windows.Forms.Panel panelTempFix;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
