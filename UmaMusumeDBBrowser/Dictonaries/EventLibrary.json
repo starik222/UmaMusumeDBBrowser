@@ -19,6 +19,57 @@
       "CardName": "【Maverick】ナリタブライアン"
     },
     {
+      "EventName": "チュートリアル",
+      "EventNameToCheck": "チュートリアル",
+      "EventOptionsList": [
+        {
+          "Option": "説明を聞く",
+          "OptionToCheck": "説明を聞く",
+          "Effect": "Послушать объяснение"
+        },
+        {
+          "Option": "説明を聞かない",
+          "OptionToCheck": "説明を聞かない",
+          "Effect": "Пропустить объяснение"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Maverick】ナリタブライアン"
+    },
+    {
+      "EventName": "チュートリアル",
+      "EventNameToCheck": "チュートリアル",
+      "EventOptionsList": [
+        {
+          "Option": "『アオハル杯』について",
+          "OptionToCheck": "アオハル杯について",
+          "Effect": "О кубке Аохару"
+        },
+        {
+          "Option": "『アオハル杯』のレースについて",
+          "OptionToCheck": "アオハル杯のレースについて",
+          "Effect": "О гонках Аохару"
+        },
+        {
+          "Option": "チームメンバーとアオハル特訓について",
+          "OptionToCheck": "チームメンバーとアオハル特訓について",
+          "Effect": "О членах команды и специальной тренировке Аохару"
+        },
+        {
+          "Option": "チームの情報について",
+          "OptionToCheck": "チームの情報について",
+          "Effect": "Информация о команде"
+        },
+        {
+          "Option": "もう大丈夫です",
+          "OptionToCheck": "もう大丈夫です",
+          "Effect": "Все понятно"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Maverick】ナリタブライアン"
+    },
+    {
       "EventName": "あんし～ん笹針師、参文上",
       "EventNameToCheck": "あんしーん笹針師、参文上",
       "EventOptionsList": [
@@ -23010,6 +23061,679 @@
       ],
       "Type": 1,
       "CardName": "［トレセン学園］エアシャカール"
+    },
+    {
+      "EventName": "誇りをまとうに相応しく",
+      "EventNameToCheck": "誇りをまとうに相応しく",
+      "EventOptionsList": [
+        {
+          "Option": "とにかくたくさん走って慣れる、かな",
+          "OptionToCheck": "とにかくたくさん走って慣れる、かな",
+          "Effect": "Сила+20"
+        },
+        {
+          "Option": "……ここはお菓子作りだ！",
+          "OptionToCheck": "ここはお菓子作りだ",
+          "Effect": "Skill point+40"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "闇の中にうごめく影は……",
+      "EventNameToCheck": "闇の中にうごめく影は",
+      "EventOptionsList": [
+        {
+          "Option": "とにかく逃げよう！",
+          "OptionToCheck": "とにかく逃げよう",
+          "Effect": "Скорость+10\nСила воли+10"
+        },
+        {
+          "Option": "もう戦うしかない……",
+          "OptionToCheck": "もう戦うしかない",
+          "Effect": "Выносливость+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "賭するは名誉",
+      "EventNameToCheck": "賭するは名誉",
+      "EventOptionsList": [
+        {
+          "Option": "君なら勝てる！",
+          "OptionToCheck": "君なら勝てる",
+          "Effect": "Сила воли+20\nСлучайно 「切れ者」"
+        },
+        {
+          "Option": "仇を…取ってくれ…！",
+          "OptionToCheck": "仇を取ってくれ",
+          "Effect": "Интеллект+20\nСлучайно 「切れ者」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "追憶のFreizeitpark",
+      "EventNameToCheck": "追憶のFreizeitpark",
+      "EventOptionsList": [
+        {
+          "Option": "･･･今日に限っては正解だよ",
+          "OptionToCheck": "今日に限っては正解だよ",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "せっかくだし、もっと見ていったら？",
+          "OptionToCheck": "せっかくだし、もっと見ていったら",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "トレンドを追って",
+      "EventNameToCheck": "トレンドを追って",
+      "EventOptionsList": [
+        {
+          "Option": "合いの手は任せて！",
+          "OptionToCheck": "合いの手は任せて",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "歌い慣れてる歌がいいよ",
+          "OptionToCheck": "歌い慣れてる歌がいいよ",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "教え導くためならば",
+      "EventNameToCheck": "教え導くためならば",
+      "EventOptionsList": [
+        {
+          "Option": "手早く済む方法があるぞ",
+          "OptionToCheck": "手早く済む方法があるぞ",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "根気強く、理解を進めよう！",
+          "OptionToCheck": "根気強く、理解を進めよう",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "和の心に触れて",
+      "EventNameToCheck": "和の心に触れて",
+      "EventOptionsList": [
+        {
+          "Option": "今度は宿泊してみる、とか？",
+          "OptionToCheck": "今度は宿泊してみる、とか",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "仲居さんに質問してみよう",
+          "OptionToCheck": "仲居さんに質問してみよう",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "馴染みゆく日々の中で",
+      "EventNameToCheck": "馴染みゆく日々の中で",
+      "EventOptionsList": [
+        {
+          "Option": "友達に聞いてみたら？",
+          "OptionToCheck": "友達に聞いてみたら",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "積み重ねていくしかない",
+          "OptionToCheck": "積み重ねていくしかない",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "しばらくドイツ語禁止にするとか",
+          "OptionToCheck": "しばらくドイツ語禁止にするとか",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "試験:フラッシュプラン",
+      "EventNameToCheck": "試験フラッシュプラン",
+      "EventOptionsList": [
+        {
+          "Option": "次のトレーニングは任せよう!",
+          "OptionToCheck": "次のトレーニングは任せよう",
+          "Effect": "Мотивация+1\nСледующее обучение будет только 1 вида"
+        },
+        {
+          "Option": "遠慮する",
+          "OptionToCheck": "遠慮する",
+          "Effect": "Нет эффекта\n※ Событие без выбора 「結果：フラッシュプラン」 не произойдет"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "誠意を貴方へ",
+      "EventNameToCheck": "誠意を貴方へ",
+      "EventOptionsList": [
+        {
+          "Option": "いろいろ見て決めたい",
+          "OptionToCheck": "いろいろ見て決めたい",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "君が選んでくれたものならなんでも！",
+          "OptionToCheck": "君が選んでくれたものならなんでも",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "天道の守護者",
+      "EventNameToCheck": "天道の守護者",
+      "EventOptionsList": [
+        {
+          "Option": "体力がもたないかも……",
+          "OptionToCheck": "体力がもたないかも",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "力になれるなら！",
+          "OptionToCheck": "力になれるなら",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "空飛ぶガイダンス",
+      "EventNameToCheck": "空飛ぶガイダンス",
+      "EventOptionsList": [
+        {
+          "Option": "1日観察してもらう、とか",
+          "OptionToCheck": "1日観察してもらう、とか",
+          "Effect": "Скорость+5\nВыносливость+5\nСила+5"
+        },
+        {
+          "Option": "コツを教えてあげたら？",
+          "OptionToCheck": "コツを教えてあげたら",
+          "Effect": "「根幹距離○」 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "ドイツの歌がいいんじゃないか？",
+          "OptionToCheck": "ドイツの歌がいいんじゃないか",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "…まずはお手本を！",
+          "OptionToCheck": "まずはお手本を",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "追加の自主トレ",
+      "EventNameToCheck": "追加の自主トレ",
+      "EventOptionsList": [
+        {
+          "Option": "行っておいで！",
+          "OptionToCheck": "行っておいで",
+          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с директором+5"
+        },
+        {
+          "Option": "今日はもう休まないと",
+          "OptionToCheck": "今日はもう休まないと",
+          "Effect": "Энергия+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "凧揚げで成長祈願！",
+          "OptionToCheck": "凧揚げで成長祈願",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "おせちで健康祈願！",
+          "OptionToCheck": "おせちで健康祈願",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "書初めで決意祈願！",
+          "OptionToCheck": "書初めで決意祈願",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "初詣",
+      "EventNameToCheck": "初詣",
+      "EventOptionsList": [
+        {
+          "Option": "寝正月をしよう！",
+          "OptionToCheck": "寝正月をしよう",
+          "Effect": "Энергия+30"
+        },
+        {
+          "Option": "お願いごとを書こう！",
+          "OptionToCheck": "お願いごとを書こう",
+          "Effect": "Все характеристики+5"
+        },
+        {
+          "Option": "年賀状を交換しよう！",
+          "OptionToCheck": "年賀状を交換しよう",
+          "Effect": "Skill point+35"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "夏合宿（2年目）にて",
+      "EventNameToCheck": "夏合宿2年目にて",
+      "EventOptionsList": [
+        {
+          "Option": "パワーを出すコツを教えて",
+          "OptionToCheck": "パワーを出すコツを教えて",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "最後まで粘るコツをおしえて",
+          "OptionToCheck": "最後まで粘るコツをおしえて",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "レース勝利！",
+      "EventNameToCheck": "レース勝利",
+      "EventOptionsList": [
+        {
+          "Option": "おめでとう！",
+          "OptionToCheck": "おめでとう",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+5～+10\nSkill point+35/+45\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "もっと上を目指そう",
+          "OptionToCheck": "もっと上を目指そう",
+          "Effect": "Энергия-5/-20/-30\nСлучайно 1 характеристика+5～+10\nSkill point+35/+45\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "揚げたてのサクサクを！",
+      "EventNameToCheck": "揚げたてのサクサクを",
+      "EventOptionsList": [
+        {
+          "Option": "1つを半分こしないか？",
+          "OptionToCheck": "1つを半分こしないか",
+          "Effect": "Энергия+10、Skill point+5"
+        },
+        {
+          "Option": "歩き回った分たくさん食べよう！",
+          "OptionToCheck": "歩き回った分たくさん食べよう",
+          "Effect": "Энергия+30\nSkill point+10\nСкорость-5\nСила+5\nЭффект 「太り気味」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "お大事に！",
+      "EventNameToCheck": "お大事に",
+      "EventOptionsList": [
+        {
+          "Option": "今はしっかり休んで",
+          "OptionToCheck": "今はしっかり休んで",
+          "Effect": "Провал:\n└Мотивация-1\n└Последний тип тренировки-5～10\n└Случайно 「練習ベタ」\nУспех:\n└「練習上手○」"
+        },
+        {
+          "Option": "続けられるのか？",
+          "OptionToCheck": "続けられるのか",
+          "Effect": "Тоже самое"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Meisterschaft】エイシンフラッシュ"
+    },
+    {
+      "EventName": "追加の自主トレ",
+      "EventNameToCheck": "追加の自主トレ",
+      "EventOptionsList": [
+        {
+          "Option": "その覚悟、受け取った！",
+          "OptionToCheck": "その覚悟、受け取った",
+          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с директором+5"
+        },
+        {
+          "Option": "他人のペースに乱されるな",
+          "OptionToCheck": "他人のペースに乱されるな",
+          "Effect": "Энергия+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【スターライトビート】オグリキャップ"
+    },
+    {
+      "EventName": "私がお守りです！",
+      "EventNameToCheck": "私がお守りです",
+      "EventOptionsList": [
+        {
+          "Option": "お参りがいいかな",
+          "OptionToCheck": "お参りがいいかな",
+          "Effect": "Выносливость+20"
+        },
+        {
+          "Option": "開運グッズがいいかな",
+          "OptionToCheck": "開運グッズがいいかな",
+          "Effect": "「ラッキーセブン」 умение Lv+2"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【吉兆・初あらし】マチカネフクキタル"
+    },
+    {
+      "EventName": "今だけ！パワースポット",
+      "EventNameToCheck": "今だけパワースポット",
+      "EventOptionsList": [
+        {
+          "Option": "1＝次の駅で降りてみよう",
+          "OptionToCheck": "1＝次の駅で降りてみよう",
+          "Effect": "Выносливость+10\nСила+10"
+        },
+        {
+          "Option": "6＝行けるところまで行ってみよう",
+          "OptionToCheck": "6＝行けるところまで行ってみよう",
+          "Effect": "Интеллект+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【吉兆・初あらし】マチカネフクキタル"
+    },
+    {
+      "EventName": "フクキタル来れば福来たる",
+      "EventNameToCheck": "フクキタル来れば福来たる",
+      "EventOptionsList": [
+        {
+          "Option": "人助けはどうだ？",
+          "OptionToCheck": "人助けはどうだ",
+          "Effect": "Скорость+20\nСлучайно 「注目株」"
+        },
+        {
+          "Option": "どうか俺に幸運を！",
+          "OptionToCheck": "どうか俺に幸運を",
+          "Effect": "Скорость+7\nВыносливость+7\nСила+7\nСлучайно 「注目株」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【吉兆・初あらし】マチカネフクキタル"
+    },
+    {
+      "EventName": "共に極めよ、かっこ良さの道",
+      "EventNameToCheck": "共に極めよ、かっこ良さの道",
+      "EventOptionsList": [
+        {
+          "Option": "ここは任せろ！",
+          "OptionToCheck": "ここは任せろ",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "逃げるぞ！",
+          "OptionToCheck": "逃げるぞ",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "ウオッカ、君に任せる",
+          "OptionToCheck": "ウオッカ、君に任せる",
+          "Effect": "Выносливость+5\nСила воли+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ワイルドトップギア】ウオッカ"
+    },
+    {
+      "EventName": "抑えられないキモチ",
+      "EventNameToCheck": "抑えられないキモチ",
+      "EventOptionsList": [
+        {
+          "Option": "甘いお菓子を食べよう",
+          "OptionToCheck": "甘いお菓子を食べよう",
+          "Effect": "Энергия+10\nУровень отношений+5"
+        },
+        {
+          "Option": "走って頭をからっぽにしよう",
+          "OptionToCheck": "走って頭をからっぽにしよう",
+          "Effect": "Энергия-5\nСкорость+5\nСила+5\nУстранение дебафов\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［願いまでは拭わない］ナイスネイチャ"
+    },
+    {
+      "EventName": "奏でようWINNING!",
+      "EventNameToCheck": "奏でようWINNING",
+      "EventOptionsList": [
+        {
+          "Option": "親睦会!!",
+          "OptionToCheck": "親睦会",
+          "Effect": "Сила воли+10\n「栄養補給」 умение Lv+1"
+        },
+        {
+          "Option": "体を動かせば、練習にもなるよ",
+          "OptionToCheck": "体を動かせば、練習にもなるよ",
+          "Effect": "Скорость+10\n「軽やかステップ」 умение Lv+1"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［WINNING DREAM］サイレンススズカ"
+    },
+    {
+      "EventName": "意外な一面",
+      "EventNameToCheck": "意外な一面",
+      "EventOptionsList": [
+        {
+          "Option": "まずは体力をつけてみては？",
+          "OptionToCheck": "まずは体力をつけてみては",
+          "Effect": "Успех:\n【URA/Кубок Аохару】\nЭнергия+18\nМотивация+\nВыносливость+12\n「ペースアップ」 умение Lv+3\nУровень отношений+10\nВозможность отдохнуть\nПровал:\n【URA/Кубок Аохару】\n「おひとり様○」 умение Lv+5\nУровень отношений-10"
+        },
+        {
+          "Option": "何度でも挑戦してみましょう！",
+          "OptionToCheck": "何度でも挑戦してみましょう",
+          "Effect": "【URA/Кубок Аохару】\nМотивация+\nСила воли+18\nУровень отношений\nВозможность отдохнуть"
+        },
+        {
+          "Option": "ちょっと今日は急いでいるので・・・・・",
+          "OptionToCheck": "ちょっと今日は急いでいるので",
+          "Effect": "【Кубок Аохару】\n「一匹狼」 умение Lv+3\nУровень отношений-10"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［徹底管理主義］樫本理子"
+    },
+    {
+      "EventName": "喜ぶ顔を思い浮かべて",
+      "EventNameToCheck": "喜ぶ顔を思い浮かべて",
+      "EventOptionsList": [
+        {
+          "Option": "ここは『大容量ハチミルク』で！",
+          "OptionToCheck": "ここは大容量ハチミルクで",
+          "Effect": "【アオハル杯/URA】\nЭнергия+24\nМотивация+\nВыносливость+12\nСила воли+6\nУровень отношений+5"
+        },
+        {
+          "Option": "やはり『ウマスタ映えソーダ』で！",
+          "OptionToCheck": "やはりウマスタ映えソーダで",
+          "Effect": "【URA】\nМотивация+\nSkill point+37\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［徹底管理主義］樫本理子"
+    },
+    {
+      "EventName": "樫本流、片付け術",
+      "EventNameToCheck": "樫本流、片付け術",
+      "EventOptionsList": [
+        {
+          "Option": "ゴミ捨てをお願いします",
+          "OptionToCheck": "ゴミ捨てをお願いします",
+          "Effect": "【Кубок Аохару】\nВыносливость+15\nУровень отношений+5"
+        },
+        {
+          "Option": "書類の整理をお願いします",
+          "OptionToCheck": "書類の整理をお願いします",
+          "Effect": "【Кубок Аохару】\nСила воли+15\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［徹底管理主義］樫本理子"
+    },
+    {
+      "EventName": "雨の日、ぷかぷか、お花畑",
+      "EventNameToCheck": "雨の日、ぷかぷか、お花畑",
+      "EventOptionsList": [
+        {
+          "Option": "ポジティブに行こう！",
+          "OptionToCheck": "ポジティブに行こう",
+          "Effect": "【URA/Кубок Аохару】\nСила+10\nУровень отношений+5"
+        },
+        {
+          "Option": "幸せは近くに転がっているかも",
+          "OptionToCheck": "幸せは近くに転がっているかも",
+          "Effect": "※<Прекращение события>\n【URA/Кубок Аохару】\nSkill point+40\n「パス上手」 умение Lv1"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［幸せは曲がり角の向こう］ライスシャワー"
+    },
+    {
+      "EventName": "ずうっと、つやつや、魔法の花",
+      "EventNameToCheck": "ずうっと、つやつや、魔法の花",
+      "EventOptionsList": [
+        {
+          "Option": "できたら見せてね！",
+          "OptionToCheck": "できたら見せてね",
+          "Effect": "【URA】\nВыносливость+5\nСила+10\nУровень отношений+5"
+        },
+        {
+          "Option": "次、自分で作るのが楽しみだな！",
+          "OptionToCheck": "次、自分で作るのが楽しみだな",
+          "Effect": "【Кубок Аохару】\nЭнергия+15\nСила+5\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［幸せは曲がり角の向こう］ライスシャワー"
+    },
+    {
+      "EventName": "スマホって時間泥棒じゃん?",
+      "EventNameToCheck": "スマホって時間泥棒じゃん",
+      "EventOptionsList": [
+        {
+          "Option": "まずは1本タイムを計ってみる",
+          "OptionToCheck": "まずは1本タイムを計ってみる",
+          "Effect": "Мотивация+1\nСкорость+5\nУровень отношений+5"
+        },
+        {
+          "Option": "いつもと違う場所でジョギング",
+          "OptionToCheck": "いつもと違う場所でジョギング",
+          "Effect": "Выносливость+10\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［nail on Turf］トーセンジョーダン"
+    },
+    {
+      "EventName": "レビューって半分賭けじゃん?",
+      "EventNameToCheck": "レビューって半分賭けじゃん",
+      "EventOptionsList": [
+        {
+          "Option": "走らない日だけつけるとか",
+          "OptionToCheck": "走らない日だけつけるとか",
+          "Effect": "Энергия+?\nМотивация+1\nУровень отношений+5"
+        },
+        {
+          "Option": "別の活用方法を探す",
+          "OptionToCheck": "別の活用方法を探す",
+          "Effect": "「ラッキーセブン」 умение Lv+1\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［nail on Turf］トーセンジョーダン"
+    },
+    {
+      "EventName": "ターフにネイリスト",
+      "EventNameToCheck": "ターフにネイリスト",
+      "EventOptionsList": [
+        {
+          "Option": "革新的だ！",
+          "OptionToCheck": "革新的だ",
+          "Effect": "Успех:\nSkill point+40\nУровень отношений+5\nПровал:\nМотивация-\nSkill point+10"
+        },
+        {
+          "Option": "やめた方が……",
+          "OptionToCheck": "やめた方が",
+          "Effect": "Выносливость+10\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［nail on Turf］トーセンジョーダン"
+    },
+    {
+      "EventName": "下地あってのネイルっしょ",
+      "EventNameToCheck": "下地あってのネイルっしょ",
+      "EventOptionsList": [
+        {
+          "Option": "オシャレな上にお得ってことだね",
+          "OptionToCheck": "オシャレな上にお得ってことだね",
+          "Effect": "Успех:\nЭнергия+10\n「ペースアップ」 умение Lv+3\nУровень отношений+5\nПровал:\n「ペースアップ」 умение Lv+1"
+        },
+        {
+          "Option": "勝負に真剣なのはカッコいいと思う",
+          "OptionToCheck": "勝負に真剣なのはカッコいいと思う",
+          "Effect": "Энергия-5\nВыносливость+20\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［nail on Turf］トーセンジョーダン"
     }
   ]
 }
