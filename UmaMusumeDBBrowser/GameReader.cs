@@ -29,6 +29,7 @@ namespace UmaMusumeDBBrowser
         private GameDataType lastDataType = GameDataType.NotFound;
         private List<SkillManager.SkillData> lastSkillResult;
         private List<FactorManager.FactorData> lastGenResult;
+        private List<MissionManager.MissionData> lastMissionResult;
         private AllLibraryManager libraryManager;
         private GameSettings settings;
         private CancellationTokenSource tokenSource;
@@ -51,6 +52,7 @@ namespace UmaMusumeDBBrowser
             charReplaceDictonary = replaceChars;
             lastSkillResult = new List<SkillManager.SkillData>();
             lastGenResult = new List<FactorManager.FactorData>();
+            lastMissionResult = new List<MissionManager.MissionData>();
             gameHandle = IntPtr.Zero;
 
         }
@@ -234,6 +236,16 @@ namespace UmaMusumeDBBrowser
                             }
                             break;
                         }
+                    case GameDataType.MissionBtn:
+                        {
+                            var result = GetMissionList(currentImage, dataType.type);
+                            if (result.Count > 0 && !EqualMissionList(result, lastMissionResult))
+                            {
+                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.MissionBtn, DataClass = result });
+                                lastMissionResult = result;
+                            }
+                            break;
+                        }
                     default:
                         {
                             DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = "Other part" });
@@ -250,6 +262,18 @@ namespace UmaMusumeDBBrowser
         }
 
         private bool EqualFactorList(List<FactorManager.FactorData> list1, List<FactorManager.FactorData> list2)
+        {
+            if (list1.Count != list2.Count)
+                return false;
+            for (int i = 0; i < list1.Count; i++)
+            {
+                if (list1[i].Id != list2[i].Id)
+                    return false;
+            }
+            return true;
+        }
+
+        private bool EqualMissionList(List<MissionManager.MissionData> list1, List<MissionManager.MissionData> list2)
         {
             if (list1.Count != list2.Count)
                 return false;
@@ -426,6 +450,62 @@ namespace UmaMusumeDBBrowser
             }
             grayImg.Dispose();
             return factorDatas;
+        }
+
+
+        private List<MissionManager.MissionData> GetMissionList(Image<Bgr, byte> img, GameDataType dataType)
+        {
+            List<MissionManager.MissionData> missionDatas = new List<MissionManager.MissionData>();
+            Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
+            List<GameSettings.GamePart> parts = new List<GameSettings.GamePart>();
+
+            var part = settings.GameParts.Find(a => a.PartName.Equals("MissionBtn"));
+            if (part != null)
+                parts.Add(part);
+            //part = settings.GameParts.Find(a => a.PartName.Equals("MissionBtn2"));
+            //if (part != null)
+            //    parts.Add(part);
+            if (parts.Count == 0)
+                return missionDatas;
+            List<Rectangle> partsLocInfo = GetGamePartsRects(grayImg, parts, 0.75);
+            for (int i = 0; i < partsLocInfo.Count; i++)
+            {
+                //исправление координат
+                Rectangle partRect = partsLocInfo[i];
+                partRect.X -= 335;
+                partRect.Y -= 22;
+                partRect.Width = 320;
+                partRect.Height = 46;
+                if (partRect.Y < 400)
+                    continue;
+                //partRect.Height += 2;
+                //---
+                var result = GetMissionFromPart(img, partRect);
+                if (result != null)
+                    missionDatas.Add(result);
+            }
+            grayImg.Dispose();
+            return missionDatas;
+        }
+
+        private MissionManager.MissionData GetMissionFromPart(Image<Bgr, byte> img, Rectangle partRect)
+        {
+            MissionManager.MissionData missionData = null;
+            Mat textMat = new Mat(img.Mat, partRect);
+            //нужно ли?
+            //CvInvoke.Resize(textMat, textMat, new Size(), 2, 2);
+
+            CvInvoke.CvtColor(textMat, textMat, ColorConversion.Bgr2Gray);
+            if (Program.IsDebug)
+            {
+                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = textMat.ToBitmap() });
+            }
+            string tempText = Program.TessManager.GetTextMultiLine(textMat).Replace("\\n", "");
+            tempText = CorrectText(tempText);
+            textMat.Dispose();
+
+            missionData = libraryManager.MissionLibrary.FindMissionItemByTextDice(tempText);
+            return missionData;
         }
 
         private int GetFactorIndex(Image<Bgr, byte> img, Rectangle bounds)
@@ -1053,6 +1133,7 @@ namespace UmaMusumeDBBrowser
             GenWindow = 7,
             SkillDetailView = 8,
             FactorDetailView = 9,
+            MissionBtn = 10,
             GameNotFound = -1,
             NotFound = -2,
             DebugImage = -3

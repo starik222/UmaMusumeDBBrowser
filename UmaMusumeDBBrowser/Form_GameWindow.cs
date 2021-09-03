@@ -64,6 +64,7 @@ namespace UmaMusumeDBBrowser
 
         private void button4_Click(object sender, EventArgs e)
         {
+            float conf = (float)Convert.ToDecimal(textBox1.Text.Replace(".", ","));
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() != DialogResult.OK)
                 return;
@@ -95,7 +96,7 @@ namespace UmaMusumeDBBrowser
             {
                 CvInvoke.MinMaxLoc(mat, ref minVal, ref maxVal, ref minLoc, ref maxLoc, general_mask);
 
-                if (maxVal > 0.65)
+                if (maxVal > conf)
                 {
                     Rectangle rectangle = new Rectangle(maxLoc, template.Size);
                     CvInvoke.Rectangle(image, rectangle, new MCvScalar(255, 0, 0), 3);

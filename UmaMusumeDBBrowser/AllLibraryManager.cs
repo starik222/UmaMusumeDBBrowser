@@ -13,6 +13,7 @@ namespace UmaMusumeDBBrowser
         public SkillManager SkillLibrary { get; set; }
         public TazunaManager TazunaLibrary { get; set; }
         public FactorManager FactorLibrary { get; set; }
+        public MissionManager MissionLibrary { get; set; }
 
         public AllLibraryManager()
         {
@@ -20,6 +21,7 @@ namespace UmaMusumeDBBrowser
             SkillLibrary = new SkillManager();
             TazunaLibrary = new TazunaManager();
             FactorLibrary = new FactorManager();
+            MissionLibrary = new MissionManager();
         }
 
         public void FillData()
@@ -28,6 +30,7 @@ namespace UmaMusumeDBBrowser
             SkillLibrary.FillData();
             TazunaLibrary.LoadLibrary(Path.Combine(Program.DictonariesDir, "TazunaLibrary.json"));
             FactorLibrary.FillData();
+            MissionLibrary.FillData();
         }
 
 

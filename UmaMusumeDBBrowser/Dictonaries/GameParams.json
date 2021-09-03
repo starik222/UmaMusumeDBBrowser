@@ -292,6 +292,12 @@
           "ImageName": "FactorStar.bmp"
         }
       ]
+    },
+    {
+      "PartName": "MissionBtn",
+      "VerticalState": true,
+      "DataType": 10,
+      "ImageName": "MissionBtn2.bmp"
     }
   ]
 }

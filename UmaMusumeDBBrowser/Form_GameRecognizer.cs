@@ -37,12 +37,14 @@ namespace UmaMusumeDBBrowser
         private EventControlManager controlManager;
         private SkillControlManager skillControlManager;
         private string skillIconPath = null;
+        private List<string> itemIconPathes = null;
 
         public Form_GameRecognizer(string lang)
         {
             InitializeComponent();
             libManager = new AllLibraryManager();
             libManager.FactorLibrary.FillTransDict(Path.Combine(Program.DictonariesDir, "succession_factor" + "_" + lang + ".txt"));
+            libManager.MissionLibrary.FillTransDict(Path.Combine(Program.DictonariesDir, "mission_data" + "_" + lang + ".txt"));
             libManager.FillData();
             settings = JsonConvert.DeserializeObject<GameSettings>(File.ReadAllText(Path.Combine(Program.DictonariesDir, "GameParams.json")));
             LoadImagesToSettings();
@@ -133,9 +135,16 @@ namespace UmaMusumeDBBrowser
                     }
                 case GameReader.GameDataType.GenWindow:
                     {
-                        SelectTab(tabPage6);
+                        SelectTab(tabPage7);
                         SetFactors((List<FactorManager.FactorData>)gameDataArgs.DataClass);
                         Extensions.SetTextToControl(label1, "Щелкните дважды на ячейку для открытия описания умения (если оно есть в тексте).");
+                        break;
+                    }
+                case GameReader.GameDataType.MissionBtn:
+                    {
+                        SelectTab(tabPage7);
+                        SetMissions((List<MissionManager.MissionData>)gameDataArgs.DataClass);
+                        Extensions.SetTextToControl(label1, "Mission list");
                         break;
                     }
                 case GameReader.GameDataType.TazunaAfterHelp:
@@ -177,6 +186,18 @@ namespace UmaMusumeDBBrowser
                     skillIconPath = skillSettings.IconSettings[0].Value[0];
             }
             skillTransDictonary = Program.TransDict.LoadDictonary(Path.Combine(Program.DictonariesDir, "skill_data" + "_" + parentForm.toolStripComboBox1.SelectedItem + ".txt"));
+
+
+            var itemSettings = Program.TableDisplaySettings.Find(a => a.TableName.Equals("item_data"));
+            itemIconPathes = new List<string>();
+            if (itemSettings != null)
+            {
+
+                if (itemSettings.IconSettings.Count > 0)
+                {
+                    itemIconPathes = new List<string>(itemSettings.IconSettings[0].Value);
+                }
+            }
 
             pictureBox6.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Images\\Tazuna.bmp"));
 
@@ -228,6 +249,45 @@ namespace UmaMusumeDBBrowser
                         Extensions.SetGridRowBackColor(dataGridView2, i, Program.ColorManager.SelectedScheme.GrigStyle.BackColor);
                         Extensions.SetGridRowForeColor(dataGridView2, i, Program.ColorManager.SelectedScheme.GrigStyle.ForeColor);
                     }
+                }
+            }
+        }
+
+        private void SetMissions(List<MissionManager.MissionData> datas)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Id", typeof(long));
+            dt.Columns.Add("Item", typeof(Image));
+            dt.Columns.Add("Count", typeof(long));
+            dt.Columns.Add("Mission", typeof(string));
+            dt.Columns.Add("MissionTrans", typeof(string));
+
+            foreach (var item in datas)
+            {
+                Image img = null;
+                foreach (var iconPath in itemIconPathes)
+                {
+                    img = Program.IconDB.GetImageByKey(iconPath, item.ItemId.ToString());
+                    if (img != null)
+                        break;
+                }
+
+                dt.Rows.Add(item.Id, img, item.ItemCount, item.MissionText, item.TransMissionText);
+            }
+
+            Extensions.SetGridDataSource(dataGridView3, dt);
+            Extensions.SetGridColumnVisible(dataGridView3, "Id", false);
+            Extensions.SetGridColumnSizeMode(dataGridView3, "Item", DataGridViewAutoSizeColumnMode.AllCells);
+            Extensions.SetGridColumnSizeMode(dataGridView3, "Count", DataGridViewAutoSizeColumnMode.NotSet);
+            Extensions.SetGridColumnSizeMode(dataGridView3, "Mission", DataGridViewAutoSizeColumnMode.Fill);
+            Extensions.SetGridColumnSizeMode(dataGridView3, "MissionTrans", DataGridViewAutoSizeColumnMode.Fill);
+
+            for (int i = 0; i < dataGridView3.RowCount; i++)
+            {
+                if (Program.ColorManager.SelectedScheme != null)
+                {
+                    Extensions.SetGridRowBackColor(dataGridView3, i, Program.ColorManager.SelectedScheme.GrigStyle.BackColor);
+                    Extensions.SetGridRowForeColor(dataGridView3, i, Program.ColorManager.SelectedScheme.GrigStyle.ForeColor);
                 }
             }
         }
@@ -521,6 +581,35 @@ namespace UmaMusumeDBBrowser
             else
                 return;
             parentForm.LoadTableByText(text);
+            if (parentForm.WindowState == FormWindowState.Minimized)
+                parentForm.WindowState = FormWindowState.Normal;
+            parentForm.Activate();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image.Save("DebugImg.bmp", ImageFormat.Bmp);
+        }
+
+        private void dataGridView3_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            if (e.Column.ValueType == typeof(Image))
+            {
+                ((DataGridViewImageColumn)e.Column).ImageLayout = DataGridViewImageCellLayout.Zoom;
+                e.Column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            List<Int64> ids = new List<Int64>();
+            for (int i = 0; i < dataGridView3.RowCount; i++)
+            {
+                ids.Add((long)dataGridView3["Id", i].Value);
+            }
+            if (ids.Count == 0)
+                MessageBox.Show("mission list is empty.");
+            parentForm.LoadTableByIds("mission_data", ids);
             if (parentForm.WindowState == FormWindowState.Minimized)
                 parentForm.WindowState = FormWindowState.Normal;
             parentForm.Activate();
