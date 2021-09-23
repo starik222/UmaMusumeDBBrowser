@@ -23734,6 +23734,843 @@
       ],
       "Type": 1,
       "CardName": "［nail on Turf］トーセンジョーダン"
+    },
+    {
+      "EventName": "みんなでビックチャレンジ!",
+      "EventNameToCheck": "みんなでビックチャレンジ",
+      "EventOptionsList": [
+        {
+          "Option": "高いところから投げれば届くかも",
+          "OptionToCheck": "高いところから投げれば届くかも",
+          "Effect": "Скорость+5\nСила+5"
+        },
+        {
+          "Option": "日本式なら忍者だね",
+          "OptionToCheck": "日本式なら忍者だね",
+          "Effect": "Выносливость+5\nSkill point+15"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "はっけよい、陶芸教室!",
+      "EventNameToCheck": "はっけよい、陶芸教室",
+      "EventOptionsList": [
+        {
+          "Option": "何事も経験なので",
+          "OptionToCheck": "何事も経験なので",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "腕を上げてから挑戦するのは？",
+          "OptionToCheck": "腕を上げてから挑戦するのは",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "はっけよい、お弁当!",
+      "EventNameToCheck": "はっけよい、お弁当",
+      "EventOptionsList": [
+        {
+          "Option": "アケボノも昔はそうだった？",
+          "OptionToCheck": "アケボノも昔はそうだった",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "アケボノもたくさん練習したんだな",
+          "OptionToCheck": "アケボノもたくさん練習したんだな",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "宇宙の食卓",
+      "EventNameToCheck": "宇宙の食卓",
+      "EventOptionsList": [
+        {
+          "Option": "作ってみる？",
+          "OptionToCheck": "作ってみる",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "宇宙食を買って食べよう!",
+          "OptionToCheck": "宇宙食を買って食べよう",
+          "Effect": "Энергия+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "はっけよい、好き!",
+      "EventNameToCheck": "はっけよい、好き",
+      "EventOptionsList": [
+        {
+          "Option": "トレーナーの仕事と一緒だな",
+          "OptionToCheck": "トレーナーの仕事と一緒だな",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "それが成長ってことだな",
+          "OptionToCheck": "それが成長ってことだな",
+          "Effect": "Skill point+30"
+        },
+        {
+          "Option": "アケボノが1番好きなのって?",
+          "OptionToCheck": "アケボノが1番好きなのって",
+          "Effect": "Выносливость+5\nСила воли+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "届けボーノ!",
+      "EventNameToCheck": "届けボーノ",
+      "EventOptionsList": [
+        {
+          "Option": "靴の背中にあるクッキーだね",
+          "OptionToCheck": "靴の背中にあるクッキーだね",
+          "Effect": "Скорость+20"
+        },
+        {
+          "Option": "手伝うよ!",
+          "OptionToCheck": "手伝うよ",
+          "Effect": "Сила воли+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "大きくな～れ!",
+      "EventNameToCheck": "大きくなれ",
+      "EventOptionsList": [
+        {
+          "Option": "寛容さとか？",
+          "OptionToCheck": "寛容さとか",
+          "Effect": "Интеллект+10\nSkill point+15"
+        },
+        {
+          "Option": "精神を鍛えるとか・・・",
+          "OptionToCheck": "精神を鍛えるとか",
+          "Effect": "Энергия+15"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "集まれ☆お料理好き",
+      "EventNameToCheck": "集まれ☆お料理好き",
+      "EventOptionsList": [
+        {
+          "Option": "力がつきそうなステーキ!",
+          "OptionToCheck": "力がつきそうなステーキ",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "とにかく辛いカレー!",
+          "OptionToCheck": "とにかく辛いカレー",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "腹が減っては巡回できぬ☆",
+      "EventNameToCheck": "腹が減っては巡回できぬ☆",
+      "EventOptionsList": [
+        {
+          "Option": "体力がなくて困ってる・・・",
+          "OptionToCheck": "体力がなくて困ってる",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "スタミナを保つ方法ない？",
+          "OptionToCheck": "スタミナを保つ方法ない",
+          "Effect": "「スタミナキープ」 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "レッスン☆サバイバル生活",
+      "EventNameToCheck": "レッスン☆サバイバル生活",
+      "EventOptionsList": [
+        {
+          "Option": "根性を見せて追いかける",
+          "OptionToCheck": "根性を見せて追いかける",
+          "Effect": "Энергия-10\nВыносливость+10\nСила воли+10"
+        },
+        {
+          "Option": "生き生きと力強く登場する",
+          "OptionToCheck": "生き生きと力強く登場する",
+          "Effect": "Энергия-10\nВыносливость+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "凸凹ぶつかり稽古！？",
+      "EventNameToCheck": "凸凹ぶつかり稽古",
+      "EventOptionsList": [
+        {
+          "Option": "早食い対決にしよう！",
+          "OptionToCheck": "早食い対決にしよう",
+          "Effect": "Успех:\nСкорость+30\n「善後策」 умение Lv2\nПровал:\nЭнергия-5\nСкорость+10"
+        },
+        {
+          "Option": "大食い対決にしよう！",
+          "OptionToCheck": "大食い対決にしよう",
+          "Effect": "Успех:\nЭнергия+10\nСила+10\nПровал:\nЭнергия+5\n「太り気味」"
+        },
+        {
+          "Option": "対決はなし！",
+          "OptionToCheck": "対決はなし",
+          "Effect": "Интеллект+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "堂々と行こう！",
+      "EventNameToCheck": "堂々と行こう",
+      "EventOptionsList": [
+        {
+          "Option": "君たち、やめなさい",
+          "OptionToCheck": "君たち、やめなさい",
+          "Effect": "Сила+20\nСлучайно 「切れ者」"
+        },
+        {
+          "Option": "助けて、おまわりさーん！！",
+          "OptionToCheck": "助けて、おまわりさーん",
+          "Effect": "Выносливость+20\nСлучайно 「切れ者」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "お夜食ちゃんこの効能",
+      "EventNameToCheck": "お夜食ちゃんこの効能",
+      "EventOptionsList": [
+        {
+          "Option": "夢いっぱい味噌ちゃんこ",
+          "OptionToCheck": "夢いっぱい味噌ちゃんこ",
+          "Effect": "Энергия+70"
+        },
+        {
+          "Option": "お野菜メインの塩ちゃんこ",
+          "OptionToCheck": "お野菜メインの塩ちゃんこ",
+          "Effect": "Энергия+40\nМотивация+"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "前へがぶり寄る!",
+          "OptionToCheck": "前へがぶり寄る",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "お客さんをステージへ",
+          "OptionToCheck": "お客さんをステージへ",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "追加の自主トレ",
+      "EventNameToCheck": "追加の自主トレ",
+      "EventOptionsList": [
+        {
+          "Option": "行ってらっしゃい!",
+          "OptionToCheck": "行ってらっしゃい",
+          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с директором+5"
+        },
+        {
+          "Option": "見回りは俺が行く",
+          "OptionToCheck": "見回りは俺が行く",
+          "Effect": "Энергия+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "おせち料理で力をつける！",
+          "OptionToCheck": "おせち料理で力をつける",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "お雑煮で温まる！",
+          "OptionToCheck": "お雑煮で温まる",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "色んなお餅を楽しむ！",
+          "OptionToCheck": "色んなお餅を楽しむ",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "初詣",
+      "EventNameToCheck": "初詣",
+      "EventOptionsList": [
+        {
+          "Option": "甘酒で、栄養たっぷり！",
+          "OptionToCheck": "甘酒で、栄養たっぷり",
+          "Effect": "Энергия+30"
+        },
+        {
+          "Option": "コーヒーで、全部頑張る！",
+          "OptionToCheck": "コーヒーで、全部頑張る",
+          "Effect": "Все характеристики+5"
+        },
+        {
+          "Option": "ホットチョコレートで、特別なパワー！",
+          "OptionToCheck": "ホットチョコレートで、特別なパワー",
+          "Effect": "Skill point+35"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "夏合宿（2年目）にて",
+      "EventNameToCheck": "夏合宿2年目にて",
+      "EventOptionsList": [
+        {
+          "Option": "人混みの中で見る",
+          "OptionToCheck": "人混みの中で見る",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "別の場所を探す",
+          "OptionToCheck": "別の場所を探す",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "レース入着",
+      "EventNameToCheck": "レース入着",
+      "EventOptionsList": [
+        {
+          "Option": "でも充実したレースだった",
+          "OptionToCheck": "でも充実したレースだった",
+          "Effect": "Энергия-20\nСлучайно 1 характеристика+2～+8\nSkill point+20～+45\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "次は白星をあげよう！",
+          "OptionToCheck": "次は白星をあげよう",
+          "Effect": "Энергия-10/-30\nСлучайно 1 характеристика+2～+8\nSkill point+20～+45\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "レース勝利",
+      "EventNameToCheck": "レース勝利",
+      "EventOptionsList": [
+        {
+          "Option": "とってもボーノ！",
+          "OptionToCheck": "とってもボーノ",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+5～+10\nSkill point+35/+45\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "もうひと声！",
+          "OptionToCheck": "もうひと声",
+          "Effect": "Энергия-5/-20/-30\nСлучайно 1 характеристика+5～+10\nSkill point+35/+45\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "ボーノな試食会",
+      "EventNameToCheck": "ボーノな試食会",
+      "EventOptionsList": [
+        {
+          "Option": "俺も分けてもらってもいいかな?",
+          "OptionToCheck": "俺も分けてもらってもいいかな",
+          "Effect": "Энергия+10、Skill point+5"
+        },
+        {
+          "Option": "存分に食してあげなさい・・・・・!",
+          "OptionToCheck": "存分に食してあげなさい",
+          "Effect": "Энергия+30\nSkill point+10\nСкорость-5\nСила+5\nЭффект 「太り気味」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ボーノ☆アラモーダ】ヒシアケボノ"
+    },
+    {
+      "EventName": "推し事探訪〜入門編〜",
+      "EventNameToCheck": "推し事探訪〜入門編〜",
+      "EventOptionsList": [
+        {
+          "Option": "ペンライト",
+          "OptionToCheck": "ペンライト",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "応援うちわ",
+          "OptionToCheck": "応援うちわ",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "ヲタク最高すぎるんだが？",
+      "EventNameToCheck": "ヲタク最高すぎるんだが",
+      "EventOptionsList": [
+        {
+          "Option": "友情って素晴らしい！",
+          "OptionToCheck": "友情って素晴らしい",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "これもウマ娘への愛・・・・・なのかな？",
+          "OptionToCheck": "これもウマ娘への愛なのかな",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "ウマ娘ちゃんクイズ☆ 〜嗜好編〜",
+      "EventNameToCheck": "ウマ娘ちゃんクイズ☆ 〜嗜好編〜",
+      "EventOptionsList": [
+        {
+          "Option": "ごはん",
+          "OptionToCheck": "ごはん",
+          "Effect": "Выносливость+5"
+        },
+        {
+          "Option": "パン",
+          "OptionToCheck": "パン",
+          "Effect": "Выносливость+15\n「京都レース場○」 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "あなたの背中を推したくて・・・・・",
+      "EventNameToCheck": "あなたの背中を推したくて",
+      "EventOptionsList": [
+        {
+          "Option": "か、かっこいい・・・・・!",
+          "OptionToCheck": "か、かっこいい",
+          "Effect": "Скорость+10\nСила+10"
+        },
+        {
+          "Option": "君だって主人公の1人だよ",
+          "OptionToCheck": "君だって主人公の1人だよ",
+          "Effect": "Выносливость+10\nСила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "推し事探訪〜極編〜",
+      "EventNameToCheck": "推し事探訪〜極編〜",
+      "EventOptionsList": [
+        {
+          "Option": "レースの前後だと思う",
+          "OptionToCheck": "レースの前後だと思う",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "・・・・・今、デジタルが行きたい場所かな",
+          "OptionToCheck": "今、デジタルが行きたい場所かな",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "推し事探訪〜免許皆伝編〜",
+      "EventNameToCheck": "推し事探訪〜免許皆伝編〜",
+      "EventOptionsList": [
+        {
+          "Option": "デ・ジ・たーーーん!!",
+          "OptionToCheck": "デジたーーーん",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "キング!キング!",
+          "OptionToCheck": "キングキング",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "両手にペンライトを装備する",
+          "OptionToCheck": "両手にペンライトを装備する",
+          "Effect": "Skill point+30"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "推し接近アラート、発令!?",
+      "EventNameToCheck": "推し接近アラート、発令",
+      "EventOptionsList": [
+        {
+          "Option": "A賞が取れれば興奮するかも・・・・・",
+          "OptionToCheck": "A賞が取れれば興奮するかも",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "これ以上無理させないでくれ!",
+          "OptionToCheck": "これ以上無理させないでくれ",
+          "Effect": "Энергия+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "ウマ娘ちゃんクイズ☆ 〜関係性編〜",
+      "EventNameToCheck": "ウマ娘ちゃんクイズ☆ 〜関係性編〜",
+      "EventOptionsList": [
+        {
+          "Option": "エイシンフラッシュ",
+          "OptionToCheck": "エイシンフラッシュ",
+          "Effect": "Скорость+15\n「末脚」 умение Lv+1"
+        },
+        {
+          "Option": "ミホノブルボン",
+          "OptionToCheck": "ミホノブルボン",
+          "Effect": "Скорость+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "萌えは無限の可能性",
+      "EventNameToCheck": "萌えは無限の可能性",
+      "EventOptionsList": [
+        {
+          "Option": "1人にかける時間を短縮しよう!",
+          "OptionToCheck": "1人にかける時間を短縮しよう",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "地道に片づけていくしかない",
+          "OptionToCheck": "地道に片づけていくしかない",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "毎日がコラボカフェ",
+      "EventNameToCheck": "毎日がコラボカフェ",
+      "EventOptionsList": [
+        {
+          "Option": "スマートファルコンメニュー",
+          "OptionToCheck": "スマートファルコンメニュー",
+          "Effect": "「レコメンド」 умение Lv+1"
+        },
+        {
+          "Option": "ウォッカメニュー",
+          "OptionToCheck": "ウォッカメニュー",
+          "Effect": "「アクセラレーション」 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "推しみない愛を推しに!",
+      "EventNameToCheck": "推しみない愛を推しに",
+      "EventOptionsList": [
+        {
+          "Option": "君が思う最高の作品にしよう!",
+          "OptionToCheck": "君が思う最高の作品にしよう",
+          "Effect": "Выносливость+10\nSkill point+15"
+        },
+        {
+          "Option": "2人で考えるっていうのはどうかな？",
+          "OptionToCheck": "2人で考えるっていうのはどうかな",
+          "Effect": "Сила+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "公式が最大手すぐる件",
+      "EventNameToCheck": "公式が最大手すぐる件",
+      "EventOptionsList": [
+        {
+          "Option": "力を問われる激しい戦いで！",
+          "OptionToCheck": "力を問われる激しい戦いで",
+          "Effect": "Сила+5\nСила воли+5"
+        },
+        {
+          "Option": "知的エレガントでお願いします",
+          "OptionToCheck": "知的エレガントでお願いします",
+          "Effect": "Энергия+5\nИнтеллект+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "推しえて、デジタル先生!",
+      "EventNameToCheck": "推しえて、デジタル先生",
+      "EventOptionsList": [
+        {
+          "Option": "弟子はこれで卒業かな?",
+          "OptionToCheck": "弟子はこれで卒業かな",
+          "Effect": "Интеллект+20"
+        },
+        {
+          "Option": "これからは同志として楽しもう!",
+          "OptionToCheck": "これからは同志として楽しもう",
+          "Effect": "Сила+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "ウマ娘ちゃんクイズ☆ 〜ルーツ編〜",
+      "EventNameToCheck": "ウマ娘ちゃんクイズ☆ 〜ルーツ編〜",
+      "EventOptionsList": [
+        {
+          "Option": "ケンタッキー州",
+          "OptionToCheck": "ケンタッキー州",
+          "Effect": "Сила+15\n「マイルコーナー○」 умение Lv+1"
+        },
+        {
+          "Option": "テキサス州",
+          "OptionToCheck": "テキサス州",
+          "Effect": "Сила+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "難度の高いダンスに挑戦してみよう",
+          "OptionToCheck": "難度の高いダンスに挑戦してみよう",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "得意なダンスでGO！",
+          "OptionToCheck": "得意なダンスでGO",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "追加の自主トレ",
+      "EventNameToCheck": "追加の自主トレ",
+      "EventOptionsList": [
+        {
+          "Option": "こっそりとね",
+          "OptionToCheck": "こっそりとね",
+          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с директором+5"
+        },
+        {
+          "Option": "オーバーワークはダメ",
+          "OptionToCheck": "オーバーワークはダメ",
+          "Effect": "Энергия+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "ウマ娘ちゃんにご奉仕",
+          "OptionToCheck": "ウマ娘ちゃんにご奉仕",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "本を読む",
+          "OptionToCheck": "本を読む",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "モノマネから学ぶ",
+          "OptionToCheck": "モノマネから学ぶ",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "初詣",
+      "EventNameToCheck": "初詣",
+      "EventOptionsList": [
+        {
+          "Option": "養分",
+          "OptionToCheck": "養分",
+          "Effect": "Энергия+30"
+        },
+        {
+          "Option": "友情パワー",
+          "OptionToCheck": "友情パワー",
+          "Effect": "Все характеристики+5"
+        },
+        {
+          "Option": "多様性",
+          "OptionToCheck": "多様性",
+          "Effect": "Skill point+35"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "夏合宿（2年目）にて",
+      "EventNameToCheck": "夏合宿2年目にて",
+      "EventOptionsList": [
+        {
+          "Option": "パワフルなコール本",
+          "OptionToCheck": "パワフルなコール本",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "応援イラスト集",
+          "OptionToCheck": "応援イラスト集",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "トレードさせていただきますっ!",
+      "EventNameToCheck": "トレードさせていただきますっ",
+      "EventOptionsList": [
+        {
+          "Option": "食べ過ぎないようにね",
+          "OptionToCheck": "食べ過ぎないようにね",
+          "Effect": "Энергия+10、Skill point+5"
+        },
+        {
+          "Option": "心ゆくまで堪能しよう!",
+          "OptionToCheck": "心ゆくまで堪能しよう",
+          "Effect": "Энергия+30\nSkill point+10\nСкорость-5\nСила+5\nЭффект 「太り気味」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【超特急！フルカラー特殊PP】アグネスデジタル"
+    },
+    {
+      "EventName": "2人で頑張った日の1ページ",
+      "EventNameToCheck": "2人で頑張った日の1ページ",
+      "EventOptionsList": [
+        {
+          "Option": "大成功",
+          "OptionToCheck": "大成功",
+          "Effect": "Энергия-10\nВыносливость+5\nСила воли+5\nУровень отношений+5\n「火事場のバ鹿力」 умение Lv+3"
+        },
+        {
+          "Option": "成功",
+          "OptionToCheck": "成功",
+          "Effect": "Энергия-10\nУровень отношений+5\n「火事場のバ鹿力」 умение Lv+1"
+        },
+        {
+          "Option": "失敗",
+          "OptionToCheck": "失敗",
+          "Effect": "Энергия-10\nУровень отношений+5\n「別腹タンク」 умение Lv+1"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［『幸せ』が舞う時］ライスシャワー"
+    },
+    {
+      "EventName": "ポジティブ逃げネバギバ！",
+      "EventNameToCheck": "ポジティブ逃げネバギバ",
+      "EventOptionsList": [
+        {
+          "Option": "いいコンビだな（パターン1）",
+          "OptionToCheck": "いいコンビだなパターン1",
+          "Effect": "Энергия-20\nВыносливость+5\nСила воли+5\n「リードキープ」 умение Lv+3\nУровень отношений+5"
+        },
+        {
+          "Option": "いいコンビだな（パターン2）",
+          "OptionToCheck": "いいコンビだなパターン2",
+          "Effect": "Энергия-20\nВыносливость+10\nСила воли+10\n「先陣の心得」 умение Lv+3\nУровень отношений+5"
+        },
+        {
+          "Option": "君の”逃げ”は向上心なんだな",
+          "OptionToCheck": "君の”逃げ”は向上心なんだな",
+          "Effect": "Энергия+10\n「一匹狼」 умение Lv+1"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［バカと笑え］メジロパーマー"
+    },
+    {
+      "EventName": "Uゆしき事態？",
+      "EventNameToCheck": "Uゆしき事態",
+      "EventOptionsList": [
+        {
+          "Option": "話した内容に自信はある？",
+          "OptionToCheck": "話した内容に自信はある",
+          "Effect": "Сила воли+15\n「臨機応変」 умение Lv+1\nУровень отношений+5"
+        },
+        {
+          "Option": "俺にも蹄鉄を見繕ってよ",
+          "OptionToCheck": "俺にも蹄鉄を見繕ってよ",
+          "Effect": "Энергия+20\nСкорость+10\nSkill point+10"
+        }
+      ],
+      "Type": 1,
+      "CardName": "[心と足元は温かく]イクノディクタス"
     }
   ]
 }

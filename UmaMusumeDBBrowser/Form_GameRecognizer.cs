@@ -135,7 +135,7 @@ namespace UmaMusumeDBBrowser
                     }
                 case GameReader.GameDataType.GenWindow:
                     {
-                        SelectTab(tabPage7);
+                        SelectTab(tabPage6);
                         SetFactors((List<FactorManager.FactorData>)gameDataArgs.DataClass);
                         Extensions.SetTextToControl(label1, "Щелкните дважды на ячейку для открытия описания умения (если оно есть в тексте).");
                         break;

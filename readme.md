@@ -1,10 +1,11 @@
 # UmaMusumeDBBrowser
 ## ќписание
-UmaMusumeDBBrowser предназначена дл€ просмотра базы данных игры Uma Musume Pretty Derby, а также считывани€ событий, умений, подсказок и генов с окна игры во врем€ тренировки.
+UmaMusumeDBBrowser предназначена дл€ просмотра базы данных игры Uma Musume Pretty Derby, а также считывани€ событий, умений, подсказок, генов и заданий с окна игры.
 Ѕаза данных имеет возможность самосто€тельного перевода оригинального текста. ѕеревод сохран€етс€ в папке "Dictonaries" и оттуда же подгружаетс€ при открытии таблиц.
 
 ## ƒемонстраци€
-[![Presontation](https://img.youtube.com/vi/m_HzN4kwGY4/0.jpg)](https://www.youtube.com/watch?v=m_HzN4kwGY4)
+[![Presontation](https://img.youtube.com/vi/m_HzN4kwGY4/0.jpg)](https://www.youtube.com/watch?v=m_HzN4kwGY4) [![Presontation](https://img.youtube.com/vi/1EIozYBr5PU/0.jpg)](https://www.youtube.com/watch?v=1EIozYBr5PU)
+
 
 ## ƒополнительна€ информаци€
 - ¬ [релизе](https://github.com/starik222/UmaMusumeDBBrowser/releases) присутствуют два €зыка перевода базы данных: машинный русский и английский. ќписание тренировочных событий только на русском.
@@ -18,6 +19,7 @@ UmaMusumeDBBrowser предназначена дл€ просмотра базы данных игры Uma Musume Prett
 ![](https://user-images.githubusercontent.com/1236582/120617746-9b96a380-c484-11eb-997a-082388f2376e.png)
 ![](https://user-images.githubusercontent.com/1236582/120617799-a7826580-c484-11eb-86c7-0eb3a0ddf1f9.png)
 ![](https://user-images.githubusercontent.com/1236582/123568506-b394e500-d7ee-11eb-823b-26f3d70a0046.png)
+![](https://user-images.githubusercontent.com/1236582/134459212-817dbe40-6404-4708-b8ae-bbc6575d8d4f.png)
 
 ## –едактирование отображаемых таблиз из Ѕƒ
 Ќастройки по отображаемым в программе таблицам хран€тс€ в файле [Settings.ini](https://github.com/starik222/UmaMusumeDBBrowser/blob/master/UmaMusumeDBBrowser/Settings.ini).
