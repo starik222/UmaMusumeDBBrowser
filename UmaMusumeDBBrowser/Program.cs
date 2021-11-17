@@ -86,6 +86,5 @@ namespace UmaMusumeDBBrowser
         {
             fLog.ClearLog();
         }
-
     }
 }
