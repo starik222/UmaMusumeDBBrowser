@@ -33,7 +33,7 @@ namespace UmaMusumeDBBrowser
         private AllLibraryManager libraryManager;
         private GameSettings settings;
         private CancellationTokenSource tokenSource;
-        private string cardName = null;
+        //private string cardName = null;
         private List<NAMES> charReplaceDictonary;
         private GameType gameType;
         private IntPtr gameHandle;
@@ -104,6 +104,10 @@ namespace UmaMusumeDBBrowser
 
         private void Processed(int periodMillisec, CancellationToken token)
         {
+            if (Program.IsDebug)
+            {
+                Program.AddToLog("Сканирование запущено.");
+            }
             bool isVertical = true;
             Image<Bgr, byte> currentImage = null;
             //Image<Bgr, byte> currentImageGray = null;
@@ -114,6 +118,10 @@ namespace UmaMusumeDBBrowser
                 {
                     DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.GameNotFound, DataClass = "Game not found! Scan is stopped!" });
                     Stop();
+                    if (Program.IsDebug)
+                    {
+                        Program.AddToLog("Сканирование остановлено.");
+                    }
                     break;
                 }
                 //handle = WindowManager.GetHandleByProcessName("BlueStacks");
@@ -124,7 +132,17 @@ namespace UmaMusumeDBBrowser
                 //}
                 Image origImg = WindowManager.CaptureWindow(gameHandle);
                 if (origImg == null || origImg.Width <= 1 || origImg.Height <= 1)
+                {
+                    if (Program.IsDebug)
+                    {
+                        Program.AddToLog("(!)Ошибка получения скриншота!");
+                    }
                     goto Exit;
+                }
+                if (Program.IsDebug)
+                {
+                    Program.AddToLog("Получен скриншот");
+                }
                 if (gameType == GameType.BluestacksV4)
                 {
                     Rectangle rectangle = new Rectangle(settings.BlueStacksPanel.Ver4.X, settings.BlueStacksPanel.Ver4.Height, origImg.Width - settings.BlueStacksPanel.Ver4.X - (BsRightPanelVisible ? settings.BlueStacksPanel.Ver4.Width : settings.BlueStacksPanel.Ver4.X),
@@ -161,6 +179,13 @@ namespace UmaMusumeDBBrowser
                 }
                 currentImage = ImageManager.PrepareImage((Bitmap)origImg, normalSize);
                 var dataType = DetectDataType(currentImage, isVertical);
+                if (Program.IsDebug)
+                {
+                    if (dataType.type == GameDataType.NotFound)
+                        Program.AddToLog("Игровых частей не обнаружено!");
+                    else
+                        Program.AddToLog("найдена игровая часть - " + dataType.type.ToString());
+                }
                 if (dataType.type == GameDataType.NotFound)
                 {
                     DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.NotFound, DataClass = "Any game parts not found!" });
@@ -302,6 +327,10 @@ namespace UmaMusumeDBBrowser
                     DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = warningWindow.ToBitmap() });
                 }
                 tempText = Program.TessManager.GetTextSingleLine(warningWindow);
+                if (Program.IsDebug)
+                {
+                    Program.AddToLog("TazunaHelpWarning text: " + tempText);
+                }
                 warningWindow.Dispose();
                 var warnRes = libraryManager.TazunaLibrary.FindHelpItemByDescDice(tempText, TazunaManager.HelpType.AfterRaceWarning);
                 if (warnRes != null)
@@ -315,6 +344,10 @@ namespace UmaMusumeDBBrowser
                 DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = helpWindow.ToBitmap() });
             }
             tempText = Program.TessManager.GetTextMultiLine(helpWindow);
+            if (Program.IsDebug)
+            {
+                Program.AddToLog("TazunaHelp text: " + tempText);
+            }
             tempText = CorrectText(tempText);
             helpWindow.Dispose();
 
@@ -735,6 +768,10 @@ namespace UmaMusumeDBBrowser
                 if (result != null)
                     skillDatas.Add(result);
             }
+            if (Program.IsDebug)
+            {
+                Program.AddToLog($"Обнаружено {skillDatas.Count} умений.");
+            }
             return skillDatas;
         }
 
@@ -850,6 +887,10 @@ namespace UmaMusumeDBBrowser
                 DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = invertedMat.ToBitmap() });
             }
             string text = Program.TessManager.GetTextSingleLine(invertedMat);
+            if (Program.IsDebug)
+            {
+                Program.AddToLog($"Получен текст названия события {text}");
+            }
             text = CorrectText(text);
             //text = DeleteNumbers(text);
             //Пробуем искать по имени.
@@ -857,6 +898,10 @@ namespace UmaMusumeDBBrowser
             if (eventData.Count == 0)
             {
                 string text2 = Program.TessManager.GetTextSingleLine(threshMat);
+                if (Program.IsDebug)
+                {
+                    Program.AddToLog($"Получен текст названия события {text2}");
+                }
                 text2 = CorrectText(text2);
                 eventData = libraryManager.EventLibrary.FindEventByName(text2, true);
             }
@@ -998,6 +1043,10 @@ namespace UmaMusumeDBBrowser
                 CvInvoke.Threshold(cutImg, cutImg, 0.0, 255.0, ThresholdType.Otsu);
             }
             string text = Program.TessManager.GetTextSingleLine(cutImg);
+            if (Program.IsDebug)
+            {
+                Program.AddToLog($"Получен текст варианта выбора: {text}");
+            }
             cutImg.Dispose();
             return text;
         }

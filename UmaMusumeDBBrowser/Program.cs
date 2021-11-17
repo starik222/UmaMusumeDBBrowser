@@ -32,6 +32,8 @@ namespace UmaMusumeDBBrowser
                 DbPath = testDbPath;
             else
                 DbPath = "master.db";
+            fLog = new Form_log();
+            fLog.Show();
             Application.Run(new Form1());
         }
 
@@ -64,5 +66,23 @@ namespace UmaMusumeDBBrowser
 #endif
             }
         }
+
+        private static Form_log fLog;
+
+        public static void AddToLog(string text)
+        {
+            fLog.AddToLog(text);
+        }
+
+        public static void SaveLog()
+        {
+            fLog.SaveLog("ProgramLog.txt");
+        }
+
+        public static void ClearLog()
+        {
+            fLog.ClearLog();
+        }
+
     }
 }
