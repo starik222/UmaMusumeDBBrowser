@@ -16,6 +16,8 @@ namespace UmaMusumeDBBrowser
         [STAThread]
         static void Main()
         {
+           //Application.SetUnhandledExceptionMode(UnhandledExceptionMode.ThrowException);
+           //AppDomain.CurrentDomain.UnhandledException += DumpMaker.CurrentDomain_UnhandledException;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DictonariesDir = Path.Combine(Application.StartupPath, "Dictonaries");

@@ -30170,6 +30170,674 @@
       ],
       "Type": 1,
       "CardName": "［一等星は揺らがない］シリウスシンボリ"
+    },
+    {
+      "EventName": "聖夜に並んで走るため",
+      "EventNameToCheck": "聖夜に並んで走るため",
+      "EventOptionsList": [
+        {
+          "Option": "どこで競うの?",
+          "OptionToCheck": "どこで競うの",
+          "Effect": "Skill point+30"
+        },
+        {
+          "Option": "焦ってやる必要はないよ",
+          "OptionToCheck": "焦ってやる必要はないよ",
+          "Effect": "Скорость+10\nСила+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【キセキの白星】オグリキャップ"
+    },
+    {
+      "EventName": "先取り大人のクリスマス！？",
+      "EventNameToCheck": "先取り大人のクリスマス",
+      "EventOptionsList": [
+        {
+          "Option": "今までで最高のプレゼントだよ",
+          "OptionToCheck": "今までで最高のプレゼントだよ",
+          "Effect": "Энергия+20\nМотивация+1\n「冬ウマ娘○」 умение Lv+2"
+        },
+        {
+          "Option": "‥‥‥じゃあ、今年はサンタさん来ないかも?",
+          "OptionToCheck": "‥‥‥じゃあ、今年はサンタさん来ないかも",
+          "Effect": "Скорость+10\nИнтеллект+20\n「冬ウマ娘○」 умение Lv+2"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【キセキの白星】オグリキャップ"
+    },
+    {
+      "EventName": "みんなのオグリキャップ",
+      "EventNameToCheck": "みんなのオグリキャップ",
+      "EventOptionsList": [
+        {
+          "Option": "彼女の夢を叶えてみせます！",
+          "OptionToCheck": "彼女の夢を叶えてみせます",
+          "Effect": "「栄養補給」 умение Lv+2\nСлучайно 「愛嬌○」"
+        },
+        {
+          "Option": "不束者ですがよろしくお願いします",
+          "OptionToCheck": "不束者ですがよろしくお願いします",
+          "Effect": "Сила+10\nСила воли+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【キセキの白星】オグリキャップ"
+    },
+    {
+      "EventName": "追加の自主トレ",
+      "EventNameToCheck": "追加の自主トレ",
+      "EventOptionsList": [
+        {
+          "Option": "その覚悟、受け取った！",
+          "OptionToCheck": "その覚悟、受け取った",
+          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с директором+5"
+        },
+        {
+          "Option": "他人のペースに乱されないで",
+          "OptionToCheck": "他人のペースに乱されないで",
+          "Effect": "Энергия+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【キセキの白星】オグリキャップ"
+    },
+    {
+      "EventName": "レース入着",
+      "EventNameToCheck": "レース入着",
+      "EventOptionsList": [
+        {
+          "Option": "焦る必要はないよ",
+          "OptionToCheck": "焦る必要はないよ",
+          "Effect": "Энергия-20\nСлучайно 1 характеристика+2～+8\nSkill point+20～+45\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "協力は惜しまないよ！",
+          "OptionToCheck": "協力は惜しまないよ",
+          "Effect": "Энергия-10/-30\nСлучайно 1 характеристика+2～+8\nSkill point+20～+45\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【キセキの白星】オグリキャップ"
+    },
+    {
+      "EventName": "レース勝利",
+      "EventNameToCheck": "レース勝利",
+      "EventOptionsList": [
+        {
+          "Option": "今日はご馳走ね！",
+          "OptionToCheck": "今日はご馳走ね",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+5～+10\nSkill point+35/+45\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "次も全力で頑張ろう",
+          "OptionToCheck": "次も全力で頑張ろう",
+          "Effect": "Энергия-5/-20/-30\nСлучайно 1 характеристика+5～+10\nSkill point+35/+45\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【キセキの白星】オグリキャップ"
+    },
+    {
+      "EventName": "レース敗北",
+      "EventNameToCheck": "レース敗北",
+      "EventOptionsList": [
+        {
+          "Option": "次は期待しているよ！",
+          "OptionToCheck": "次は期待しているよ",
+          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "早速トレーニングだね！",
+          "OptionToCheck": "早速トレーニングだね",
+          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【キセキの白星】オグリキャップ"
+    },
+    {
+      "EventName": "グルメイベント",
+      "EventNameToCheck": "グルメイベント",
+      "EventOptionsList": [
+        {
+          "Option": "食事は適量が1番",
+          "OptionToCheck": "食事は適量が1番",
+          "Effect": "Энергия+10、Skill point+5"
+        },
+        {
+          "Option": "腹が減っては力が出ない！",
+          "OptionToCheck": "腹が減っては力が出ない",
+          "Effect": "Энергия+30\nSkill point+10\nСкорость-5\nСила+5\nЭффект 「太り気味」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【キセキの白星】オグリキャップ"
+    },
+    {
+      "EventName": "お大事に！",
+      "EventNameToCheck": "お大事に",
+      "EventOptionsList": [
+        {
+          "Option": "でもちゃんと休もう",
+          "OptionToCheck": "でもちゃんと休もう",
+          "Effect": "Провал:\n└Мотивация-1\n└Последний тип тренировки-5～10\n└Случайно 「練習ベタ」\nУспех:\n└「練習上手○」"
+        },
+        {
+          "Option": "本当に?",
+          "OptionToCheck": "本当に",
+          "Effect": "Тоже самое"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【キセキの白星】オグリキャップ"
+    },
+    {
+      "EventName": "メジロの色",
+      "EventNameToCheck": "メジロの色",
+      "EventOptionsList": [
+        {
+          "Option": "その意気！",
+          "OptionToCheck": "その意気",
+          "Effect": "Выносливость+20"
+        },
+        {
+          "Option": "いきなり無理する必要はない",
+          "OptionToCheck": "いきなり無理する必要はない",
+          "Effect": "Сила+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "香りの魔術師",
+      "EventNameToCheck": "香りの魔術師",
+      "EventOptionsList": [
+        {
+          "Option": "ドーベルは普段なに使ってるの?",
+          "OptionToCheck": "ドーベルは普段なに使ってるの",
+          "Effect": "Интеллект+20"
+        },
+        {
+          "Option": "おすすめを選んでほしい",
+          "OptionToCheck": "おすすめを選んでほしい",
+          "Effect": "Сила воли+10\nSkill point+15"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "ワンクッション親子",
+      "EventNameToCheck": "ワンクッション親子",
+      "EventOptionsList": [
+        {
+          "Option": "お母さんのことが苦手なの？",
+          "OptionToCheck": "お母さんのことが苦手なの",
+          "Effect": "Скорость+20\nСлучайно 「愛嬌○」"
+        },
+        {
+          "Option": "ベルちゃん？",
+          "OptionToCheck": "ベルちゃん",
+          "Effect": "Сила+20\nСлучайно 「愛嬌○」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "今のアタシは……",
+      "EventNameToCheck": "今のアタシは",
+      "EventOptionsList": [
+        {
+          "Option": "もっと活躍して立派なところを見せよう",
+          "OptionToCheck": "もっと活躍して立派なところを見せよう",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "お父さんはドーベルを認めてくれているよ",
+          "OptionToCheck": "お父さんはドーベルを認めてくれているよ",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "カラオケチャレンジ",
+      "EventNameToCheck": "カラオケチャレンジ",
+      "EventOptionsList": [
+        {
+          "Option": "ドーベルが挑戦します！",
+          "OptionToCheck": "ドーベルが挑戦します",
+          "Effect": "Успех:\nЭнергия+10\nВсе характеристики+5\nПровал:\nВыносливость+5\nСила воли+10"
+        },
+        {
+          "Option": "ライアンの優しさを今は受け取っておこう(失敗)",
+          "OptionToCheck": "ライアンの優しさを今は受け取っておこう失敗",
+          "Effect": "Энергия+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "嵐の大特訓",
+      "EventNameToCheck": "嵐の大特訓",
+      "EventOptionsList": [
+        {
+          "Option": "あ、憧れを追い続ける強い意志‥‥‥！",
+          "OptionToCheck": "あ、憧れを追い続ける強い意志‥‥‥",
+          "Effect": "Энергия-10\nВыносливость+20"
+        },
+        {
+          "Option": "不安に打ち勝つパワーかな！？",
+          "OptionToCheck": "不安に打ち勝つパワーかな",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "きゅんきゅんティータイム!?",
+      "EventNameToCheck": "きゅんきゅんティータイム",
+      "EventOptionsList": [
+        {
+          "Option": "おいしい紅茶との出会いのためだよ！",
+          "OptionToCheck": "おいしい紅茶との出会いのためだよ",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "ドーベルなりの言葉でいいんじゃない？",
+          "OptionToCheck": "ドーベルなりの言葉でいいんじゃない",
+          "Effect": "Интеллект+5\nSkill point+15"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "ゆたかなる友情",
+      "EventNameToCheck": "ゆたかなる友情",
+      "EventOptionsList": [
+        {
+          "Option": "漫画を貸してあげたら？",
+          "OptionToCheck": "漫画を貸してあげたら",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "野球観戦、一緒にするとか！",
+          "OptionToCheck": "野球観戦、一緒にするとか",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "ヤミナベス女王杯！？",
+      "EventNameToCheck": "ヤミナベス女王杯",
+      "EventOptionsList": [
+        {
+          "Option": "じゃあ材料を揃えよう！善は急げ！",
+          "OptionToCheck": "じゃあ材料を揃えよう善は急げ",
+          "Effect": "Скорость+15"
+        },
+        {
+          "Option": "思い出づくりを楽しんでおいで",
+          "OptionToCheck": "思い出づくりを楽しんでおいで",
+          "Effect": "「秋ウマ娘○」 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "見える範囲からやっていこう",
+          "OptionToCheck": "見える範囲からやっていこう",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "世界配信、目指す?",
+          "OptionToCheck": "世界配信、目指す",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "追加の自主トレ",
+      "EventNameToCheck": "追加の自主トレ",
+      "EventOptionsList": [
+        {
+          "Option": "見てるから思いっきりやろう！",
+          "OptionToCheck": "見てるから思いっきりやろう",
+          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с директором+5"
+        },
+        {
+          "Option": "やっぱり許可できない",
+          "OptionToCheck": "やっぱり許可できない",
+          "Effect": "Энергия+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "かるた、やろう！",
+          "OptionToCheck": "かるた、やろう",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "お雑煮、食べよう！",
+          "OptionToCheck": "お雑煮、食べよう",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "書初め、しよう！",
+          "OptionToCheck": "書初め、しよう",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "初詣",
+      "EventNameToCheck": "初詣",
+      "EventOptionsList": [
+        {
+          "Option": "甘酒を飲もう",
+          "OptionToCheck": "甘酒を飲もう",
+          "Effect": "Энергия+30"
+        },
+        {
+          "Option": "お守りを買おう",
+          "OptionToCheck": "お守りを買おう",
+          "Effect": "Все характеристики+5"
+        },
+        {
+          "Option": "願い事をしよう",
+          "OptionToCheck": "願い事をしよう",
+          "Effect": "Skill point+35"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "レース入着",
+      "EventNameToCheck": "レース入着",
+      "EventOptionsList": [
+        {
+          "Option": "自分を褒めるのも大事",
+          "OptionToCheck": "自分を褒めるのも大事",
+          "Effect": "Энергия-20\nСлучайно 1 характеристика+2～+8\nSkill point+20～+45\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "立ち止まってられないね",
+          "OptionToCheck": "立ち止まってられないね",
+          "Effect": "Энергия-10/-30\nСлучайно 1 характеристика+2～+8\nSkill point+20～+45\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "レース勝利",
+      "EventNameToCheck": "レース勝利",
+      "EventOptionsList": [
+        {
+          "Option": "全力を見せてもらえた",
+          "OptionToCheck": "全力を見せてもらえた",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+5～+10\nSkill point+35/+45\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "まだまだ伸びしろを感じた",
+          "OptionToCheck": "まだまだ伸びしろを感じた",
+          "Effect": "Энергия-5/-20/-30\nСлучайно 1 характеристика+5～+10\nSkill point+35/+45\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "レース敗北",
+      "EventNameToCheck": "レース敗北",
+      "EventOptionsList": [
+        {
+          "Option": "貴方ならできるよ",
+          "OptionToCheck": "貴方ならできるよ",
+          "Effect": "Энергия-25\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
+        },
+        {
+          "Option": "今日の経験を糧にしよう！",
+          "OptionToCheck": "今日の経験を糧にしよう",
+          "Effect": "Энергия-15/-25/-35\nСлучайно 1 характеристика+0～+4\nSkill point+10～+25\nСлучайно Советы по навыкам и гоночной трассе"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "想いの重さ＞砂糖の重さ",
+      "EventNameToCheck": "想いの重さ＞砂糖の重さ",
+      "EventOptionsList": [
+        {
+          "Option": "それは食べすぎじゃない？",
+          "OptionToCheck": "それは食べすぎじゃない",
+          "Effect": "Энергия+10、Skill point+5"
+        },
+        {
+          "Option": "食べ尽くして吟味しよう！",
+          "OptionToCheck": "食べ尽くして吟味しよう",
+          "Effect": "Энергия+30\nSkill point+10\nСкорость-5\nСила+5\nЭффект 「太り気味」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "無茶は厳禁",
+      "EventNameToCheck": "無茶は厳禁",
+      "EventOptionsList": [
+        {
+          "Option": "今は体を大切にしよう",
+          "OptionToCheck": "今は体を大切にしよう",
+          "Effect": "Провал:\n└Мотивация-1\n└Последний тип тренировки-5～10\n└Случайно 「練習ベタ」\nУспех:\n└「練習上手○」"
+        },
+        {
+          "Option": "治ったら取り返そう！",
+          "OptionToCheck": "治ったら取り返そう",
+          "Effect": "Тоже самое"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "お願い、お姉さん！",
+      "EventNameToCheck": "お願い、お姉さん",
+      "EventOptionsList": [
+        {
+          "Option": "ハヤヒデの選んだ色っぽいマニキュア",
+          "OptionToCheck": "ハヤヒデの選んだ色っぽいマニキュア",
+          "Effect": "Скорость+15"
+        },
+        {
+          "Option": "タイシンの選んだクールな耳飾り",
+          "OptionToCheck": "タイシンの選んだクールな耳飾り",
+          "Effect": "Выносливость+15"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ノエルージュ・キャロル】ビワハヤヒデ"
+    },
+    {
+      "EventName": "助っ人参上！",
+      "EventNameToCheck": "助っ人参上",
+      "EventOptionsList": [
+        {
+          "Option": "1日だけ体験してみたら？",
+          "OptionToCheck": "1日だけ体験してみたら",
+          "Effect": "Выносливость+5\nSkill point+15"
+        },
+        {
+          "Option": "妹を見てもらうっていう条件で入ったら？",
+          "OptionToCheck": "妹を見てもらうっていう条件で入ったら",
+          "Effect": "「追い上げ」 умение Lv2"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ノエルージュ・キャロル】ビワハヤヒデ"
+    },
+    {
+      "EventName": "もうひとつの星",
+      "EventNameToCheck": "もうひとつの星",
+      "EventOptionsList": [
+        {
+          "Option": "インパクトで勝負！後ろ姿だ！",
+          "OptionToCheck": "インパクトで勝負後ろ姿だ",
+          "Effect": "Энергия-10\nСкорость+30\nСила воли+10\n「冬ウマ娘」 умение Lv2"
+        },
+        {
+          "Option": "主役らしく普通に渡そう",
+          "OptionToCheck": "主役らしく普通に渡そう",
+          "Effect": "Энергия+15\nSkill point+20\n「冬ウマ娘」 умение Lv2"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ノエルージュ・キャロル】ビワハヤヒデ"
+    },
+    {
+      "EventName": "ポジティブ逃げネバギバ！",
+      "EventNameToCheck": "ポジティブ逃げネバギバ",
+      "EventOptionsList": [
+        {
+          "Option": "いいコンビだな（パターン1）",
+          "OptionToCheck": "いいコンビだなパターン1",
+          "Effect": "Энергия-20\nВыносливость+5\nСила воли+5\n「リードキープ」 умение Lv+3\nУровень отношений+5"
+        },
+        {
+          "Option": "いいコンビだな（パターン2）",
+          "OptionToCheck": "いいコンビだなパターン2",
+          "Effect": "Энергия-20\nВыносливость+10\nСила воли+10\n「先陣の心得」 умение Lv+3\nУровень отношений+5"
+        },
+        {
+          "Option": "君の”逃げ”は向上心なんだな",
+          "OptionToCheck": "君の”逃げ”は向上心なんだな",
+          "Effect": "Энергия+10\n「一匹狼」 умение Lv+1"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［バカと笑え］メジロパーマー"
+    },
+    {
+      "EventName": "笑顔伝説・爆誕！",
+      "EventNameToCheck": "笑顔伝説爆誕",
+      "EventOptionsList": [
+        {
+          "Option": "注目度を上げるとか？",
+          "OptionToCheck": "注目度を上げるとか",
+          "Effect": "Успех:\nЭнергия-5\nСила+15\n「先駆け」 умение Lv+1\nУровень отношений+5\nПровал:\nЭнергия-5\nСила+15\nУровень отношений+5"
+        },
+        {
+          "Option": "今のままで充分だと思う！",
+          "OptionToCheck": "今のままで充分だと思う",
+          "Effect": "Энергия+10\nСкорость+15\n「先行コーナー○」 умение Lv+1\n※ <Прекращение события>"
+        }
+      ],
+      "Type": 1,
+      "CardName": "[おどれ・さわげ・フェスれ！]ダイタクヘリオス"
+    },
+    {
+      "EventName": "なんでもない日の……♪",
+      "EventNameToCheck": "なんでもない日の",
+      "EventOptionsList": [
+        {
+          "Option": "素敵なお父さんだね",
+          "OptionToCheck": "素敵なお父さんだね",
+          "Effect": "Мотивация+1\nСкорость+20\nСила воли+10\n「真っ向勝負」 умение Lv+1\nУровень отношений+5"
+        },
+        {
+          "Option": "誰かを気遣える素敵な”大人”だね",
+          "OptionToCheck": "誰かを気遣える素敵な”大人”だね",
+          "Effect": "Интеллект+15\nУровень отношений+5"
+        },
+        {
+          "Option": "じゃあ私からも何かあげようか？",
+          "OptionToCheck": "じゃあ私からも何かあげようか",
+          "Effect": "Энергия+20\nВыносливость+10\n「対抗意識○」 умение Lv1"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［フォーメーション：PARTY］マヤノトップガン"
+    },
+    {
+      "EventName": "素直トレーニング！",
+      "EventNameToCheck": "素直トレーニング",
+      "EventOptionsList": [
+        {
+          "Option": "いい友達だね",
+          "OptionToCheck": "いい友達だね",
+          "Effect": "Сила+10\n「軽やかステップ」 умение Lv+1\nУровень отношений+5"
+        },
+        {
+          "Option": "今度は2人に素直になってもらおう！",
+          "OptionToCheck": "今度は2人に素直になってもらおう",
+          "Effect": "Выносливость+10\n「パス上手」 умение Lv1\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［いじっぱりのマルクト］ナリタタイシン"
+    },
+    {
+      "EventName": "キラッと輝くマーベラス☆",
+      "EventNameToCheck": "キラッと輝くマーベラス☆",
+      "EventOptionsList": [
+        {
+          "Option": "疲れてるのかも……",
+          "OptionToCheck": "疲れてるのかも",
+          "Effect": "Энергия+10\nУровень отношений+5"
+        },
+        {
+          "Option": "もう1度この目で確かめてみたい……！",
+          "OptionToCheck": "もう1度この目で確かめてみたい",
+          "Effect": "「曇りの日」 умение Lv2\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［スノウクリスタル・デイ］マーベラスサンデー"
+    },
+    {
+      "EventName": "黄昏サボタージュ",
+      "EventNameToCheck": "黄昏サボタージュ",
+      "EventOptionsList": [
+        {
+          "Option": "反省の態度を見せよう！",
+          "OptionToCheck": "反省の態度を見せよう",
+          "Effect": "Максимум энергии+4\nСила+10\nУровень отношений+5"
+        },
+        {
+          "Option": "素直に謝ればいい",
+          "OptionToCheck": "素直に謝ればいい",
+          "Effect": "Скорость+15\n「マイルコーナー○」 умение Lv+1\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［うるさい監視役］ウオッカ"
     }
   ]
 }

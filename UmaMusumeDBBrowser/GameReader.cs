@@ -142,6 +142,7 @@ namespace UmaMusumeDBBrowser
                 if (Program.IsDebug)
                 {
                     Program.AddToLog("Получен скриншот");
+                    ((Image)origImg.Clone()).Save(string.Format(@"origScr_{0}_{1}.bmp", DateTime.Today.ToShortDateString(), DateTime.Now.Ticks), ImageFormat.Bmp);
                 }
                 if (gameType == GameType.BluestacksV4)
                 {
@@ -178,6 +179,10 @@ namespace UmaMusumeDBBrowser
                     normalSize.Height = settings.GameNormalSize.Horizontal.Height;
                 }
                 currentImage = ImageManager.PrepareImage((Bitmap)origImg, normalSize);
+                if (Program.IsDebug)
+                {
+                    (currentImage.Clone().ToBitmap()).Save(string.Format(@"resizedScr_{0}_{1}.bmp", DateTime.Today.ToShortDateString(), DateTime.Now.Ticks), ImageFormat.Bmp);
+                }
                 var dataType = DetectDataType(currentImage, isVertical);
                 if (Program.IsDebug)
                 {
