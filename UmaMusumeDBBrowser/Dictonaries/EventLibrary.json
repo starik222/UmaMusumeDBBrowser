@@ -31865,6 +31865,1359 @@
       ],
       "Type": 1,
       "CardName": "［泥濘一笑、真っつぐに］イナリワン"
+    },
+    {
+      "EventName": "その時間は贈り物",
+      "EventNameToCheck": "その時間は贈り物",
+      "EventOptionsList": [
+        {
+          "Option": "手紙を書こう",
+          "OptionToCheck": "手紙を書こう",
+          "Effect": "Энергия+10\nСкорость+15\nИнтеллект+10"
+        },
+        {
+          "Option": "ケーキを作ろう！",
+          "OptionToCheck": "ケーキを作ろう",
+          "Effect": "Энергия+10\n「ささやき」 умение Lv+3"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【コレクト・ショコラティエ】エイシンフラッシュ"
+    },
+    {
+      "EventName": "『花は桜木、ウマ娘は‥‥‥』",
+      "EventNameToCheck": "花は桜木、ウマ娘は‥‥‥",
+      "EventOptionsList": [
+        {
+          "Option": "大和撫子・グラスワンダー",
+          "OptionToCheck": "大和撫子グラスワンダー",
+          "Effect": "Сила+20\nСлучайно 「練習上手○」"
+        },
+        {
+          "Option": "武道少女・ヤエノムテキ",
+          "OptionToCheck": "武道少女ヤエノムテキ",
+          "Effect": "Скорость+20\nСлучайно 「練習上手○」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "どすこい！決まり手指導！？",
+      "EventNameToCheck": "どすこい決まり手指導",
+      "EventOptionsList": [
+        {
+          "Option": "早速、根性で覚えるよ！",
+          "OptionToCheck": "早速、根性で覚えるよ",
+          "Effect": "Скорость+10\nСила воли+5"
+        },
+        {
+          "Option": "覚えるコツとかないかな‥‥‥？",
+          "OptionToCheck": "覚えるコツとかないかな‥‥‥",
+          "Effect": "「先行のコツ○」 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "『想いはバブリーに包め』",
+      "EventNameToCheck": "想いはバブリーに包め",
+      "EventOptionsList": [
+        {
+          "Option": "マルゼンスキーはどんな子？",
+          "OptionToCheck": "マルゼンスキーはどんな子",
+          "Effect": "Сила воли+10\nSkill point+15"
+        },
+        {
+          "Option": "チヨノートに答えはもうあるかも",
+          "OptionToCheck": "チヨノートに答えはもうあるかも",
+          "Effect": "Интеллект+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "『そこにあるのが、日常である』",
+      "EventNameToCheck": "そこにあるのが、日常である",
+      "EventOptionsList": [
+        {
+          "Option": "友だちを呼ぼう",
+          "OptionToCheck": "友だちを呼ぼう",
+          "Effect": "Сила+10\nИнтеллект+10"
+        },
+        {
+          "Option": "家族に直接見せるのは？",
+          "OptionToCheck": "家族に直接見せるのは",
+          "Effect": "Выносливость+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "風紀委員長賞、受賞者ですから",
+      "EventNameToCheck": "風紀委員長賞、受賞者ですから",
+      "EventOptionsList": [
+        {
+          "Option": "よし、思い切って飛びつこう！",
+          "OptionToCheck": "よし、思い切って飛びつこう",
+          "Effect": "Энергия+5\nСила+5"
+        },
+        {
+          "Option": "よし、回り込んで挟み撃ち！",
+          "OptionToCheck": "よし、回り込んで挟み撃ち",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "天皇賞（秋）の後に・空に手を",
+      "EventNameToCheck": "天皇賞秋の後に空に手を",
+      "EventOptionsList": [
+        {
+          "Option": "マイル路線の『安田記念』",
+          "OptionToCheck": "マイル路線の安田記念",
+          "Effect": "Целевая гонка 「安田記念」\nВсе характеристики+3\nSkill point+59\nУровень отношений с директором+4"
+        },
+        {
+          "Option": "中距離路線の『宝塚記念』",
+          "OptionToCheck": "中距離路線の宝塚記念",
+          "Effect": "Целевая гонка 「宝塚記念」\nВсе характеристики+3\nSkill point+59\nУровень отношений с директором+4"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "最近流行のブティックで",
+      "EventNameToCheck": "最近流行のブティックで",
+      "EventOptionsList": [
+        {
+          "Option": "ダンスをするのにぴったりなドレス",
+          "OptionToCheck": "ダンスをするのにぴったりなドレス",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "大人っぽくて知的なスーツ",
+          "OptionToCheck": "大人っぽくて知的なスーツ",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "カーレースフレンド",
+      "EventNameToCheck": "カーレースフレンド",
+      "EventOptionsList": [
+        {
+          "Option": "いいゲーセン友だちになりそうだな",
+          "OptionToCheck": "いいゲーセン友だちになりそうだな",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "じゃあ、ぜひ再戦を！",
+          "OptionToCheck": "じゃあ、ぜひ再戦を",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "ウマ娘演歌大会！",
+      "EventNameToCheck": "ウマ娘演歌大会",
+      "EventOptionsList": [
+        {
+          "Option": "とっても感動したよ",
+          "OptionToCheck": "とっても感動したよ",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "アンコールしたいな！",
+          "OptionToCheck": "アンコールしたいな",
+          "Effect": "Скорость+5\nСила воли+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "チヨノオーは頼られたい",
+      "EventNameToCheck": "チヨノオーは頼られたい",
+      "EventOptionsList": [
+        {
+          "Option": "2人とも楽しんでたと思うよ",
+          "OptionToCheck": "2人とも楽しんでたと思うよ",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "最初からうまくはいかないよ",
+          "OptionToCheck": "最初からうまくはいかないよ",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "頼りになる人ツアー？",
+      "EventNameToCheck": "頼りになる人ツアー",
+      "EventOptionsList": [
+        {
+          "Option": "頑張りすぎないようにな",
+          "OptionToCheck": "頑張りすぎないようにな",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "その調子だ！",
+          "OptionToCheck": "その調子だ",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "頼られる意味",
+      "EventNameToCheck": "頼られる意味",
+      "EventOptionsList": [
+        {
+          "Option": "いいとこ見せておいで！",
+          "OptionToCheck": "いいとこ見せておいで",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "俺も頼りにしてるよ",
+          "OptionToCheck": "俺も頼りにしてるよ",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "俺もやろうかな",
+          "OptionToCheck": "俺もやろうかな",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "昔も今と繋がっているんだね",
+          "OptionToCheck": "昔も今と繋がっているんだね",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "周りの子たちを見てごらん？",
+          "OptionToCheck": "周りの子たちを見てごらん",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "レース展開を読む力かな",
+          "OptionToCheck": "レース展開を読む力かな",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "まずは休養",
+          "OptionToCheck": "まずは休養",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "むしろ新たな一面を開拓しよう",
+          "OptionToCheck": "むしろ新たな一面を開拓しよう",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "初詣",
+      "EventNameToCheck": "初詣",
+      "EventOptionsList": [
+        {
+          "Option": "健康第一、過度な自主トレは厳禁！",
+          "OptionToCheck": "健康第一、過度な自主トレは厳禁",
+          "Effect": "Энергия+30"
+        },
+        {
+          "Option": "成長のために基礎から取り組もう",
+          "OptionToCheck": "成長のために基礎から取り組もう",
+          "Effect": "Все характеристики+5"
+        },
+        {
+          "Option": "みんなを蹴散らすスキルも身につけよう",
+          "OptionToCheck": "みんなを蹴散らすスキルも身につけよう",
+          "Effect": "Skill point+35"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "夏合宿(2年目)にて",
+      "EventNameToCheck": "夏合宿2年目にて",
+      "EventOptionsList": [
+        {
+          "Option": "ぶつかり稽古をしよう",
+          "OptionToCheck": "ぶつかり稽古をしよう",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "ビーチランニングを続けよう",
+          "OptionToCheck": "ビーチランニングを続けよう",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "追加の自主トレ",
+      "EventNameToCheck": "追加の自主トレ",
+      "EventOptionsList": [
+        {
+          "Option": "すぐ戻るんだよ",
+          "OptionToCheck": "すぐ戻るんだよ",
+          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с директором+5"
+        },
+        {
+          "Option": "私も付き合うから歩いて行こう",
+          "OptionToCheck": "私も付き合うから歩いて行こう",
+          "Effect": "Энергия+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "おいしすぎるお饅頭",
+      "EventNameToCheck": "おいしすぎるお饅頭",
+      "EventOptionsList": [
+        {
+          "Option": "食べすぎには注意だよ",
+          "OptionToCheck": "食べすぎには注意だよ",
+          "Effect": "Энергия+10\nSkill point+5"
+        },
+        {
+          "Option": "上達のたえにたくさん作って食べよう",
+          "OptionToCheck": "上達のたえにたくさん作って食べよう",
+          "Effect": "Энергия+30\nSkill point+10\nНебольшой шанс \nСкорость-5\nСила+5\n「太り気味」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【日下開山・花あかり】サクラチヨノオー"
+    },
+    {
+      "EventName": "Not Found",
+      "EventNameToCheck": "Not Found",
+      "EventOptionsList": [
+        {
+          "Option": "思いのままに言葉を並べて",
+          "OptionToCheck": "思いのままに言葉を並べて",
+          "Effect": "Энергия+10\nСкорость+10\nВыносливость+15"
+        },
+        {
+          "Option": "身振りで表現しよう！",
+          "OptionToCheck": "身振りで表現しよう",
+          "Effect": "Энергия+10\n「Скоростьイーター」 умение Lv+3"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【CODE:グラサージュ】ミホノブルボン"
+    },
+    {
+      "EventName": "ガラスのワルツ",
+      "EventNameToCheck": "ガラスのワルツ",
+      "EventOptionsList": [
+        {
+          "Option": "確かに、輝くようなダンスだった",
+          "OptionToCheck": "確かに、輝くようなダンスだった",
+          "Effect": "Сила+10\nСила воли+10"
+        },
+        {
+          "Option": "次からは相談もしてほしい",
+          "OptionToCheck": "次からは相談もしてほしい",
+          "Effect": "Интеллект+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "前門の母、後門の姉",
+      "EventNameToCheck": "前門の母、後門の姉",
+      "EventOptionsList": [
+        {
+          "Option": "お姉さんっぽいところがあるからね",
+          "OptionToCheck": "お姉さんっぽいところがあるからね",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "赤ちゃんにされるよりは‥‥‥",
+          "OptionToCheck": "赤ちゃんにされるよりは‥‥‥",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "人と観る映画",
+      "EventNameToCheck": "人と観る映画",
+      "EventOptionsList": [
+        {
+          "Option": "じゃあ、俺におすすめの映画も教えて",
+          "OptionToCheck": "じゃあ、俺におすすめの映画も教えて",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "次は参加者を増やしてもいいかもな",
+          "OptionToCheck": "次は参加者を増やしてもいいかもな",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "乙女の語らい",
+      "EventNameToCheck": "乙女の語らい",
+      "EventOptionsList": [
+        {
+          "Option": "‥‥‥耐性がたりなかったのかな",
+          "OptionToCheck": "‥‥‥耐性がたりなかったのかな",
+          "Effect": "Мотивация+1\nСила воли+5"
+        },
+        {
+          "Option": "紹介が上手くて感情移入しすぎたんだよ",
+          "OptionToCheck": "紹介が上手くて感情移入しすぎたんだよ",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "アルダンの寄り道講座・初級編",
+      "EventNameToCheck": "アルダンの寄り道講座初級編",
+      "EventOptionsList": [
+        {
+          "Option": "可愛かったよ",
+          "OptionToCheck": "可愛かったよ",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "寄り道って楽しいな",
+          "OptionToCheck": "寄り道って楽しいな",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "アルダンの寄り道講座・変則編",
+      "EventNameToCheck": "アルダンの寄り道講座変則編",
+      "EventOptionsList": [
+        {
+          "Option": "みんなで仲良く分けあおう！",
+          "OptionToCheck": "みんなで仲良く分けあおう",
+          "Effect": "Энергия+10"
+        },
+        {
+          "Option": "まずはチャレンジだ！",
+          "OptionToCheck": "まずはチャレンジだ",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "アルダンの寄り道講座・追憶編",
+      "EventNameToCheck": "アルダンの寄り道講座追憶編",
+      "EventOptionsList": [
+        {
+          "Option": "これからもいろんな寄り道がしたいな",
+          "OptionToCheck": "これからもいろんな寄り道がしたいな",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "いつでも、どんなことにも付き合うぞ！",
+          "OptionToCheck": "いつでも、どんなことにも付き合うぞ",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "いい羽休めになったみたいだな",
+          "OptionToCheck": "いい羽休めになったみたいだな",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "思い出光る昼下がり",
+      "EventNameToCheck": "思い出光る昼下がり",
+      "EventOptionsList": [
+        {
+          "Option": "微笑ましいなぁ",
+          "OptionToCheck": "微笑ましいなぁ",
+          "Effect": "Выносливость+20"
+        },
+        {
+          "Option": "みんなのお姉ちゃんみたいだな",
+          "OptionToCheck": "みんなのお姉ちゃんみたいだな",
+          "Effect": "Интеллект+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "意外なたくましさ？",
+      "EventNameToCheck": "意外なたくましさ",
+      "EventOptionsList": [
+        {
+          "Option": "アルダンはたくましい……な……！",
+          "OptionToCheck": "アルダンはたくましいな",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "お、俺も食べきる！",
+          "OptionToCheck": "お、俺も食べきる",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "史を顧みて",
+      "EventNameToCheck": "史を顧みて",
+      "EventOptionsList": [
+        {
+          "Option": "波乱万丈なものが読みたい",
+          "OptionToCheck": "波乱万丈なものが読みたい",
+          "Effect": "Сила+25"
+        },
+        {
+          "Option": "初心者向けのものが読みたい",
+          "OptionToCheck": "初心者向けのものが読みたい",
+          "Effect": "「先行のコツ○」 умение Lv+3"
+        },
+        {
+          "Option": "アルダンのお気に入りが読みたい",
+          "OptionToCheck": "アルダンのお気に入りが読みたい",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "体が勝手に‥‥‥?",
+      "EventNameToCheck": "体が勝手に‥‥‥",
+      "EventOptionsList": [
+        {
+          "Option": "そのまま羽を伸ばすのもいいんじゃ",
+          "OptionToCheck": "そのまま羽を伸ばすのもいいんじゃ",
+          "Effect": "Скорость+10\nSkill point+15"
+        },
+        {
+          "Option": "今だから出来る、とも言えるよ?",
+          "OptionToCheck": "今だから出来る、とも言えるよ",
+          "Effect": "「抜け出し準備」 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "信じ合うこと",
+      "EventNameToCheck": "信じ合うこと",
+      "EventOptionsList": [
+        {
+          "Option": "勝利へ向けての第一歩だね",
+          "OptionToCheck": "勝利へ向けての第一歩だね",
+          "Effect": "Скорость+20"
+        },
+        {
+          "Option": "けれど？",
+          "OptionToCheck": "けれど",
+          "Effect": "Сила воли+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "福笑い",
+          "OptionToCheck": "福笑い",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "お雑煮を食べに行く",
+          "OptionToCheck": "お雑煮を食べに行く",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "凧揚げ",
+          "OptionToCheck": "凧揚げ",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "初詣",
+      "EventNameToCheck": "初詣",
+      "EventOptionsList": [
+        {
+          "Option": "アルダンが元気でいいられますように",
+          "OptionToCheck": "アルダンが元気でいいられますように",
+          "Effect": "Энергия+30"
+        },
+        {
+          "Option": "アルダンが強くなれますように",
+          "OptionToCheck": "アルダンが強くなれますように",
+          "Effect": "Все характеристикиータス+5"
+        },
+        {
+          "Option": "アルダンが幸せになれますように",
+          "OptionToCheck": "アルダンが幸せになれますように",
+          "Effect": "Skill point+35"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "良薬は口に苦し",
+      "EventNameToCheck": "良薬は口に苦し",
+      "EventOptionsList": [
+        {
+          "Option": "過剰摂取になっちゃうよ",
+          "OptionToCheck": "過剰摂取になっちゃうよ",
+          "Effect": "Энергия+10\nSkill point+5"
+        },
+        {
+          "Option": "どんどん食べて体を強くしよう",
+          "OptionToCheck": "どんどん食べて体を強くしよう",
+          "Effect": "Энергия+30\nSkill point+10\nНебольшой шанс \nСкорость-5\nСила+5\n「太り気味」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "夏合宿(2年目)にて",
+      "EventNameToCheck": "夏合宿2年目にて",
+      "EventOptionsList": [
+        {
+          "Option": "『力、入れてこうぜ。鬼辛肉増し麻婆豆腐』",
+          "OptionToCheck": "力、入れてこうぜ。鬼辛肉増し麻婆豆腐",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "『根性、アゲてけよ。鬼シビ汁なし担々麺』",
+          "OptionToCheck": "根性、アゲてけよ。鬼シビ汁なし担々麺",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "踊り慣れたダンスをしよう",
+          "OptionToCheck": "踊り慣れたダンスをしよう",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "まずは‥‥‥真似して踊ってみよう!",
+          "OptionToCheck": "まずは‥‥‥真似して踊ってみよう",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【クリノクロア・ライン】メジロアルダン"
+    },
+    {
+      "EventName": "夕陽にときめいて",
+      "EventNameToCheck": "夕陽にときめいて",
+      "EventOptionsList": [
+        {
+          "Option": "また行こうな",
+          "OptionToCheck": "また行こうな",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "次はどこに行きたい？",
+          "OptionToCheck": "次はどこに行きたい",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "願い、花火に寄せて",
+      "EventNameToCheck": "願い、花火に寄せて",
+      "EventOptionsList": [
+        {
+          "Option": "ドーベルの想いが伝わってきたよ",
+          "OptionToCheck": "ドーベルの想いが伝わってきたよ",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "堂々としててよかったよ",
+          "OptionToCheck": "堂々としててよかったよ",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "みんなと打ち上げとかしないの？",
+          "OptionToCheck": "みんなと打ち上げとかしないの",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ツイステッド・ライン】メジロドーベル"
+    },
+    {
+      "EventName": "距離感とかあるし",
+      "EventNameToCheck": "距離感とかあるし",
+      "EventOptionsList": [
+        {
+          "Option": "DIYに挑戦！",
+          "OptionToCheck": "DIYに挑戦",
+          "Effect": "Скорость+10\nВыносливость+5\nУровень отношений+5"
+        },
+        {
+          "Option": "イメチェン☆着回しオトナコーデ",
+          "OptionToCheck": "イメチェン☆着回しオトナコーデ",
+          "Effect": "Энергия+10\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［In my way］トーセンジョーダン"
+    },
+    {
+      "EventName": "ヲタクの責務",
+      "EventNameToCheck": "ヲタクの責務",
+      "EventOptionsList": [
+        {
+          "Option": "でも推しのお願いなんだよね?",
+          "OptionToCheck": "でも推しのお願いなんだよね",
+          "Effect": "Выносливость+15\n「栄養補給」 умение Lv+1\nУровень отношений+"
+        },
+        {
+          "Option": "もっと自信を持って!",
+          "OptionToCheck": "もっと自信を持って",
+          "Effect": "Интеллект+15\n「集中力」 умение Lv+1\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［そこに“いる”幸せ］アグネスデジタル"
+    },
+    {
+      "EventName": "ヲタクの推し活",
+      "EventNameToCheck": "ヲタクの推し活",
+      "EventOptionsList": [
+        {
+          "Option": "さすがウマ娘オタク‥‥‥",
+          "OptionToCheck": "さすがウマ娘オタク‥‥‥",
+          "Effect": "Сила+10\nSkill point+15\n「狙うは最前列!」 умение Lv+1"
+        },
+        {
+          "Option": "憧れは自分の力になるもんね",
+          "OptionToCheck": "憧れは自分の力になるもんね",
+          "Effect": "Скорость+35\n「ウマ好み」 умение Lv+1\nУровень отношений+"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［そこに“いる”幸せ］アグネスデジタル"
+    },
+    {
+      "EventName": "決戦☆あんし〜んよ永遠に！",
+      "EventNameToCheck": "決戦☆あんし〜んよ永遠に",
+      "EventOptionsList": [
+        {
+          "Option": "思いっきりやっちゃってください！",
+          "OptionToCheck": "思いっきりやっちゃってください",
+          "Effect": "Успех:\nЭнергия+30\nМотивация+1\nВсе характеристики+10\nSkill point+20\n「博打うち」 умение Lv+3\nУровень отношений+5\nПровал:\nЭнергия-10\nМотивация-2"
+        },
+        {
+          "Option": "あんし～ん第一でお願いします‥‥‥！",
+          "OptionToCheck": "あんしん第一でお願いします‥‥‥",
+          "Effect": "Успех:\nЭнергия+\n「博打打ち」 умение Lv+1\nУровень отношений+5\nПровал:\nЭнергия+20\n「あやしげな作戦」 умение Lv+1\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［ブスッといっとく？］安心沢刺々美"
+    },
+    {
+      "EventName": "あんし〜んの練習台？",
+      "EventNameToCheck": "あんし〜んの練習台",
+      "EventOptionsList": [
+        {
+          "Option": "わかりました、お付き合いします！",
+          "OptionToCheck": "わかりました、お付き合いします",
+          "Effect": "Успех:\nМаксимум энергии+3\nЭнергия+10\nУровень отношений+10\nお出かけができるようになる\nПровал:\nSkill point+50\n「コーナー回復×」になる\nУровень отношений+5\nお出かけができるようになる"
+        },
+        {
+          "Option": "じゃ、じゃあ様子を見ながらで‥‥‥",
+          "OptionToCheck": "じゃ、じゃあ様子を見ながらで‥‥‥",
+          "Effect": "Мотивация+1\nランダムにステUP+10\nУровень отношений+5\nВозможность отдохнуть"
+        },
+        {
+          "Option": "遠慮しておきます！！",
+          "OptionToCheck": "遠慮しておきます",
+          "Effect": "Энергия-10\nSkill point+100\n「あやしげな作戦」 умение Lv+1\n「空回り」\nУровень отношений-10"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［ブスッといっとく？］安心沢刺々美"
+    },
+    {
+      "EventName": "刺々美との絆・酔えばあんし〜ん？",
+      "EventNameToCheck": "刺々美との絆酔えばあんし〜ん",
+      "EventOptionsList": [
+        {
+          "Option": "け、健康になれる秘孔で‥‥‥",
+          "OptionToCheck": "け、健康になれる秘孔で‥‥‥",
+          "Effect": "Энергия+10\nСлучайные 2 характеристики+10\n「ウマ好み」 умение Lv+3\nУровень отношений+5"
+        },
+        {
+          "Option": "頭がよくなる秘孔を！",
+          "OptionToCheck": "頭がよくなる秘孔を",
+          "Effect": "Энергия+10\nСлучайные 2 характеристики+10\n「ウマ好み」 умение Lv+3\nУровень отношений+5"
+        },
+        {
+          "Option": "魅力的になれる秘孔とか？",
+          "OptionToCheck": "魅力的になれる秘孔とか",
+          "Effect": "Энергия+10\nСлучайные 2 характеристики+10\n「ウマ好み」 умение Lv+3\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［ブスッといっとく？］安心沢刺々美"
+    },
+    {
+      "EventName": "私、ママになりますっ！",
+      "EventNameToCheck": "私、ママになりますっ",
+      "EventOptionsList": [
+        {
+          "Option": "今日の貴方はバッチリだったよ！",
+          "OptionToCheck": "今日の貴方はバッチリだったよ",
+          "Effect": "Уровень отношений+5\nSkill point+15\n「ギアシフト」 умение Lv+1"
+        },
+        {
+          "Option": "その気持ちは届いているよ",
+          "OptionToCheck": "その気持ちは届いているよ",
+          "Effect": "Уровень отношений+10\nМотивация+1\nПолное устранение ненормального состояния"
+        },
+        {
+          "Option": "いつかなれるといいね",
+          "OptionToCheck": "いつかなれるといいね",
+          "Effect": "※<Прекращение события>\nУровень отношений-5\nСила+25"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［小さなカップに想いをこめて］ニシノフラワー"
+    },
+    {
+      "EventName": "喜ぶ顔を思い浮かべて ",
+      "EventNameToCheck": "喜ぶ顔を思い浮かべて ",
+      "EventOptionsList": [
+        {
+          "Option": "ここは『大容量ハチミルク』で！",
+          "OptionToCheck": "ここは大容量ハチミルクで",
+          "Effect": "【Аохару/URA】\nЭнергия+24\nМотивация+1\nВыносливость+12\nСила воли+6\nУровень отношений+5"
+        },
+        {
+          "Option": "やはり『ウマスタ映えソーダ』で！",
+          "OptionToCheck": "やはりウマスタ映えソーダで",
+          "Effect": "【URA】\nМотивация+1\nSkill point+37\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［徹底管理主義］樫本理子"
+    },
+    {
+      "EventName": "『ちびっ子ウマ娘徒競走大会』",
+      "EventNameToCheck": "ちびっ子ウマ娘徒競走大会",
+      "EventOptionsList": [
+        {
+          "Option": "今はそっとしておこうか",
+          "OptionToCheck": "今はそっとしておこうか",
+          "Effect": "Уровень отношений+5\nСила воли+5\n「地固め」 умение Lv+1"
+        },
+        {
+          "Option": "特訓をしてあげるとか！",
+          "OptionToCheck": "特訓をしてあげるとか",
+          "Effect": "Уровень отношений+5\nМаксимум энергии+4\nСкорость+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［爆速！最速！花あらし！］サクラバクシンオー"
+    },
+    {
+      "EventName": "姉の背中",
+      "EventNameToCheck": "姉の背中",
+      "EventOptionsList": [
+        {
+          "Option": "わかった、応援してるよ",
+          "OptionToCheck": "わかった、応援してるよ",
+          "Effect": "Уровень отношений+5\nСила воли+10\nСкорость+5"
+        },
+        {
+          "Option": "準備、手伝わせてほしい！",
+          "OptionToCheck": "準備、手伝わせてほしい",
+          "Effect": "※<Прекращение события>\nSkill point+30"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［爆速！最速！花あらし！］サクラバクシンオー"
+    },
+    {
+      "EventName": "辿り着いたよミラクルハッピー",
+      "EventNameToCheck": "辿り着いたよミラクルハッピー",
+      "EventOptionsList": [
+        {
+          "Option": "ー(大成功)",
+          "OptionToCheck": "ー大成功",
+          "Effect": "Скорость+7\nВыносливость+7\nСила+7\nСила воли+7\nИнтеллект+7\nSkill point+77\n「スーパーラッキーセブン」 умение Lv+3\nУровень отношений+7"
+        },
+        {
+          "Option": "ー",
+          "OptionToCheck": "ー",
+          "Effect": "Успех:\nСкорость+7\nВыносливость+7\nСила+7\nСила воли+7\nИнтеллект+7\nSkill point+7\n「スーパーラッキーセブン」 умение Lv+1\nУровень отношений+7\nПровал:\nSkill point+7\n「スーパーラッキーセブン」 умение Lv+3\nУровень отношений+7"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［袖振り合えば福となる♪］マチカネフクキタル"
+    },
+    {
+      "EventName": "人情ラプソディ",
+      "EventNameToCheck": "人情ラプソディ",
+      "EventOptionsList": [
+        {
+          "Option": "どうしてそこまで親身に？",
+          "OptionToCheck": "どうしてそこまで親身に",
+          "Effect": "Мотивация+\nСкорость+5\nУровень отношений+5"
+        },
+        {
+          "Option": "優しいんだな",
+          "OptionToCheck": "優しいんだな",
+          "Effect": "Энергия+10\nВыносливость+5\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［これがウチらのいか焼きや！］タマモクロス"
+    },
+    {
+      "EventName": "商いの道は人の道",
+      "EventNameToCheck": "商いの道は人の道",
+      "EventOptionsList": [
+        {
+          "Option": "私も食べたくなってきた",
+          "OptionToCheck": "私も食べたくなってきた",
+          "Effect": "Скорость+10\nSkill point+10\n「先行コーナー○」 умение Lv+1\nУровень отношений+5"
+        },
+        {
+          "Option": "どんどん売り込もう",
+          "OptionToCheck": "どんどん売り込もう",
+          "Effect": "Выносливость+10\nSkill point+10\n「差しコーナー○」 умение Lv+1\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［これがウチらのいか焼きや！］タマモクロス"
+    },
+    {
+      "EventName": "アナタの心にチャージ一発！",
+      "EventNameToCheck": "アナタの心にチャージ一発",
+      "EventOptionsList": [
+        {
+          "Option": "よし、遊ぼう！",
+          "OptionToCheck": "よし、遊ぼう",
+          "Effect": "Максимум энергии+4\nУровень отношений+5"
+        },
+        {
+          "Option": "まだ仕事が残ってるんだ……",
+          "OptionToCheck": "まだ仕事が残ってるんだ",
+          "Effect": "Мотивация+\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［頑張るキミに！］アイネスフウジン"
+    },
+    {
+      "EventName": "キミの心にいつでも……",
+      "EventNameToCheck": "キミの心にいつでも",
+      "EventOptionsList": [
+        {
+          "Option": "仲直り大成功！！",
+          "OptionToCheck": "仲直り大成功",
+          "Effect": "Скорость+10\n「中距離直線○」 умение Lv+1\n「シンパシー」 умение Lv+1\nУровень отношений+5"
+        },
+        {
+          "Option": "これで離れても寂しくないかな",
+          "OptionToCheck": "これで離れても寂しくないかな",
+          "Effect": ""
+        }
+      ],
+      "Type": 1,
+      "CardName": "［頑張るキミに！］アイネスフウジン"
+    },
+    {
+      "EventName": "たった1つの使命",
+      "EventNameToCheck": "たった1つの使命",
+      "EventOptionsList": [
+        {
+          "Option": "私も、できる事を一緒に頑張るよ",
+          "OptionToCheck": "私も、できる事を一緒に頑張るよ",
+          "Effect": "Сила+10\nСила воли+10"
+        },
+        {
+          "Option": "唯一、ではないと思う",
+          "OptionToCheck": "唯一、ではないと思う",
+          "Effect": "Скорость+20\nСлучайно 「愛嬌○」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "想いよ届け",
+      "EventNameToCheck": "想いよ届け",
+      "EventOptionsList": [
+        {
+          "Option": "モデルの仕事もやれそうだね",
+          "OptionToCheck": "モデルの仕事もやれそうだね",
+          "Effect": "Сила+20"
+        },
+        {
+          "Option": "出来上がるのが楽しみだね",
+          "OptionToCheck": "出来上がるのが楽しみだね",
+          "Effect": "Выносливость+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "アヤベさんのサンドウィッチ",
+      "EventNameToCheck": "アヤベさんのサンドウィッチ",
+      "EventOptionsList": [
+        {
+          "Option": "無難な具材を勧める",
+          "OptionToCheck": "無難な具材を勧める",
+          "Effect": "「直線巧者」 умение Lv+2"
+        },
+        {
+          "Option": "珍品(肉)を勧めてみる！",
+          "OptionToCheck": "珍品肉を勧めてみる",
+          "Effect": "Мотивация+1\nСила+10"
+        },
+        {
+          "Option": "珍品(魚)を勧めてみる！",
+          "OptionToCheck": "珍品魚を勧めてみる",
+          "Effect": "Мотивация+1\nИнтеллект+15\n「中距離直線○」 умение Lv+2"
+        },
+        {
+          "Option": "珍品(野菜)を勧めてみる！",
+          "OptionToCheck": "珍品野菜を勧めてみる",
+          "Effect": "Мотивация+1\nСкорость+15\n「隠れ蓑」 умение Lv+2"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "同室シスターにはかなわない",
+      "EventNameToCheck": "同室シスターにはかなわない",
+      "EventOptionsList": [
+        {
+          "Option": "善は急げだね！",
+          "OptionToCheck": "善は急げだね",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "力を借りてみよう",
+          "OptionToCheck": "力を借りてみよう",
+          "Effect": "Энергия+5\nСила+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "静かに通じて",
+      "EventNameToCheck": "静かに通じて",
+      "EventOptionsList": [
+        {
+          "Option": "運命的なものがあるのかも",
+          "OptionToCheck": "運命的なものがあるのかも",
+          "Effect": "Интеллект+20"
+        },
+        {
+          "Option": "いい友人だね",
+          "OptionToCheck": "いい友人だね",
+          "Effect": "Скорость+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "それは、当たり前",
+      "EventNameToCheck": "それは、当たり前",
+      "EventOptionsList": [
+        {
+          "Option": "わかる！『かっけー』よね！",
+          "OptionToCheck": "わかるかっけーよね",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "ここは私に任せて",
+          "OptionToCheck": "ここは私に任せて",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "言葉+……",
+      "EventNameToCheck": "言葉",
+      "EventOptionsList": [
+        {
+          "Option": "なら、美味しく焼かないとね！",
+          "OptionToCheck": "なら、美味しく焼かないとね",
+          "Effect": "Энергия+10"
+        },
+        {
+          "Option": "学びの多い1日だった",
+          "OptionToCheck": "学びの多い1日だった",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "雲の向こう、宙のかなた",
+      "EventNameToCheck": "雲の向こう、宙のかなた",
+      "EventOptionsList": [
+        {
+          "Option": "力になれたみたいだね",
+          "OptionToCheck": "力になれたみたいだね",
+          "Effect": "Сила+10\nSkill point+15"
+        },
+        {
+          "Option": "観測のコツを伝えてあげたら？",
+          "OptionToCheck": "観測のコツを伝えてあげたら",
+          "Effect": "「仕掛け抜群」 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "必殺アヤベさん",
+      "EventNameToCheck": "必殺アヤベさん",
+      "EventOptionsList": [
+        {
+          "Option": "これが”仕事人”の力……！",
+          "OptionToCheck": "これが”仕事人”の力",
+          "Effect": "Энергия-10\nСила+20"
+        },
+        {
+          "Option": "根性のいる仕事だもんな",
+          "OptionToCheck": "根性のいる仕事だもんな",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "もふもふ審美眼",
+      "EventNameToCheck": "もふもふ審美眼",
+      "EventOptionsList": [
+        {
+          "Option": "子羊のためにはなった",
+          "OptionToCheck": "子羊のためにはなった",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "他の事にも応用できたり？",
+          "OptionToCheck": "他の事にも応用できたり",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "夢で見た光景",
+      "EventNameToCheck": "夢で見た光景",
+      "EventOptionsList": [
+        {
+          "Option": "でも楽しかったな",
+          "OptionToCheck": "でも楽しかったな",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "いい姉妹だな",
+          "OptionToCheck": "いい姉妹だな",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "元気が出そうなホットスナック",
+          "OptionToCheck": "元気が出そうなホットスナック",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "リラックスできそうなインスタントスープ",
+          "OptionToCheck": "リラックスできそうなインスタントスープ",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "頭が冴えそうなスイーツ",
+          "OptionToCheck": "頭が冴えそうなスイーツ",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "追加の自主トレ",
+      "EventNameToCheck": "追加の自主トレ",
+      "EventOptionsList": [
+        {
+          "Option": "付き合うよ",
+          "OptionToCheck": "付き合うよ",
+          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с директором+5"
+        },
+        {
+          "Option": "明日のために力を残そう",
+          "OptionToCheck": "明日のために力を残そう",
+          "Effect": "Энергия+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "夏合宿(2年目)にて",
+      "EventNameToCheck": "夏合宿2年目にて",
+      "EventOptionsList": [
+        {
+          "Option": "力がつきそう！『BLTサンド』",
+          "OptionToCheck": "力がつきそうBLTサンド",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "元気が出そう！『オレンジサンド』",
+          "OptionToCheck": "元気が出そうオレンジサンド",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "初詣",
+      "EventNameToCheck": "初詣",
+      "EventOptionsList": [
+        {
+          "Option": "(めいっぱい健康でいられますように！)",
+          "OptionToCheck": "めいっぱい健康でいられますように",
+          "Effect": "Энергия+30"
+        },
+        {
+          "Option": "(たくさんレースで活躍できますように)",
+          "OptionToCheck": "たくさんレースで活躍できますように",
+          "Effect": "Все характеристики+5"
+        },
+        {
+          "Option": "(多くの楽しみを見つけられますように)",
+          "OptionToCheck": "多くの楽しみを見つけられますように",
+          "Effect": "Skill point+35"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "じゃあ、私が代わりに言うね",
+          "OptionToCheck": "じゃあ、私が代わりに言うね",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "やってみる価値はある",
+          "OptionToCheck": "やってみる価値はある",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
+    },
+    {
+      "EventName": "ふわっふわスイート",
+      "EventNameToCheck": "ふわっふわスイート",
+      "EventOptionsList": [
+        {
+          "Option": "食べすぎないようにね",
+          "OptionToCheck": "食べすぎないようにね",
+          "Effect": "Энергия+10、Skill point+5"
+        },
+        {
+          "Option": "(このまま思う存分食べてもらおう)",
+          "OptionToCheck": "このまま思う存分食べてもらおう",
+          "Effect": "Энергия+30\nSkill point+10\nСкорость-5\nСила+5\nЭффект 「太り気味」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【Starry Nocturne】アドマイヤベガ"
     }
   ]
 }
