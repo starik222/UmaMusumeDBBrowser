@@ -14,6 +14,7 @@ namespace UmaMusumeDBBrowser
         public TazunaManager TazunaLibrary { get; set; }
         public FactorManager FactorLibrary { get; set; }
         public MissionManager MissionLibrary { get; set; }
+        public FreeShopManager FreeShopLibrary { get; set; }
 
         public AllLibraryManager()
         {
@@ -22,6 +23,7 @@ namespace UmaMusumeDBBrowser
             TazunaLibrary = new TazunaManager();
             FactorLibrary = new FactorManager();
             MissionLibrary = new MissionManager();
+            FreeShopLibrary = new FreeShopManager();
         }
 
         public void FillData()
@@ -31,6 +33,7 @@ namespace UmaMusumeDBBrowser
             TazunaLibrary.LoadLibrary(Path.Combine(Program.DictonariesDir, "TazunaLibrary.json"));
             FactorLibrary.FillData();
             MissionLibrary.FillData();
+            FreeShopLibrary.FillData();
         }
 
 

@@ -30,6 +30,7 @@ namespace UmaMusumeDBBrowser
         private List<SkillManager.SkillData> lastSkillResult;
         private List<FactorManager.FactorData> lastGenResult;
         private List<MissionManager.MissionData> lastMissionResult;
+        private List<FreeShopManager.FreeShopItemData> lastFreeShopResult;
         private AllLibraryManager libraryManager;
         private GameSettings settings;
         private CancellationTokenSource tokenSource;
@@ -53,6 +54,7 @@ namespace UmaMusumeDBBrowser
             lastSkillResult = new List<SkillManager.SkillData>();
             lastGenResult = new List<FactorManager.FactorData>();
             lastMissionResult = new List<MissionManager.MissionData>();
+            lastFreeShopResult = new List<FreeShopManager.FreeShopItemData>();
             gameHandle = IntPtr.Zero;
 
         }
@@ -276,6 +278,26 @@ namespace UmaMusumeDBBrowser
                             }
                             break;
                         }
+                    case GameDataType.FreeShopItem:
+                        {
+                            var result = GetFreeShopList(currentImage, dataType.type);
+                            if (result.Count > 0 && !EqualFreeShopList(result, lastFreeShopResult))
+                            {
+                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.FreeShopItem, DataClass = result });
+                                lastFreeShopResult = result;
+                            }
+                            break;
+                        }
+                    case GameDataType.FreeShopAvaibleWindow:
+                        {
+                            var result = GetFreeShopListFromAvaibleWindow(currentImage, dataType.type);
+                            if (result.Count > 0 && !EqualFreeShopList(result, lastFreeShopResult))
+                            {
+                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.FreeShopItem, DataClass = result });
+                                lastFreeShopResult = result;
+                            }
+                            break;
+                        }
                     default:
                         {
                             DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = "Other part" });
@@ -310,6 +332,18 @@ namespace UmaMusumeDBBrowser
             for (int i = 0; i < list1.Count; i++)
             {
                 if (list1[i].Id != list2[i].Id)
+                    return false;
+            }
+            return true;
+        }
+
+        private bool EqualFreeShopList(List<FreeShopManager.FreeShopItemData> list1, List<FreeShopManager.FreeShopItemData> list2)
+        {
+            if (list1.Count != list2.Count)
+                return false;
+            for (int i = 0; i < list1.Count; i++)
+            {
+                if (list1[i].ItemId != list2[i].ItemId)
                     return false;
             }
             return true;
@@ -490,6 +524,97 @@ namespace UmaMusumeDBBrowser
             return factorDatas;
         }
 
+        private List<FreeShopManager.FreeShopItemData> GetFreeShopListFromAvaibleWindow(Image<Bgr, byte> img, GameDataType dataType)
+        {
+            List<FreeShopManager.FreeShopItemData> shopItemDatas = new List<FreeShopManager.FreeShopItemData>();
+            Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
+            List<GameSettings.GamePart> parts = new List<GameSettings.GamePart>();
+
+            var part = settings.GameParts.Find(a => a.PartName.Equals("FreeShopAvaibleWindow"));
+            if (part != null)
+                parts.AddRange(part.SubGameParts);
+            //part = settings.GameParts.Find(a => a.PartName.Equals("MissionBtn2"));
+            //if (part != null)
+            //    parts.Add(part);
+            if (parts.Count == 0)
+                return shopItemDatas;
+            List<Rectangle> partsLocInfo = GetGamePartsRects(grayImg, parts, 0.60);
+            for (int i = 0; i < partsLocInfo.Count; i++)
+            {
+                //исправление координат
+                Rectangle partRect = partsLocInfo[i];
+                partRect.X -= 326;
+                partRect.Y -= 12;
+                partRect.Width = 302;
+                partRect.Height = 24;
+                if (partRect.Y < 95)
+                    continue;
+                //partRect.Height += 2;
+                //---
+                var result = GetFreeShopItemFromPart(img, partRect);
+                if (result != null)
+                    shopItemDatas.Add(result);
+            }
+            grayImg.Dispose();
+            return shopItemDatas;
+        }
+
+
+        private List<FreeShopManager.FreeShopItemData> GetFreeShopList(Image<Bgr, byte> img, GameDataType dataType)
+        {
+            List<FreeShopManager.FreeShopItemData> shopItemDatas = new List<FreeShopManager.FreeShopItemData>();
+            Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
+            List<GameSettings.GamePart> parts = new List<GameSettings.GamePart>();
+
+            var part = settings.GameParts.Find(a => a.PartName.Equals("FreeShopItem"));
+            if (part != null)
+                parts.Add(part);
+            //part = settings.GameParts.Find(a => a.PartName.Equals("MissionBtn2"));
+            //if (part != null)
+            //    parts.Add(part);
+            if (parts.Count == 0)
+                return shopItemDatas;
+            List<Rectangle> partsLocInfo = GetGamePartsRects(grayImg, parts, 0.75);
+            for (int i = 0; i < partsLocInfo.Count; i++)
+            {
+                //исправление координат
+                Rectangle partRect = partsLocInfo[i];
+                partRect.X -= 50;
+                partRect.Y -= 38;
+                partRect.Width = 302;
+                partRect.Height = 24;
+                if (partRect.Y < 330)
+                    continue;
+                //partRect.Height += 2;
+                //---
+                var result = GetFreeShopItemFromPart(img, partRect);
+                if (result != null)
+                    shopItemDatas.Add(result);
+            }
+            grayImg.Dispose();
+            return shopItemDatas;
+        }
+
+        private FreeShopManager.FreeShopItemData GetFreeShopItemFromPart(Image<Bgr, byte> img, Rectangle partRect)
+        {
+            FreeShopManager.FreeShopItemData freeShopItemData = null;
+            Mat textMat = new Mat(img.Mat, partRect);
+            //нужно ли?
+            //CvInvoke.Resize(textMat, textMat, new Size(), 2, 2);
+
+            CvInvoke.CvtColor(textMat, textMat, ColorConversion.Bgr2Gray);
+            if (Program.IsDebug)
+            {
+                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = textMat.ToBitmap() });
+            }
+            string tempText = Program.TessManager.GetTextMultiLine(textMat).Replace("\\n", "");
+            tempText = CorrectText(tempText);
+            textMat.Dispose();
+
+            freeShopItemData = libraryManager.FreeShopLibrary.FindFreeShopItemByTextDice(tempText);
+            return freeShopItemData;
+        }
+
 
         private List<MissionManager.MissionData> GetMissionList(Image<Bgr, byte> img, GameDataType dataType)
         {
@@ -526,6 +651,7 @@ namespace UmaMusumeDBBrowser
             return missionDatas;
         }
 
+
         private MissionManager.MissionData GetMissionFromPart(Image<Bgr, byte> img, Rectangle partRect)
         {
             MissionManager.MissionData missionData = null;
@@ -545,6 +671,8 @@ namespace UmaMusumeDBBrowser
             missionData = libraryManager.MissionLibrary.FindMissionItemByTextDice(tempText);
             return missionData;
         }
+
+
 
         private int GetFactorIndex(Image<Bgr, byte> img, Rectangle bounds)
         {
@@ -1188,6 +1316,8 @@ namespace UmaMusumeDBBrowser
             SkillDetailView = 8,
             FactorDetailView = 9,
             MissionBtn = 10,
+            FreeShopItem = 11,
+            FreeShopAvaibleWindow = 12,
             GameNotFound = -1,
             NotFound = -2,
             DebugImage = -3

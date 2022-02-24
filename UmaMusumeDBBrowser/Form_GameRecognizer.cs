@@ -38,6 +38,7 @@ namespace UmaMusumeDBBrowser
         private SkillControlManager skillControlManager;
         private string skillIconPath = null;
         private List<string> itemIconPathes = null;
+        private List<string> freeShopitemIconPathes = null;
 
         public Form_GameRecognizer(string lang)
         {
@@ -45,6 +46,8 @@ namespace UmaMusumeDBBrowser
             libManager = new AllLibraryManager();
             libManager.FactorLibrary.FillTransDict(Path.Combine(Program.DictonariesDir, "succession_factor" + "_" + lang + ".txt"));
             libManager.MissionLibrary.FillTransDict(Path.Combine(Program.DictonariesDir, "mission_data" + "_" + lang + ".txt"));
+            libManager.FreeShopLibrary.FillTransDict(Path.Combine(Program.DictonariesDir, "single_mode_free_shop_item" + "_" + lang + ".txt"));
+
             libManager.FillData();
             settings = JsonConvert.DeserializeObject<GameSettings>(File.ReadAllText(Path.Combine(Program.DictonariesDir, "GameParams.json")));
             LoadImagesToSettings();
@@ -147,6 +150,13 @@ namespace UmaMusumeDBBrowser
                         Extensions.SetTextToControl(label1, "Mission list");
                         break;
                     }
+                case GameReader.GameDataType.FreeShopItem:
+                    {
+                        SelectTab(tabPage8);
+                        SetFreeShopItems((List<FreeShopManager.FreeShopItemData>)gameDataArgs.DataClass);
+                        Extensions.SetTextToControl(label1, "FreeShopItem list");
+                        break;
+                    }
                 case GameReader.GameDataType.TazunaAfterHelp:
                     {
                         SelectTab(tabPage5);
@@ -189,13 +199,24 @@ namespace UmaMusumeDBBrowser
 
 
             var itemSettings = Program.TableDisplaySettings.Find(a => a.TableName.Equals("item_data"));
+            var freeShopitemSettings = Program.TableDisplaySettings.Find(a => a.TableName.Equals("single_mode_free_shop_item"));
             itemIconPathes = new List<string>();
+            freeShopitemIconPathes = new List<string>();
             if (itemSettings != null)
             {
 
                 if (itemSettings.IconSettings.Count > 0)
                 {
                     itemIconPathes = new List<string>(itemSettings.IconSettings[0].Value);
+                }
+            }
+
+            if (freeShopitemSettings != null)
+            {
+
+                if (freeShopitemSettings.IconSettings.Count > 0)
+                {
+                    freeShopitemIconPathes = new List<string>(freeShopitemSettings.IconSettings[0].Value);
                 }
             }
 
@@ -288,6 +309,50 @@ namespace UmaMusumeDBBrowser
                 {
                     Extensions.SetGridRowBackColor(dataGridView3, i, Program.ColorManager.SelectedScheme.GrigStyle.BackColor);
                     Extensions.SetGridRowForeColor(dataGridView3, i, Program.ColorManager.SelectedScheme.GrigStyle.ForeColor);
+                }
+            }
+        }
+
+
+        private void SetFreeShopItems(List<FreeShopManager.FreeShopItemData> datas)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Id", typeof(long));
+            dt.Columns.Add("Item", typeof(Image));
+            dt.Columns.Add("Price", typeof(long));
+            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("NameTrans", typeof(string));
+            dt.Columns.Add("Description", typeof(string));
+            dt.Columns.Add("DescriptionTrans", typeof(string));
+
+            foreach (var item in datas)
+            {
+                Image img = null;
+                foreach (var iconPath in freeShopitemIconPathes)
+                {
+                    img = Program.IconDB.GetImageByKey(iconPath, item.ItemId.ToString());
+                    if (img != null)
+                        break;
+                }
+
+                dt.Rows.Add(item.ItemId, img, item.ItemPrice, item.ItemName, item.ItemNameTrans, item.ItemDesc, item.ItemDescTrans);
+            }
+
+            Extensions.SetGridDataSource(dataGridView4, dt);
+            Extensions.SetGridColumnVisible(dataGridView4, "Id", false);
+            Extensions.SetGridColumnSizeMode(dataGridView4, "Item", DataGridViewAutoSizeColumnMode.AllCells);
+            Extensions.SetGridColumnSizeMode(dataGridView4, "Price", DataGridViewAutoSizeColumnMode.NotSet);
+            Extensions.SetGridColumnSizeMode(dataGridView4, "Name", DataGridViewAutoSizeColumnMode.Fill);
+            Extensions.SetGridColumnSizeMode(dataGridView4, "NameTrans", DataGridViewAutoSizeColumnMode.Fill);
+            Extensions.SetGridColumnSizeMode(dataGridView4, "Description", DataGridViewAutoSizeColumnMode.Fill);
+            Extensions.SetGridColumnSizeMode(dataGridView4, "DescriptionTrans", DataGridViewAutoSizeColumnMode.Fill);
+
+            for (int i = 0; i < dataGridView4.RowCount; i++)
+            {
+                if (Program.ColorManager.SelectedScheme != null)
+                {
+                    Extensions.SetGridRowBackColor(dataGridView4, i, Program.ColorManager.SelectedScheme.GrigStyle.BackColor);
+                    Extensions.SetGridRowForeColor(dataGridView4, i, Program.ColorManager.SelectedScheme.GrigStyle.ForeColor);
                 }
             }
         }
@@ -600,6 +665,15 @@ namespace UmaMusumeDBBrowser
             }
         }
 
+        private void dataGridView4_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            if (e.Column.ValueType == typeof(Image))
+            {
+                ((DataGridViewImageColumn)e.Column).ImageLayout = DataGridViewImageCellLayout.Zoom;
+                e.Column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
             List<Int64> ids = new List<Int64>();
@@ -610,6 +684,21 @@ namespace UmaMusumeDBBrowser
             if (ids.Count == 0)
                 MessageBox.Show("mission list is empty.");
             parentForm.LoadTableByIds("mission_data", ids);
+            if (parentForm.WindowState == FormWindowState.Minimized)
+                parentForm.WindowState = FormWindowState.Normal;
+            parentForm.Activate();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            List<Int64> ids = new List<Int64>();
+            for (int i = 0; i < dataGridView4.RowCount; i++)
+            {
+                ids.Add((long)dataGridView4["Id", i].Value);
+            }
+            if (ids.Count == 0)
+                MessageBox.Show("FreeShopItem list is empty.");
+            parentForm.LoadTableByIds("single_mode_free_shop_item", ids);
             if (parentForm.WindowState == FormWindowState.Minimized)
                 parentForm.WindowState = FormWindowState.Normal;
             parentForm.Activate();

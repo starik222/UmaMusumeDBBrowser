@@ -199,6 +199,7 @@
     <Compile Include="Form_log.Designer.cs">
       <DependentUpon>Form_log.cs</DependentUpon>
     </Compile>
+    <Compile Include="FreeShopManager.cs" />
     <Compile Include="GameReader.cs" />
     <Compile Include="GameSettings.cs" />
     <Compile Include="IconManager.cs" />

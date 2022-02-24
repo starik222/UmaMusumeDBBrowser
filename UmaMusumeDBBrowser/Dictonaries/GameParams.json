@@ -298,6 +298,26 @@
       "VerticalState": true,
       "DataType": 10,
       "ImageName": "MissionBtn2.bmp"
+    },
+    {
+      "PartName": "FreeShopItem",
+      "VerticalState": true,
+      "DataType": 11,
+      "ImageName": "FreeShopItem.bmp"
+    },
+    {
+      "PartName": "FreeShopAvaibleWindow",
+      "VerticalState": true,
+      "DataType": 12,
+      "ImageName": "FreeShopItemWindow.bmp",
+      "SubGameParts": [
+        {
+          "PartName": "FreeShopAvaibleItem",
+          "VerticalState": true,
+          "DataType": 12,
+          "ImageName": "FreeShopItemWindowBtn.bmp"
+        }
+      ]
     }
   ]
 }
