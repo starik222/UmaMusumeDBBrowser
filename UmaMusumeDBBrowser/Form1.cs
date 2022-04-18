@@ -269,15 +269,34 @@ namespace UmaMusumeDBBrowser
         {
             if (dataGridView1.SelectedCells.Count == 0)
                 return;
+            string pattern = "(.*?)(＜.*?＞)";
+            MatchEvaluator evaluator = new MatchEvaluator(TextReplacer);
             for (int i = 0; i < dataGridView1.SelectedCells.Count; i++)
             {
                 string cName = dataGridView1.Columns[dataGridView1.SelectedCells[i].ColumnIndex].Name;
                 if (currentTableSettings.TextTypeAndName.FindIndex(a => a.Value.Equals(cName)) != -1)
                 {
                     if (selectedLanguages != null && dataGridView1.SelectedCells[i].Value != DBNull.Value && !string.IsNullOrWhiteSpace((string)dataGridView1.SelectedCells[i].Value))
-                        dataGridView1[cName + "_trans", dataGridView1.SelectedCells[i].RowIndex].Value = Program.tools.TranslateText((string)dataGridView1.SelectedCells[i].Value, selectedLanguages, true);
+                    {
+                        string originalText = (string)dataGridView1.SelectedCells[i].Value;
+
+                        string translatedText = Regex.Replace(originalText, pattern, evaluator, RegexOptions.Singleline);
+
+                        if(originalText == translatedText)
+                            translatedText = Program.tools.TranslateText(originalText, selectedLanguages, true);
+                        dataGridView1[cName + "_trans", dataGridView1.SelectedCells[i].RowIndex].Value = translatedText; //;
+                    }
                 }
             }
+        }
+
+        private string TextReplacer(Match m)
+        {
+            if (m.Groups.Count != 3)
+                throw new Exception("Ошибочная реализация!");
+            string translatedText = Program.tools.TranslateText(m.Groups[1].Value, selectedLanguages, true);
+            string postfix = Program.tools.CompareAndReplace(m.Groups[2].Value, Program.tools.RepText);
+            return translatedText + postfix;
         }
 
         private Form_filter filter = null;

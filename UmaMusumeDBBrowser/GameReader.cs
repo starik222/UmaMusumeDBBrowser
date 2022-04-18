@@ -141,11 +141,11 @@ namespace UmaMusumeDBBrowser
                     }
                     goto Exit;
                 }
-                if (Program.IsDebug)
-                {
-                    Program.AddToLog("Получен скриншот");
-                    ((Image)origImg.Clone()).Save(string.Format(@"origScr_{0}_{1}.bmp", DateTime.Today.ToShortDateString(), DateTime.Now.Ticks), ImageFormat.Bmp);
-                }
+                //if (Program.IsDebug)
+                //{
+                //    Program.AddToLog("Получен скриншот");
+                //    ((Image)origImg.Clone()).Save(string.Format(@"origScr_{0}_{1}.bmp", DateTime.Today.ToShortDateString(), DateTime.Now.Ticks), ImageFormat.Bmp);
+                //}
                 if (gameType == GameType.BluestacksV4)
                 {
                     Rectangle rectangle = new Rectangle(settings.BlueStacksPanel.Ver4.X, settings.BlueStacksPanel.Ver4.Height, origImg.Width - settings.BlueStacksPanel.Ver4.X - (BsRightPanelVisible ? settings.BlueStacksPanel.Ver4.Width : settings.BlueStacksPanel.Ver4.X),
@@ -181,10 +181,10 @@ namespace UmaMusumeDBBrowser
                     normalSize.Height = settings.GameNormalSize.Horizontal.Height;
                 }
                 currentImage = ImageManager.PrepareImage((Bitmap)origImg, normalSize);
-                if (Program.IsDebug)
-                {
-                    (currentImage.Clone().ToBitmap()).Save(string.Format(@"resizedScr_{0}_{1}.bmp", DateTime.Today.ToShortDateString(), DateTime.Now.Ticks), ImageFormat.Bmp);
-                }
+                //if (Program.IsDebug)
+                //{
+                //    (currentImage.Clone().ToBitmap()).Save(string.Format(@"resizedScr_{0}_{1}.bmp", DateTime.Today.ToShortDateString(), DateTime.Now.Ticks), ImageFormat.Bmp);
+                //}
                 var dataType = DetectDataType(currentImage, isVertical);
                 if (Program.IsDebug)
                 {
@@ -278,12 +278,12 @@ namespace UmaMusumeDBBrowser
                             }
                             break;
                         }
-                    case GameDataType.FreeShopItem:
+                    case GameDataType.FreeShopItemWindow:
                         {
                             var result = GetFreeShopList(currentImage, dataType.type);
                             if (result.Count > 0 && !EqualFreeShopList(result, lastFreeShopResult))
                             {
-                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.FreeShopItem, DataClass = result });
+                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.FreeShopItemWindow, DataClass = result });
                                 lastFreeShopResult = result;
                             }
                             break;
@@ -293,7 +293,7 @@ namespace UmaMusumeDBBrowser
                             var result = GetFreeShopListFromAvaibleWindow(currentImage, dataType.type);
                             if (result.Count > 0 && !EqualFreeShopList(result, lastFreeShopResult))
                             {
-                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.FreeShopItem, DataClass = result });
+                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.FreeShopItemWindow, DataClass = result });
                                 lastFreeShopResult = result;
                             }
                             break;
@@ -543,8 +543,8 @@ namespace UmaMusumeDBBrowser
             {
                 //исправление координат
                 Rectangle partRect = partsLocInfo[i];
-                partRect.X -= 326;
-                partRect.Y -= 12;
+                partRect.X -= 6;
+                partRect.Y -= 35;
                 partRect.Width = 302;
                 partRect.Height = 24;
                 if (partRect.Y < 95)
@@ -566,9 +566,9 @@ namespace UmaMusumeDBBrowser
             Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
             List<GameSettings.GamePart> parts = new List<GameSettings.GamePart>();
 
-            var part = settings.GameParts.Find(a => a.PartName.Equals("FreeShopItem"));
+            var part = settings.GameParts.Find(a => a.PartName.Equals("FreeShopItemWindow"));
             if (part != null)
-                parts.Add(part);
+                parts.AddRange(part.SubGameParts);
             //part = settings.GameParts.Find(a => a.PartName.Equals("MissionBtn2"));
             //if (part != null)
             //    parts.Add(part);
@@ -630,13 +630,13 @@ namespace UmaMusumeDBBrowser
             //    parts.Add(part);
             if (parts.Count == 0)
                 return missionDatas;
-            List<Rectangle> partsLocInfo = GetGamePartsRects(grayImg, parts, 0.75);
+            List<Rectangle> partsLocInfo = GetGamePartsRects(grayImg, parts, 0.8f);
             for (int i = 0; i < partsLocInfo.Count; i++)
             {
                 //исправление координат
                 Rectangle partRect = partsLocInfo[i];
-                partRect.X -= 335;
-                partRect.Y -= 22;
+                partRect.X -= 330;
+                partRect.Y -= 16;
                 partRect.Width = 320;
                 partRect.Height = 46;
                 if (partRect.Y < 400)
@@ -1197,7 +1197,7 @@ namespace UmaMusumeDBBrowser
                 CvInvoke.MatchTemplate(grayImg, item.Image, imgOut, TemplateMatchingType.CcoeffNormed);
                 imgOut.MinMax(out minVal, out maxVal, out minLoc, out maxLoc);
                 imgOut.Dispose();
-                if (maxVal[0] > 0.86)
+                if (maxVal[0] > 0.8f)
                 {
                     if (Program.IsDebug)
                     {
@@ -1316,7 +1316,7 @@ namespace UmaMusumeDBBrowser
             SkillDetailView = 8,
             FactorDetailView = 9,
             MissionBtn = 10,
-            FreeShopItem = 11,
+            FreeShopItemWindow = 11,
             FreeShopAvaibleWindow = 12,
             GameNotFound = -1,
             NotFound = -2,

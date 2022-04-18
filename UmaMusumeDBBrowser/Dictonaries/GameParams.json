@@ -297,13 +297,21 @@
       "PartName": "MissionBtn",
       "VerticalState": true,
       "DataType": 10,
-      "ImageName": "MissionBtn2.bmp"
+      "ImageName": "MissionBtn4.bmp"
     },
     {
-      "PartName": "FreeShopItem",
+      "PartName": "FreeShopItemWindow",
       "VerticalState": true,
       "DataType": 11,
-      "ImageName": "FreeShopItem.bmp"
+      "ImageName": "FreeShopItemWindow2.bmp",
+      "SubGameParts": [
+        {
+          "PartName": "FreeShopItem",
+          "VerticalState": true,
+          "DataType": 11,
+          "ImageName": "FreeShopItem.bmp"
+        }
+      ]
     },
     {
       "PartName": "FreeShopAvaibleWindow",
@@ -315,7 +323,21 @@
           "PartName": "FreeShopAvaibleItem",
           "VerticalState": true,
           "DataType": 12,
-          "ImageName": "FreeShopItemWindowBtn.bmp"
+          "ImageName": "FreeShopItemWindowBtn2.bmp"
+        }
+      ]
+    },
+    {
+      "PartName": "FreeShopAvaibleWindow2",
+      "VerticalState": true,
+      "DataType": 12,
+      "ImageName": "FreeShopItemAVWindow.bmp",
+      "SubGameParts": [
+        {
+          "PartName": "FreeShopAvaibleItem",
+          "VerticalState": true,
+          "DataType": 12,
+          "ImageName": "FreeShopItemWindowBtn2.bmp"
         }
       ]
     }

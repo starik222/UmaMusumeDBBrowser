@@ -150,7 +150,7 @@ namespace UmaMusumeDBBrowser
                         Extensions.SetTextToControl(label1, "Mission list");
                         break;
                     }
-                case GameReader.GameDataType.FreeShopItem:
+                case GameReader.GameDataType.FreeShopItemWindow:
                     {
                         SelectTab(tabPage8);
                         SetFreeShopItems((List<FreeShopManager.FreeShopItemData>)gameDataArgs.DataClass);
