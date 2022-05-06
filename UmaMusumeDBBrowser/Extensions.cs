@@ -15,6 +15,8 @@ namespace UmaMusumeDBBrowser
     {
 
         private delegate void TextDelegate(Control textBox, string text);
+        private delegate void ListDelegate1(ListBox listBox);
+        private delegate void ListDelegate2(ListBox listBox, object text);
         private delegate void VisibleDelegate(Control control, bool visible);
         private delegate void HeightDelegate(Control control, int Height);
         private delegate void ImageDelegate(PictureBox control, Image img);
@@ -89,6 +91,28 @@ namespace UmaMusumeDBBrowser
             }
             else
                 textBox.Text = text;
+        }
+
+        public static void AddTextToList(ListBox listBox, object text)
+        {
+            if (listBox.InvokeRequired)
+            {
+                var d = new ListDelegate2(AddTextToList);
+                listBox.Invoke(d, new object[] { listBox, text });
+            }
+            else
+                listBox.Items.Add(text);
+        }
+
+        public static void ClearListBox(ListBox listBox)
+        {
+            if (listBox.InvokeRequired)
+            {
+                var d = new ListDelegate1(ClearListBox);
+                listBox.Invoke(d, new object[] { listBox });
+            }
+            else
+                listBox.Items.Clear();
         }
 
 

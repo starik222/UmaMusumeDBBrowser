@@ -15,6 +15,7 @@ using System.Drawing.Imaging;
 using Emgu.CV.CvEnum;
 using Translator;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace UmaMusumeDBBrowser
 {
@@ -31,6 +32,8 @@ namespace UmaMusumeDBBrowser
         private List<FactorManager.FactorData> lastGenResult;
         private List<MissionManager.MissionData> lastMissionResult;
         private List<FreeShopManager.FreeShopItemData> lastFreeShopResult;
+        private Mat lastDialogMask;
+        private DialogsManages.DialogsItemDataV1 lastDialogData;
         private AllLibraryManager libraryManager;
         private GameSettings settings;
         private CancellationTokenSource tokenSource;
@@ -38,6 +41,10 @@ namespace UmaMusumeDBBrowser
         private List<NAMES> charReplaceDictonary;
         private GameType gameType;
         private IntPtr gameHandle;
+        private Form_dialogReader dialogTextForm = null;
+        private List<KeyValuePair<string,string>> correctDialogTextParts;
+
+        private bool alreadyTranslated = false;
 
         public bool BsTopPanelVisible { get; set; } = true;
         public bool BsRightPanelVisible { get; set; } = true;
@@ -56,7 +63,28 @@ namespace UmaMusumeDBBrowser
             lastMissionResult = new List<MissionManager.MissionData>();
             lastFreeShopResult = new List<FreeShopManager.FreeShopItemData>();
             gameHandle = IntPtr.Zero;
+            lastDialogMask = null;
+            lastDialogData = new DialogsManages.DialogsItemDataV1();
+            correctDialogTextParts = new List<KeyValuePair<string, string>>();
+            correctDialogTextParts.Add(new KeyValuePair<string, string>("...", "…"));
+            correctDialogTextParts.Add(new KeyValuePair<string, string>("--", "――"));
+            correctDialogTextParts.Add(new KeyValuePair<string, string>("！!", "!"));
 
+        }
+
+        public void SetDialogForm(Form_dialogReader dialogForm)
+        {
+            dialogTextForm = dialogForm;
+        }
+
+        public void DeleteDialogForm()
+        {
+            if (dialogTextForm != null)
+            {
+                dialogTextForm.Close();
+                dialogTextForm.Dispose();
+                dialogTextForm = null;
+            }
         }
 
         public void SetGameType(GameType gameWindowType)
@@ -81,6 +109,7 @@ namespace UmaMusumeDBBrowser
         {
             tokenSource.Cancel();
             IsStarted = false;
+            DeleteDialogForm();
         }
 
         public bool SetWindowInfo(GameType gameWindowType, IntPtr handle)
@@ -298,6 +327,55 @@ namespace UmaMusumeDBBrowser
                             }
                             break;
                         }
+                    case GameDataType.MainDialog:
+                        {
+                            Mat currentMask = GetDialogTextMat(currentImage, dataType.PartInfo, isVertical);
+
+                            if (lastDialogMask == null)
+                            {
+                                alreadyTranslated = false;
+                                lastDialogMask = currentMask;
+                                break;
+                            }
+                            else
+                            {
+                                if (lastDialogMask.Width != currentMask.Width || lastDialogMask.Height != currentMask.Height)
+                                {
+                                    alreadyTranslated = false;
+                                    lastDialogMask = currentMask;
+                                    break;
+                                }
+
+                                float confid = CompareImages(lastDialogMask, currentMask);
+                                if (Program.IsDebug)
+                                {
+                                    Program.AddToLog("dialog compare counfidence: " + confid);
+                                }
+                                if(confid<0.98f)
+                                {
+                                    alreadyTranslated = false;
+                                    lastDialogMask = currentMask;
+                                    break;
+                                }
+                            }
+                            if (!alreadyTranslated)
+                            {
+                                string name = CheckAndGetDialogName(currentImage.Mat, isVertical);
+                                if (Program.IsDebug && !string.IsNullOrEmpty(name))
+                                {
+                                    Program.AddToLog("recognized name: " + name);
+                                }
+                                alreadyTranslated = true;
+                                var result = GetDialogData(currentMask, name, 0.1f);
+                                if (result.Text != lastDialogData.Text || result.Name != lastDialogData.Name)
+                                {
+                                    //DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = result });
+                                    dialogTextForm.SetDialogText(result);
+                                    lastDialogData = result;
+                                }
+                            }
+                            break;
+                        }
                     default:
                         {
                             DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = "Other part" });
@@ -311,6 +389,53 @@ namespace UmaMusumeDBBrowser
                 if (origImg != null)
                     origImg.Dispose();
             }
+        }
+
+        private string CheckAndGetDialogName(Mat img, bool isVertical)
+        {
+            string text = "";
+            if (isVertical)
+            {
+                Mat cutImg = new Mat(img, new Rectangle(47, 744, 235, 38));
+                Mat hsvImg = new Mat();
+                CvInvoke.CvtColor(cutImg, hsvImg, ColorConversion.Bgr2Hsv);
+                Mat mask = new Mat();
+                MCvScalar minS = new MCvScalar(46, 231, 214);
+                MCvScalar maxS = new MCvScalar(48, 233, 216);
+                CvInvoke.InRange(hsvImg, new ScalarArray(minS), new ScalarArray(maxS), mask);
+                float wr = ImageWhiteRatio(mask);
+                hsvImg.Dispose();
+                mask.Dispose();
+                if (wr > 0.5f)
+                {
+                    CvInvoke.CvtColor(cutImg, cutImg, ColorConversion.Bgr2Gray);
+                    CvInvoke.BitwiseNot(cutImg, cutImg);
+                    text = Program.TessManager.GetTextSingleLine(cutImg);
+                }
+                cutImg.Dispose();
+            }
+            else
+            {
+                Mat cutImg = new Mat(img, new Rectangle(210, 635, 418, 44));
+                Mat hsvImg = new Mat();
+                CvInvoke.CvtColor(cutImg, hsvImg, ColorConversion.Bgr2Hsv);
+                Mat mask = new Mat();
+                MCvScalar minS = new MCvScalar(0, 0, 213);
+                MCvScalar maxS = new MCvScalar(0, 0, 255);
+                CvInvoke.InRange(hsvImg, new ScalarArray(minS), new ScalarArray(maxS), mask);
+                CvInvoke.BitwiseNot(mask, mask);
+                float wr = ImageWhiteRatio(mask);
+                hsvImg.Dispose();
+                //mask.Dispose();
+                if (wr < 0.98f)
+                {
+                    //CvInvoke.CvtColor(cutImg, cutImg, ColorConversion.Bgr2Gray);
+                    //CvInvoke.BitwiseNot(cutImg, cutImg);
+                    text = Program.TessManager.GetTextSingleLine(mask);
+                }
+                mask.Dispose();
+            }
+            return text;
         }
 
         private bool EqualFactorList(List<FactorManager.FactorData> list1, List<FactorManager.FactorData> list2)
@@ -347,6 +472,93 @@ namespace UmaMusumeDBBrowser
                     return false;
             }
             return true;
+        }
+
+
+        private float CompareImages(Mat img1, Mat img2)
+        {
+            Mat templateImage = null;
+            Mat srcImage = null;
+
+
+            if (img1.Width <= img2.Width && img1.Height <= img2.Height)
+            {
+                templateImage = img1;
+                srcImage = img2;
+            }
+            else if (img1.Width > img2.Width && img1.Height > img2.Height)
+            {
+                templateImage = img2;
+                srcImage = img1;
+            }
+            else
+                return 0f;
+
+            float w1 = ImageWhiteRatio(img1);
+            float w2 = ImageWhiteRatio(img2);
+
+            Mat imgOut = new Mat();
+            double[] minVal, maxVal;
+            Point[] minLoc, maxLoc;
+            CvInvoke.MatchTemplate(srcImage, templateImage, imgOut, TemplateMatchingType.CcoeffNormed);
+            imgOut.MinMax(out minVal, out maxVal, out minLoc, out maxLoc);
+            imgOut.Dispose();
+
+            if (maxVal[0] == 1)
+            {
+                if ((w1 + 0.1f) >= w2 && (w1 - 0.1f) <= w2)
+                    return 1;
+                else
+                {
+                    return (1f - Math.Abs(w1 - w2));
+                }
+            }
+
+            return (float)maxVal[0];
+        }
+
+        private Mat GetDialogTextMat(Image<Bgr, byte> img, Rectangle partInfo, bool isVertical)
+        {
+            Mat textPart = new Mat(img.Mat, partInfo);
+            Mat mask = new Mat();
+            Mat hsvImg = new Mat();
+            if (!isVertical)
+            {
+                CvInvoke.CvtColor(textPart, hsvImg, ColorConversion.Bgr2Hsv);
+                //MCvScalar minS = new MCvScalar(0, 0, 0);
+                //MCvScalar maxS = new MCvScalar(255, 255, 237);//235
+                MCvScalar minS = new MCvScalar(0, 0, 192);//213
+                MCvScalar maxS = new MCvScalar(0, 0, 255);
+                CvInvoke.InRange(hsvImg, new ScalarArray(minS), new ScalarArray(maxS), mask);
+                CvInvoke.BitwiseNot(mask, mask);
+            }
+            else
+            {
+                CvInvoke.CvtColor(textPart, hsvImg, ColorConversion.Bgr2Gray);
+                mask = hsvImg.Clone();
+                //CvInvoke.Threshold(textPart, mask, 0.0, 255.0, ThresholdType.Otsu);
+            }
+            if (Program.IsDebug)
+            {
+                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = mask.ToBitmap() });
+            }
+            hsvImg.Dispose();
+            textPart.Dispose();
+            return mask;
+        }
+
+        private DialogsManages.DialogsItemDataV1 GetDialogData(Mat textMask, string name, float confid = 0.5f)
+        {
+            //CvInvoke.Threshold(textMask, textMask, 0, 255, ThresholdType.Otsu);
+            string tempText = Program.TessManager.GetTextMultiLine(textMask);
+            tempText = CorrectDialogText(tempText);
+            if (Program.IsDebug)
+            {
+                Program.AddToLog("dialog text: " + tempText);
+            }
+            var res = libraryManager.DialogsLibrary.FindDialogDiceAlg(name, tempText, confid);
+            return new DialogsManages.DialogsItemDataV1() { Name = res.name, NameTrans = res.nameTrans, Text = res.dialogData.Text, TextTrans = res.dialogData.TransText, ChoiceDataList = res.dialogData.ChoiceDataList };
+
         }
 
 
@@ -405,6 +617,17 @@ namespace UmaMusumeDBBrowser
             foreach (var item in charReplaceDictonary)
             {
                 text = text.Replace(item.orig_name, item.translit_name);
+            }
+            return text;
+        }
+
+        private string CorrectDialogText(string text)
+        {
+            if (correctDialogTextParts == null)
+                return text;
+            foreach (var item in correctDialogTextParts)
+            {
+                text = text.Replace(item.Key, item.Value);
             }
             return text;
         }
@@ -498,6 +721,8 @@ namespace UmaMusumeDBBrowser
                     partRect.Width = 335;
                     partRect.Height += 2;
                     //---
+                    if (partRect.X < 0 || partRect.Y < 0)
+                        goto exit;
                     var result = GetFactorFromPart(img, partRect, i);
                     if (result != null)
                         factorDatas.Add(result);
@@ -513,13 +738,15 @@ namespace UmaMusumeDBBrowser
                 partRect.Y -= 2;
                 partRect.Width = 315;
                 partRect.Height = 26;
-
+                if (partRect.X < 0 || partRect.Y < 0)
+                    goto exit;
                 int factorIndex = GetFactorIndex(img, partRect);
 
                 var result = GetFactorFromPart(img, partRect, factorIndex);
                 if (result != null)
                     factorDatas.Add(result);
             }
+            exit:
             grayImg.Dispose();
             return factorDatas;
         }
@@ -1197,7 +1424,7 @@ namespace UmaMusumeDBBrowser
                 CvInvoke.MatchTemplate(grayImg, item.Image, imgOut, TemplateMatchingType.CcoeffNormed);
                 imgOut.MinMax(out minVal, out maxVal, out minLoc, out maxLoc);
                 imgOut.Dispose();
-                if (maxVal[0] > 0.8f)
+                if (maxVal[0] > 0.82f)
                 {
                     if (Program.IsDebug)
                     {
@@ -1211,7 +1438,61 @@ namespace UmaMusumeDBBrowser
                 }
             }
             grayImg.Dispose();
-            return (GameDataType.NotFound, new Rectangle());
+
+            if (dialogTextForm == null)
+            {
+                return (GameDataType.NotFound, new Rectangle());
+            }
+            else
+            {
+                Mat outImage = new Mat();
+                Mat mask = new Mat();
+                MCvScalar minS = new MCvScalar(0, 0, 0);
+                MCvScalar maxS = new MCvScalar(255, 255, 235);
+                Rectangle dialogFrameLocation = new Rectangle();
+                if (!IsVertical)
+                {
+                    dialogFrameLocation = new Rectangle(210, 691, 990, 110);
+                    //dialogFrameLocation = new Rectangle(210, 635, 990, 166);
+                    Mat cutmg = new Mat(img.Mat, dialogFrameLocation);
+                    //CvInvoke.BitwiseNot(cutmg, outImage);
+                    CvInvoke.CvtColor(cutmg, outImage, ColorConversion.Bgr2Hsv);
+                    cutmg.Dispose();
+                    CvInvoke.InRange(outImage, new ScalarArray(minS), new ScalarArray(maxS), mask);
+
+                }
+                else
+                {
+                    dialogFrameLocation = new Rectangle(34, 786, 518, 117);
+                    Mat cutmg = new Mat(img.Mat, dialogFrameLocation);
+                    //CvInvoke.BitwiseNot(cutmg, outImage);
+                    CvInvoke.CvtColor(cutmg, outImage, ColorConversion.Bgr2Hsv);
+                    cutmg.Dispose();
+
+                    minS = new MCvScalar(12, 135, 115);
+                    maxS = new MCvScalar(14, 212, 152);
+                    CvInvoke.InRange(outImage, new ScalarArray(minS), new ScalarArray(maxS), mask);
+                    CvInvoke.BitwiseNot(mask, mask);
+                    //return (GameDataType.NotFound, new Rectangle());
+                }
+
+                
+
+                float wr = ImageWhiteRatio(mask);
+                outImage.Dispose();
+                mask.Dispose();
+                if (wr < 0.994f)
+                {
+                    return (GameDataType.MainDialog, dialogFrameLocation);
+                }
+
+
+
+                return (GameDataType.NotFound, new Rectangle());
+            }
+
+
+
 
         }
 
@@ -1318,6 +1599,8 @@ namespace UmaMusumeDBBrowser
             MissionBtn = 10,
             FreeShopItemWindow = 11,
             FreeShopAvaibleWindow = 12,
+            MainDialog = 13,
+            MainDialogOption = 14,
             GameNotFound = -1,
             NotFound = -2,
             DebugImage = -3

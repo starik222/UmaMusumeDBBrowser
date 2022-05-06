@@ -34,6 +34,7 @@ namespace UmaMusumeDBBrowser
                 DbPath = testDbPath;
             else
                 DbPath = "master.db";
+            DbPath = "master.db"; //временно принудительный выбор базы и папки с программой, пока есть проблемы с определением новейшей версии
             if (IsDebug)
             {
                 fLog = new Form_log();

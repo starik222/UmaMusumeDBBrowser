@@ -15,6 +15,7 @@ namespace UmaMusumeDBBrowser
         public FactorManager FactorLibrary { get; set; }
         public MissionManager MissionLibrary { get; set; }
         public FreeShopManager FreeShopLibrary { get; set; }
+        public DialogsManages DialogsLibrary { get; set; }
 
         public AllLibraryManager()
         {
@@ -24,6 +25,7 @@ namespace UmaMusumeDBBrowser
             FactorLibrary = new FactorManager();
             MissionLibrary = new MissionManager();
             FreeShopLibrary = new FreeShopManager();
+            DialogsLibrary = new DialogsManages();
         }
 
         public void FillData()
@@ -35,6 +37,12 @@ namespace UmaMusumeDBBrowser
             MissionLibrary.FillData();
             FreeShopLibrary.FillData();
         }
+
+        public void FillDialogsLibrary(string playerName)
+        {
+            DialogsLibrary.LoadLibrary(Path.Combine(Program.DictonariesDir, "DialogueTexts.json"), playerName);
+        }
+
 
 
     }

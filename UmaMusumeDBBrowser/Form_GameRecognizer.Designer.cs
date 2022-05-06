@@ -33,6 +33,7 @@ namespace UmaMusumeDBBrowser
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -90,6 +91,9 @@ namespace UmaMusumeDBBrowser
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -97,9 +101,8 @@ namespace UmaMusumeDBBrowser
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTempFix = new System.Windows.Forms.Panel();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox21 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -123,10 +126,10 @@ namespace UmaMusumeDBBrowser
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -159,6 +162,9 @@ namespace UmaMusumeDBBrowser
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox21);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.checkBox4);
             this.tabPage1.Controls.Add(this.checkBox3);
             this.tabPage1.Controls.Add(this.checkBox2);
             this.tabPage1.Controls.Add(this.button2);
@@ -179,6 +185,17 @@ namespace UmaMusumeDBBrowser
             this.tabPage1.Text = "Основное";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.BackColorChanged += new System.EventHandler(this.tabPage1_BackColorChanged);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(8, 134);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(131, 17);
+            this.checkBox4.TabIndex = 13;
+            this.checkBox4.Text = "Переводить диалоги";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -285,7 +302,7 @@ namespace UmaMusumeDBBrowser
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(8, 211);
+            this.button3.Location = new System.Drawing.Point(8, 288);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(160, 23);
             this.button3.TabIndex = 6;
@@ -314,16 +331,16 @@ namespace UmaMusumeDBBrowser
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(68, 150);
+            this.label3.Location = new System.Drawing.Point(68, 227);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "сек.";
+            this.label3.Text = "милисек.";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 131);
+            this.label2.Location = new System.Drawing.Point(5, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(163, 13);
             this.label2.TabIndex = 5;
@@ -331,9 +348,9 @@ namespace UmaMusumeDBBrowser
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(8, 147);
+            this.numericUpDown1.Location = new System.Drawing.Point(8, 224);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
+            10000,
             0,
             0,
             0});
@@ -341,14 +358,14 @@ namespace UmaMusumeDBBrowser
             this.numericUpDown1.Size = new System.Drawing.Size(57, 20);
             this.numericUpDown1.TabIndex = 4;
             this.numericUpDown1.Value = new decimal(new int[] {
-            2,
+            2000,
             0,
             0,
             0});
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(8, 182);
+            this.button1.Location = new System.Drawing.Point(8, 259);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 23);
             this.button1.TabIndex = 0;
@@ -860,6 +877,46 @@ namespace UmaMusumeDBBrowser
             this.dataGridView3.TabIndex = 0;
             this.dataGridView3.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridView3_ColumnAdded);
             // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.button7);
+            this.tabPage8.Controls.Add(this.dataGridView4);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(613, 401);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Предметы";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.Location = new System.Drawing.Point(8, 376);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(597, 23);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "Показать список в базе данных";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(0, 1);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.RowTemplate.Height = 50;
+            this.dataGridView4.Size = new System.Drawing.Size(613, 372);
+            this.dataGridView4.TabIndex = 3;
+            this.dataGridView4.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridView4_ColumnAdded);
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.button5);
@@ -922,45 +979,22 @@ namespace UmaMusumeDBBrowser
             this.panelTempFix.Size = new System.Drawing.Size(158, 29);
             this.panelTempFix.TabIndex = 4;
             // 
-            // tabPage8
+            // label7
             // 
-            this.tabPage8.Controls.Add(this.button7);
-            this.tabPage8.Controls.Add(this.dataGridView4);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(613, 401);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "Предметы";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 159);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Имя игрока";
             // 
-            // button7
+            // textBox21
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Location = new System.Drawing.Point(8, 376);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(597, 23);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Показать список в базе данных";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(0, 1);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.RowTemplate.Height = 50;
-            this.dataGridView4.Size = new System.Drawing.Size(613, 372);
-            this.dataGridView4.TabIndex = 3;
-            this.dataGridView4.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridView4_ColumnAdded);
+            this.textBox21.Enabled = false;
+            this.textBox21.Location = new System.Drawing.Point(81, 157);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(133, 20);
+            this.textBox21.TabIndex = 15;
             // 
             // Form_GameRecognizer
             // 
@@ -1008,10 +1042,10 @@ namespace UmaMusumeDBBrowser
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1089,5 +1123,8 @@ namespace UmaMusumeDBBrowser
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.Label label7;
     }
 }

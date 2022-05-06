@@ -32,6 +32,13 @@ namespace UmaResHelper
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,7 +59,7 @@ namespace UmaResHelper
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,6 +77,13 @@ namespace UmaResHelper
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button11);
+            this.splitContainer1.Panel1.Controls.Add(this.button10);
+            this.splitContainer1.Panel1.Controls.Add(this.button9);
+            this.splitContainer1.Panel1.Controls.Add(this.button8);
+            this.splitContainer1.Panel1.Controls.Add(this.button7);
+            this.splitContainer1.Panel1.Controls.Add(this.button6);
+            this.splitContainer1.Panel1.Controls.Add(this.button5);
             this.splitContainer1.Panel1.Controls.Add(this.button4);
             this.splitContainer1.Panel1.Controls.Add(this.checkBox1);
             this.splitContainer1.Panel1.Controls.Add(this.button3);
@@ -86,6 +100,76 @@ namespace UmaResHelper
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(6, 138);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(178, 23);
+            this.button10.TabIndex = 15;
+            this.button10.Text = "Добавить тексты из скриптов";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(6, 288);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(160, 23);
+            this.button9.TabIndex = 14;
+            this.button9.Text = "Конвертировать в V2";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(6, 230);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(163, 23);
+            this.button8.TabIndex = 13;
+            this.button8.Text = "Извлеч имена";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(6, 201);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(163, 23);
+            this.button7.TabIndex = 12;
+            this.button7.Text = "Загрузить перевод";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(6, 172);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(163, 23);
+            this.button6.TabIndex = 11;
+            this.button6.Text = "Список для перевода";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(3, 259);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(163, 23);
+            this.button5.TabIndex = 10;
+            this.button5.Text = "Конвертировать и перевести";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(6, 109);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(178, 23);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Извлечь тексты из скриптов";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // checkBox1
             // 
@@ -275,15 +359,15 @@ namespace UmaResHelper
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // button4
+            // button11
             // 
-            this.button4.Location = new System.Drawing.Point(6, 109);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(163, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Извлечь тексты из скриптов";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button11.Location = new System.Drawing.Point(6, 317);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(160, 23);
+            this.button11.TabIndex = 16;
+            this.button11.Text = "V2 to train text";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // Form1
             // 
@@ -332,6 +416,13 @@ namespace UmaResHelper
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Translator;
 
 namespace UmaResHelper
 {
@@ -25,6 +26,7 @@ namespace UmaResHelper
         {
             DbPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Appdata\\LocalLow\\Cygames\\umamusume\\meta";
             ResPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Appdata\\LocalLow\\Cygames\\umamusume\\dat";
+            tools = new TextTool(Application.StartupPath);
             if (!Directory.Exists(ResPath) || !File.Exists(DbPath))
             {
                 MessageBox.Show("Каталог с ресурсами не найден!");
@@ -34,5 +36,7 @@ namespace UmaResHelper
 
         public static string DbPath;
         public static string ResPath;
+
+        public static TextTool tools;
     }
 }

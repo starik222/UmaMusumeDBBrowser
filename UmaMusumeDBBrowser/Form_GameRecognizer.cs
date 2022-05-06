@@ -57,7 +57,21 @@ namespace UmaMusumeDBBrowser
             SetColorScheme();
             //tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
             Program.ColorManager.SchemeChanded += ColorManager_SchemeChanded;
-           
+            
+        }
+
+
+        private void LoadUserSettings()
+        {
+            numericUpDown1.Value = (int)Properties.Settings.Default["ScanPeriod"];
+            textBox21.Text = (string)Properties.Settings.Default["PlayerName"];
+        }
+
+        private void SaveUserSettings()
+        {
+            Properties.Settings.Default["ScanPeriod"] = (int)numericUpDown1.Value;
+            Properties.Settings.Default["PlayerName"] = textBox21.Text;
+            Properties.Settings.Default.Save();
         }
 
         private void SetColorScheme()
@@ -178,6 +192,9 @@ namespace UmaMusumeDBBrowser
 
         private void Form_GameRecognizer_Load(object sender, EventArgs e)
         {
+            //отладка
+           // Form_dialogReader dr = new Form_dialogReader();
+            //dr.Show();
             if (!Program.IsDebug)
                 tabControl1.TabPages.Remove(tabPage3);
             optionColors = new Color[5];
@@ -221,7 +238,7 @@ namespace UmaMusumeDBBrowser
             }
 
             pictureBox6.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Images\\Tazuna.bmp"));
-
+            LoadUserSettings();
         }
 
         private void SetFactors(List<FactorManager.FactorData> datas)
@@ -469,6 +486,11 @@ namespace UmaMusumeDBBrowser
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (checkBox4.Checked && string.IsNullOrWhiteSpace(textBox21.Text))
+            {
+                MessageBox.Show("Для правильной работы распознавания диалогов,\nимя игрока(используемое в игре) должно быть заполнено!");
+                return;
+            }
             if (radioButton1.Checked)
             {
 
@@ -498,7 +520,16 @@ namespace UmaMusumeDBBrowser
                 gameReader.BsTopPanelVisible = !checkBox2.Checked;
                 gameReader.BsRightPanelVisible = !checkBox3.Checked;
             }
-            gameReader.StartAsync(/*(string)comboBox1.SelectedItem,*/ (int)numericUpDown1.Value * 1000);
+
+            if (checkBox4.Checked)
+            {
+                libManager.FillDialogsLibrary(textBox21.Text);
+                Form_dialogReader dialogReader = new Form_dialogReader();
+                gameReader.SetDialogForm(dialogReader);
+                dialogReader.Show();
+            }
+            SaveUserSettings();
+            gameReader.StartAsync(/*(string)comboBox1.SelectedItem,*/ (int)numericUpDown1.Value);
             IsReaderStarted(true);
             return;
         gameNotFound:
@@ -702,6 +733,11 @@ namespace UmaMusumeDBBrowser
             if (parentForm.WindowState == FormWindowState.Minimized)
                 parentForm.WindowState = FormWindowState.Normal;
             parentForm.Activate();
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox21.Enabled = checkBox4.Checked;
         }
     }
 }

@@ -51,6 +51,8 @@ namespace UmaMusumeDBBrowser
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.перевестиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заменаСИспользованиемRegexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label6 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -207,13 +209,15 @@ namespace UmaMusumeDBBrowser
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.linkLabel1);
+            this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.listBox1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Size = new System.Drawing.Size(800, 425);
-            this.splitContainer1.SplitterDistance = 162;
+            this.splitContainer1.SplitterDistance = 158;
             this.splitContainer1.TabIndex = 1;
             // 
             // listBox1
@@ -222,7 +226,7 @@ namespace UmaMusumeDBBrowser
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(162, 425);
+            this.listBox1.Size = new System.Drawing.Size(158, 425);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -236,7 +240,7 @@ namespace UmaMusumeDBBrowser
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.Size = new System.Drawing.Size(634, 425);
+            this.dataGridView1.Size = new System.Drawing.Size(638, 425);
             this.dataGridView1.TabIndex = 0;
             // 
             // contextMenuStrip1
@@ -245,12 +249,12 @@ namespace UmaMusumeDBBrowser
             this.перевестиToolStripMenuItem,
             this.заменаСИспользованиемRegexToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(313, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(313, 48);
             // 
             // перевестиToolStripMenuItem
             // 
             this.перевестиToolStripMenuItem.Name = "перевестиToolStripMenuItem";
-            this.перевестиToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.перевестиToolStripMenuItem.Size = new System.Drawing.Size(312, 22);
             this.перевестиToolStripMenuItem.Text = "Перевести";
             this.перевестиToolStripMenuItem.Click += new System.EventHandler(this.перевестиToolStripMenuItem_Click);
             // 
@@ -260,6 +264,30 @@ namespace UmaMusumeDBBrowser
             this.заменаСИспользованиемRegexToolStripMenuItem.Size = new System.Drawing.Size(312, 22);
             this.заменаСИспользованиемRegexToolStripMenuItem.Text = "Замена в колонке с использованием Regex";
             this.заменаСИспользованиемRegexToolStripMenuItem.Click += new System.EventHandler(this.заменаСИспользованиемRegexToolStripMenuItem_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.SystemColors.Window;
+            this.linkLabel1.Location = new System.Drawing.Point(5, 401);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(68, 13);
+            this.linkLabel1.TabIndex = 42;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "VNFAST.RU";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.Window;
+            this.label6.Location = new System.Drawing.Point(5, 385);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "Автор: starik222";
             // 
             // Form1
             // 
@@ -275,6 +303,7 @@ namespace UmaMusumeDBBrowser
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -307,6 +336,8 @@ namespace UmaMusumeDBBrowser
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripMenuItem заменаСИспользованиемRegexToolStripMenuItem;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label6;
     }
 }
 

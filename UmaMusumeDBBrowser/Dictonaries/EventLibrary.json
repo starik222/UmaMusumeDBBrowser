@@ -36139,6 +36139,404 @@
       ],
       "Type": 1,
       "CardName": "［ギリギリ!?UMA♡DOLL］スマートファルコン"
+    },
+    {
+      "EventName": "無心の理由",
+      "EventNameToCheck": "無心の理由",
+      "EventOptionsList": [
+        {
+          "Option": "とっさにあれだけ動けるなんてすごい！",
+          "OptionToCheck": "とっさにあれだけ動けるなんてすごい",
+          "Effect": "Скорость+10\nSkill point+15"
+        },
+        {
+          "Option": "根っこに優しさがあるからできることだな",
+          "OptionToCheck": "根っこに優しさがあるからできることだな",
+          "Effect": "「根幹距離○」 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "成るか成らぬか 不動心 ",
+      "EventNameToCheck": "成るか成らぬか 不動心 ",
+      "EventOptionsList": [
+        {
+          "Option": "・・・今は気持ちを解放しよう",
+          "OptionToCheck": "今は気持ちを解放しよう",
+          "Effect": "Скорость+20\n「愛嬌○」"
+        },
+        {
+          "Option": "修行の日々を思い出せ！",
+          "OptionToCheck": "修行の日々を思い出せ",
+          "Effect": "Сила воли+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "ただ、成すべきを成すのみ",
+      "EventNameToCheck": "ただ、成すべきを成すのみ",
+      "EventOptionsList": [
+        {
+          "Option": "言葉よりも走りで魅せたな！",
+          "OptionToCheck": "言葉よりも走りで魅せたな",
+          "Effect": "Скорость+20"
+        },
+        {
+          "Option": "金剛八重垣流の教えが身になってるな",
+          "OptionToCheck": "金剛八重垣流の教えが身になってるな",
+          "Effect": "Интеллект+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "允許の重み",
+      "EventNameToCheck": "允許の重み",
+      "EventOptionsList": [
+        {
+          "Option": "・・・見事！",
+          "OptionToCheck": "見事",
+          "Effect": "Сила воли+10\nИнтеллект+10"
+        },
+        {
+          "Option": "金剛八重垣流の強さを垣間見た",
+          "OptionToCheck": "金剛八重垣流の強さを垣間見た",
+          "Effect": "Выносливость+10\nСила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "道の果て、その先へ",
+      "EventNameToCheck": "道の果て、その先へ",
+      "EventOptionsList": [
+        {
+          "Option": "みんなで走れば怖くない、か",
+          "OptionToCheck": "みんなで走れば怖くない、か",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "姉弟子さんの心を救うヒントかもな",
+          "OptionToCheck": "姉弟子さんの心を救うヒントかもな",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "刃武流の真髄",
+      "EventNameToCheck": "刃武流の真髄",
+      "EventOptionsList": [
+        {
+          "Option": "・・・達人だな！",
+          "OptionToCheck": "達人だな",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "それが、バブル流か・・・",
+          "OptionToCheck": "それが、バブル流か",
+          "Effect": "Скорость+5\nИнтеллект+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "我が弟子へ",
+      "EventNameToCheck": "我が弟子へ",
+      "EventOptionsList": [
+        {
+          "Option": "いつか、師弟対決ができるといいな",
+          "OptionToCheck": "いつか、師弟対決ができるといいな",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "・・・君こそもう、本物じゃないか？",
+          "OptionToCheck": "君こそもう、本物じゃないか",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "ムテキなモーニングルーティン",
+      "EventNameToCheck": "ムテキなモーニングルーティン",
+      "EventOptionsList": [
+        {
+          "Option": "帳消しにするほどの全力を見せよう！",
+          "OptionToCheck": "帳消しにするほどの全力を見せよう",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "気合で紙に書こう！",
+          "OptionToCheck": "気合で紙に書こう",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "第1回耕作ステークス開催？",
+      "EventNameToCheck": "第1回耕作ステークス開催",
+      "EventOptionsList": [
+        {
+          "Option": "行けヤエノ、この勢いを止めずに！",
+          "OptionToCheck": "行けヤエノ、この勢いを止めずに",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "修行に大事なのは維持すること！",
+          "OptionToCheck": "修行に大事なのは維持すること",
+          "Effect": "Мотивация+1\nВыносливость+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "バランスよくトレーニングしよう！",
+          "OptionToCheck": "バランスよくトレーニングしよう",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "休息を大事に",
+          "OptionToCheck": "休息を大事に",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "必殺技を会得したいな・・・",
+          "OptionToCheck": "必殺技を会得したいな",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "大食いの免許皆伝",
+      "EventNameToCheck": "大食いの免許皆伝",
+      "EventOptionsList": [
+        {
+          "Option": "食事は適量が1番だよ",
+          "OptionToCheck": "食事は適量が1番だよ",
+          "Effect": "Энергия+10\nSkill point+5"
+        },
+        {
+          "Option": "大食いを極めよう",
+          "OptionToCheck": "大食いを極めよう",
+          "Effect": "Энергия+30\nSkill point+10\nНебольшой шанс \nСкорость-5\nСила+5\n「太り気味」"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "初詣",
+      "EventNameToCheck": "初詣",
+      "EventOptionsList": [
+        {
+          "Option": "ヤエノムテキが健康でありますように",
+          "OptionToCheck": "ヤエノムテキが健康でありますように",
+          "Effect": "Энергия+30"
+        },
+        {
+          "Option": "努力が実りますように",
+          "OptionToCheck": "努力が実りますように",
+          "Effect": "Все характеристики+5"
+        },
+        {
+          "Option": "打倒オグリキャップ！！",
+          "OptionToCheck": "打倒オグリキャップ",
+          "Effect": "Skill point+35"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "追加の自主トレ",
+      "EventNameToCheck": "追加の自主トレ",
+      "EventOptionsList": [
+        {
+          "Option": "正体を突き止めてきて",
+          "OptionToCheck": "正体を突き止めてきて",
+          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с персонажем по сценарию+5\nURA：Президент Акикава\nАохару：Репортер"
+        },
+        {
+          "Option": "ここで待っていれば、そのうち通るのでは？",
+          "OptionToCheck": "ここで待っていれば、そのうち通るのでは",
+          "Effect": "Энергия+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "敵の攻撃を受け流すイメージで+",
+          "OptionToCheck": "敵の攻撃を受け流すイメージで",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "想定する敵を……100倍に増やそう！",
+          "OptionToCheck": "想定する敵を100倍に増やそう",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "夏合宿(2年目)にて",
+      "EventNameToCheck": "夏合宿2年目にて",
+      "EventOptionsList": [
+        {
+          "Option": "スイカ割りをしよう！",
+          "OptionToCheck": "スイカ割りをしよう",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "靴下をはいてビーチ・フラッグス",
+          "OptionToCheck": "靴下をはいてビーチフラッグス",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【四白流星の襲】ヤエノムテキ"
+    },
+    {
+      "EventName": "三女神さまに願いを",
+      "EventNameToCheck": "三女神さまに願いを",
+      "EventOptionsList": [
+        {
+          "Option": "1コインに気持ちを込めよう",
+          "OptionToCheck": "1コインに気持ちを込めよう",
+          "Effect": "Успех:\nМотивация+1\nОдна случайная характеристика+30\nПровал:\nОдна случайная характеристика+15"
+        },
+        {
+          "Option": "ほどほどがちょうどいいかも？",
+          "OptionToCheck": "ほどほどがちょうどいいかも",
+          "Effect": "Успех:\nМотивация+1\nОдна случайная характеристика+30\nПровал:\nОдна случайная характеристика+15"
+        },
+        {
+          "Option": "たくさん入れよう！",
+          "OptionToCheck": "たくさん入れよう",
+          "Effect": "Успех:\nМотивация+1\nОдна случайная характеристика+30\nПровал:\nОдна случайная характеристика+15"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【ローゼスドリーム】ライスシャワー"
+    },
+    {
+      "EventName": "To Be Continued?",
+      "EventNameToCheck": "To Be Continued",
+      "EventOptionsList": [
+        {
+          "Option": "帰ってドラマ見ていいぞ",
+          "OptionToCheck": "帰ってドラマ見ていいぞ",
+          "Effect": "「負けん気」 умение Lv+2"
+        },
+        {
+          "Option": "……夜更かしはダメだぞ？",
+          "OptionToCheck": "夜更かしはダメだぞ",
+          "Effect": "Энергия+15"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【白く気高き激励の装】キングヘイロー"
+    },
+    {
+      "EventName": "動画でエール！",
+      "EventNameToCheck": "動画でエール",
+      "EventOptionsList": [
+        {
+          "Option": "お姉ちゃんらしい応援",
+          "OptionToCheck": "お姉ちゃんらしい応援",
+          "Effect": "Сила+10\nSkill point+15"
+        },
+        {
+          "Option": "かわいく元気な応援",
+          "OptionToCheck": "かわいく元気な応援",
+          "Effect": "「がんばり屋」 умение Lv+2"
+        }
+      ],
+      "Type": 0,
+      "CardName": "【RUN&WIN】ナイスネイチャ"
+    },
+    {
+      "EventName": "Re:START！",
+      "EventNameToCheck": "ReSTART",
+      "EventOptionsList": [
+        {
+          "Option": "色んな人の心に響きそう",
+          "OptionToCheck": "色んな人の心に響きそう",
+          "Effect": "Уровень отношений+5\nЭнергия+10\nИнтеллект+10\n「上昇気流」 умение Lv+2"
+        },
+        {
+          "Option": "ファンになった‥‥‥",
+          "OptionToCheck": "ファンになった‥‥‥",
+          "Effect": "Уровень отношений+5\nСила+20\nSkill point+10\n「軽い足取り」 умение Lv+2"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［そのエールは世界を変えた］シーキングザパール"
+    },
+    {
+      "EventName": "猛特訓！オムレツマイスターを狙え！",
+      "EventNameToCheck": "猛特訓オムレツマイスターを狙え",
+      "EventOptionsList": [
+        {
+          "Option": "諦めない大事さは、伝わったかな…‥?",
+          "OptionToCheck": "諦めない大事さは、伝わったかな‥",
+          "Effect": "Уровень отношений+5\nМотивация+1\nЭнергия-5\nСила воли+15\n「位置取り押し上げ」 умение Lv+1"
+        },
+        {
+          "Option": "可能性は無限大【インフィニティ】だね！！",
+          "OptionToCheck": "可能性は無限大【インフィニティ】だね",
+          "Effect": "※<Прекращение события>\nУровень отношений+5\nSkill point+30"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［届け、このオモイ！］バンブーメモリー"
+    },
+    {
+      "EventName": "読書少女と賢者の催し物",
+      "EventNameToCheck": "読書少女と賢者の催し物",
+      "EventOptionsList": [
+        {
+          "Option": "魅力的な宣伝かな？",
+          "OptionToCheck": "魅力的な宣伝かな",
+          "Effect": "Выносливость+5\n「右回り○」 умение Lv+2\nУровень отношений+5"
+        },
+        {
+          "Option": "雰囲気をもっと出すとか・・・・・・",
+          "OptionToCheck": "雰囲気をもっと出すとか",
+          "Effect": "Скорость+5\n「左回り○」 умение Lv+2\nУровень отношений+5"
+        },
+        {
+          "Option": "衣装も凝った方がいいと思う！",
+          "OptionToCheck": "衣装も凝った方がいいと思う",
+          "Effect": "Интеллект+30\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "［魔力授かりし英雄］ゼンノロブロイ"
     }
   ]
 }

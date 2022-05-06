@@ -38,7 +38,25 @@ namespace UmaMusumeDBBrowser
                 return;
             }
             Image img = WindowManager.CaptureWindow(handle);
-            var img2 = ImageManager.PrepareImage((Bitmap)img, new Size(588, 1045));
+
+            Size normalSize = new Size();
+            if (img.Width < img.Height)
+            {
+                //isVertical = true;
+                normalSize.Width = 588;
+                normalSize.Height = 1045;
+            }
+            else
+            {
+                //isVertical = false;
+                normalSize.Width = 1434;
+                normalSize.Height = 807;
+            }
+
+
+
+
+            var img2 = ImageManager.PrepareImage((Bitmap)img, normalSize);
             img2.AsBitmap().Save("img.bmp", System.Drawing.Imaging.ImageFormat.Bmp);
             pictureBox1.Image = null;
             pictureBox1.Image = img;

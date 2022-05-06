@@ -11,6 +11,7 @@ using System.IO;
 using Translator;
 using ExcelPrint;
 using System.Text.RegularExpressions;
+using System.Net;
 
 namespace UmaMusumeDBBrowser
 {
@@ -52,8 +53,42 @@ namespace UmaMusumeDBBrowser
                 Program.ColorManager.ChangeColorSchemeInConteiner(Controls, Program.ColorManager.SelectedScheme);
         }
 
+        private async void CheckForUpdateAsync()
+        {
+            string data = null;
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (WebClient client = new WebClient())
+                    {
+                        data = client.DownloadString("https://vnfast.ru/files/updates/" + Application.ProductName + ".txt");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    if (Program.IsDebug)
+                    {
+                        Program.AddToLog(ex.Message);
+                    }
+                }
+            });
+            if (!string.IsNullOrEmpty(data))
+            {
+                if (data != Application.ProductVersion)
+                {
+                    if (MessageBox.Show($"На сайте обнаружена новая версия программы ({data}).\nХотите перейти на страницу программы?",
+                        "Найдено обновление программы", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        System.Diagnostics.Process.Start("https://vnfast.ru/programmy/96-umdbb");
+                    }
+                }
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
+            CheckForUpdateAsync();
             if (!Program.IsDebug)
             {
                 toolStripButton7.Visible = false;
@@ -546,6 +581,11 @@ namespace UmaMusumeDBBrowser
 
 
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://vnfast.ru");
         }
     }
 }

@@ -340,6 +340,12 @@
           "ImageName": "FreeShopItemWindowBtn2.bmp"
         }
       ]
+    },
+    {
+      "PartName": "MainDialogOption",
+      "VerticalState": false,
+      "DataType": 14,
+      "ImageName": "EventOptionHorisontal.bmp"
     }
   ]
 }
