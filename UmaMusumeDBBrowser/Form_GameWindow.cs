@@ -69,7 +69,7 @@ namespace UmaMusumeDBBrowser
         {
             var prepImg = ImageManager.PrepareImageGray(pictureBox1.Image as Bitmap, new Size(568, 1010));
             prepImg = prepImg.ThresholdBinary(new Gray(111), new Gray(255));
-            richTextBox1.Text = Program.TessManager.GetText(prepImg.Mat);
+            richTextBox1.Text = Program.TessManager.GetText(prepImg.Mat, TesseractManager.TessDict.jpn);
             prepImg.Draw(new Rectangle(55, 431, 427, 286), new Gray(0), 3);
             pictureBox1.Image = prepImg.AsBitmap();
             richTextBox1.Text = richTextBox1.Text.Replace(" ", "");

@@ -410,7 +410,7 @@ namespace UmaMusumeDBBrowser
                 {
                     CvInvoke.CvtColor(cutImg, cutImg, ColorConversion.Bgr2Gray);
                     CvInvoke.BitwiseNot(cutImg, cutImg);
-                    text = Program.TessManager.GetTextSingleLine(cutImg);
+                    text = Program.TessManager.GetTextSingleLine(cutImg, TesseractManager.TessDict.uma);
                 }
                 cutImg.Dispose();
             }
@@ -431,7 +431,7 @@ namespace UmaMusumeDBBrowser
                 {
                     //CvInvoke.CvtColor(cutImg, cutImg, ColorConversion.Bgr2Gray);
                     //CvInvoke.BitwiseNot(cutImg, cutImg);
-                    text = Program.TessManager.GetTextSingleLine(mask);
+                    text = Program.TessManager.GetTextSingleLine(mask, TesseractManager.TessDict.uma);
                 }
                 mask.Dispose();
             }
@@ -550,7 +550,7 @@ namespace UmaMusumeDBBrowser
         private DialogsManages.DialogsItemDataV1 GetDialogData(Mat textMask, string name, float confid = 0.5f)
         {
             //CvInvoke.Threshold(textMask, textMask, 0, 255, ThresholdType.Otsu);
-            string tempText = Program.TessManager.GetTextMultiLine(textMask);
+            string tempText = Program.TessManager.GetTextMultiLine(textMask, TesseractManager.TessDict.uma);
             tempText = CorrectDialogText(tempText);
             if (Program.IsDebug)
             {
@@ -577,7 +577,7 @@ namespace UmaMusumeDBBrowser
                 {
                     DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = warningWindow.ToBitmap() });
                 }
-                tempText = Program.TessManager.GetTextSingleLine(warningWindow);
+                tempText = Program.TessManager.GetTextSingleLine(warningWindow, TesseractManager.TessDict.jpn);
                 if (Program.IsDebug)
                 {
                     Program.AddToLog("TazunaHelpWarning text: " + tempText);
@@ -594,7 +594,7 @@ namespace UmaMusumeDBBrowser
             {
                 DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = helpWindow.ToBitmap() });
             }
-            tempText = Program.TessManager.GetTextMultiLine(helpWindow);
+            tempText = Program.TessManager.GetTextMultiLine(helpWindow, TesseractManager.TessDict.jpn);
             if (Program.IsDebug)
             {
                 Program.AddToLog("TazunaHelp text: " + tempText);
@@ -834,7 +834,7 @@ namespace UmaMusumeDBBrowser
             {
                 DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = textMat.ToBitmap() });
             }
-            string tempText = Program.TessManager.GetTextMultiLine(textMat).Replace("\\n", "");
+            string tempText = Program.TessManager.GetTextMultiLine(textMat, TesseractManager.TessDict.jpn).Replace("\\n", "");
             tempText = CorrectText(tempText);
             textMat.Dispose();
 
@@ -891,7 +891,7 @@ namespace UmaMusumeDBBrowser
             {
                 DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = textMat.ToBitmap() });
             }
-            string tempText = Program.TessManager.GetTextMultiLine(textMat).Replace("\\n", "");
+            string tempText = Program.TessManager.GetTextMultiLine(textMat, TesseractManager.TessDict.uma).Replace("\\n", "");
             tempText = CorrectText(tempText);
             textMat.Dispose();
 
@@ -1010,7 +1010,7 @@ namespace UmaMusumeDBBrowser
                 DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = resMat.ToBitmap() });
             }
 
-            string text = Program.TessManager.GetTextSingleLine(resMat);
+            string text = Program.TessManager.GetTextSingleLine(resMat, TesseractManager.TessDict.jpn);
             if (!string.IsNullOrWhiteSpace(text))
             {
                 var res = libraryManager.FactorLibrary.FindFactorByNameDiceAlg(text, 0.3f);
@@ -1149,7 +1149,7 @@ namespace UmaMusumeDBBrowser
             Mat mask = new Mat();
             Mat hsvMat = new Mat();
             CvInvoke.CvtColor(textMat, hsvMat, ColorConversion.Bgr2Hsv);
-            bool isNext = false;
+            int isNext = 0;
             MCvScalar minS = new MCvScalar(10, 45, 70);
             MCvScalar maxS = new MCvScalar(13, 218, 204);
         nextTry:
@@ -1162,10 +1162,12 @@ namespace UmaMusumeDBBrowser
             {
                 DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = textMat.ToBitmap() });
             }
+        nextTry2:
+            string text = Program.TessManager.GetTextSingleLine(resMat, TesseractManager.TessDict.jpn);
+            if(string.IsNullOrEmpty(text))
+                text = Program.TessManager.GetTextSingleLine(resMat, TesseractManager.TessDict.uma);
 
-            string text = Program.TessManager.GetTextSingleLine(resMat);
-
-            var res = libraryManager.SkillLibrary.FindSkillByName(text, true, 0.8f);
+            var res = libraryManager.SkillLibrary.FindSkillByName(text, true, 0.7f);
             if (res.Count == 1)
                 skillData = res[0].Value;
             else if (res.Count > 1)
@@ -1189,14 +1191,27 @@ namespace UmaMusumeDBBrowser
 
 
 
-            if (res.Count == 0 && !isNext)
+            if (res.Count == 0 && isNext == 0)
             {
                 resMat.Dispose();
                 minS = new MCvScalar(10, 67, 75);
                 maxS = new MCvScalar(14, 212, 162);
-                isNext = true;
+                isNext = 1;
                 goto nextTry;
             }
+            else if (res.Count == 0 && isNext == 1)
+            {
+                resMat = new Mat(img.Mat, textCountor);
+                isNext = 2;
+                goto nextTry2;
+            }
+            //else if (res.Count == 0 && isNext == 2)
+            //{
+            //    CvInvoke.Resize(resMat, resMat, new Size(), 2, 2);
+            //    CvInvoke.Threshold(resMat, resMat, 123f, 255f, ThresholdType.Binary);
+            //    isNext = 3;
+            //    goto nextTry2;
+            //}
             resMat.Dispose();
             textMat.Dispose();
             hsvMat.Dispose();
@@ -1246,7 +1261,7 @@ namespace UmaMusumeDBBrowser
             {
                 DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = invertedMat.ToBitmap() });
             }
-            string text = Program.TessManager.GetTextSingleLine(invertedMat);
+            string text = Program.TessManager.GetTextSingleLine(invertedMat, TesseractManager.TessDict.jpn);
             if (Program.IsDebug)
             {
                 Program.AddToLog($"Получен текст названия события {text}");
@@ -1257,7 +1272,7 @@ namespace UmaMusumeDBBrowser
             var eventData = libraryManager.EventLibrary.FindEventByName(text, true);
             if (eventData.Count == 0)
             {
-                string text2 = Program.TessManager.GetTextSingleLine(threshMat);
+                string text2 = Program.TessManager.GetTextSingleLine(threshMat, TesseractManager.TessDict.jpn);
                 if (Program.IsDebug)
                 {
                     Program.AddToLog($"Получен текст названия события {text2}");
@@ -1402,7 +1417,7 @@ namespace UmaMusumeDBBrowser
             {
                 CvInvoke.Threshold(cutImg, cutImg, 0.0, 255.0, ThresholdType.Otsu);
             }
-            string text = Program.TessManager.GetTextSingleLine(cutImg);
+            string text = Program.TessManager.GetTextSingleLine(cutImg, TesseractManager.TessDict.jpn);
             if (Program.IsDebug)
             {
                 Program.AddToLog($"Получен текст варианта выбора: {text}");

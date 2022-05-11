@@ -11,26 +11,28 @@ namespace UmaMusumeDBBrowser
 {
     public class TesseractManager
     {
-        private Emgu.CV.OCR.Tesseract engine;
+        private Emgu.CV.OCR.Tesseract engineJpn;
+        private Emgu.CV.OCR.Tesseract engineUma;
         //private TesseractEngine engine;
         public TesseractManager()
         {
-            engine = new Emgu.CV.OCR.Tesseract(@"./tessdata", "jpn", OcrEngineMode.LstmOnly);
+            engineJpn = new Emgu.CV.OCR.Tesseract(@"./tessdata", "jpn", OcrEngineMode.LstmOnly);
+            engineUma = new Emgu.CV.OCR.Tesseract(@"./tessdata", "uma", OcrEngineMode.LstmOnly);
             //engine = new TesseractEngine(@"./tessdata", "jpn", EngineMode.Default);
         }
 
-        public string GetText(IInputArray image)
+        public string GetText(IInputArray image, TessDict dict)
         {
-            engine.SetImage(image);
-            if (engine.Recognize() != 0)
+            GetEngine(dict).SetImage(image);
+            if (GetEngine(dict).Recognize() != 0)
                 throw new Exception("Ошибка распознавания изображения!");
-            return engine.GetUTF8Text();
+            return GetEngine(dict).GetUTF8Text();
         }
 
-        public string GetTextMultiLine(IInputArray image)
+        public string GetTextMultiLine(IInputArray image, TessDict dict)
         {
-            engine.PageSegMode = Emgu.CV.OCR.PageSegMode.SingleBlock;
-            string text = GetText(image).Replace(" ", "").Replace("\r", "");
+            GetEngine(dict).PageSegMode = Emgu.CV.OCR.PageSegMode.SingleBlock;
+            string text = GetText(image, dict).Replace(" ", "").Replace("\r", "");
             if (!string.IsNullOrWhiteSpace(text) && text.EndsWith("\n"))
             {
                 text = text.Substring(0, text.Length - 1);
@@ -38,10 +40,10 @@ namespace UmaMusumeDBBrowser
             return text.Replace("\n", "\\n");
         }
 
-        public string GetTextSingleLine(IInputArray image)
+        public string GetTextSingleLine(IInputArray image, TessDict dict)
         {
-            engine.PageSegMode = Emgu.CV.OCR.PageSegMode.SingleLine;
-            return GetText(image).Replace(" ", "").Replace("\r", "").Replace("\n", "");
+            GetEngine(dict).PageSegMode = Emgu.CV.OCR.PageSegMode.SingleLine;
+            return GetText(image, dict).Replace(" ", "").Replace("\r", "").Replace("\n", "");
         }
         //public string GetText(Bitmap image, Rect region)
         //{
@@ -51,5 +53,23 @@ namespace UmaMusumeDBBrowser
         //    text = text.Replace(" ", "");
         //    return text;
         //}
+        private Emgu.CV.OCR.Tesseract GetEngine(TessDict dict)
+        {
+            switch (dict)
+            {
+                case TessDict.jpn:
+                    return engineJpn;
+                case TessDict.uma:
+                    return engineUma;
+                default:
+                    throw new Exception("Должен быть указан словарь!");
+            }
+        }
+
+        public enum TessDict
+        {
+            jpn,
+            uma
+        }
     }
 }
