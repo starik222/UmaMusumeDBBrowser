@@ -329,7 +329,7 @@ namespace UmaMusumeDBBrowser
                         }
                     case GameDataType.MainDialog:
                         {
-                            Mat currentMask = GetDialogTextMat(currentImage, dataType.PartInfo, isVertical);
+                            Mat currentMask = GetDialogTextMat(currentImage, dataType.PartInfo, isVertical, false);
 
                             if (lastDialogMask == null)
                             {
@@ -351,7 +351,7 @@ namespace UmaMusumeDBBrowser
                                 {
                                     Program.AddToLog("dialog compare counfidence: " + confid);
                                 }
-                                if(confid<0.98f)
+                                if(confid<0.97f)
                                 {
                                     alreadyTranslated = false;
                                     lastDialogMask = currentMask;
@@ -366,7 +366,7 @@ namespace UmaMusumeDBBrowser
                                     Program.AddToLog("recognized name: " + name);
                                 }
                                 alreadyTranslated = true;
-                                var result = GetDialogData(currentMask, name, 0.1f);
+                                var result = GetDialogData((gameType == GameType.DMM) ? currentMask : GetDialogTextMat(currentImage, dataType.PartInfo, isVertical, true), name, 0.1f);
                                 if (result.Text != lastDialogData.Text || result.Name != lastDialogData.Name)
                                 {
                                     //DataChanged?.Invoke(this, new GameDataArgs() { DataType = dataType.type, DataClass = result });
@@ -422,6 +422,11 @@ namespace UmaMusumeDBBrowser
                 Mat mask = new Mat();
                 MCvScalar minS = new MCvScalar(0, 0, 213);
                 MCvScalar maxS = new MCvScalar(0, 0, 255);
+                if (gameType != GameType.DMM)
+                {
+                    minS = new MCvScalar(0, 0, 207);
+                    maxS = new MCvScalar(123, 22, 255);
+                }
                 CvInvoke.InRange(hsvImg, new ScalarArray(minS), new ScalarArray(maxS), mask);
                 CvInvoke.BitwiseNot(mask, mask);
                 float wr = ImageWhiteRatio(mask);
@@ -517,7 +522,7 @@ namespace UmaMusumeDBBrowser
             return (float)maxVal[0];
         }
 
-        private Mat GetDialogTextMat(Image<Bgr, byte> img, Rectangle partInfo, bool isVertical)
+        private Mat GetDialogTextMat(Image<Bgr, byte> img, Rectangle partInfo, bool isVertical, bool bluestacksText)
         {
             Mat textPart = new Mat(img.Mat, partInfo);
             Mat mask = new Mat();
@@ -529,6 +534,11 @@ namespace UmaMusumeDBBrowser
                 //MCvScalar maxS = new MCvScalar(255, 255, 237);//235
                 MCvScalar minS = new MCvScalar(0, 0, 192);//213
                 MCvScalar maxS = new MCvScalar(0, 0, 255);
+                if (bluestacksText && (gameType == GameType.BluestacksV5 || gameType == GameType.BluestacksV4))
+                {
+                    minS = new MCvScalar(0, 0, 205);//213
+                    maxS = new MCvScalar(123, 10, 255);
+                }
                 CvInvoke.InRange(hsvImg, new ScalarArray(minS), new ScalarArray(maxS), mask);
                 CvInvoke.BitwiseNot(mask, mask);
             }

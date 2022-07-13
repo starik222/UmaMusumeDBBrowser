@@ -55,14 +55,14 @@ namespace UmaMusumeDBBrowser
 
         private async void CheckForUpdateAsync()
         {
-            string data = null;
+            byte[] data = null;
             await Task.Run(() =>
             {
                 try
                 {
                     using (WebClient client = new WebClient())
                     {
-                        data = client.DownloadString("https://vnfast.ru/files/updates/" + Application.ProductName + ".txt");
+                        data = client.DownloadData("https://vnfast.ru/files/updates/" + Application.ProductName + ".txt");
                     }
                 }
                 catch(Exception ex)
@@ -73,11 +73,18 @@ namespace UmaMusumeDBBrowser
                     }
                 }
             });
-            if (!string.IsNullOrEmpty(data))
+            if (data.Length>0)
             {
-                if (data != Application.ProductVersion)
+                string text = Encoding.UTF8.GetString(data);
+                string[] listItems = text.Split(new char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                StringBuilder sb = new StringBuilder();
+                for (int i = 1; i < listItems.Length; i++)
                 {
-                    if (MessageBox.Show($"На сайте обнаружена новая версия программы ({data}).\nХотите перейти на страницу программы?",
+                    sb.AppendLine(listItems[i]);
+                }
+                if (listItems[0] != Application.ProductVersion)
+                {
+                    if (MessageBox.Show($"На сайте обнаружена новая версия программы ({listItems[0]}).\nНовое в версии:\n{sb}\nХотите перейти на страницу программы?",
                         "Найдено обновление программы", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
                         System.Diagnostics.Process.Start("https://vnfast.ru/programmy/96-umdbb");
