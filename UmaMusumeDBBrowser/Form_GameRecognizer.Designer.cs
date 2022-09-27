@@ -33,6 +33,8 @@ namespace UmaMusumeDBBrowser
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -101,8 +103,6 @@ namespace UmaMusumeDBBrowser
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTempFix = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -185,6 +185,23 @@ namespace UmaMusumeDBBrowser
             this.tabPage1.Text = "Основное";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.BackColorChanged += new System.EventHandler(this.tabPage1_BackColorChanged);
+            // 
+            // textBox21
+            // 
+            this.textBox21.Enabled = false;
+            this.textBox21.Location = new System.Drawing.Point(81, 157);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(133, 20);
+            this.textBox21.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 159);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Имя игрока";
             // 
             // checkBox4
             // 
@@ -978,23 +995,6 @@ namespace UmaMusumeDBBrowser
             this.panelTempFix.Name = "panelTempFix";
             this.panelTempFix.Size = new System.Drawing.Size(158, 29);
             this.panelTempFix.TabIndex = 4;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 159);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Имя игрока";
-            // 
-            // textBox21
-            // 
-            this.textBox21.Enabled = false;
-            this.textBox21.Location = new System.Drawing.Point(81, 157);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(133, 20);
-            this.textBox21.TabIndex = 15;
             // 
             // Form_GameRecognizer
             // 

@@ -347,6 +347,7 @@ namespace UmaMusumeDBBrowser
                                 }
 
                                 float confid = CompareImages(lastDialogMask, currentMask);
+
                                 if (Program.IsDebug)
                                 {
                                     Program.AddToLog("dialog compare counfidence: " + confid);
@@ -511,7 +512,7 @@ namespace UmaMusumeDBBrowser
 
             if (maxVal[0] == 1)
             {
-                if ((w1 + 0.1f) >= w2 && (w1 - 0.1f) <= w2)
+                if ((w1 + 0.03f) >= w2 && (w1 - 0.03f) <= w2)
                     return 1;
                 else
                 {

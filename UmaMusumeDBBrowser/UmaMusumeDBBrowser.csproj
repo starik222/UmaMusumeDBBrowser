@@ -211,6 +211,7 @@
     <Compile Include="GameSettings.cs" />
     <Compile Include="IconManager.cs" />
     <Compile Include="ImageManager.cs" />
+    <Compile Include="LiveDataManager.cs" />
     <Compile Include="MissionManager.cs" />
     <Compile Include="OptionControlManager.cs" />
     <Compile Include="PrintToExcel.cs" />

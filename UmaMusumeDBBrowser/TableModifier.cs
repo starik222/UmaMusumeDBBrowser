@@ -16,6 +16,10 @@ namespace UmaMusumeDBBrowser
                 ModifySkillDataTable(ref table);
             if (table.TableName.Equals("race"))
                 ModifyRaceDataTable(ref table);
+            if (table.TableName.Equals("single_mode_live_master_bonus") || table.TableName.Equals("single_mode_live_square"))
+            {
+                ModifyLiveDataTable(ref table);
+            }
         }
 
 
@@ -40,6 +44,17 @@ namespace UmaMusumeDBBrowser
             ModifyColumnData(GetRaceTrack, "race_track_id", ref table);
             ModifyColumnData(GetGround, "ground", ref table);
             ModifRaceDate(ref table);
+        }
+
+        private static void ModifyLiveDataTable(ref DataTable table)
+        {
+            string pattern = "\\<color\\=.*>(.*)\\</color\\>";
+            MatchEvaluator evaluator = new MatchEvaluator(TagRemover);
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                string text = (string)table.Rows[i]["MasterText"];
+                table.Rows[i]["MasterText"] = Regex.Replace(text, pattern, evaluator, RegexOptions.IgnoreCase);
+            }
         }
 
         private static void ModifRaceDate(ref DataTable table)
@@ -160,6 +175,11 @@ namespace UmaMusumeDBBrowser
                 default:
                     return val;
             }
+        }
+
+        private static string TagRemover(Match match)
+        {
+            return match.Groups[1].Value;
         }
 
         private static string ParamChanger(Match match)
