@@ -44562,6 +44562,1233 @@
       ],
       "Type": 1,
       "CardName": "[The 3rd MIRACLE]ケイエスミラクル"
+    },
+    {
+      "EventName": "毎日がコラボカフェ",
+      "EventNameToCheck": "毎日がコラボカフェ",
+      "EventOptionsList": [
+        {
+          "Option": "スマートファルコンメニュー",
+          "OptionToCheck": "スマートファルコンメニュー",
+          "Effect": "『レコメンド』 умение Lv+1"
+        },
+        {
+          "Option": "ウオッカメニュー",
+          "OptionToCheck": "ウオッカメニュー",
+          "Effect": "『アクセラレーション』 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "ウマ娘ちゃんクイズ☆～関係性編～",
+      "EventNameToCheck": "ウマ娘ちゃんクイズ☆関係性編",
+      "EventOptionsList": [
+        {
+          "Option": "エイシンフラッシュ",
+          "OptionToCheck": "エイシンフラッシュ",
+          "Effect": "Скорость+15\n『末脚』 умение Lv+1"
+        },
+        {
+          "Option": "ミホノブルボン",
+          "OptionToCheck": "ミホノブルボン",
+          "Effect": "Скорость+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "ウマ娘ちゃんクイズ☆～嗜好編～",
+      "EventNameToCheck": "ウマ娘ちゃんクイズ☆嗜好編",
+      "EventOptionsList": [
+        {
+          "Option": "ごはん",
+          "OptionToCheck": "ごはん",
+          "Effect": "Выносливость+5"
+        },
+        {
+          "Option": "パン",
+          "OptionToCheck": "パン",
+          "Effect": "Выносливость+15\n『京都レース場◯』 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "ウマ娘ちゃんクイズ☆～ルーツ編～",
+      "EventNameToCheck": "ウマ娘ちゃんクイズ☆ルーツ編",
+      "EventOptionsList": [
+        {
+          "Option": "ケンタッキー州",
+          "OptionToCheck": "ケンタッキー州",
+          "Effect": "Сила+15\n『マイルコーナー◯』 умение Lv+1"
+        },
+        {
+          "Option": "テキサス州",
+          "OptionToCheck": "テキサス州",
+          "Effect": "Сила+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "お大事に！",
+      "EventNameToCheck": "お大事に",
+      "EventOptionsList": [
+        {
+          "Option": "ちゃんと休もう",
+          "OptionToCheck": "ちゃんと休もう",
+          "Effect": "Мотивация-\nПоследний тип тренировки-5\nСлучайно 『練習下手』"
+        },
+        {
+          "Option": "……わかった！",
+          "OptionToCheck": "わかった",
+          "Effect": "Мотивация-\nПоследний тип тренировки-10\nСлучайно 『練習下手』\n『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "無茶は厳禁！",
+      "EventNameToCheck": "無茶は厳禁",
+      "EventOptionsList": [
+        {
+          "Option": "心配ないから今は休んで",
+          "OptionToCheck": "心配ないから今は休んで",
+          "Effect": "Энергия+10\nМотивация -3\nПоследний тип тренировки-10\nСлучайно 2 характеристики-10\nСлучайно 『練習ベタ』"
+        },
+        {
+          "Option": "歩くだけなら……",
+          "OptionToCheck": "歩くだけなら",
+          "Effect": "Мотивация -3\nПоследний тип тренировки-10\nСлучайно 2 характеристики-10\n『練習ベタ』\nЭнергия+10\n『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "トレードさせていただきますっ！",
+      "EventNameToCheck": "トレードさせていただきますっ",
+      "EventOptionsList": [
+        {
+          "Option": "食べすぎないようにね",
+          "OptionToCheck": "食べすぎないようにね",
+          "Effect": "Энергия+10\nSkill point+5"
+        },
+        {
+          "Option": "心ゆくまで堪能しよう！",
+          "OptionToCheck": "心ゆくまで堪能しよう",
+          "Effect": "Успех:：\nЭнергия+30\nSkill point+10\nПровал:：\nЭнергия+30\nSkill point+10\nСкорость-5\nСила+5\n『太り気味』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "ハロウィンカラオケパーリィ",
+      "EventNameToCheck": "ハロウィンカラオケパーリィ",
+      "EventOptionsList": [
+        {
+          "Option": "『みんな』には君も入ってる",
+          "OptionToCheck": "みんなには君も入ってる",
+          "Effect": "『砂浴び◯』 умение Lv+2\nСлучайно 『愛嬌◯』"
+        },
+        {
+          "Option": "みんなは君を知りたいんじゃないか？",
+          "OptionToCheck": "みんなは君を知りたいんじゃないか",
+          "Effect": "Сила+20\nСлучайно 『愛嬌◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "好きこそものの上手なれ",
+      "EventNameToCheck": "好きこそものの上手なれ",
+      "EventOptionsList": [
+        {
+          "Option": "本当に素敵な家族だな",
+          "OptionToCheck": "本当に素敵な家族だな",
+          "Effect": "Мотивация+\nСила воли+15"
+        },
+        {
+          "Option": "趣味のおかげで多才にもなれたしな",
+          "OptionToCheck": "趣味のおかげで多才にもなれたしな",
+          "Effect": "Выносливость+10\nСила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "推し事探訪　～入門編～",
+      "EventNameToCheck": "推し事探訪　入門編",
+      "EventOptionsList": [
+        {
+          "Option": "ペンライト",
+          "OptionToCheck": "ペンライト",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "応援うちわ",
+          "OptionToCheck": "応援うちわ",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "推し事探訪　～極編～",
+      "EventNameToCheck": "推し事探訪　極編",
+      "EventOptionsList": [
+        {
+          "Option": "レースの前後だと思う",
+          "OptionToCheck": "レースの前後だと思う",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "……今、デジタルが行きたい場所かな",
+          "OptionToCheck": "今、デジタルが行きたい場所かな",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "推し事探訪　～免許皆伝編～",
+      "EventNameToCheck": "推し事探訪　免許皆伝編",
+      "EventOptionsList": [
+        {
+          "Option": "デ・ジ・たーーーん！！",
+          "OptionToCheck": "デジたーーーん",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "キング！キング！",
+          "OptionToCheck": "キングキング",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "両手にペンライトを装備する",
+          "OptionToCheck": "両手にペンライトを装備する",
+          "Effect": "Skill point+30"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "推し接近アラート、発令！？",
+      "EventNameToCheck": "推し接近アラート、発令",
+      "EventOptionsList": [
+        {
+          "Option": "A賞が取れれば、興奮するかも……",
+          "OptionToCheck": "A賞が取れれば、興奮するかも",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "これ以上無理をさせないでくれ！",
+          "OptionToCheck": "これ以上無理をさせないでくれ",
+          "Effect": "Энергия+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "レース勝利！(1着)",
+      "EventNameToCheck": "レース勝利1着",
+      "EventOptionsList": [
+        {
+          "Option": "君が一番輝いてたぞ",
+          "OptionToCheck": "君が一番輝いてたぞ",
+          "Effect": "G1：\nСлучайно 1 характеристика+10\nSkill point+45\nG2~G3：\nСлучайно 1 характеристика+8\nSkill point+35\nop：\nСлучайно 1 характеристика+5\nSkill point+30\n共通：\nЭнергия-15\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        },
+        {
+          "Option": "次のレースも頑張ろう",
+          "OptionToCheck": "次のレースも頑張ろう",
+          "Effect": "G1：\nСлучайно 1 характеристика+10\nSkill point+45\nG2~G3：\nСлучайно 1 характеристика+8\nSkill point+35\nop：\nСлучайно 1 характеристика+5\nSkill point+30\n共通：\nЭнергия-5or-10or-20or-30\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "レース入着(2~5着)",
+      "EventNameToCheck": "レース入着2~5着",
+      "EventOptionsList": [
+        {
+          "Option": "入着おめでとう！",
+          "OptionToCheck": "入着おめでとう",
+          "Effect": "G1：\nСлучайно 1 характеристика+5~8\nSkill point+40~45\nG2~G3：\nСлучайно 1 характеристика+4~6\nSkill point+30~45\nop：\nСлучайно 1 характеристика+2~4\nSkill point+20~45\n共通：\nЭнергия-20\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        },
+        {
+          "Option": "次は自分が1着を取ろうな",
+          "OptionToCheck": "次は自分が1着を取ろうな",
+          "Effect": "G1：\nСлучайно 1 характеристика+5~8\nSkill point+40~45\nG2~G3：\nСлучайно 1 характеристика+4~6\nSkill point+30~45\nop：\nСлучайно 1 характеристика+2~4\nSkill point+20~45\n共通：\nЭнергия-10or-30\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "レース敗北(6着以下)",
+      "EventNameToCheck": "レース敗北6着以下",
+      "EventOptionsList": [
+        {
+          "Option": "次こそ頑張ろう！",
+          "OptionToCheck": "次こそ頑張ろう",
+          "Effect": "G1：\nСлучайно 1 характеристика+4\nSkill point+25\nG2~G3：\nСлучайно 1 характеристика+3\nSkill point+20\nop：\nSkill point+10\n共通：\nЭнергия-25\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        },
+        {
+          "Option": "悔しくないのか？",
+          "OptionToCheck": "悔しくないのか",
+          "Effect": "G1：\nСлучайно 1 характеристика+4\nSkill point+25\nG2~G3：\nСлучайно 1 характеристика+3\nSkill point+20\nop：\nSkill point+10\n共通：\nЭнергия-15or-25or-35\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "ヒヤシンスSの後に",
+      "EventNameToCheck": "ヒヤシンスSの後に",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Случайно 3 характеристики+3\nSkill point+30\nУровень отношений+4"
+        },
+        {
+          "Option": "2位",
+          "OptionToCheck": "2位",
+          "Effect": "Случайно 3 характеристики+2\nSkill point+30\nУровень отношений+4"
+        },
+        {
+          "Option": "3位",
+          "OptionToCheck": "3位",
+          "Effect": "Случайно 3 характеристики+1\nSkill point+30\nУровень отношений+4"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "NHKマイルCの後に",
+      "EventNameToCheck": "NHKマイルCの後に",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Все характеристики+3\nSkill point+45\nУровень отношений+4"
+        },
+        {
+          "Option": "2位",
+          "OptionToCheck": "2位",
+          "Effect": "Все характеристики+2\nSkill point+45\nУровень отношений+4"
+        },
+        {
+          "Option": "3位",
+          "OptionToCheck": "3位",
+          "Effect": "Все характеристики+1\nSkill point+35or45\nУровень отношений+4"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "マイルCSの後に",
+      "EventNameToCheck": "マイルCSの後に",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Все характеристики+3\nSkill point+45\nУровень отношений+4"
+        },
+        {
+          "Option": "2位",
+          "OptionToCheck": "2位",
+          "Effect": "Все характеристики+2\nSkill point+45\nУровень отношений+4"
+        },
+        {
+          "Option": "3位",
+          "OptionToCheck": "3位",
+          "Effect": "Все характеристики+1\nSkill point+35or45\nУровень отношений+4"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[愛麗♡キョンシー]アグネスデジタル"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "新春登山",
+          "OptionToCheck": "新春登山",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "デパ地下巡り",
+          "OptionToCheck": "デパ地下巡り",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "お正月遊びをいろいろ",
+          "OptionToCheck": "お正月遊びをいろいろ",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "本番っぽい練習をしよう",
+          "OptionToCheck": "本番っぽい練習をしよう",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "緊張しないおまじないを探そう",
+          "OptionToCheck": "緊張しないおまじないを探そう",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "不屈の1歩は小さな1歩",
+      "EventNameToCheck": "不屈の1歩は小さな1歩",
+      "EventOptionsList": [
+        {
+          "Option": "ナイスガッツ！",
+          "OptionToCheck": "ナイスガッツ",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "まずは休憩にしようか",
+          "OptionToCheck": "まずは休憩にしようか",
+          "Effect": "Энергия+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "お大事に！",
+      "EventNameToCheck": "お大事に",
+      "EventOptionsList": [
+        {
+          "Option": "痛いなら休もう(夏合宿中：きっちり休ませる)",
+          "OptionToCheck": "痛いなら休もう夏合宿中きっちり休ませる",
+          "Effect": "Мотивация-\nПоследний тип тренировки-5\nСлучайно 『練習下手』"
+        },
+        {
+          "Option": "無理をしないって約束できるなら(夏合宿中：頑張らせる)",
+          "OptionToCheck": "無理をしないって約束できるなら夏合宿中頑張らせる",
+          "Effect": "Мотивация-\nПоследний тип тренировки-10\nСлучайно 『練習下手』\n『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "無茶は厳禁！",
+      "EventNameToCheck": "無茶は厳禁",
+      "EventOptionsList": [
+        {
+          "Option": "今は安静にしてほしい(夏合宿中：とにかく労わる)",
+          "OptionToCheck": "今は安静にしてほしい夏合宿中とにかく労わる",
+          "Effect": "Энергия+10\nМотивация -3\nПоследний тип тренировки-10\nСлучайно 2 характеристики-10\nСлучайно 『練習ベタ』"
+        },
+        {
+          "Option": "トレーニング、戻ってみるか？(夏合宿中：厳しくいく！)",
+          "OptionToCheck": "トレーニング、戻ってみるか夏合宿中厳しくいく",
+          "Effect": "Мотивация -3\nПоследний тип тренировки-10\nСлучайно 2 характеристики-10\n『練習ベタ』\nЭнергия+10\n『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "友情のハロウィンパレード",
+      "EventNameToCheck": "友情のハロウィンパレード",
+      "EventOptionsList": [
+        {
+          "Option": "早く行っておいで！",
+          "OptionToCheck": "早く行っておいで",
+          "Effect": "Скорость+10\nСила+10\nСлучайно 『愛嬌◯』"
+        },
+        {
+          "Option": "いい友達を持っているんだな",
+          "OptionToCheck": "いい友達を持っているんだな",
+          "Effect": "『ありったけ』 умение Lv+2\nСлучайно 『愛嬌◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "泣き虫フレンズ",
+      "EventNameToCheck": "泣き虫フレンズ",
+      "EventOptionsList": [
+        {
+          "Option": "まさかケンカ……！？",
+          "OptionToCheck": "まさかケンカ",
+          "Effect": "Выносливость+10\nСила воли+10"
+        },
+        {
+          "Option": "……嬉し涙かな？",
+          "OptionToCheck": "嬉し涙かな",
+          "Effect": "Энергия+10\nИнтеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "ミルク味の夕暮れ",
+      "EventNameToCheck": "ミルク味の夕暮れ",
+      "EventOptionsList": [
+        {
+          "Option": "買い物、行くか？",
+          "OptionToCheck": "買い物、行くか",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "じゃあ今からもっと食べ歩きしよう！",
+          "OptionToCheck": "じゃあ今からもっと食べ歩きしよう",
+          "Effect": "Скорость+5\nВыносливость+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "レース勝利！(1着)",
+      "EventNameToCheck": "レース勝利1着",
+      "EventOptionsList": [
+        {
+          "Option": "おめでとう、現実だぞ！",
+          "OptionToCheck": "おめでとう、現実だぞ",
+          "Effect": "G1：\nСлучайно 1 характеристика+10\nSkill point+45\nG2~G3：\nСлучайно 1 характеристика+8\nSkill point+35\nop：\nСлучайно 1 характеристика+5\nSkill point+30\n共通：\nЭнергия-15\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        },
+        {
+          "Option": "浮かれてばかりいられないぞ",
+          "OptionToCheck": "浮かれてばかりいられないぞ",
+          "Effect": "G1：\nСлучайно 1 характеристика+10\nSkill point+45\nG2~G3：\nСлучайно 1 характеристика+8\nSkill point+35\nop：\nСлучайно 1 характеристика+5\nSkill point+30\n共通：\nЭнергия-5or-10or-20or-30\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "レース入着(2~5着)",
+      "EventNameToCheck": "レース入着2~5着",
+      "EventOptionsList": [
+        {
+          "Option": "今日の走りなら上を目指せる！",
+          "OptionToCheck": "今日の走りなら上を目指せる",
+          "Effect": "G1：\nСлучайно 1 характеристика+5~8\nSkill point+40~45\nG2~G3：\nСлучайно 1 характеристика+4~6\nSkill point+30~45\nop：\nСлучайно 1 характеристика+2~4\nSkill point+20~45\n共通：\nЭнергия-20\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        },
+        {
+          "Option": "課題を1つずつクリアしていこう",
+          "OptionToCheck": "課題を1つずつクリアしていこう",
+          "Effect": "G1：\nСлучайно 1 характеристика+5~8\nSkill point+40~45\nG2~G3：\nСлучайно 1 характеристика+4~6\nSkill point+30~45\nop：\nСлучайно 1 характеристика+2~4\nSkill point+20~45\n共通：\nЭнергия-10or-30\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "レース敗北(6着以下)",
+      "EventNameToCheck": "レース敗北6着以下",
+      "EventOptionsList": [
+        {
+          "Option": "諦めの悪さが君のいいところだ",
+          "OptionToCheck": "諦めの悪さが君のいいところだ",
+          "Effect": "G1：\nСлучайно 1 характеристика+4\nSkill point+25\nG2~G3：\nСлучайно 1 характеристика+3\nSkill point+20\nop：\nSkill point+10\n共通：\nЭнергия-25\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        },
+        {
+          "Option": "泣いても強くなれないぞ！",
+          "OptionToCheck": "泣いても強くなれないぞ",
+          "Effect": "G1：\nСлучайно 1 характеристика+4\nSkill point+25\nG2~G3：\nСлучайно 1 характеристика+3\nSkill point+20\nop：\nSkill point+10\n共通：\nЭнергия-15or-25or-35\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "皐月賞の後に",
+      "EventNameToCheck": "皐月賞の後に",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+10\nSkill point+45"
+        },
+        {
+          "Option": "2~5位",
+          "OptionToCheck": "2~5位",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+5~8\nSkill point+35~45"
+        },
+        {
+          "Option": "6位以下",
+          "OptionToCheck": "6位以下",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+4\nSkill point+25"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "日経新春杯の後に",
+      "EventNameToCheck": "日経新春杯の後に",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Случайно 4 характеристики+3\nSkill point+35\nУровень отношение с NPC сценария+4"
+        },
+        {
+          "Option": "2位",
+          "OptionToCheck": "2位",
+          "Effect": "Случайно 4 характеристики+2\nSkill point+35\nУровень отношение с NPC сценария+4"
+        },
+        {
+          "Option": "3位",
+          "OptionToCheck": "3位",
+          "Effect": "Случайно 4 характеристики+1\nSkill point+30\nУровень отношение с NPC сценария+4"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "天皇賞(春)の後に",
+      "EventNameToCheck": "天皇賞春の後に",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+10\nSkill point+45"
+        },
+        {
+          "Option": "2~5位",
+          "OptionToCheck": "2~5位",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+5~8\nSkill point+35~45"
+        },
+        {
+          "Option": "6位以下",
+          "OptionToCheck": "6位以下",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+4\nSkill point+25"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "宝塚記念の後に",
+      "EventNameToCheck": "宝塚記念の後に",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Все характеристики+3\nSkill point+45\nУровень отношение с NPC сценария+4"
+        },
+        {
+          "Option": "2位",
+          "OptionToCheck": "2位",
+          "Effect": "Все характеристики+2\nSkill point+45\nУровень отношение с NPC сценария+4"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "天皇賞(秋)の後に",
+      "EventNameToCheck": "天皇賞秋の後に",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Все характеристики+3\nSkill point+45\nУровень отношение с NPC сценария+4"
+        },
+        {
+          "Option": "2位",
+          "OptionToCheck": "2位",
+          "Effect": "Все характеристики+2\nSkill point+45\nУровень отношение с NPC сценария+4"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "ジャパンCの後に",
+      "EventNameToCheck": "ジャパンCの後に",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Все характеристики+3\nSkill point+45\nУровень отношение с NPC сценария+4"
+        },
+        {
+          "Option": "2位",
+          "OptionToCheck": "2位",
+          "Effect": "Все характеристики+2\nSkill point+45\nУровень отношение с NPC сценария+4"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "お菓子を配るのが得意でさ",
+      "EventNameToCheck": "お菓子を配るのが得意でさ",
+      "EventOptionsList": [
+        {
+          "Option": "参加していいのか？",
+          "OptionToCheck": "参加していいのか",
+          "Effect": "Skill point+30\nУровень отношений+5"
+        },
+        {
+          "Option": "予定があるからまたな",
+          "OptionToCheck": "予定があるからまたな",
+          "Effect": "Энергия+30\n『パス上手』 умение Lv+2\n※Прекращение цепочки событий"
+        }
+      ],
+      "Type": 1,
+      "CardName": "[月下の悪魔ちゃん♪]メジロパーマー"
+    },
+    {
+      "EventName": "ポジティブな逃げ",
+      "EventNameToCheck": "ポジティブな逃げ",
+      "EventOptionsList": [
+        {
+          "Option": "ありがとう。でもまだ頑張りたい",
+          "OptionToCheck": "ありがとう。でもまだ頑張りたい",
+          "Effect": "Сила воли+15\nУровень отношений+5"
+        },
+        {
+          "Option": "じゃあ、俺も逃げてみる！",
+          "OptionToCheck": "じゃあ、俺も逃げてみる",
+          "Effect": "『道悪◯』 умение Lv+1\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "[月下の悪魔ちゃん♪]メジロパーマー"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "巨大たこ揚げダッシュ",
+          "OptionToCheck": "巨大たこ揚げダッシュ",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "神社へ願掛け",
+          "OptionToCheck": "神社へ願掛け",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "『マーちゃん百人一首』",
+          "OptionToCheck": "マーちゃん百人一首",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "初詣",
+      "EventNameToCheck": "初詣",
+      "EventOptionsList": [
+        {
+          "Option": "元気をくれるクロエ・ハーバードさんへ",
+          "OptionToCheck": "元気をくれるクロエハーバードさんへ",
+          "Effect": "Энергия+30"
+        },
+        {
+          "Option": "天才ノラ猫の服部忍び丸へ",
+          "OptionToCheck": "天才ノラ猫の服部忍び丸へ",
+          "Effect": "Все характеристики+5"
+        },
+        {
+          "Option": "無限の可能性を秘めているアリ村さんへ",
+          "OptionToCheck": "無限の可能性を秘めているアリ村さんへ",
+          "Effect": "Skill point+35"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "夏合宿(2年目)にて",
+      "EventNameToCheck": "夏合宿2年目にて",
+      "EventOptionsList": [
+        {
+          "Option": "山へ、パワフルなクワガタを探しに",
+          "OptionToCheck": "山へ、パワフルなクワガタを探しに",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "海へ、根性のあるナマコを探しに",
+          "OptionToCheck": "海へ、根性のあるナマコを探しに",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "だったら、逆にもっと増やしてみたら？",
+          "OptionToCheck": "だったら、逆にもっと増やしてみたら",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "休憩して頭の中を整理しよう",
+          "OptionToCheck": "休憩して頭の中を整理しよう",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "都市伝説、ですか？",
+      "EventNameToCheck": "都市伝説、ですか",
+      "EventOptionsList": [
+        {
+          "Option": "素早く移動していいトレーニングかも……？",
+          "OptionToCheck": "素早く移動していいトレーニングかも",
+          "Effect": "Скорость+5\nСила+5"
+        },
+        {
+          "Option": "作戦を練るのがうまいな！",
+          "OptionToCheck": "作戦を練るのがうまいな",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "押せるときに押していきましょう",
+      "EventNameToCheck": "押せるときに押していきましょう",
+      "EventOptionsList": [
+        {
+          "Option": "2人が力を合わせると無敵だな！",
+          "OptionToCheck": "2人が力を合わせると無敵だな",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "物は考えよう、か",
+          "OptionToCheck": "物は考えよう、か",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "SSBの謎を追え！",
+      "EventNameToCheck": "SSBの謎を追え",
+      "EventOptionsList": [
+        {
+          "Option": "研究のことは誰にも言わないよ",
+          "OptionToCheck": "研究のことは誰にも言わないよ",
+          "Effect": "Скорость+5\nИнтеллект+10"
+        },
+        {
+          "Option": "宣伝スキルあげ、協力させてほしい",
+          "OptionToCheck": "宣伝スキルあげ、協力させてほしい",
+          "Effect": "『軽い足取り』 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "いろいろおいしいみたいです",
+      "EventNameToCheck": "いろいろおいしいみたいです",
+      "EventOptionsList": [
+        {
+          "Option": "受けて立とう！",
+          "OptionToCheck": "受けて立とう",
+          "Effect": "Успех:：\nМотивация+\nСкорость+25\n『逃げのコツ◯』 умение Lv+3\nПровал:：\nЭнергия-10\nСкорость+10\n『逃げのコツ◯』 умение Lv+1"
+        },
+        {
+          "Option": "今回は遠慮しておこう",
+          "OptionToCheck": "今回は遠慮しておこう",
+          "Effect": "Энергия+10\nИнтеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "お大事に！",
+      "EventNameToCheck": "お大事に",
+      "EventOptionsList": [
+        {
+          "Option": "それでも心配だから休もう……",
+          "OptionToCheck": "それでも心配だから休もう",
+          "Effect": "Мотивация-\nПоследний тип тренировки-5\nСлучайно 『練習下手』"
+        },
+        {
+          "Option": "……無理と判断したら、止めるからな",
+          "OptionToCheck": "無理と判断したら、止めるからな",
+          "Effect": "Мотивация-\nПоследний тип тренировки-10\nСлучайно 『練習下手』\n『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "無茶は厳禁！",
+      "EventNameToCheck": "無茶は厳禁",
+      "EventOptionsList": [
+        {
+          "Option": "許可できない",
+          "OptionToCheck": "許可できない",
+          "Effect": "Энергия+10\nМотивация -3\nПоследний тип тренировки-10\nСлучайно 2 характеристики-10\nСлучайно 『練習ベタ』"
+        },
+        {
+          "Option": "無理のない範囲でなら……",
+          "OptionToCheck": "無理のない範囲でなら",
+          "Effect": "Мотивация -3\nПоследний тип тренировки-10\nСлучайно 2 характеристики-10\n『練習ベタ』\nЭнергия+10\n『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "王冠といえば……",
+      "EventNameToCheck": "王冠といえば",
+      "EventOptionsList": [
+        {
+          "Option": "レースへの影響は、大丈夫？",
+          "OptionToCheck": "レースへの影響は、大丈夫",
+          "Effect": "Энергия+10\nSkill point+5"
+        },
+        {
+          "Option": "絶対に勝ち取ろう",
+          "OptionToCheck": "絶対に勝ち取ろう",
+          "Effect": "Успех:：\nЭнергия+30\nSkill point+10\nПровал:：\nЭнергия+30\nSkill point+10\nСкорость-5\nСила+5\n『太り気味』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "むすんでおぼえて",
+      "EventNameToCheck": "むすんでおぼえて",
+      "EventOptionsList": [
+        {
+          "Option": "今日は勝負服でトレーニングしよう！",
+          "OptionToCheck": "今日は勝負服でトレーニングしよう",
+          "Effect": "Сила+20"
+        },
+        {
+          "Option": "本当に注目される時までとっておこう",
+          "OptionToCheck": "本当に注目される時までとっておこう",
+          "Effect": "Скорость+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "マーちゃんはマーちゃんなのです",
+      "EventNameToCheck": "マーちゃんはマーちゃんなのです",
+      "EventOptionsList": [
+        {
+          "Option": "でも、顔は覚えてもらえたから！",
+          "OptionToCheck": "でも、顔は覚えてもらえたから",
+          "Effect": "Выносливость+10\nИнтеллект+10"
+        },
+        {
+          "Option": "他の委員会を考えようか……",
+          "OptionToCheck": "他の委員会を考えようか",
+          "Effect": "Сила воли+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "くっきんメモリーズ",
+      "EventNameToCheck": "くっきんメモリーズ",
+      "EventOptionsList": [
+        {
+          "Option": "君の好きな食べ物にしよう",
+          "OptionToCheck": "君の好きな食べ物にしよう",
+          "Effect": "Выносливость+20\nСлучайно 『愛嬌◯』"
+        },
+        {
+          "Option": "見た目にインパクトがあるものにしよう！",
+          "OptionToCheck": "見た目にインパクトがあるものにしよう",
+          "Effect": "Сила+20\nСлучайно 『愛嬌◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "海のマスコット先輩です",
+      "EventNameToCheck": "海のマスコット先輩です",
+      "EventOptionsList": [
+        {
+          "Option": "ひとつ発見をしたな！",
+          "OptionToCheck": "ひとつ発見をしたな",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "これ、活かせるかな？",
+          "OptionToCheck": "これ、活かせるかな",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "レンズの先に、何を写します？",
+      "EventNameToCheck": "レンズの先に、何を写します",
+      "EventOptionsList": [
+        {
+          "Option": "これからはもっとしっかり見るよ！",
+          "OptionToCheck": "これからはもっとしっかり見るよ",
+          "Effect": "Выносливость+5\nИнтеллект+5"
+        },
+        {
+          "Option": "今日の反省を活かします……",
+          "OptionToCheck": "今日の反省を活かします",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "いつかビッグになっても、です",
+      "EventNameToCheck": "いつかビッグになっても、です",
+      "EventOptionsList": [
+        {
+          "Option": "記念撮影しようか",
+          "OptionToCheck": "記念撮影しようか",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "もっと大きな存在になったら……",
+          "OptionToCheck": "もっと大きな存在になったら",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "いい1日だった",
+          "OptionToCheck": "いい1日だった",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "翔ける丸ハムカツ強奪事件",
+      "EventNameToCheck": "翔ける丸ハムカツ強奪事件",
+      "EventOptionsList": [
+        {
+          "Option": "無事、大きくなるといいな",
+          "OptionToCheck": "無事、大きくなるといいな",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "代わりのハムカツを買って帰ろうか",
+          "OptionToCheck": "代わりのハムカツを買って帰ろうか",
+          "Effect": "Сила+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "マーちゃんは忘れたい",
+      "EventNameToCheck": "マーちゃんは忘れたい",
+      "EventOptionsList": [
+        {
+          "Option": "過酷な特訓だったんだな",
+          "OptionToCheck": "過酷な特訓だったんだな",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "話を聞いてたら、ちょっと興味が――",
+          "OptionToCheck": "話を聞いてたら、ちょっと興味が――",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "レース勝利！(1着)",
+      "EventNameToCheck": "レース勝利1着",
+      "EventOptionsList": [
+        {
+          "Option": "夢が叶う日も近いな",
+          "OptionToCheck": "夢が叶う日も近いな",
+          "Effect": "G1：\nСлучайно 1 характеристика+10\nSkill point+45\nG2~G3：\nСлучайно 1 характеристика+8\nSkill point+35\nop：\nСлучайно 1 характеристика+5\nSkill point+30\n共通：\nЭнергия-15\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        },
+        {
+          "Option": "油断大敵だよ",
+          "OptionToCheck": "油断大敵だよ",
+          "Effect": "G1：\nСлучайно 1 характеристика+10\nSkill point+45\nG2~G3：\nСлучайно 1 характеристика+8\nSkill point+35\nop：\nСлучайно 1 характеристика+5\nSkill point+30\n共通：\nЭнергия-5or-10or-20or-30\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "レース入着(2~5着)",
+      "EventNameToCheck": "レース入着2~5着",
+      "EventOptionsList": [
+        {
+          "Option": "今日のレースも悪くなかった",
+          "OptionToCheck": "今日のレースも悪くなかった",
+          "Effect": "G1：\nСлучайно 1 характеристика+5~8\nSkill point+40~45\nG2~G3：\nСлучайно 1 характеристика+4~6\nSkill point+30~45\nop：\nСлучайно 1 характеристика+2~4\nSkill point+20~45\n共通：\nЭнергия-20\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        },
+        {
+          "Option": "有言実行を期待しているよ",
+          "OptionToCheck": "有言実行を期待しているよ",
+          "Effect": "G1：\nСлучайно 1 характеристика+5~8\nSkill point+40~45\nG2~G3：\nСлучайно 1 характеристика+4~6\nSkill point+30~45\nop：\nСлучайно 1 характеристика+2~4\nSkill point+20~45\n共通：\nЭнергия-10or-30\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "レース敗北(6着以下)",
+      "EventNameToCheck": "レース敗北6着以下",
+      "EventOptionsList": [
+        {
+          "Option": "充分、頑張っていると思う",
+          "OptionToCheck": "充分、頑張っていると思う",
+          "Effect": "G1：\nСлучайно 1 характеристика+4\nSkill point+25\nG2~G3：\nСлучайно 1 характеристика+3\nSkill point+20\nop：\nSkill point+10\n共通：\nЭнергия-25\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        },
+        {
+          "Option": "トレーニング量を増やそう！",
+          "OptionToCheck": "トレーニング量を増やそう",
+          "Effect": "G1：\nСлучайно 1 характеристика+4\nSkill point+25\nG2~G3：\nСлучайно 1 характеристика+3\nSkill point+20\nop：\nSkill point+10\n共通：\nЭнергия-15or-25or-35\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "ファンタジーSの後に",
+      "EventNameToCheck": "ファンタジーSの後に",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Случайно 4 характеристики+3\nSkill point+30\nУровень отношение с NPC сценария+4"
+        },
+        {
+          "Option": "2位",
+          "OptionToCheck": "2位",
+          "Effect": "Случайно 4 характеристики+2\nSkill point+30\nУровень отношение с NPC сценария+4"
+        },
+        {
+          "Option": "3位以下",
+          "OptionToCheck": "3位以下",
+          "Effect": "Случайно 4 характеристики+1\nSkill point+30\nУровень отношение с NPC сценария+4"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "フィリーズレビューの後に",
+      "EventNameToCheck": "フィリーズレビューの後に",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Случайно 4 характеристики+3\nSkill point+35\nУровень отношение с NPC сценария+4"
+        },
+        {
+          "Option": "2位",
+          "OptionToCheck": "2位",
+          "Effect": "Случайно 4 характеристики+2\nSkill point+35\nУровень отношение с NPC сценария+4"
+        },
+        {
+          "Option": "3位以下",
+          "OptionToCheck": "3位以下",
+          "Effect": "Случайно 4 характеристики+1\nSkill point+35\nУровень отношение с NPC сценария+4"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "秋華賞の後に(クラシック)",
+      "EventNameToCheck": "秋華賞の後にクラシック",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+10\nSkill point+45\n『前途洋々』 умение Lv+2"
+        },
+        {
+          "Option": "2~5位",
+          "OptionToCheck": "2~5位",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+5~8\nSkill point+35~45"
+        },
+        {
+          "Option": "6位以下",
+          "OptionToCheck": "6位以下",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+4\nSkill point+25"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
+    },
+    {
+      "EventName": "天皇賞(秋)の後に(シニア)",
+      "EventNameToCheck": "天皇賞秋の後にシニア",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+10\nSkill point+45\n『テンポアップ』 умение Lv+2"
+        },
+        {
+          "Option": "2~5位",
+          "OptionToCheck": "2~5位",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+5~8\nSkill point+35~45"
+        },
+        {
+          "Option": "6位以下",
+          "OptionToCheck": "6位以下",
+          "Effect": "Энергия-15\nСлучайно 1 характеристика+4\nSkill point+25"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Flare]アストンマーチャン"
     }
   ]
 }
