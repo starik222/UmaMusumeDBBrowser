@@ -103,6 +103,8 @@ namespace UmaMusumeDBBrowser
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTempFix = new System.Windows.Forms.Panel();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox23 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -417,17 +419,20 @@ namespace UmaMusumeDBBrowser
             this.tableLayoutPanel1.Controls.Add(this.textBox4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBox5, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBox6, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBox22, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBox23, 0, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(593, 140);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(593, 192);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // textBox2
@@ -996,6 +1001,24 @@ namespace UmaMusumeDBBrowser
             this.panelTempFix.Size = new System.Drawing.Size(158, 29);
             this.panelTempFix.TabIndex = 4;
             // 
+            // textBox22
+            // 
+            this.textBox22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox22.Location = new System.Drawing.Point(8, 138);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.ReadOnly = true;
+            this.textBox22.Size = new System.Drawing.Size(227, 20);
+            this.textBox22.TabIndex = 4;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox23.Location = new System.Drawing.Point(8, 164);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.ReadOnly = true;
+            this.textBox23.Size = new System.Drawing.Size(227, 20);
+            this.textBox23.TabIndex = 4;
+            // 
             // Form_GameRecognizer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1126,5 +1149,7 @@ namespace UmaMusumeDBBrowser
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox textBox23;
     }
 }

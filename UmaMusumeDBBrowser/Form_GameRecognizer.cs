@@ -197,12 +197,14 @@ namespace UmaMusumeDBBrowser
             //dr.Show();
             if (!Program.IsDebug)
                 tabControl1.TabPages.Remove(tabPage3);
-            optionColors = new Color[5];
+            optionColors = new Color[7];
             optionColors[0] = Color.FromArgb(0xd5, 0xfb, 0xa4);
             optionColors[1] = Color.FromArgb(0xff, 0xf6, 0xb0);
             optionColors[2] = Color.FromArgb(0xff, 0xcd, 0xe5);
             optionColors[3] = Color.FromArgb(0xb5, 0xe7, 0xff);
             optionColors[4] = Color.FromArgb(0xce, 0xcb, 0xff);
+            optionColors[5] = Color.FromArgb(0xce, 0xcb, 0xff);
+            optionColors[6] = Color.FromArgb(0xce, 0xcb, 0xff);
             CreateRichTextBoxes();
             controlManager.SetVisibleFirst(0);
             CreateSkillControlManager();
@@ -419,9 +421,11 @@ namespace UmaMusumeDBBrowser
             controlManager.AddOption(textBox4);
             controlManager.AddOption(textBox5);
             controlManager.AddOption(textBox6);
+            controlManager.AddOption(textBox22);
+            controlManager.AddOption(textBox23);
             Font rcFont = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 1);
             controlManager.SetOptionsColor(optionColors);
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 7; i++)
             {
                 //controlManager.Options[i].BackColor = optionColors[i];
                 CustomRichTextBox customRichTextBox = new CustomRichTextBox();
