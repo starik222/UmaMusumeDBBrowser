@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("vnfast.ru")]
 [assembly: AssemblyProduct("UmaMusumeDBBrowser")]
-[assembly: AssemblyCopyright("Copyright © vnfast.ru 2021")]
+[assembly: AssemblyCopyright("Copyright © vnfast.ru 2021-2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номера сборки и редакции по умолчанию 
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.5.7.0")]
-[assembly: AssemblyFileVersion("1.5.7.0")]
+[assembly: AssemblyVersion("1.5.8.0")]
+[assembly: AssemblyFileVersion("1.5.8.0")]
