@@ -34083,34 +34083,6 @@
       "CardName": "［鼓動速まるクールダウン］メジロライアン"
     },
     {
-      "EventName": "ついに集まったチームメンバー！",
-      "EventNameToCheck": "ついに集まったチームメンバー",
-      "EventOptionsList": [
-        {
-          "Option": "チーム＜HOP CHEERS＞",
-          "OptionToCheck": "チーム＜HOP CHEERS＞",
-          "Effect": "「マイルの支配者」"
-        },
-        {
-          "Option": "チーム＜ハレノヒ・ランナーズ＞",
-          "OptionToCheck": "チーム＜ハレノヒランナーズ＞",
-          "Effect": "「千里眼」"
-        },
-        {
-          "Option": "チーム＜にんじんぷりん＞",
-          "OptionToCheck": "チーム＜にんじんぷりん＞",
-          "Effect": "「不屈の心」\n==========\nКоманда＜ブルームス＞\n「クールダウン」"
-        },
-        {
-          "Option": "チーム＜キャロッツ＞",
-          "OptionToCheck": "チーム＜キャロッツ＞",
-          "Effect": "「ノンストップガール」"
-        }
-      ],
-      "Type": 2,
-      "CardName": "アオハル杯"
-    },
-    {
       "EventName": "アグネスデジタル、爆死す",
       "EventNameToCheck": "アグネスデジタル、爆死す",
       "EventOptionsList": [
