@@ -638,5 +638,100 @@ namespace UmaResHelper
 
 
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            OpenFolderDialog openFolderDialog = new OpenFolderDialog();
+            if (openFolderDialog.ShowDialog() != DialogResult.OK)
+                return;
+            string p = "chr_icon_(\\d+).png";
+            CopyFilesWithPattern(openFolderDialog.Folder, openFolderDialog.Folder, p, NotConvertName);
+
+        }
+
+        private void CopyFilesWithPattern(string srcDir, string dstDir, string pattern, Func<string, string> convNameFunc)
+        {
+            Regex r = new Regex(pattern, RegexOptions.IgnoreCase);
+            string[] files = Directory.GetFiles(srcDir, "*.png", SearchOption.AllDirectories);
+            foreach (var item in files)
+            {
+                string fName = Path.GetFileName(item);
+                Match m = r.Match(fName);
+                if (m.Success)
+                {
+                    string nFilePath = Path.Combine(dstDir, convNameFunc(m.Groups[1].Value) + ".png");
+                    if (!File.Exists(nFilePath))
+                        File.Copy(item, nFilePath);
+                }
+            }
+        }
+
+        private string NotConvertName(string name)
+        {
+            return name;
+        }
+
+        private string ConvToInt(string name)
+        {
+            int res = -1;
+            if (int.TryParse(name, out res))
+                return res.ToString();
+            else
+                return name;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenFolderDialog openFolderDialog = new OpenFolderDialog();
+            if (openFolderDialog.ShowDialog() != DialogResult.OK)
+                return;
+            string p = "item_icon_(.*).png";
+            CopyFilesWithPattern(openFolderDialog.Folder, openFolderDialog.Folder, p, ConvToInt);
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            OpenFolderDialog openFolderDialog = new OpenFolderDialog();
+            if (openFolderDialog.ShowDialog() != DialogResult.OK)
+                return;
+            string p = "thum_race_rt_\\d+_(\\d+)_\\d+.png";
+            CopyFilesWithPattern(openFolderDialog.Folder, openFolderDialog.Folder, p, NotConvertName);
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            OpenFolderDialog openFolderDialog = new OpenFolderDialog();
+            if (openFolderDialog.ShowDialog() != DialogResult.OK)
+                return;
+            string p = "support_card_s_(\\d+).png";
+            CopyFilesWithPattern(openFolderDialog.Folder, openFolderDialog.Folder, p, NotConvertName);
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            OpenFolderDialog openFolderDialog = new OpenFolderDialog();
+            if (openFolderDialog.ShowDialog() != DialogResult.OK)
+                return;
+            string p = "honor_(\\d+).png";
+            CopyFilesWithPattern(openFolderDialog.Folder, openFolderDialog.Folder, p, NotConvertName);
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            OpenFolderDialog openFolderDialog = new OpenFolderDialog();
+            if (openFolderDialog.ShowDialog() != DialogResult.OK)
+                return;
+            string p = "piece_icon_(\\d+).png";
+            CopyFilesWithPattern(openFolderDialog.Folder, openFolderDialog.Folder, p, NotConvertName);
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            OpenFolderDialog openFolderDialog = new OpenFolderDialog();
+            if (openFolderDialog.ShowDialog() != DialogResult.OK)
+                return;
+            string p = "utx_ico_skill_(\\d+).png";
+            CopyFilesWithPattern(openFolderDialog.Folder, openFolderDialog.Folder, p, NotConvertName);
+        }
     }
 }
