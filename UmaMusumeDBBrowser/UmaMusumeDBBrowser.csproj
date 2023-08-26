@@ -148,9 +148,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Translator, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Translator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\Translator.dll</HintPath>
+      <HintPath>..\..\GoogleTranslate\GoogleTranslate\bin\Debug\Translator.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

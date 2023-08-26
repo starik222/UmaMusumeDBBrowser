@@ -19,6 +19,14 @@ namespace UmaMusumeDBBrowser
             if (table.TableName.Equals("single_mode_live_master_bonus") || table.TableName.Equals("single_mode_live_square"))
             {
                 ModifyLiveDataTable(ref table);
+            }            
+            if (table.TableName.Equals("single_mode_arc_debuff"))
+            {
+                ModifyArcDebuffDataTable(ref table);
+            }
+            if (table.TableName.Equals("single_mode_arc_potential_bonus"))
+            {
+                ModifyArcBonusDataTable(ref table);
             }
         }
 
@@ -54,6 +62,30 @@ namespace UmaMusumeDBBrowser
             {
                 string text = (string)table.Rows[i]["MasterText"];
                 table.Rows[i]["MasterText"] = Regex.Replace(text, pattern, evaluator, RegexOptions.IgnoreCase);
+            }
+        }
+
+        private static void ModifyArcDebuffDataTable(ref DataTable table)
+        {
+            string pattern = "\\<color\\=.*>(.*)\\</color\\>";
+            MatchEvaluator evaluator = new MatchEvaluator(TagRemover);
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                string text = (string)table.Rows[i]["DebaffDesc"];
+                table.Rows[i]["DebaffDesc"] = Regex.Replace(text, pattern, evaluator, RegexOptions.IgnoreCase);
+            }
+        }
+
+        private static void ModifyArcBonusDataTable(ref DataTable table)
+        {
+            string pattern = "\\<color\\=.*>(.*)\\</color\\>";
+            MatchEvaluator evaluator = new MatchEvaluator(TagRemover);
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                string text = (string)table.Rows[i]["Effect1"];
+                table.Rows[i]["Effect1"] = Regex.Replace(text, pattern, evaluator, RegexOptions.IgnoreCase);
+                text = (string)table.Rows[i]["Effect2"];
+                table.Rows[i]["Effect2"] = Regex.Replace(text, pattern, evaluator, RegexOptions.IgnoreCase);
             }
         }
 

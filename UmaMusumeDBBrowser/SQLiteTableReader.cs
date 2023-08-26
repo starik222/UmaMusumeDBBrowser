@@ -139,18 +139,32 @@ namespace UmaMusumeDBBrowser
                     sb.Append(", \"\" as " + settings.TextTypeAndName[i].Value + "_trans");
                 }
                 sb.Append(" FROM ");
-                sb.Append(string.Join(", ", textQueries));
-                sb.Append(" WHERE ");
-                for (int i = 0; i < settings.TextTypeAndName.Count; i++)
+                if (textQueries.Count > 1)
                 {
-                    sb.Append("tm." + settings.TextIndexColumn + " = " + "t" + i + ".\"index\"");
-                    if (i != settings.TextTypeAndName.Count - 1)
-                        sb.Append(" AND ");
+                    sb.Append(textQueries[0]);
+                    for (int i = 1; i < textQueries.Count; i++)
+                    {
+                        sb.Append(" LEFT JOIN ");
+                        sb.Append(textQueries[i]);
+                        sb.Append(" ON ");
+                        sb.Append("tm." + settings.TextIndexColumn + " = " + "t" + (i - 1) + ".\"index\"");
+                    }
                 }
+
+
+
+                //sb.Append(string.Join(", ", textQueries));
+                //sb.Append(" WHERE ");
+                //for (int i = 0; i < settings.TextTypeAndName.Count; i++)
+                //{
+                //    sb.Append("tm." + settings.TextIndexColumn + " = " + "t" + i + ".\"index\"");
+                //    if (i != settings.TextTypeAndName.Count - 1)
+                //        sb.Append(" AND ");
+                //}
 
                 if (filterByTextIds != null)
                 {
-                    sb.Append(" AND (");
+                    sb.Append(" WHERE (");
                     for (int i = 0; i < filterByTextIds.Count; i++)
                     {
                         sb.Append("tm." + settings.TextIndexColumn + " = " + filterByTextIds[i]);
@@ -220,7 +234,14 @@ namespace UmaMusumeDBBrowser
                         {
                             if (settings.TextTypeAndName.FindIndex(b => b.Value.Equals(cName)) != -1)
                             {
-                                row[cName] = ((string)reader[i]).Replace("\\n", "");
+                                if (reader[i] != DBNull.Value)
+                                {
+                                    row[cName] = ((string)reader[i]).Replace("\\n", "");
+                                }
+                                else
+                                {
+                                    row[cName] = "";
+                                }
                             }
                             else
                                 row[cName] = reader[i];
