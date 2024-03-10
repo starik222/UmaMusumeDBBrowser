@@ -594,5 +594,34 @@ namespace UmaMusumeDBBrowser
         {
             System.Diagnostics.Process.Start("https://vnfast.ru");
         }
+
+        private void перевестиПустыеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedCells.Count == 0)
+                return;
+            int columnIndex = dataGridView1.SelectedCells[0].ColumnIndex;
+            string pattern = "(.*?)(＜.*?＞)";
+            MatchEvaluator evaluator = new MatchEvaluator(TextReplacer);
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                string cName = dataGridView1.Columns[columnIndex].Name;
+                if (currentTableSettings.TextTypeAndName.FindIndex(a => a.Value.Equals(cName)) != -1)
+                {
+                    if (selectedLanguages != null && dataGridView1[columnIndex, i].Value != DBNull.Value && !string.IsNullOrWhiteSpace((string)dataGridView1[columnIndex, i].Value))
+                    {
+                        if (dataGridView1[cName + "_trans", i].Value == DBNull.Value || string.IsNullOrEmpty((string)dataGridView1[cName + "_trans", i].Value))
+                        {
+                            string originalText = (string)dataGridView1[columnIndex, i].Value;
+
+                            string translatedText = Regex.Replace(originalText, pattern, evaluator, RegexOptions.Singleline);
+
+                            if (originalText == translatedText)
+                                translatedText = Program.tools.TranslateText(originalText, selectedLanguages, true);
+                            dataGridView1[cName + "_trans", i].Value = translatedText; //;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
