@@ -3822,18 +3822,18 @@
       "EventNameToCheck": "三女神の気分転換トレーニング温かなメッセージ",
       "EventOptionsList": [
         {
-          "Option": "いざ、魔法の国へ！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(育成ウマ娘名)の写真を送る",
-          "OptionToCheck": "いざ、魔法の国へ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>育成ウマ娘名の写真を送る",
+          "Option": "いざ、魔法の国へ！",
+          "OptionToCheck": "いざ、魔法の国へ",
           "Effect": "Skill point+4\nУровень отношений+5\n1 красный осколок знаний или Skill point+4\n(Только в сценарии Грандмастера)\nСлучайно 『情熱ゾーン：祖にして導く者』"
         },
         {
-          "Option": "いざ、動物草原へ！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>トレーニングの様子を動画に撮る",
-          "OptionToCheck": "いざ、動物草原へ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>トレーニングの様子を動画に撮る",
+          "Option": "いざ、動物草原へ！",
+          "OptionToCheck": "いざ、動物草原へ",
           "Effect": "Скорость+4\nУровень отношений+5\n1 синий осколок знаний или Skill point+4\n(Только в сценарии Грандмастера)\nСлучайно 『情熱ゾーン：祖にして導く者』"
         },
         {
-          "Option": "いざ、ダンジョン攻略へ！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ここは文字の力！文章で表現しよう",
-          "OptionToCheck": "いざ、ダンジョン攻略へ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ここは文字の力文章で表現しよう",
+          "Option": "いざ、ダンジョン攻略へ！",
+          "OptionToCheck": "いざ、ダンジョン攻略へ",
           "Effect": "Выносливость+4\nSkill point+4\nУровень отношений+5\n1 желтый осколок знаний или Skill point+4\n(Только в сценарии Грандмастера)\nСлучайно 『情熱ゾーン：祖にして導く者』"
         }
       ],
@@ -5318,18 +5318,18 @@
       "EventNameToCheck": "鍛えよ共に温かなメッセージ",
       "EventOptionsList": [
         {
-          "Option": "読書で走りの知識を深めようか<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(育成ウマ娘名)の写真を送る",
-          "OptionToCheck": "読書で走りの知識を深めようか<hr><span class=\"subinfo\">L'Arcで発生時<span><br>育成ウマ娘名の写真を送る",
+          "Option": "読書で走りの知識を深めようか",
+          "OptionToCheck": "読書で走りの知識を深めようか",
           "Effect": "Успех:\nИнтеллект+4\nSkill point+4\nУровень отношений+5\nПровал:\nИнтеллект+4\nУровень отношений+5"
         },
         {
-          "Option": "やっぱり併走かな！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>トレーニングの様子を動画に撮る",
-          "OptionToCheck": "やっぱり併走かな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>トレーニングの様子を動画に撮る",
+          "Option": "やっぱり併走かな！",
+          "OptionToCheck": "やっぱり併走かな",
           "Effect": "Успех:\nСкорость+4\nSkill point+4\nУровень отношений+5\nПровал:\nСкорость+4\nУровень отношений+5"
         },
         {
-          "Option": "しっかりテクニックを磨いていこう<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ここは文字の力！文章で表現しよう",
-          "OptionToCheck": "しっかりテクニックを磨いていこう<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ここは文字の力文章で表現しよう",
+          "Option": "しっかりテクニックを磨いていこう",
+          "OptionToCheck": "しっかりテクニックを磨いていこう",
           "Effect": "Успех:\nЭнергия+3\nSkill point+4\nУровень отношений+5\nПровал:\nSkill point+4\nУровень отношений+5"
         }
       ],
@@ -5953,18 +5953,18 @@
       "EventNameToCheck": "おかわりトレーニング温かなメッセージ",
       "EventOptionsList": [
         {
-          "Option": "外周、スタミナがつきそうだな<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(育成ウマ娘名)の写真を送る",
-          "OptionToCheck": "外周、スタミナがつきそうだな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>育成ウマ娘名の写真を送る",
+          "Option": "外周、スタミナがつきそうだな",
+          "OptionToCheck": "外周、スタミナがつきそうだな",
           "Effect": "Успех:\nВыносливость+4\nSkill point+4\nУровень отношений+5\nПровал:\nВыносливость+4\nУровень отношений+5"
         },
         {
-          "Option": "スピード王選手権！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>トレーニングの様子を動画に撮る",
-          "OptionToCheck": "スピード王選手権<hr><span class=\"subinfo\">L'Arcで発生時<span><br>トレーニングの様子を動画に撮る",
+          "Option": "スピード王選手権！",
+          "OptionToCheck": "スピード王選手権",
           "Effect": "Успех:\nСкорость+4\nSkill point+4\nУровень отношений+5\nПровал:\nСкорость+4\nУровень отношений+5"
         },
         {
-          "Option": "……休息にもなるし、食べ放題かな？<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ここは文字の力！文章で表現しよう",
-          "OptionToCheck": "休息にもなるし、食べ放題かな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ここは文字の力文章で表現しよう",
+          "Option": "……休息にもなるし、食べ放題かな？",
+          "OptionToCheck": "休息にもなるし、食べ放題かな",
           "Effect": "Успех:\nЭнергия+3\nSkill point+4\nУровень отношений+5\nПровал:\nSkill point+4\nУровень отношений+5"
         }
       ],
@@ -16654,17 +16654,17 @@
       "CardName": "[紫雲の夢見取り]トウカイテイオー"
     },
     {
-      "EventName": "『シン』を射る(パリの街にて)",
-      "EventNameToCheck": "シンを射るパリの街にて",
+      "EventName": "『シン』を射る",
+      "EventNameToCheck": "シンを射る",
       "EventOptionsList": [
         {
-          "Option": "この感覚を忘れなければな<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(声、かけてみようかな……)",
-          "OptionToCheck": "この感覚を忘れなければな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>声、かけてみようかな",
+          "Option": "この感覚を忘れなければな",
+          "OptionToCheck": "この感覚を忘れなければな",
           "Effect": "Вариант 1\nСкорость+15\n『攻めの姿勢』 умение Lv+3\nВариант 2\nСкорость+10\n『攻めの姿勢』 умение Lv+1\nВариант 3\nСкорость+10"
         },
         {
-          "Option": "トレーニングに取り入れようかな<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(もうちょっと会話を聞いてみよう)",
-          "OptionToCheck": "トレーニングに取り入れようかな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>もうちょっと会話を聞いてみよう",
+          "Option": "トレーニングに取り入れようかな",
+          "OptionToCheck": "トレーニングに取り入れようかな",
           "Effect": "Сила воли+25"
         }
       ],
@@ -16672,17 +16672,17 @@
       "CardName": "[紫雲の夢見取り]トウカイテイオー"
     },
     {
-      "EventName": "次代の道標(その日を信じて)",
-      "EventNameToCheck": "次代の道標その日を信じて",
+      "EventName": "次代の道標",
+      "EventNameToCheck": "次代の道標",
       "EventOptionsList": [
         {
-          "Option": "これからも憧れの的として頑張らないとな<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "これからも憧れの的として頑張らないとな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "これからも憧れの的として頑張らないとな",
+          "OptionToCheck": "これからも憧れの的として頑張らないとな",
           "Effect": "Мотивация+\nСила+15\nСлучайно 『愛嬌◯』"
         },
         {
-          "Option": "みんな2人に見入ってたよ！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "みんな2人に見入ってたよ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "みんな2人に見入ってたよ！",
+          "OptionToCheck": "みんな2人に見入ってたよ",
           "Effect": "『食らいつき』 умение Lv+2\nСлучайно 『愛嬌◯』"
         }
       ],
@@ -17193,17 +17193,17 @@
       "CardName": "[水干撫子]カワカミプリンセス"
     },
     {
-      "EventName": "舞い姫、奉りて(パリの街にて)",
-      "EventNameToCheck": "舞い姫、奉りてパリの街にて",
+      "EventName": "舞い姫、奉りて",
+      "EventNameToCheck": "舞い姫、奉りて",
       "EventOptionsList": [
         {
-          "Option": "君の想い、家族に伝わったと思うよ<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(声、かけてみようかな……)",
-          "OptionToCheck": "君の想い、家族に伝わったと思うよ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>声、かけてみようかな",
+          "Option": "君の想い、家族に伝わったと思うよ",
+          "OptionToCheck": "君の想い、家族に伝わったと思うよ",
           "Effect": "Вариант 1\nСила+10\n『フルスロットル』 умение Lv+1\nВариант 2\nСила+10"
         },
         {
-          "Option": "思わず見とれたよ<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(もうちょっと会話を聞いてみよう)",
-          "OptionToCheck": "思わず見とれたよ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>もうちょっと会話を聞いてみよう",
+          "Option": "思わず見とれたよ",
+          "OptionToCheck": "思わず見とれたよ",
           "Effect": "Сила воли+25"
         }
       ],
@@ -17211,17 +17211,17 @@
       "CardName": "[水干撫子]カワカミプリンセス"
     },
     {
-      "EventName": "プリンセスのことなら(その日を信じて)",
-      "EventNameToCheck": "プリンセスのことならその日を信じて",
+      "EventName": "プリンセスのことなら",
+      "EventNameToCheck": "プリンセスのことなら",
       "EventOptionsList": [
         {
-          "Option": "君の憧れを叶えるのが役目だからな<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "君の憧れを叶えるのが役目だからな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "君の憧れを叶えるのが役目だからな",
+          "OptionToCheck": "君の憧れを叶えるのが役目だからな",
           "Effect": "Мотивация+\nСила воли+15\nСлучайно 『注目株』"
         },
         {
-          "Option": "さすがは『伝説のトレーナー』だろ？<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "さすがは伝説のトレーナーだろ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "さすがは『伝説のトレーナー』だろ？",
+          "OptionToCheck": "さすがは伝説のトレーナーだろ",
           "Effect": "『秋ウマ娘◯』 умение Lv+1\nСлучайно 『注目株』"
         }
       ],
@@ -18268,17 +18268,17 @@
       "CardName": "[Jetblack Automaton]シンボリクリスエス"
     },
     {
-      "EventName": "Where is my mission?(その日を信じて)",
-      "EventNameToCheck": "Where is my missionその日を信じて",
+      "EventName": "Where is my mission?",
+      "EventNameToCheck": "Where is my mission",
       "EventOptionsList": [
         {
-          "Option": "伝達役、やってみる？<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "伝達役、やってみる<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "伝達役、やってみる？",
+          "OptionToCheck": "伝達役、やってみる",
           "Effect": "Энергия+10\nСлучайно 『注目株』"
         },
         {
-          "Option": "発注業務を引き受けてはどうかな<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "発注業務を引き受けてはどうかな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "発注業務を引き受けてはどうかな",
+          "OptionToCheck": "発注業務を引き受けてはどうかな",
           "Effect": "Сила+20\nСлучайно 『注目株』"
         }
       ],
@@ -18712,17 +18712,17 @@
       "CardName": "[Belphegor's Prime]エアシャカール"
     },
     {
-      "EventName": "Casting(その日を信じて)",
-      "EventNameToCheck": "Castingその日を信じて",
+      "EventName": "Casting",
+      "EventNameToCheck": "Casting",
       "EventOptionsList": [
         {
-          "Option": "楽しい聖蹄祭になりそうだな！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "楽しい聖蹄祭になりそうだな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "楽しい聖蹄祭になりそうだな！",
+          "OptionToCheck": "楽しい聖蹄祭になりそうだな",
           "Effect": "Энергия+10\nСлучайно 『注目株』"
         },
         {
-          "Option": "シャカールの先導ならきっと効率よく進むな<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "シャカールの先導ならきっと効率よく進むな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "シャカールの先導ならきっと効率よく進むな",
+          "OptionToCheck": "シャカールの先導ならきっと効率よく進むな",
           "Effect": "Скорость+20\nСлучайно 『注目株』"
         }
       ],
@@ -20119,17 +20119,17 @@
       "CardName": "[La mode 564]ゴールドシップ"
     },
     {
-      "EventName": "ゴルシ流ランウェイ(その日を信じて)",
-      "EventNameToCheck": "ゴルシ流ランウェイその日を信じて",
+      "EventName": "ゴルシ流ランウェイ",
+      "EventNameToCheck": "ゴルシ流ランウェイ",
       "EventOptionsList": [
         {
-          "Option": "刺激的な背中のいかり<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "刺激的な背中のいかり<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "刺激的な背中のいかり",
+          "OptionToCheck": "刺激的な背中のいかり",
           "Effect": "Скорость+10\n『後方待機』 умение Lv+2"
         },
         {
-          "Option": "一番目立つ、お腹のホタテがいい<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "一番目立つ、お腹のホタテがいい<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "一番目立つ、お腹のホタテがいい",
+          "OptionToCheck": "一番目立つ、お腹のホタテがいい",
           "Effect": "Сила+30"
         }
       ],
@@ -20137,17 +20137,17 @@
       "CardName": "[La mode 564]ゴールドシップ"
     },
     {
-      "EventName": "ゴールドシップ頂上決戦(彼の都の思い出は)",
-      "EventNameToCheck": "ゴールドシップ頂上決戦彼の都の思い出は",
+      "EventName": "ゴールドシップ頂上決戦",
+      "EventNameToCheck": "ゴールドシップ頂上決戦",
       "EventOptionsList": [
         {
-          "Option": "勝者は、制服のゴールドシップ！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>パリの街でのことを話す",
-          "OptionToCheck": "勝者は、制服のゴールドシップ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>パリの街でのことを話す",
+          "Option": "勝者は、制服のゴールドシップ！",
+          "OptionToCheck": "勝者は、制服のゴールドシップ",
           "Effect": "『ワンチャンス』 умение Lv+1"
         },
         {
-          "Option": "僅差で、勝負服のゴールドシップの勝ち！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>レース場でのことを話す",
-          "OptionToCheck": "僅差で、勝負服のゴールドシップの勝ち<hr><span class=\"subinfo\">L'Arcで発生時<span><br>レース場でのことを話す",
+          "Option": "僅差で、勝負服のゴールドシップの勝ち！",
+          "OptionToCheck": "僅差で、勝負服のゴールドシップの勝ち",
           "Effect": "Скорость+15"
         }
       ],
@@ -21102,17 +21102,17 @@
       "CardName": "[波間のエメラルド]サイレンススズカ"
     },
     {
-      "EventName": "潮騒に呑まれて(その日を信じて)",
-      "EventNameToCheck": "潮騒に呑まれてその日を信じて",
+      "EventName": "潮騒に呑まれて",
+      "EventNameToCheck": "潮騒に呑まれて",
       "EventOptionsList": [
         {
-          "Option": "大活躍だったからな！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "大活躍だったからな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "大活躍だったからな！",
+          "OptionToCheck": "大活躍だったからな",
           "Effect": "Энергия+10\nСлучайно 『愛嬌◯』\n※Эффекты события боевой формы 「大海原をどこまでも」 будет изменен"
         },
         {
-          "Option": "勝ち取った場所で好きに走れるよ<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "勝ち取った場所で好きに走れるよ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "勝ち取った場所で好きに走れるよ",
+          "OptionToCheck": "勝ち取った場所で好きに走れるよ",
           "Effect": "Сила воли+10\nСлучайно 『愛嬌◯』\n※Эффекты события боевой формы 「大海原をどこまでも」 будет изменен"
         }
       ],
@@ -21120,17 +21120,17 @@
       "CardName": "[波間のエメラルド]サイレンススズカ"
     },
     {
-      "EventName": "涼風を探して(パリの街にて)",
-      "EventNameToCheck": "涼風を探してパリの街にて",
+      "EventName": "涼風を探して",
+      "EventNameToCheck": "涼風を探して",
       "EventOptionsList": [
         {
-          "Option": "もっとリラックスしていこう！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(声、かけてみようかな……)",
-          "OptionToCheck": "もっとリラックスしていこう<hr><span class=\"subinfo\">L'Arcで発生時<span><br>声、かけてみようかな",
+          "Option": "もっとリラックスしていこう！",
+          "OptionToCheck": "もっとリラックスしていこう",
           "Effect": "Выносливость+20\n※Эффекты события боевой формы 「大海原をどこまでも」 будет изменен"
         },
         {
-          "Option": "気をつかいすぎもよくないよ<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(もうちょっと会話を聞いてみよう)",
-          "OptionToCheck": "気をつかいすぎもよくないよ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>もうちょっと会話を聞いてみよう",
+          "Option": "気をつかいすぎもよくないよ",
+          "OptionToCheck": "気をつかいすぎもよくないよ",
           "Effect": "Энергия+10\nСила+10\n※Эффекты события боевой формы 「大海原をどこまでも」 будет изменен"
         }
       ],
@@ -21564,17 +21564,17 @@
       "CardName": "[Lunatic Lab]アグネスタキオン"
     },
     {
-      "EventName": "恐怖！ワカメ人間(その日を信じて)",
-      "EventNameToCheck": "恐怖ワカメ人間その日を信じて",
+      "EventName": "恐怖！ワカメ人間",
+      "EventNameToCheck": "恐怖ワカメ人間",
       "EventOptionsList": [
         {
-          "Option": "……まともな薬が完成することを祈ってる<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "まともな薬が完成することを祈ってる<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "……まともな薬が完成することを祈ってる",
+          "OptionToCheck": "まともな薬が完成することを祈ってる",
           "Effect": "Скорость+10\nСлучайно 『練習上手◯』"
         },
         {
-          "Option": "ここでの研究は禁止！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "ここでの研究は禁止<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "ここでの研究は禁止！",
+          "OptionToCheck": "ここでの研究は禁止",
           "Effect": "Энергия+10\nСлучайно 『練習上手◯』"
         }
       ],
@@ -21582,17 +21582,17 @@
       "CardName": "[Lunatic Lab]アグネスタキオン"
     },
     {
-      "EventName": "混沌のバーベキュー(パリの街にて)",
-      "EventNameToCheck": "混沌のバーベキューパリの街にて",
+      "EventName": "混沌のバーベキュー",
+      "EventNameToCheck": "混沌のバーベキュー",
       "EventOptionsList": [
         {
-          "Option": "危ないところだったな<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(声、かけてみようかな……)",
-          "OptionToCheck": "危ないところだったな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>声、かけてみようかな",
+          "Option": "危ないところだったな",
+          "OptionToCheck": "危ないところだったな",
           "Effect": "Энергия+10\nСила воли+10"
         },
         {
-          "Option": "証拠隠滅に加担してしまった……<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(もうちょっと会話を聞いてみよう)",
-          "OptionToCheck": "証拠隠滅に加担してしまった<hr><span class=\"subinfo\">L'Arcで発生時<span><br>もうちょっと会話を聞いてみよう",
+          "Option": "証拠隠滅に加担してしまった……",
+          "OptionToCheck": "証拠隠滅に加担してしまった",
           "Effect": "Сила+10\nИнтеллект+10"
         }
       ],
@@ -23027,17 +23027,17 @@
       "CardName": "[Aurore☆Vacances]トーセンジョーダン"
     },
     {
-      "EventName": "デカい背中(その日を信じて)",
-      "EventNameToCheck": "デカい背中その日を信じて",
+      "EventName": "デカい背中",
+      "EventNameToCheck": "デカい背中",
       "EventOptionsList": [
         {
-          "Option": "自身があるんじゃないか<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "自身があるんじゃないか<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "自身があるんじゃないか",
+          "OptionToCheck": "自身があるんじゃないか",
           "Effect": "『前のめり』 умение Lv+2"
         },
         {
-          "Option": "何かあったのか？<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "何かあったのか<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "何かあったのか？",
+          "OptionToCheck": "何かあったのか",
           "Effect": "Интеллект+20\nСлучайно 『練習上手◯』"
         }
       ],
@@ -23507,17 +23507,17 @@
       "CardName": "[Ultra☆Marine]バンブーメモリー"
     },
     {
-      "EventName": "日々是鍛錬～流行の巻～(その日を信じて)",
-      "EventNameToCheck": "日々是鍛錬流行の巻その日を信じて",
+      "EventName": "日々是鍛錬～流行の巻～",
+      "EventNameToCheck": "日々是鍛錬流行の巻",
       "EventOptionsList": [
         {
-          "Option": "流行を追い越さないようにな<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "流行を追い越さないようにな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "流行を追い越さないようにな",
+          "OptionToCheck": "流行を追い越さないようにな",
           "Effect": "『外差し準備』 умение Lv+2\nСлучайно 『愛嬌◯』"
         },
         {
-          "Option": "流行は速いぞー？<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "流行は速いぞー<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "流行は速いぞー？",
+          "OptionToCheck": "流行は速いぞー",
           "Effect": "Скорость+20\nСлучайно 『愛嬌◯』"
         }
       ],
@@ -36246,17 +36246,17 @@
       "CardName": "[夢ノ金原]イナリワン"
     },
     {
-      "EventName": "昔話も江戸風でい！(パリの街にて)",
-      "EventNameToCheck": "昔話も江戸風でいパリの街にて",
+      "EventName": "昔話も江戸風でい！",
+      "EventNameToCheck": "昔話も江戸風でい",
       "EventOptionsList": [
         {
-          "Option": "芸達者だった<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(声、かけてみようかな……)",
-          "OptionToCheck": "芸達者だった<hr><span class=\"subinfo\">L'Arcで発生時<span><br>声、かけてみようかな",
+          "Option": "芸達者だった",
+          "OptionToCheck": "芸達者だった",
           "Effect": "Энергия+20\nСила+20"
         },
         {
-          "Option": "ウマ娘の想いが伝わってきた<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(もうちょっと会話を聞いてみよう)",
-          "OptionToCheck": "ウマ娘の想いが伝わってきた<hr><span class=\"subinfo\">L'Arcで発生時<span><br>もうちょっと会話を聞いてみよう",
+          "Option": "ウマ娘の想いが伝わってきた",
+          "OptionToCheck": "ウマ娘の想いが伝わってきた",
           "Effect": "Скорость+10\nВыносливость+10\n『秋ウマ娘◯』 умение Lv+2"
         }
       ],
@@ -36264,17 +36264,17 @@
       "CardName": "[夢ノ金原]イナリワン"
     },
     {
-      "EventName": "ひと汗かこうぜ、銭湯で！(その日を信じて)",
-      "EventNameToCheck": "ひと汗かこうぜ、銭湯でその日を信じて",
+      "EventName": "ひと汗かこうぜ、銭湯で！",
+      "EventNameToCheck": "ひと汗かこうぜ、銭湯で",
       "EventOptionsList": [
         {
-          "Option": "人を見る目があるな<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "人を見る目があるな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "人を見る目があるな",
+          "OptionToCheck": "人を見る目があるな",
           "Effect": "『下校の楽しみ』 умение Lv+2\nСлучайно 『練習上手◯』"
         },
         {
-          "Option": "プロの仕事みたいだった<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "プロの仕事みたいだった<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "プロの仕事みたいだった",
+          "OptionToCheck": "プロの仕事みたいだった",
           "Effect": "Мотивация+\nСкорость+10\nСлучайно 『練習上手◯』"
         }
       ],
@@ -36749,17 +36749,17 @@
       "CardName": "[猛ル鳴神]タマモクロス"
     },
     {
-      "EventName": "進め！お神輿ガラガラと(パリの街にて)",
-      "EventNameToCheck": "進めお神輿ガラガラとパリの街にて",
+      "EventName": "進め！お神輿ガラガラと",
+      "EventNameToCheck": "進めお神輿ガラガラと",
       "EventOptionsList": [
         {
-          "Option": "子どもと一緒に楽しく<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(声、かけてみようかな……)",
-          "OptionToCheck": "子どもと一緒に楽しく<hr><span class=\"subinfo\">L'Arcで発生時<span><br>声、かけてみようかな",
+          "Option": "子どもと一緒に楽しく",
+          "OptionToCheck": "子どもと一緒に楽しく",
           "Effect": "Энергия+20\nИнтеллект+20"
         },
         {
-          "Option": "ド派手に神輿バトル！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(もうちょっと会話を聞いてみよう)",
-          "OptionToCheck": "ド派手に神輿バトル<hr><span class=\"subinfo\">L'Arcで発生時<span><br>もうちょっと会話を聞いてみよう",
+          "Option": "ド派手に神輿バトル！",
+          "OptionToCheck": "ド派手に神輿バトル",
           "Effect": "Сила+10\nSkill point+10\n『秋ウマ娘◯』 умение Lv+2"
         }
       ],
@@ -36767,17 +36767,17 @@
       "CardName": "[猛ル鳴神]タマモクロス"
     },
     {
-      "EventName": "魂のマヨヒガ(その日を信じて)",
-      "EventNameToCheck": "魂のマヨヒガその日を信じて",
+      "EventName": "魂のマヨヒガ",
+      "EventNameToCheck": "魂のマヨヒガ",
       "EventOptionsList": [
         {
-          "Option": "猛トレーニングで忘れる<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "猛トレーニングで忘れる<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "猛トレーニングで忘れる",
+          "OptionToCheck": "猛トレーニングで忘れる",
           "Effect": "Скорость+15"
         },
         {
-          "Option": "山から全力逃亡！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "山から全力逃亡<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "山から全力逃亡！",
+          "OptionToCheck": "山から全力逃亡",
           "Effect": "『直滑降』 умение Lv+2"
         }
       ],
@@ -38174,17 +38174,17 @@
       "CardName": "[Dot-o'-Lantern]メイショウドトウ"
     },
     {
-      "EventName": "友情のハロウィンパレード(その日を信じて)",
-      "EventNameToCheck": "友情のハロウィンパレードその日を信じて",
+      "EventName": "友情のハロウィンパレード",
+      "EventNameToCheck": "友情のハロウィンパレード",
       "EventOptionsList": [
         {
-          "Option": "早く行っておいで！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "早く行っておいで<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "早く行っておいで！",
+          "OptionToCheck": "早く行っておいで",
           "Effect": "Скорость+10\nСила+10\nСлучайно 『愛嬌◯』"
         },
         {
-          "Option": "いい友達を持っているんだな<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "いい友達を持っているんだな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "いい友達を持っているんだな",
+          "OptionToCheck": "いい友達を持っているんだな",
           "Effect": "『ありったけ』 умение Lv+2\nСлучайно 『愛嬌◯』"
         }
       ],
@@ -38192,17 +38192,17 @@
       "CardName": "[Dot-o'-Lantern]メイショウドトウ"
     },
     {
-      "EventName": "泣き虫フレンズ(彼の都の思い出は)",
-      "EventNameToCheck": "泣き虫フレンズ彼の都の思い出は",
+      "EventName": "泣き虫フレンズ",
+      "EventNameToCheck": "泣き虫フレンズ",
       "EventOptionsList": [
         {
-          "Option": "まさかケンカ……！？<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>パリの街でのことを話す",
-          "OptionToCheck": "まさかケンカ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>パリの街でのことを話す",
+          "Option": "まさかケンカ……！？",
+          "OptionToCheck": "まさかケンカ",
           "Effect": "Выносливость+10\nСила воли+10"
         },
         {
-          "Option": "……嬉し涙かな？<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>レース場でのことを話す",
-          "OptionToCheck": "嬉し涙かな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>レース場でのことを話す",
+          "Option": "……嬉し涙かな？",
+          "OptionToCheck": "嬉し涙かな",
           "Effect": "Энергия+10\nИнтеллект+10"
         }
       ],
@@ -41526,17 +41526,17 @@
       "CardName": "[黒鉄の大志]バンブーメモリー"
     },
     {
-      "EventName": "竜ゴル城にお出迎え(パリの街にて)",
-      "EventNameToCheck": "竜ゴル城にお出迎えパリの街にて",
+      "EventName": "竜ゴル城にお出迎え",
+      "EventNameToCheck": "竜ゴル城にお出迎え",
       "EventOptionsList": [
         {
-          "Option": "ゴールドシップを好きに遊ばせてあげよう<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(声、かけてみようかな……)",
-          "OptionToCheck": "ゴールドシップを好きに遊ばせてあげよう<hr><span class=\"subinfo\">L'Arcで発生時<span><br>声、かけてみようかな",
+          "Option": "ゴールドシップを好きに遊ばせてあげよう",
+          "OptionToCheck": "ゴールドシップを好きに遊ばせてあげよう",
           "Effect": "Skill point+15"
         },
         {
-          "Option": "なんとかゴールドシップをなだめよう<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(もうちょっと会話を聞いてみよう)",
-          "OptionToCheck": "なんとかゴールドシップをなだめよう<hr><span class=\"subinfo\">L'Arcで発生時<span><br>もうちょっと会話を聞いてみよう",
+          "Option": "なんとかゴールドシップをなだめよう",
+          "OptionToCheck": "なんとかゴールドシップをなだめよう",
           "Effect": "Сила воли+20"
         }
       ],
@@ -41544,17 +41544,17 @@
       "CardName": "[RUN！乱！ランチャー！！]ゴールドシップ"
     },
     {
-      "EventName": "海産勇者伝説ゴルシ(その日を信じて)",
-      "EventNameToCheck": "海産勇者伝説ゴルシその日を信じて",
+      "EventName": "海産勇者伝説ゴルシ",
+      "EventNameToCheck": "海産勇者伝説ゴルシ",
       "EventOptionsList": [
         {
-          "Option": "まさかライトだけであれほどのパワーが……<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "まさかライトだけであれほどのパワーが<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "まさかライトだけであれほどのパワーが……",
+          "OptionToCheck": "まさかライトだけであれほどのパワーが",
           "Effect": "『夏ウマ娘◯』 умение Lv+2\nСлучайно 『練習上手◯』"
         },
         {
-          "Option": "勝負服もきっとパワーアップしたな<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "勝負服もきっとパワーアップしたな<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "勝負服もきっとパワーアップしたな",
+          "OptionToCheck": "勝負服もきっとパワーアップしたな",
           "Effect": "Сила+20\nСлучайно 『練習上手◯』"
         }
       ],
@@ -41847,17 +41847,17 @@
       "CardName": "[さざ波フェアレディ]メジロマックイーン"
     },
     {
-      "EventName": "それはきっと、青写真よりも(パリの街にて)",
-      "EventNameToCheck": "それはきっと、青写真よりもパリの街にて",
+      "EventName": "それはきっと、青写真よりも",
+      "EventNameToCheck": "それはきっと、青写真よりも",
       "EventOptionsList": [
         {
-          "Option": "俺たちも今日の決意を写真に残しておこう<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(声、かけてみようかな……)",
-          "OptionToCheck": "俺たちも今日の決意を写真に残しておこう<hr><span class=\"subinfo\">L'Arcで発生時<span><br>声、かけてみようかな",
+          "Option": "俺たちも今日の決意を写真に残しておこう",
+          "OptionToCheck": "俺たちも今日の決意を写真に残しておこう",
           "Effect": "Интеллект+20"
         },
         {
-          "Option": "この景色を目に焼き付けていこう<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(もうちょっと会話を聞いてみよう)",
-          "OptionToCheck": "この景色を目に焼き付けていこう<hr><span class=\"subinfo\">L'Arcで発生時<span><br>もうちょっと会話を聞いてみよう",
+          "Option": "この景色を目に焼き付けていこう",
+          "OptionToCheck": "この景色を目に焼き付けていこう",
           "Effect": "Энергия+10"
         }
       ],
@@ -41865,17 +41865,17 @@
       "CardName": "[さざ波フェアレディ]メジロマックイーン"
     },
     {
-      "EventName": "触らぬ者にたたりなしですわ！！(その日を信じて)",
-      "EventNameToCheck": "触らぬ者にたたりなしですわその日を信じて",
+      "EventName": "触らぬ者にたたりなしですわ！！",
+      "EventNameToCheck": "触らぬ者にたたりなしですわ",
       "EventOptionsList": [
         {
-          "Option": "気を強く持て！あれは罠だ！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "気を強く持てあれは罠だ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "気を強く持て！あれは罠だ！",
+          "OptionToCheck": "気を強く持てあれは罠だ",
           "Effect": "Выносливость+20\nСлучайно 『愛嬌◯』"
         },
         {
-          "Option": "……そろそろ構ってあげたら？<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "そろそろ構ってあげたら<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "……そろそろ構ってあげたら？",
+          "OptionToCheck": "そろそろ構ってあげたら",
           "Effect": "『夏ウマ娘◯』 умение Lv+2\nСлучайно 『愛嬌◯』"
         }
       ],
@@ -42286,17 +42286,17 @@
       "CardName": "[日之本一の総大将]スペシャルウィーク"
     },
     {
-      "EventName": "スペの緊急牧場ガイド(その日を信じて)",
-      "EventNameToCheck": "スペの緊急牧場ガイドその日を信じて",
+      "EventName": "スペの緊急牧場ガイド",
+      "EventNameToCheck": "スペの緊急牧場ガイド",
       "EventOptionsList": [
         {
-          "Option": "もう少しだけ楽しもうか<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "もう少しだけ楽しもうか<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "もう少しだけ楽しもうか",
+          "OptionToCheck": "もう少しだけ楽しもうか",
           "Effect": "Выносливость+15\nСлучайно 『切れ者』"
         },
         {
-          "Option": "……正直に話そう、スペ<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "正直に話そう、スペ<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "……正直に話そう、スペ",
+          "OptionToCheck": "正直に話そう、スペ",
           "Effect": "Сила воли+10\nИнтеллект+5\nСлучайно 『切れ者』"
         }
       ],
@@ -55488,17 +55488,17 @@
       "CardName": "[ぶっとび☆さまーナイト]マルゼンスキー"
     },
     {
-      "EventName": "憧れの『マルゼンさん』(パリの街にて)",
-      "EventNameToCheck": "憧れのマルゼンさんパリの街にて",
+      "EventName": "憧れの『マルゼンさん』",
+      "EventNameToCheck": "憧れのマルゼンさん",
       "EventOptionsList": [
         {
-          "Option": "気のせいだと思う！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(声、かけてみようかな……)",
-          "OptionToCheck": "気のせいだと思う<hr><span class=\"subinfo\">L'Arcで発生時<span><br>声、かけてみようかな",
+          "Option": "気のせいだと思う！",
+          "OptionToCheck": "気のせいだと思う",
           "Effect": "Скорость+10\nСила+10"
         },
         {
-          "Option": "実は、悩んでいるみたいで……<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(もうちょっと会話を聞いてみよう)",
-          "OptionToCheck": "実は、悩んでいるみたいで<hr><span class=\"subinfo\">L'Arcで発生時<span><br>もうちょっと会話を聞いてみよう",
+          "Option": "実は、悩んでいるみたいで……",
+          "OptionToCheck": "実は、悩んでいるみたいで",
           "Effect": "Энергия+15"
         }
       ],
@@ -55506,17 +55506,17 @@
       "CardName": "[ぶっとび☆さまーナイト]マルゼンスキー"
     },
     {
-      "EventName": "ようこそ、バブリーランドへ(彼の都の思い出は)",
-      "EventNameToCheck": "ようこそ、バブリーランドへ彼の都の思い出は",
+      "EventName": "ようこそ、バブリーランドへ",
+      "EventNameToCheck": "ようこそ、バブリーランドへ",
       "EventOptionsList": [
         {
-          "Option": "素敵な写真を撮って送ろう！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>パリの街でのことを話す",
-          "OptionToCheck": "素敵な写真を撮って送ろう<hr><span class=\"subinfo\">L'Arcで発生時<span><br>パリの街でのことを話す",
+          "Option": "素敵な写真を撮って送ろう！",
+          "OptionToCheck": "素敵な写真を撮って送ろう",
           "Effect": "Сила воли+20"
         },
         {
-          "Option": "とびっきりのお土産を贈ろう！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>レース場でのことを話す",
-          "OptionToCheck": "とびっきりのお土産を贈ろう<hr><span class=\"subinfo\">L'Arcで発生時<span><br>レース場でのことを話す",
+          "Option": "とびっきりのお土産を贈ろう！",
+          "OptionToCheck": "とびっきりのお土産を贈ろう",
           "Effect": "Интеллект+20"
         }
       ],
@@ -55524,17 +55524,17 @@
       "CardName": "[ぶっとび☆さまーナイト]マルゼンスキー"
     },
     {
-      "EventName": "マルゼンスキーの大切なもの(その日を信じて)",
-      "EventNameToCheck": "マルゼンスキーの大切なものその日を信じて",
+      "EventName": "マルゼンスキーの大切なもの",
+      "EventNameToCheck": "マルゼンスキーの大切なもの",
       "EventOptionsList": [
         {
-          "Option": "ゴールへ向かおう<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "ゴールへ向かおう<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "ゴールへ向かおう",
+          "OptionToCheck": "ゴールへ向かおう",
           "Effect": "『急ぎ足』 умение Lv+2\nСлучайно 『愛嬌◯』"
         },
         {
-          "Option": "スタート地点へ戻ろう<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "スタート地点へ戻ろう<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "スタート地点へ戻ろう",
+          "OptionToCheck": "スタート地点へ戻ろう",
           "Effect": "Выносливость+20\nСлучайно 『愛嬌◯』"
         }
       ],
@@ -55829,17 +55829,17 @@
       "CardName": "[ぶっとび☆さまーナイト]マルゼンスキー"
     },
     {
-      "EventName": "炸裂、水着パワー！(パリの街にて)",
-      "EventNameToCheck": "炸裂、水着パワーパリの街にて",
+      "EventName": "炸裂、水着パワー！",
+      "EventNameToCheck": "炸裂、水着パワー",
       "EventOptionsList": [
         {
-          "Option": "部屋の掃除とか？<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(声、かけてみようかな……)",
-          "OptionToCheck": "部屋の掃除とか<hr><span class=\"subinfo\">L'Arcで発生時<span><br>声、かけてみようかな",
+          "Option": "部屋の掃除とか？",
+          "OptionToCheck": "部屋の掃除とか",
           "Effect": "Скорость+10\nSkill point+15"
         },
         {
-          "Option": "勉強を頑張ろう！<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>(もうちょっと会話を聞いてみよう)",
-          "OptionToCheck": "勉強を頑張ろう<hr><span class=\"subinfo\">L'Arcで発生時<span><br>もうちょっと会話を聞いてみよう",
+          "Option": "勉強を頑張ろう！",
+          "OptionToCheck": "勉強を頑張ろう",
           "Effect": "Интеллект+20"
         }
       ],
@@ -55847,17 +55847,17 @@
       "CardName": "[ほっぴん♪ビタミンハート]スペシャルウィーク"
     },
     {
-      "EventName": "夏、満喫大作戦！！(彼の都の思い出は)",
-      "EventNameToCheck": "夏、満喫大作戦彼の都の思い出は",
+      "EventName": "夏、満喫大作戦！！",
+      "EventNameToCheck": "夏、満喫大作戦",
       "EventOptionsList": [
         {
-          "Option": "綺麗な貝を探すとか？<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>パリの街でのことを話す",
-          "OptionToCheck": "綺麗な貝を探すとか<hr><span class=\"subinfo\">L'Arcで発生時<span><br>パリの街でのことを話す",
+          "Option": "綺麗な貝を探すとか？",
+          "OptionToCheck": "綺麗な貝を探すとか",
           "Effect": "Выносливость+10\nСила+10"
         },
         {
-          "Option": "砂の城でも作る？<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>レース場でのことを話す",
-          "OptionToCheck": "砂の城でも作る<hr><span class=\"subinfo\">L'Arcで発生時<span><br>レース場でのことを話す",
+          "Option": "砂の城でも作る？",
+          "OptionToCheck": "砂の城でも作る",
           "Effect": "Энергия+10\nВсе характеристики+2"
         }
       ],
@@ -55865,17 +55865,17 @@
       "CardName": "[ほっぴん♪ビタミンハート]スペシャルウィーク"
     },
     {
-      "EventName": "もう1人のお母ちゃんへ(その日を信じて)",
-      "EventNameToCheck": "もう1人のお母ちゃんへその日を信じて",
+      "EventName": "もう1人のお母ちゃんへ",
+      "EventNameToCheck": "もう1人のお母ちゃんへ",
       "EventOptionsList": [
         {
-          "Option": "食べ過ぎないように見守ってください<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>俺も、その時を楽しみにしています",
-          "OptionToCheck": "食べ過ぎないように見守ってください<hr><span class=\"subinfo\">L'Arcで発生時<span><br>俺も、その時を楽しみにしています",
+          "Option": "食べ過ぎないように見守ってください",
+          "OptionToCheck": "食べ過ぎないように見守ってください",
           "Effect": "『がんばり屋』 умение Lv+2\nСлучайно 『練習上手◯』"
         },
         {
-          "Option": "ケガしないよう見守ってください<hr><span class=\"sub-info\">L'Arcで発生時：</span><br>ええ、きっと1着で駆け抜けますよ",
-          "OptionToCheck": "ケガしないよう見守ってください<hr><span class=\"subinfo\">L'Arcで発生時<span><br>ええ、きっと1着で駆け抜けますよ",
+          "Option": "ケガしないよう見守ってください",
+          "OptionToCheck": "ケガしないよう見守ってください",
           "Effect": "Сила воли+20\nСлучайно 『練習上手◯』"
         }
       ],
@@ -66955,6 +66955,1229 @@
       ],
       "Type": 0,
       "CardName": "[ZOKU-ZOKU GIZMO]トランセンド"
+    },
+    {
+      "EventName": "Beta:“Me”",
+      "EventNameToCheck": "Beta“Me”",
+      "EventOptionsList": [
+        {
+          "Option": "タップの意見を聞く",
+          "OptionToCheck": "タップの意見を聞く",
+          "Effect": "Skill point+10\n『端緒』 умение Lv+2\n『急襲』 умение Lv+2\nУровень отношений+5"
+        },
+        {
+          "Option": "ファインの意見を聞く",
+          "OptionToCheck": "ファインの意見を聞く",
+          "Effect": "Энергия+25\nВсе характеристики+5\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "[Cocoon]エアシャカール"
+    },
+    {
+      "EventName": "Release:“Me”",
+      "EventNameToCheck": "Release“Me”",
+      "EventOptionsList": [
+        {
+          "Option": "答えは見つかった？",
+          "OptionToCheck": "答えは見つかった",
+          "Effect": "Все характеристики+5\nSkill point+15\n『連鎖反応』 умение Lv+2\nУровень отношений+5"
+        },
+        {
+          "Option": "今日はよく眠れそう？",
+          "OptionToCheck": "今日はよく眠れそう",
+          "Effect": "Энергия+15\nВыносливость+25\n『烈火の如く』 умение Lv+2\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "[Cocoon]エアシャカール"
+    },
+    {
+      "EventName": "たとえ子供っぽくたって！",
+      "EventNameToCheck": "たとえ子供っぽくたって",
+      "EventOptionsList": [
+        {
+          "Option": "いい心がけだと思う",
+          "OptionToCheck": "いい心がけだと思う",
+          "Effect": "Энергия+10\nИнтеллект+20\n『影打』 умение Lv+2\nУровень отношений+5"
+        },
+        {
+          "Option": "全然子供っぽいとは思わない",
+          "OptionToCheck": "全然子供っぽいとは思わない",
+          "Effect": "Энергия+10\nSkill point+20\n『急ぎ足』 умение Lv+2\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "[緋色の君へ風が吹く]ダイワスカーレット"
+    },
+    {
+      "EventName": "バブリー水泳競技会！",
+      "EventNameToCheck": "バブリー水泳競技会",
+      "EventOptionsList": [
+        {
+          "Option": "圧巻の泳ぎだった",
+          "OptionToCheck": "圧巻の泳ぎだった",
+          "Effect": "Большой успех:\nЭнергия+10\nСкорость+10\nИнтеллект+20\n『万里一空』 умение Lv+3\nУровень отношений+5\nУспех:\nЭнергия+5\nИнтеллект+10\n『万里一空』 умение Lv+1\nУровень отношений+5"
+        },
+        {
+          "Option": "想いはイチバンだった",
+          "OptionToCheck": "想いはイチバンだった",
+          "Effect": "Большой успех:\nЭнергия+10\nИнтеллект+20\nSkill point+10\n『トップランナー』 умение Lv+3\nУровень отношений+5\nУспех:\nЭнергия+5\nИнтеллект+5\nSkill point+5\n『トップランナー』 умение Lv+1\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "[緋色の君へ風が吹く]ダイワスカーレット"
+    },
+    {
+      "EventName": "三女神の気分転換トレーニング",
+      "EventNameToCheck": "三女神の気分転換トレーニング",
+      "EventOptionsList": [
+        {
+          "Option": "いざ、魔法の国へ！",
+          "OptionToCheck": "いざ、魔法の国へ",
+          "Effect": "Skill point+4\nУровень отношений+5\n1 красный осколок знаний или Skill point+4\n(Только в сценарии Грандмастера)\nСлучайно 『情熱ゾーン：祖にして導く者』"
+        },
+        {
+          "Option": "いざ、動物草原へ！",
+          "OptionToCheck": "いざ、動物草原へ",
+          "Effect": "Скорость+4\nУровень отношений+5\n1 синий осколок знаний или Skill point+4\n(Только в сценарии Грандмастера)\nСлучайно 『情熱ゾーン：祖にして導く者』"
+        },
+        {
+          "Option": "いざ、ダンジョン攻略へ！",
+          "OptionToCheck": "いざ、ダンジョン攻略へ",
+          "Effect": "Выносливость+4\nSkill point+4\nУровень отношений+5\n1 желтый осколок знаний или Skill point+4\n(Только в сценарии Грандмастера)\nСлучайно 『情熱ゾーン：祖にして導く者』"
+        }
+      ],
+      "Type": 1,
+      "CardName": "[永劫続く栄光へ]祖にして導く者"
+    },
+    {
+      "EventName": "鍛えよ共に",
+      "EventNameToCheck": "鍛えよ共に",
+      "EventOptionsList": [
+        {
+          "Option": "読書で走りの知識を深めようか",
+          "OptionToCheck": "読書で走りの知識を深めようか",
+          "Effect": "Успех:\nИнтеллект+4\nSkill point+4\nУровень отношений+5\nПровал:\nИнтеллект+4\nУровень отношений+5"
+        },
+        {
+          "Option": "やっぱり併走かな！",
+          "OptionToCheck": "やっぱり併走かな",
+          "Effect": "Успех:\nСкорость+4\nSkill point+4\nУровень отношений+5\nПровал:\nСкорость+4\nУровень отношений+5"
+        },
+        {
+          "Option": "しっかりテクニックを磨いていこう",
+          "OptionToCheck": "しっかりテクニックを磨いていこう",
+          "Effect": "Успех:\nЭнергия+3\nSkill point+4\nУровень отношений+5\nПровал:\nSkill point+4\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "[尊尚親愛]玉座に集いし者たち"
+    },
+    {
+      "EventName": "おかわりトレーニング",
+      "EventNameToCheck": "おかわりトレーニング",
+      "EventOptionsList": [
+        {
+          "Option": "外周、スタミナがつきそうだな",
+          "OptionToCheck": "外周、スタミナがつきそうだな",
+          "Effect": "Успех:\nВыносливость+4\nSkill point+4\nУровень отношений+5\nПровал:\nВыносливость+4\nУровень отношений+5"
+        },
+        {
+          "Option": "スピード王選手権！",
+          "OptionToCheck": "スピード王選手権",
+          "Effect": "Успех:\nСкорость+4\nSkill point+4\nУровень отношений+5\nПровал:\nСкорость+4\nУровень отношений+5"
+        },
+        {
+          "Option": "……休息にもなるし、食べ放題かな？",
+          "OptionToCheck": "休息にもなるし、食べ放題かな",
+          "Effect": "Успех:\nЭнергия+3\nSkill point+4\nУровень отношений+5\nПровал:\nSkill point+4\nУровень отношений+5"
+        }
+      ],
+      "Type": 1,
+      "CardName": "[紡がれてゆく想い]チーム＜シリウス＞"
+    },
+    {
+      "EventName": "リニア・リグレッション",
+      "EventNameToCheck": "リニアリグレッション",
+      "EventOptionsList": [
+        {
+          "Option": "ハヤヒデが甘えたい時は俺が頑張ろう",
+          "OptionToCheck": "ハヤヒデが甘えたい時は俺が頑張ろう",
+          "Effect": "Выносливость+5\n『先行コーナー◯』 умение Lv+1"
+        },
+        {
+          "Option": "頼りになるのは俺が保証するよ！",
+          "OptionToCheck": "頼りになるのは俺が保証するよ",
+          "Effect": "Интеллект+5\n『抜かりなし』 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Engineered Victory]ビワハヤヒデ"
+    },
+    {
+      "EventName": "夢のような、奇跡のような",
+      "EventNameToCheck": "夢のような、奇跡のような",
+      "EventOptionsList": [
+        {
+          "Option": "発生条件",
+          "OptionToCheck": "発生条件",
+          "Effect": "Выиграйте 2 гонки G1 на дистанции マイル кроме целевых."
+        },
+        {
+          "Option": "効果",
+          "OptionToCheck": "効果",
+          "Effect": "Скорость+20\nСила+20\nSkill point+30\n『マイル直線◯』 умение Lv+2"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "奇跡のような、夢のような",
+      "EventNameToCheck": "奇跡のような、夢のような",
+      "EventOptionsList": [
+        {
+          "Option": "発生条件",
+          "OptionToCheck": "発生条件",
+          "Effect": "Выиграйте 2 гонки G1 на дистанции 中距離 кроме целевых."
+        },
+        {
+          "Option": "効果",
+          "OptionToCheck": "効果",
+          "Effect": "Скорость+15\nСила+15\nСила воли+15\n『中距離直線◯』 умение Lv+2"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "新年の抱負",
+      "EventNameToCheck": "新年の抱負",
+      "EventOptionsList": [
+        {
+          "Option": "ウエイトトレーニング",
+          "OptionToCheck": "ウエイトトレーニング",
+          "Effect": "Скорость+25"
+        },
+        {
+          "Option": "動画で研究",
+          "OptionToCheck": "動画で研究",
+          "Effect": "Энергия+20"
+        },
+        {
+          "Option": "せっかくなら軽めの併走",
+          "OptionToCheck": "せっかくなら軽めの併走",
+          "Effect": "Skill point+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "初詣",
+      "EventNameToCheck": "初詣",
+      "EventOptionsList": [
+        {
+          "Option": "……とりあえず、何か食べる？",
+          "OptionToCheck": "とりあえず、何か食べる",
+          "Effect": "Энергия+30"
+        },
+        {
+          "Option": "ゲームする、とか……？",
+          "OptionToCheck": "ゲームする、とか",
+          "Effect": "Все характеристики+8"
+        },
+        {
+          "Option": "……映画はアリ？",
+          "OptionToCheck": "映画はアリ",
+          "Effect": "Skill point+35"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "夏合宿(2年目)にて",
+      "EventNameToCheck": "夏合宿2年目にて",
+      "EventOptionsList": [
+        {
+          "Option": "……す、相撲でもしようか！",
+          "OptionToCheck": "す、相撲でもしようか",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "ビーチで精神統一、とか？",
+          "OptionToCheck": "ビーチで精神統一、とか",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "ダンスレッスン",
+      "EventNameToCheck": "ダンスレッスン",
+      "EventOptionsList": [
+        {
+          "Option": "先生だけじゃなくファンも喜ぶ出来だ！",
+          "OptionToCheck": "先生だけじゃなくファンも喜ぶ出来だ",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "本当の姉妹みたいな支え合いだった",
+          "OptionToCheck": "本当の姉妹みたいな支え合いだった",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "1勝より……",
+      "EventNameToCheck": "1勝より",
+      "EventOptionsList": [
+        {
+          "Option": "そのマインドがパワーの秘訣なのかも？",
+          "OptionToCheck": "そのマインドがパワーの秘訣なのかも",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "見習いたいな、その考え",
+          "OptionToCheck": "見習いたいな、その考え",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "VS困ったちゃん",
+      "EventNameToCheck": "VS困ったちゃん",
+      "EventOptionsList": [
+        {
+          "Option": "すごい速さの追いかけっこだった！",
+          "OptionToCheck": "すごい速さの追いかけっこだった",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "付き合ってあげるとスタミナがつきそう",
+          "OptionToCheck": "付き合ってあげるとスタミナがつきそう",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "気持ち1つで……！",
+      "EventNameToCheck": "気持ち1つで",
+      "EventOptionsList": [
+        {
+          "Option": "どっちもいい根性してる！",
+          "OptionToCheck": "どっちもいい根性してる",
+          "Effect": "Сила воли+10\nИнтеллект+5"
+        },
+        {
+          "Option": "君たちって素敵だな！",
+          "OptionToCheck": "君たちって素敵だな",
+          "Effect": "『先行のコツ◯』 умение Lv+1"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "ウマウマカワイイお菓子作り",
+      "EventNameToCheck": "ウマウマカワイイお菓子作り",
+      "EventOptionsList": [
+        {
+          "Option": "マカロンが食べたい！",
+          "OptionToCheck": "マカロンが食べたい",
+          "Effect": "『栄養補給』 умение Lv+1"
+        },
+        {
+          "Option": "マドレーヌがいいかな",
+          "OptionToCheck": "マドレーヌがいいかな",
+          "Effect": "Энергия+10\nСкорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "お大事に！",
+      "EventNameToCheck": "お大事に",
+      "EventOptionsList": [
+        {
+          "Option": "それでも今は休むべきだ",
+          "OptionToCheck": "それでも今は休むべきだ",
+          "Effect": "Мотивация-\nПоследний тип тренировки-5\nСлучайно 『練習下手』"
+        },
+        {
+          "Option": "わかった。無理のない範囲で",
+          "OptionToCheck": "わかった。無理のない範囲で",
+          "Effect": "Мотивация-\nПоследний тип тренировки-10\nСлучайно 『練習下手』\n『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "無茶は厳禁！",
+      "EventNameToCheck": "無茶は厳禁",
+      "EventOptionsList": [
+        {
+          "Option": "なおさら回復に努めるべき",
+          "OptionToCheck": "なおさら回復に努めるべき",
+          "Effect": "Энергия+10\nМотивация -3\nПоследний тип тренировки-10\nСлучайно 2 характеристики-10\nСлучайно 『練習ベタ』"
+        },
+        {
+          "Option": "……軽いリハビリ程度なら",
+          "OptionToCheck": "軽いリハビリ程度なら",
+          "Effect": "Мотивация -3\nПоследний тип тренировки-10\nСлучайно 2 характеристики-10\n『練習ベタ』\nЭнергия+10\n『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "追加の自主トレ",
+      "EventNameToCheck": "追加の自主トレ",
+      "EventOptionsList": [
+        {
+          "Option": "思う存分いっておいで",
+          "OptionToCheck": "思う存分いっておいで",
+          "Effect": "Энергия-5\nПоследний тип тренировки+5\nУровень отношений с персонажем по сценарию+5\nURA Президент Акикава\nАохару Репортер"
+        },
+        {
+          "Option": "これ以上はオーバーワークになる",
+          "OptionToCheck": "これ以上はオーバーワークになる",
+          "Effect": "Энергия+5"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "スーパーサイズ！",
+      "EventNameToCheck": "スーパーサイズ",
+      "EventOptionsList": [
+        {
+          "Option": "食べ過ぎになる、みんなで分けよう",
+          "OptionToCheck": "食べ過ぎになる、みんなで分けよう",
+          "Effect": "Энергия+10\nSkill point+5"
+        },
+        {
+          "Option": "満足するまで食べちゃおう！",
+          "OptionToCheck": "満足するまで食べちゃおう",
+          "Effect": "Успех:\nЭнергия+30\nSkill point+10\nПровал:\nЭнергия+30\nSkill point+10\nСкорость-5\nСила+5\n『太り気味』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "元気の源を詰め込んで",
+      "EventNameToCheck": "元気の源を詰め込んで",
+      "EventOptionsList": [
+        {
+          "Option": "子どもたちを大喜びさせてさすがだった",
+          "OptionToCheck": "子どもたちを大喜びさせてさすがだった",
+          "Effect": "Сила+20"
+        },
+        {
+          "Option": "バブルのお父さんも鼻が高そうだった",
+          "OptionToCheck": "バブルのお父さんも鼻が高そうだった",
+          "Effect": "Выносливость+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "ハジける刹那を捉えて",
+      "EventNameToCheck": "ハジける刹那を捉えて",
+      "EventOptionsList": [
+        {
+          "Option": "バブルの宣言は現実になるんだ",
+          "OptionToCheck": "バブルの宣言は現実になるんだ",
+          "Effect": "Скорость+20"
+        },
+        {
+          "Option": "君が諦めずに頑張ってたからだよ",
+          "OptionToCheck": "君が諦めずに頑張ってたからだよ",
+          "Effect": "Сила воли+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "対等という特別",
+      "EventNameToCheck": "対等という特別",
+      "EventOptionsList": [
+        {
+          "Option": "もちろん対等だよ",
+          "OptionToCheck": "もちろん対等だよ",
+          "Effect": "Сила+20\nランダムで『リフレッシュの心得』"
+        },
+        {
+          "Option": "対等ではないかな",
+          "OptionToCheck": "対等ではないかな",
+          "Effect": "Сила воли+10\nИнтеллект+10\nСлучайно 『リフレッシュの心得』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "宣言・笑顔にしてみせる！",
+      "EventNameToCheck": "宣言笑顔にしてみせる",
+      "EventOptionsList": [
+        {
+          "Option": "見習いたいな、その強さ",
+          "OptionToCheck": "見習いたいな、その強さ",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "本当にかっこいいな！",
+          "OptionToCheck": "本当にかっこいいな",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "宣言・するほどじゃないけど……？",
+      "EventNameToCheck": "宣言するほどじゃないけど",
+      "EventOptionsList": [
+        {
+          "Option": "ああ、楽しかった！",
+          "OptionToCheck": "ああ、楽しかった",
+          "Effect": "Выносливость+10"
+        },
+        {
+          "Option": "君も楽しめた？",
+          "OptionToCheck": "君も楽しめた",
+          "Effect": "Сила воли+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "宣言・彼女のように！",
+      "EventNameToCheck": "宣言彼女のように",
+      "EventOptionsList": [
+        {
+          "Option": "口に出すって大事だな",
+          "OptionToCheck": "口に出すって大事だな",
+          "Effect": "Интеллект+10"
+        },
+        {
+          "Option": "今日勝てたのは君のおかげだよ",
+          "OptionToCheck": "今日勝てたのは君のおかげだよ",
+          "Effect": "Сила+10"
+        },
+        {
+          "Option": "これからも、もっと頑張るよ！",
+          "OptionToCheck": "これからも、もっと頑張るよ",
+          "Effect": "Скорость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "初めてなんて怖くない",
+      "EventNameToCheck": "初めてなんて怖くない",
+      "EventOptionsList": [
+        {
+          "Option": "本当に見事な大技だった！",
+          "OptionToCheck": "本当に見事な大技だった",
+          "Effect": "Скорость+10"
+        },
+        {
+          "Option": "バブルはどこにいても人気者だな",
+          "OptionToCheck": "バブルはどこにいても人気者だな",
+          "Effect": "Интеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "見た目から楽しませて",
+      "EventNameToCheck": "見た目から楽しませて",
+      "EventOptionsList": [
+        {
+          "Option": "大人ビターな感じでかっこいい！",
+          "OptionToCheck": "大人ビターな感じでかっこいい",
+          "Effect": "Сила воли+10"
+        },
+        {
+          "Option": "立体的でマーベラスだ！",
+          "OptionToCheck": "立体的でマーベラスだ",
+          "Effect": "Выносливость+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "ジャパンCの後に(クラシック)",
+      "EventNameToCheck": "ジャパンCの後にクラシック",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "調査中"
+        },
+        {
+          "Option": "2位",
+          "OptionToCheck": "2位",
+          "Effect": "調査中"
+        },
+        {
+          "Option": "3位以下",
+          "OptionToCheck": "3位以下",
+          "Effect": "Все характеристики+1\nSkill point+35\nУровень отношение с NPC сценария+4"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "天皇賞(秋)の後に(シニア)",
+      "EventNameToCheck": "天皇賞秋の後にシニア",
+      "EventOptionsList": [
+        {
+          "Option": "1位",
+          "OptionToCheck": "1位",
+          "Effect": "Все характеристики+3\nSkill point+45\nУровень отношение с NPC сценария+4"
+        },
+        {
+          "Option": "2位",
+          "OptionToCheck": "2位",
+          "Effect": "Все характеристики+2\nSkill point+45\nУровень отношение с NPC сценария+4"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "レース勝利！(1着)",
+      "EventNameToCheck": "レース勝利1着",
+      "EventOptionsList": [
+        {
+          "Option": "ああ、誇っていい",
+          "OptionToCheck": "ああ、誇っていい",
+          "Effect": "G1：\nСлучайно 1 характеристика+10\nSkill point+45\nG2~G3：\nСлучайно 1 характеристика+8\nSkill point+35\nop：\nСлучайно 1 характеристика+5\nSkill point+30\nПровал\nЭнергия-15\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        },
+        {
+          "Option": "勝利に慢心しないように！",
+          "OptionToCheck": "勝利に慢心しないように",
+          "Effect": "G1：\nСлучайно 1 характеристика+10\nSkill point+45\nG2~G3：\nСлучайно 1 характеристика+8\nSkill point+35\nop：\nСлучайно 1 характеристика+5\nSkill point+30\nПровал\nЭнергия-5or-10or-20or-30\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "レース入着(2~5着)",
+      "EventNameToCheck": "レース入着2~5着",
+      "EventOptionsList": [
+        {
+          "Option": "その前向きな気持ちがあれば大丈夫！",
+          "OptionToCheck": "その前向きな気持ちがあれば大丈夫",
+          "Effect": "G1：\nСлучайно 1 характеристика+5~8\nSkill point+40~45\nG2~G3：\nСлучайно 1 характеристика+4~6\nSkill point+30~45\nop：\nСлучайно 1 характеристика+2~4\nSkill point+20~45\nПровал\nЭнергия-20\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        },
+        {
+          "Option": "反省点をしっかり見直そうか",
+          "OptionToCheck": "反省点をしっかり見直そうか",
+          "Effect": "G1：\nСлучайно 1 характеристика+5~8\nSkill point+40~45\nG2~G3：\nСлучайно 1 характеристика+4~6\nSkill point+30~45\nop：\nСлучайно 1 характеристика+2~4\nSkill point+20~45\nПровал\nЭнергия-10or-30\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "レース敗北(6着以下)",
+      "EventNameToCheck": "レース敗北6着以下",
+      "EventOptionsList": [
+        {
+          "Option": "すぐ前を向く、いいところがでてるよ",
+          "OptionToCheck": "すぐ前を向く、いいところがでてるよ",
+          "Effect": "G1：\nСлучайно 1 характеристика+4\nSkill point+25\nG2~G3：\nСлучайно 1 характеристика+3\nSkill point+20\nop：\nSkill point+10\nПровал\nЭнергия-25\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        },
+        {
+          "Option": "ああ、しっかり反省会をしよう",
+          "OptionToCheck": "ああ、しっかり反省会をしよう",
+          "Effect": "G1：\nСлучайно 1 характеристика+4\nSkill point+25\nG2~G3：\nСлучайно 1 характеристика+3\nSkill point+20\nop：\nSkill point+10\nПровал\nЭнергия-15or-25or-35\nСлучайно 『Случайное умение, связанное с трассой и ситуацией』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[POPPING!]バブルガムフェロー"
+    },
+    {
+      "EventName": "『シン』を射る",
+      "EventNameToCheck": "シンを射る",
+      "EventOptionsList": [
+        {
+          "Option": "この感覚を忘れなければな",
+          "OptionToCheck": "この感覚を忘れなければな",
+          "Effect": "Вариант 1\nСкорость+15\n『攻めの姿勢』 умение Lv+3\nВариант 2\nСкорость+10\n『攻めの姿勢』 умение Lv+1\nВариант 3\nСкорость+10"
+        },
+        {
+          "Option": "トレーニングに取り入れようかな",
+          "OptionToCheck": "トレーニングに取り入れようかな",
+          "Effect": "Сила воли+25"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[紫雲の夢見取り]トウカイテイオー"
+    },
+    {
+      "EventName": "次代の道標",
+      "EventNameToCheck": "次代の道標",
+      "EventOptionsList": [
+        {
+          "Option": "これからも憧れの的として頑張らないとな",
+          "OptionToCheck": "これからも憧れの的として頑張らないとな",
+          "Effect": "Мотивация+\nСила+15\nСлучайно 『愛嬌◯』"
+        },
+        {
+          "Option": "みんな2人に見入ってたよ！",
+          "OptionToCheck": "みんな2人に見入ってたよ",
+          "Effect": "『食らいつき』 умение Lv+2\nСлучайно 『愛嬌◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[紫雲の夢見取り]トウカイテイオー"
+    },
+    {
+      "EventName": "舞い姫、奉りて",
+      "EventNameToCheck": "舞い姫、奉りて",
+      "EventOptionsList": [
+        {
+          "Option": "君の想い、家族に伝わったと思うよ",
+          "OptionToCheck": "君の想い、家族に伝わったと思うよ",
+          "Effect": "Вариант 1\nСила+10\n『フルスロットル』 умение Lv+1\nВариант 2\nСила+10"
+        },
+        {
+          "Option": "思わず見とれたよ",
+          "OptionToCheck": "思わず見とれたよ",
+          "Effect": "Сила воли+25"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[水干撫子]カワカミプリンセス"
+    },
+    {
+      "EventName": "プリンセスのことなら",
+      "EventNameToCheck": "プリンセスのことなら",
+      "EventOptionsList": [
+        {
+          "Option": "君の憧れを叶えるのが役目だからな",
+          "OptionToCheck": "君の憧れを叶えるのが役目だからな",
+          "Effect": "Мотивация+\nСила воли+15\nСлучайно 『注目株』"
+        },
+        {
+          "Option": "さすがは『伝説のトレーナー』だろ？",
+          "OptionToCheck": "さすがは伝説のトレーナーだろ",
+          "Effect": "『秋ウマ娘◯』 умение Lv+1\nСлучайно 『注目株』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[水干撫子]カワカミプリンセス"
+    },
+    {
+      "EventName": "Where is my mission?",
+      "EventNameToCheck": "Where is my mission",
+      "EventOptionsList": [
+        {
+          "Option": "伝達役、やってみる？",
+          "OptionToCheck": "伝達役、やってみる",
+          "Effect": "Энергия+10\nСлучайно 『注目株』"
+        },
+        {
+          "Option": "発注業務を引き受けてはどうかな",
+          "OptionToCheck": "発注業務を引き受けてはどうかな",
+          "Effect": "Сила+20\nСлучайно 『注目株』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Jetblack Automaton]シンボリクリスエス"
+    },
+    {
+      "EventName": "Casting",
+      "EventNameToCheck": "Casting",
+      "EventOptionsList": [
+        {
+          "Option": "楽しい聖蹄祭になりそうだな！",
+          "OptionToCheck": "楽しい聖蹄祭になりそうだな",
+          "Effect": "Энергия+10\nСлучайно 『注目株』"
+        },
+        {
+          "Option": "シャカールの先導ならきっと効率よく進むな",
+          "OptionToCheck": "シャカールの先導ならきっと効率よく進むな",
+          "Effect": "Скорость+20\nСлучайно 『注目株』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Belphegor's Prime]エアシャカール"
+    },
+    {
+      "EventName": "ゴルシ流ランウェイ",
+      "EventNameToCheck": "ゴルシ流ランウェイ",
+      "EventOptionsList": [
+        {
+          "Option": "刺激的な背中のいかり",
+          "OptionToCheck": "刺激的な背中のいかり",
+          "Effect": "Скорость+10\n『後方待機』 умение Lv+2"
+        },
+        {
+          "Option": "一番目立つ、お腹のホタテがいい",
+          "OptionToCheck": "一番目立つ、お腹のホタテがいい",
+          "Effect": "Сила+30"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[La mode 564]ゴールドシップ"
+    },
+    {
+      "EventName": "ゴールドシップ頂上決戦",
+      "EventNameToCheck": "ゴールドシップ頂上決戦",
+      "EventOptionsList": [
+        {
+          "Option": "勝者は、制服のゴールドシップ！",
+          "OptionToCheck": "勝者は、制服のゴールドシップ",
+          "Effect": "『ワンチャンス』 умение Lv+1"
+        },
+        {
+          "Option": "僅差で、勝負服のゴールドシップの勝ち！",
+          "OptionToCheck": "僅差で、勝負服のゴールドシップの勝ち",
+          "Effect": "Скорость+15"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[La mode 564]ゴールドシップ"
+    },
+    {
+      "EventName": "潮騒に呑まれて",
+      "EventNameToCheck": "潮騒に呑まれて",
+      "EventOptionsList": [
+        {
+          "Option": "大活躍だったからな！",
+          "OptionToCheck": "大活躍だったからな",
+          "Effect": "Энергия+10\nСлучайно 『愛嬌◯』\n※Эффекты события боевой формы 「大海原をどこまでも」 будет изменен"
+        },
+        {
+          "Option": "勝ち取った場所で好きに走れるよ",
+          "OptionToCheck": "勝ち取った場所で好きに走れるよ",
+          "Effect": "Сила воли+10\nСлучайно 『愛嬌◯』\n※Эффекты события боевой формы 「大海原をどこまでも」 будет изменен"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[波間のエメラルド]サイレンススズカ"
+    },
+    {
+      "EventName": "涼風を探して",
+      "EventNameToCheck": "涼風を探して",
+      "EventOptionsList": [
+        {
+          "Option": "もっとリラックスしていこう！",
+          "OptionToCheck": "もっとリラックスしていこう",
+          "Effect": "Выносливость+20\n※Эффекты события боевой формы 「大海原をどこまでも」 будет изменен"
+        },
+        {
+          "Option": "気をつかいすぎもよくないよ",
+          "OptionToCheck": "気をつかいすぎもよくないよ",
+          "Effect": "Энергия+10\nСила+10\n※Эффекты события боевой формы 「大海原をどこまでも」 будет изменен"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[波間のエメラルド]サイレンススズカ"
+    },
+    {
+      "EventName": "恐怖！ワカメ人間",
+      "EventNameToCheck": "恐怖ワカメ人間",
+      "EventOptionsList": [
+        {
+          "Option": "……まともな薬が完成することを祈ってる",
+          "OptionToCheck": "まともな薬が完成することを祈ってる",
+          "Effect": "Скорость+10\nСлучайно 『練習上手◯』"
+        },
+        {
+          "Option": "ここでの研究は禁止！",
+          "OptionToCheck": "ここでの研究は禁止",
+          "Effect": "Энергия+10\nСлучайно 『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Lunatic Lab]アグネスタキオン"
+    },
+    {
+      "EventName": "混沌のバーベキュー",
+      "EventNameToCheck": "混沌のバーベキュー",
+      "EventOptionsList": [
+        {
+          "Option": "危ないところだったな",
+          "OptionToCheck": "危ないところだったな",
+          "Effect": "Энергия+10\nСила воли+10"
+        },
+        {
+          "Option": "証拠隠滅に加担してしまった……",
+          "OptionToCheck": "証拠隠滅に加担してしまった",
+          "Effect": "Сила+10\nИнтеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Lunatic Lab]アグネスタキオン"
+    },
+    {
+      "EventName": "デカい背中",
+      "EventNameToCheck": "デカい背中",
+      "EventOptionsList": [
+        {
+          "Option": "自身があるんじゃないか",
+          "OptionToCheck": "自身があるんじゃないか",
+          "Effect": "『前のめり』 умение Lv+2"
+        },
+        {
+          "Option": "何かあったのか？",
+          "OptionToCheck": "何かあったのか",
+          "Effect": "Интеллект+20\nСлучайно 『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Aurore☆Vacances]トーセンジョーダン"
+    },
+    {
+      "EventName": "日々是鍛錬～流行の巻～",
+      "EventNameToCheck": "日々是鍛錬流行の巻",
+      "EventOptionsList": [
+        {
+          "Option": "流行を追い越さないようにな",
+          "OptionToCheck": "流行を追い越さないようにな",
+          "Effect": "『外差し準備』 умение Lv+2\nСлучайно 『愛嬌◯』"
+        },
+        {
+          "Option": "流行は速いぞー？",
+          "OptionToCheck": "流行は速いぞー",
+          "Effect": "Скорость+20\nСлучайно 『愛嬌◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Ultra☆Marine]バンブーメモリー"
+    },
+    {
+      "EventName": "昔話も江戸風でい！",
+      "EventNameToCheck": "昔話も江戸風でい",
+      "EventOptionsList": [
+        {
+          "Option": "芸達者だった",
+          "OptionToCheck": "芸達者だった",
+          "Effect": "Энергия+20\nСила+20"
+        },
+        {
+          "Option": "ウマ娘の想いが伝わってきた",
+          "OptionToCheck": "ウマ娘の想いが伝わってきた",
+          "Effect": "Скорость+10\nВыносливость+10\n『秋ウマ娘◯』 умение Lv+2"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[夢ノ金原]イナリワン"
+    },
+    {
+      "EventName": "ひと汗かこうぜ、銭湯で！",
+      "EventNameToCheck": "ひと汗かこうぜ、銭湯で",
+      "EventOptionsList": [
+        {
+          "Option": "人を見る目があるな",
+          "OptionToCheck": "人を見る目があるな",
+          "Effect": "『下校の楽しみ』 умение Lv+2\nСлучайно 『練習上手◯』"
+        },
+        {
+          "Option": "プロの仕事みたいだった",
+          "OptionToCheck": "プロの仕事みたいだった",
+          "Effect": "Мотивация+\nСкорость+10\nСлучайно 『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[夢ノ金原]イナリワン"
+    },
+    {
+      "EventName": "進め！お神輿ガラガラと",
+      "EventNameToCheck": "進めお神輿ガラガラと",
+      "EventOptionsList": [
+        {
+          "Option": "子どもと一緒に楽しく",
+          "OptionToCheck": "子どもと一緒に楽しく",
+          "Effect": "Энергия+20\nИнтеллект+20"
+        },
+        {
+          "Option": "ド派手に神輿バトル！",
+          "OptionToCheck": "ド派手に神輿バトル",
+          "Effect": "Сила+10\nSkill point+10\n『秋ウマ娘◯』 умение Lv+2"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[猛ル鳴神]タマモクロス"
+    },
+    {
+      "EventName": "魂のマヨヒガ",
+      "EventNameToCheck": "魂のマヨヒガ",
+      "EventOptionsList": [
+        {
+          "Option": "猛トレーニングで忘れる",
+          "OptionToCheck": "猛トレーニングで忘れる",
+          "Effect": "Скорость+15"
+        },
+        {
+          "Option": "山から全力逃亡！",
+          "OptionToCheck": "山から全力逃亡",
+          "Effect": "『直滑降』 умение Lv+2"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[猛ル鳴神]タマモクロス"
+    },
+    {
+      "EventName": "友情のハロウィンパレード",
+      "EventNameToCheck": "友情のハロウィンパレード",
+      "EventOptionsList": [
+        {
+          "Option": "早く行っておいで！",
+          "OptionToCheck": "早く行っておいで",
+          "Effect": "Скорость+10\nСила+10\nСлучайно 『愛嬌◯』"
+        },
+        {
+          "Option": "いい友達を持っているんだな",
+          "OptionToCheck": "いい友達を持っているんだな",
+          "Effect": "『ありったけ』 умение Lv+2\nСлучайно 『愛嬌◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "泣き虫フレンズ",
+      "EventNameToCheck": "泣き虫フレンズ",
+      "EventOptionsList": [
+        {
+          "Option": "まさかケンカ……！？",
+          "OptionToCheck": "まさかケンカ",
+          "Effect": "Выносливость+10\nСила воли+10"
+        },
+        {
+          "Option": "……嬉し涙かな？",
+          "OptionToCheck": "嬉し涙かな",
+          "Effect": "Энергия+10\nИнтеллект+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[Dot-o'-Lantern]メイショウドトウ"
+    },
+    {
+      "EventName": "竜ゴル城にお出迎え",
+      "EventNameToCheck": "竜ゴル城にお出迎え",
+      "EventOptionsList": [
+        {
+          "Option": "ゴールドシップを好きに遊ばせてあげよう",
+          "OptionToCheck": "ゴールドシップを好きに遊ばせてあげよう",
+          "Effect": "Skill point+15"
+        },
+        {
+          "Option": "なんとかゴールドシップをなだめよう",
+          "OptionToCheck": "なんとかゴールドシップをなだめよう",
+          "Effect": "Сила воли+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[RUN！乱！ランチャー！！]ゴールドシップ"
+    },
+    {
+      "EventName": "海産勇者伝説ゴルシ",
+      "EventNameToCheck": "海産勇者伝説ゴルシ",
+      "EventOptionsList": [
+        {
+          "Option": "まさかライトだけであれほどのパワーが……",
+          "OptionToCheck": "まさかライトだけであれほどのパワーが",
+          "Effect": "『夏ウマ娘◯』 умение Lv+2\nСлучайно 『練習上手◯』"
+        },
+        {
+          "Option": "勝負服もきっとパワーアップしたな",
+          "OptionToCheck": "勝負服もきっとパワーアップしたな",
+          "Effect": "Сила+20\nСлучайно 『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[RUN！乱！ランチャー！！]ゴールドシップ"
+    },
+    {
+      "EventName": "それはきっと、青写真よりも",
+      "EventNameToCheck": "それはきっと、青写真よりも",
+      "EventOptionsList": [
+        {
+          "Option": "俺たちも今日の決意を写真に残しておこう",
+          "OptionToCheck": "俺たちも今日の決意を写真に残しておこう",
+          "Effect": "Интеллект+20"
+        },
+        {
+          "Option": "この景色を目に焼き付けていこう",
+          "OptionToCheck": "この景色を目に焼き付けていこう",
+          "Effect": "Энергия+10"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[さざ波フェアレディ]メジロマックイーン"
+    },
+    {
+      "EventName": "触らぬ者にたたりなしですわ！！",
+      "EventNameToCheck": "触らぬ者にたたりなしですわ",
+      "EventOptionsList": [
+        {
+          "Option": "気を強く持て！あれは罠だ！",
+          "OptionToCheck": "気を強く持てあれは罠だ",
+          "Effect": "Выносливость+20\nСлучайно 『愛嬌◯』"
+        },
+        {
+          "Option": "……そろそろ構ってあげたら？",
+          "OptionToCheck": "そろそろ構ってあげたら",
+          "Effect": "『夏ウマ娘◯』 умение Lv+2\nСлучайно 『愛嬌◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[さざ波フェアレディ]メジロマックイーン"
+    },
+    {
+      "EventName": "スペの緊急牧場ガイド",
+      "EventNameToCheck": "スペの緊急牧場ガイド",
+      "EventOptionsList": [
+        {
+          "Option": "もう少しだけ楽しもうか",
+          "OptionToCheck": "もう少しだけ楽しもうか",
+          "Effect": "Выносливость+15\nСлучайно 『切れ者』"
+        },
+        {
+          "Option": "……正直に話そう、スペ",
+          "OptionToCheck": "正直に話そう、スペ",
+          "Effect": "Сила воли+10\nИнтеллект+5\nСлучайно 『切れ者』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[日之本一の総大将]スペシャルウィーク"
+    },
+    {
+      "EventName": "憧れの『マルゼンさん』",
+      "EventNameToCheck": "憧れのマルゼンさん",
+      "EventOptionsList": [
+        {
+          "Option": "気のせいだと思う！",
+          "OptionToCheck": "気のせいだと思う",
+          "Effect": "Скорость+10\nСила+10"
+        },
+        {
+          "Option": "実は、悩んでいるみたいで……",
+          "OptionToCheck": "実は、悩んでいるみたいで",
+          "Effect": "Энергия+15"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[ぶっとび☆さまーナイト]マルゼンスキー"
+    },
+    {
+      "EventName": "ようこそ、バブリーランドへ",
+      "EventNameToCheck": "ようこそ、バブリーランドへ",
+      "EventOptionsList": [
+        {
+          "Option": "素敵な写真を撮って送ろう！",
+          "OptionToCheck": "素敵な写真を撮って送ろう",
+          "Effect": "Сила воли+20"
+        },
+        {
+          "Option": "とびっきりのお土産を贈ろう！",
+          "OptionToCheck": "とびっきりのお土産を贈ろう",
+          "Effect": "Интеллект+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[ぶっとび☆さまーナイト]マルゼンスキー"
+    },
+    {
+      "EventName": "マルゼンスキーの大切なもの",
+      "EventNameToCheck": "マルゼンスキーの大切なもの",
+      "EventOptionsList": [
+        {
+          "Option": "ゴールへ向かおう",
+          "OptionToCheck": "ゴールへ向かおう",
+          "Effect": "『急ぎ足』 умение Lv+2\nСлучайно 『愛嬌◯』"
+        },
+        {
+          "Option": "スタート地点へ戻ろう",
+          "OptionToCheck": "スタート地点へ戻ろう",
+          "Effect": "Выносливость+20\nСлучайно 『愛嬌◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[ぶっとび☆さまーナイト]マルゼンスキー"
+    },
+    {
+      "EventName": "炸裂、水着パワー！",
+      "EventNameToCheck": "炸裂、水着パワー",
+      "EventOptionsList": [
+        {
+          "Option": "部屋の掃除とか？",
+          "OptionToCheck": "部屋の掃除とか",
+          "Effect": "Скорость+10\nSkill point+15"
+        },
+        {
+          "Option": "勉強を頑張ろう！",
+          "OptionToCheck": "勉強を頑張ろう",
+          "Effect": "Интеллект+20"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[ほっぴん♪ビタミンハート]スペシャルウィーク"
+    },
+    {
+      "EventName": "夏、満喫大作戦！！",
+      "EventNameToCheck": "夏、満喫大作戦",
+      "EventOptionsList": [
+        {
+          "Option": "綺麗な貝を探すとか？",
+          "OptionToCheck": "綺麗な貝を探すとか",
+          "Effect": "Выносливость+10\nСила+10"
+        },
+        {
+          "Option": "砂の城でも作る？",
+          "OptionToCheck": "砂の城でも作る",
+          "Effect": "Энергия+10\nВсе характеристики+2"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[ほっぴん♪ビタミンハート]スペシャルウィーク"
+    },
+    {
+      "EventName": "もう1人のお母ちゃんへ",
+      "EventNameToCheck": "もう1人のお母ちゃんへ",
+      "EventOptionsList": [
+        {
+          "Option": "食べ過ぎないように見守ってください",
+          "OptionToCheck": "食べ過ぎないように見守ってください",
+          "Effect": "『がんばり屋』 умение Lv+2\nСлучайно 『練習上手◯』"
+        },
+        {
+          "Option": "ケガしないよう見守ってください",
+          "OptionToCheck": "ケガしないよう見守ってください",
+          "Effect": "Сила воли+20\nСлучайно 『練習上手◯』"
+        }
+      ],
+      "Type": 0,
+      "CardName": "[ほっぴん♪ビタミンハート]スペシャルウィーク"
     }
   ]
 }
