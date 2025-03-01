@@ -28,6 +28,7 @@ namespace UmaMusumeDBBrowser
     {
 
         private List<NAMES> skillTransDictonary;
+        private List<NAMES> buffTransDictonary;
         private Color[] optionColors;
         private delegate void TabDelegate(TabPage tabPage);
         private AllLibraryManager libManager;
@@ -36,7 +37,10 @@ namespace UmaMusumeDBBrowser
         public Form1 parentForm = null;
         private EventControlManager controlManager;
         private SkillControlManager skillControlManager;
+        private LegendBuffControlManager buffControlManager;
         private string skillIconPath = null;
+        private string buffIconPathRank = null;
+        private string buffIconPathBuff = null;
         private List<string> itemIconPathes = null;
         private List<string> freeShopitemIconPathes = null;
 
@@ -150,6 +154,13 @@ namespace UmaMusumeDBBrowser
                         Extensions.SetTextToControl(label1, "Skill list");
                         break;
                     }
+                case GameReader.GameDataType.LegendBuffList:
+                    {
+                        SelectTab(tabPage9);
+                        SetLegendBuffs((List<LegendBuffManager.BuffData>)gameDataArgs.DataClass);
+                        Extensions.SetTextToControl(label1, "legend buff list");
+                        break;
+                    }
                 case GameReader.GameDataType.GenWindow:
                     {
                         SelectTab(tabPage6);
@@ -208,6 +219,7 @@ namespace UmaMusumeDBBrowser
             CreateRichTextBoxes();
             controlManager.SetVisibleFirst(0);
             CreateSkillControlManager();
+            CreateBuffControlManager();
             var skillSettings = Program.TableDisplaySettings.Find(a => a.TableName.Equals("skill_data"));
             if (skillSettings != null)
             {
@@ -216,6 +228,16 @@ namespace UmaMusumeDBBrowser
             }
             skillTransDictonary = Program.TransDict.LoadDictonary(Path.Combine(Program.DictonariesDir, "skill_data" + "_" + parentForm.toolStripComboBox1.SelectedItem + ".txt"));
 
+            var buffSettings = Program.TableDisplaySettings.Find(a => a.TableName.Equals("single_mode_10_buff"));
+            if (buffSettings != null)
+            {
+                if (buffSettings.IconSettings.Count > 0)
+                {
+                    buffIconPathRank = buffSettings.IconSettings[0].Value[0];
+                    buffIconPathBuff = buffSettings.IconSettings[1].Value[0];
+                }
+            }
+            buffTransDictonary = Program.TransDict.LoadDictonary(Path.Combine(Program.DictonariesDir, "single_mode_10_buff" + "_" + parentForm.toolStripComboBox1.SelectedItem + ".txt"));
 
             var itemSettings = Program.TableDisplaySettings.Find(a => a.TableName.Equals("item_data"));
             var freeShopitemSettings = Program.TableDisplaySettings.Find(a => a.TableName.Equals("single_mode_free_shop_item"));
@@ -402,6 +424,33 @@ namespace UmaMusumeDBBrowser
             }
         }
 
+        private void SetLegendBuffs(List<LegendBuffManager.BuffData> datas)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (i < datas.Count)
+                {
+                    Image imgRank = Program.IconDB.GetImageByKey(buffIconPathRank, datas[i].IconRank);
+                    Image imgBuff = Program.IconDB.GetImageByKey(buffIconPathBuff, datas[i].IconBuff);
+                    if (checkBox1.Checked)
+                    {
+                        string transName = Program.TransDict.GetTranslation(buffTransDictonary, datas[i].Name);
+                        if (string.IsNullOrEmpty(transName))
+                            transName = string.Empty;
+                        string transDesc = Program.TransDict.GetTranslation(buffTransDictonary, datas[i].Desc);
+                        if (string.IsNullOrEmpty(transDesc))
+                            transDesc = datas[i].Desc;
+                        buffControlManager.SetText(i, datas[i].Id, datas[i].Name, transName, transDesc, imgRank, imgBuff);
+                    }
+                    else
+                        buffControlManager.SetText(i, datas[i].Id, datas[i].Name, "", datas[i].Desc, imgRank, imgBuff);
+                }
+                else
+                    buffControlManager.SetText(i, -1, "", "", "", null, null);
+
+            }
+        }
+
         private void CreateSkillControlManager()
         {
             skillControlManager = new SkillControlManager();
@@ -409,6 +458,15 @@ namespace UmaMusumeDBBrowser
             skillControlManager.AddItem(textBox10, textBox11, textBox12, pictureBox3);
             skillControlManager.AddItem(textBox13, textBox14, textBox15, pictureBox4);
             skillControlManager.AddItem(textBox16, textBox17, textBox18, pictureBox5);
+        }
+
+        private void CreateBuffControlManager()
+        {
+            buffControlManager = new LegendBuffControlManager();
+            buffControlManager.AddItem(textBox24, textBox25, textBox26, pictureBox7, pictureBox11);
+            buffControlManager.AddItem(textBox27, textBox28, textBox29, pictureBox8, pictureBox12);
+            buffControlManager.AddItem(textBox30, textBox31, textBox32, pictureBox9, pictureBox13);
+            buffControlManager.AddItem(textBox33, textBox34, textBox35, pictureBox10, pictureBox14);
         }
 
 
@@ -742,6 +800,11 @@ namespace UmaMusumeDBBrowser
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
             textBox21.Enabled = checkBox4.Checked;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            gameReader.GetDebugImage();
         }
     }
 }

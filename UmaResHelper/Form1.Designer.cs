@@ -33,6 +33,11 @@ namespace UmaResHelper
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -63,11 +68,6 @@ namespace UmaResHelper
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -126,6 +126,56 @@ namespace UmaResHelper
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Renamer";
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(6, 193);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(211, 23);
+            this.button18.TabIndex = 6;
+            this.button18.Text = "skillicon";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(6, 164);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(211, 23);
+            this.button17.TabIndex = 5;
+            this.button17.Text = "piece";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(6, 135);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(211, 23);
+            this.button16.TabIndex = 4;
+            this.button16.Text = "honor";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(6, 106);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(211, 23);
+            this.button15.TabIndex = 3;
+            this.button15.Text = "support card";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(6, 77);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(211, 23);
+            this.button14.TabIndex = 2;
+            this.button14.Text = "races";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button13
             // 
@@ -382,6 +432,7 @@ namespace UmaResHelper
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -414,56 +465,6 @@ namespace UmaResHelper
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(6, 77);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(211, 23);
-            this.button14.TabIndex = 2;
-            this.button14.Text = "races";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(6, 106);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(211, 23);
-            this.button15.TabIndex = 3;
-            this.button15.Text = "support card";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(6, 135);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(211, 23);
-            this.button16.TabIndex = 4;
-            this.button16.Text = "honor";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(6, 164);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(211, 23);
-            this.button17.TabIndex = 5;
-            this.button17.Text = "piece";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(6, 193);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(211, 23);
-            this.button18.TabIndex = 6;
-            this.button18.Text = "skillicon";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // Form1
             // 

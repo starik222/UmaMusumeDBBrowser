@@ -59,6 +59,13 @@ namespace UmaMusumeDBBrowser
                                     ts.DisplayColumms.Add(item.Trim());
                                 break;
                             }
+                        case "HideColumms":
+                            {
+                                string[] listColumn = subItems[1].Split(new char[] { ',' });
+                                foreach (var item in listColumn)
+                                    ts.HideColumms.Add(item.Trim());
+                                break;
+                            }
                         case "IconSettings":
                             {
                                 string[] listParam = subItems[1].Split(new char[] { ',' });

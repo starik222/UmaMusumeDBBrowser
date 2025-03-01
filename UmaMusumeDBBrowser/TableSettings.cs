@@ -11,6 +11,7 @@ namespace UmaMusumeDBBrowser
         public string TableName { get; set; }
         public string TextIndexColumn { get; set; }
         public List<string> DisplayColumms { get; set; }
+        public List<string> HideColumms { get; set; }
         public List<KeyValuePair<string, List<string>>> IconSettings { get; set; }
         //public string IconPath { get; set; }
         public List<KeyValuePair<int, string>> TextTypeAndName { get; set; }
@@ -23,6 +24,7 @@ namespace UmaMusumeDBBrowser
         {
             IconSettings = new List<KeyValuePair<string, List<string>>>();
             DisplayColumms = new List<string>();
+            HideColumms = new List<string>();
             TextTypeAndName = new List<KeyValuePair<int, string>>();
             RowHeight = 40;
             ColumnWidth = new List<KeyValuePair<string, int>>();

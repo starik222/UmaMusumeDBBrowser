@@ -38,7 +38,7 @@ namespace UmaMusumeDBBrowser
 
         public static Image<Bgr, byte> ResizeImage(Image<Bgr, byte> img, double scale)
         {
-            return img.Resize(scale, Inter.Linear);
+            return img.Resize(scale, Inter.Lanczos4);
         }
 
         public static Image<Bgr, byte> NormalizeImage(Image<Bgr, byte> img, Size normalSize)

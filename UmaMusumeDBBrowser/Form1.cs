@@ -53,49 +53,51 @@ namespace UmaMusumeDBBrowser
                 Program.ColorManager.ChangeColorSchemeInConteiner(Controls, Program.ColorManager.SelectedScheme);
         }
 
-        private async void CheckForUpdateAsync()
-        {
-            byte[] data = null;
-            await Task.Run(() =>
-            {
-                try
-                {
-                    using (WebClient client = new WebClient())
-                    {
-                        data = client.DownloadData("https://vnfast.ru/files/updates/" + Application.ProductName + ".txt");
-                    }
-                }
-                catch(Exception ex)
-                {
-                    if (Program.IsDebug)
-                    {
-                        Program.AddToLog(ex.Message);
-                    }
-                }
-            });
-            if (data.Length>0)
-            {
-                string text = Encoding.UTF8.GetString(data);
-                string[] listItems = text.Split(new char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-                StringBuilder sb = new StringBuilder();
-                for (int i = 1; i < listItems.Length; i++)
-                {
-                    sb.AppendLine(listItems[i]);
-                }
-                if (listItems[0] != Application.ProductVersion)
-                {
-                    if (MessageBox.Show($"На сайте обнаружена новая версия программы ({listItems[0]}).\nНовое в версии:\n{sb}\nХотите перейти на страницу программы?",
-                        "Найдено обновление программы", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                    {
-                        System.Diagnostics.Process.Start("https://vnfast.ru/programmy/96-umdbb");
-                    }
-                }
-            }
-        }
+        //private async void CheckForUpdateAsync()
+        //{
+        //    byte[] data = null;
+        //    await Task.Run(() =>
+        //    {
+        //        try
+        //        {
+        //            using (WebClient client = new WebClient())
+        //            {
+        //                data = client.DownloadData("https://vnfast.ru/files/updates/" + Application.ProductName + ".txt");
+        //            }
+        //        }
+        //        catch(Exception ex)
+        //        {
+        //            if (Program.IsDebug)
+        //            {
+        //                Program.AddToLog(ex.Message);
+        //            }
+        //        }
+        //    });
+        //    if (data.Length>0)
+        //    {
+        //        string text = Encoding.UTF8.GetString(data);
+        //        string[] listItems = text.Split(new char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+        //        StringBuilder sb = new StringBuilder();
+        //        for (int i = 1; i < listItems.Length; i++)
+        //        {
+        //            sb.AppendLine(listItems[i]);
+        //        }
+        //        if (listItems[0] != Application.ProductVersion)
+        //        {
+        //            if (MessageBox.Show($"На сайте обнаружена новая версия программы ({listItems[0]}).\nНовое в версии:\n{sb}\nХотите перейти на страницу программы?",
+        //                "Найдено обновление программы", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+        //            {
+        //                System.Diagnostics.Process.Start("https://vnfast.ru/programmy/96-umdbb");
+        //            }
+        //        }
+        //    }
+        //}
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CheckForUpdateAsync();
+            if (!Program.IsDebug)
+                Extensions.CheckForUpdateAsync(Application.ProductVersion);
+            //CheckForUpdateAsync();
             if (!Program.IsDebug)
             {
                 toolStripButton7.Visible = false;
@@ -249,7 +251,12 @@ namespace UmaMusumeDBBrowser
                 dataGridView1.Columns[item.Key].Width = item.Value;
                 dataGridView1.Columns[item.Key].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             }
-            
+
+            foreach (var item in settings.HideColumms)
+            {
+                dataGridView1.Columns[item].Visible = false;
+            }
+
             currentTableSettings = settings;
             currentTable = table;
             if (filter != null)

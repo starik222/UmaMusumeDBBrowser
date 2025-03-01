@@ -29,6 +29,7 @@ namespace UmaMusumeDBBrowser
         //private Image<Bgr, byte> lastImage = null;
         private GameDataType lastDataType = GameDataType.NotFound;
         private List<SkillManager.SkillData> lastSkillResult;
+        private List<LegendBuffManager.BuffData> lastLegendBuffResult;
         private List<FactorManager.FactorData> lastGenResult;
         private List<MissionManager.MissionData> lastMissionResult;
         private List<FreeShopManager.FreeShopItemData> lastFreeShopResult;
@@ -50,6 +51,8 @@ namespace UmaMusumeDBBrowser
         public bool BsRightPanelVisible { get; set; } = true;
 
         private const float optionsConfidence = 0.6f;
+
+        private bool needGetImage = false;
 
 
         public GameReader(GameType gameWindowType, AllLibraryManager libManager, GameSettings gameSettings, List<NAMES> replaceChars = null)
@@ -131,6 +134,10 @@ namespace UmaMusumeDBBrowser
             return true;
         }
 
+        public void GetDebugImage()
+        {
+            needGetImage = true;
+        }
 
 
         private void Processed(int periodMillisec, CancellationToken token)
@@ -170,11 +177,11 @@ namespace UmaMusumeDBBrowser
                     }
                     goto Exit;
                 }
-                //if (Program.IsDebug)
-                //{
-                //    Program.AddToLog("Получен скриншот");
-                //    ((Image)origImg.Clone()).Save(string.Format(@"origScr_{0}_{1}.bmp", DateTime.Today.ToShortDateString(), DateTime.Now.Ticks), ImageFormat.Bmp);
-                //}
+                if (Program.IsDebug && needGetImage)
+                {
+                    Program.AddToLog("Получен скриншот");
+                    ((Image)origImg.Clone()).Save(string.Format(@"origScr_{0}_{1}.bmp", DateTime.Today.ToShortDateString(), DateTime.Now.Ticks), ImageFormat.Bmp);
+                }
                 if (gameType == GameType.BluestacksV4)
                 {
                     Rectangle rectangle = new Rectangle(settings.BlueStacksPanel.Ver4.X, settings.BlueStacksPanel.Ver4.Height, origImg.Width - settings.BlueStacksPanel.Ver4.X - (BsRightPanelVisible ? settings.BlueStacksPanel.Ver4.Width : settings.BlueStacksPanel.Ver4.X),
@@ -210,10 +217,11 @@ namespace UmaMusumeDBBrowser
                     normalSize.Height = settings.GameNormalSize.Horizontal.Height;
                 }
                 currentImage = ImageManager.PrepareImage((Bitmap)origImg, normalSize);
-                //if (Program.IsDebug)
-                //{
-                //    (currentImage.Clone().ToBitmap()).Save(string.Format(@"resizedScr_{0}_{1}.bmp", DateTime.Today.ToShortDateString(), DateTime.Now.Ticks), ImageFormat.Bmp);
-                //}
+                if (Program.IsDebug && needGetImage)
+                {
+                    (currentImage.Clone().ToBitmap()).Save(string.Format(@"resizedScr_{0}_{1}.bmp", DateTime.Today.ToShortDateString(), DateTime.Now.Ticks), ImageFormat.Bmp);
+                    needGetImage = false;
+                }
                 var dataType = DetectDataType(currentImage, isVertical);
                 if (Program.IsDebug)
                 {
@@ -283,6 +291,16 @@ namespace UmaMusumeDBBrowser
                             {
                                 DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.UmaSkillList, DataClass = result });
                                 lastSkillResult = result;
+                            }
+                            break;
+                        }
+                    case GameDataType.LegendBuffList:
+                        {
+                            var result = GetLegendBuffList(currentImage, dataType.PartInfo, dataType.type);
+                            if (result.Count > 0 && !result.Equals(lastLegendBuffResult))
+                            {
+                                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.LegendBuffList, DataClass = result });
+                                lastLegendBuffResult = result;
                             }
                             break;
                         }
@@ -1146,6 +1164,46 @@ namespace UmaMusumeDBBrowser
             return skillDatas;
         }
 
+        private List<LegendBuffManager.BuffData> GetLegendBuffList(Image<Bgr, byte> img, Rectangle gamePart, GameDataType dataType)
+        {
+            List<LegendBuffManager.BuffData> buffDatas = new List<LegendBuffManager.BuffData>();
+            if (dataType == GameDataType.LegendBuffList)
+            {
+                Image<Gray, byte> grayImg = img.Convert<Gray, byte>();
+                //Поиск контуров всех кнопок понижения.
+
+                var subParts = settings.GameParts.Find(a => a.PartName.Equals("LegendBuffList"))?.SubGameParts;
+
+                if (subParts == null || subParts.Count == 0)
+                {
+                    grayImg.Dispose();
+                    return buffDatas;
+                }
+                List<Rectangle> partsLocInfo = GetGamePartsRects(grayImg, subParts, 0.93);
+                //Создание рабочих контуров
+                foreach (var item in partsLocInfo)
+                {
+                    if (item.Y < settings.GameTypeElements[gameType].LegendBuffListWindow.Y || item.Y > settings.GameTypeElements[gameType].LegendBuffListWindow.Y + settings.GameTypeElements[gameType].LegendBuffListWindow.Height)//исключение первого умения, если его название обрезано.
+                        continue;
+
+                    if (item.X < settings.GameTypeElements[gameType].LegendBuffListWindow.X + 290 || item.X > settings.GameTypeElements[gameType].LegendBuffListWindow.X + settings.GameTypeElements[gameType].LegendBuffListWindow.Width)//исключение первого умения, если его название обрезано.
+                        continue;
+                    Rectangle textCountor = new Rectangle(item.X - settings.GameTypeElements[gameType].LegendBuffNameCorrectBounds.X,
+                        item.Y - settings.GameTypeElements[gameType].LegendBuffNameCorrectBounds.Y, settings.GameTypeElements[gameType].LegendBuffNameCorrectBounds.Width,
+                        settings.GameTypeElements[gameType].LegendBuffNameCorrectBounds.Height);
+                    var result = GetBuffDataFromCountor(img, textCountor);
+                    if (result != null)
+                        buffDatas.Add(result);
+                }
+                grayImg.Dispose();
+            }
+            if (Program.IsDebug)
+            {
+                Program.AddToLog($"Обнаружено {buffDatas.Count} умений.");
+            }
+            return buffDatas;
+        }
+
 
         private SkillManager.SkillData GetSkillDataFromCountor(Image<Bgr, byte> img, Rectangle textCountor)
         {
@@ -1228,6 +1286,89 @@ namespace UmaMusumeDBBrowser
             hsvMat.Dispose();
             mask.Dispose();
             return skillData;
+        }
+
+        private LegendBuffManager.BuffData GetBuffDataFromCountor(Image<Bgr, byte> img, Rectangle textCountor)
+        {
+            LegendBuffManager.BuffData buffData = null;
+            if (Program.IsDebug)
+            {
+                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = (new Mat(img.Mat, textCountor)).ToBitmap() });
+            }
+
+            Mat textMat = new Mat(img.Mat, textCountor);
+            CvInvoke.Resize(textMat, textMat, new Size(), 2, 2, Inter.Lanczos4);
+            Mat mask = new Mat();
+            Mat hsvMat = new Mat();
+            CvInvoke.CvtColor(textMat, hsvMat, ColorConversion.Bgr2Hsv);
+            int isNext = 0;
+            MCvScalar minS = new MCvScalar(10, 45, 70);
+            MCvScalar maxS = new MCvScalar(13, 218, 204);
+        nextTry:
+            CvInvoke.InRange(hsvMat, new ScalarArray(minS), new ScalarArray(maxS), mask);
+            CvInvoke.BitwiseNot(mask, mask);
+            Mat resMat = textMat.Clone();
+            resMat.SetTo(new MCvScalar(255, 255, 255), mask);
+
+            if (Program.IsDebug)
+            {
+                DataChanged?.Invoke(this, new GameDataArgs() { DataType = GameDataType.DebugImage, DataClass = textMat.ToBitmap() });
+            }
+        nextTry2:
+            string text = Program.TessManager.GetTextSingleLine(resMat, TesseractManager.TessDict.jpn);
+            if (string.IsNullOrEmpty(text))
+                text = Program.TessManager.GetTextSingleLine(resMat, TesseractManager.TessDict.uma);
+
+            var res = libraryManager.LegendBuffLibrary.FindBuffByName(text, true, 0.5f);
+            if (res.Count == 1)
+                buffData = res[0].Value;
+            else if (res.Count > 1)
+            {
+                var s = GetItemWithMaxConfidence<LegendBuffManager.BuffData>(res);
+                if (s != null)
+                    buffData = s;
+            }
+            else if (res.Count == 0 && !string.IsNullOrWhiteSpace(text))
+            {
+                res = libraryManager.LegendBuffLibrary.FindBuffByNameDiceAlg(text);
+                if (res.Count == 1)
+                    buffData = res[0].Value;
+                else if (res.Count > 1)
+                {
+                    var s = GetItemWithMaxConfidence<LegendBuffManager.BuffData>(res);
+                    if (s != null)
+                        buffData = s;
+                }
+            }
+
+
+
+            if (res.Count == 0 && isNext == 0)
+            {
+                resMat.Dispose();
+                minS = new MCvScalar(10, 125, 100);
+                maxS = new MCvScalar(14, 212, 160);
+                isNext = 1;
+                goto nextTry;
+            }
+            else if (res.Count == 0 && isNext == 1)
+            {
+                resMat = new Mat(img.Mat, textCountor);
+                isNext = 2;
+                goto nextTry2;
+            }
+            //else if (res.Count == 0 && isNext == 2)
+            //{
+            //    CvInvoke.Resize(resMat, resMat, new Size(), 2, 2);
+            //    CvInvoke.Threshold(resMat, resMat, 123f, 255f, ThresholdType.Binary);
+            //    isNext = 3;
+            //    goto nextTry2;
+            //}
+            resMat.Dispose();
+            textMat.Dispose();
+            hsvMat.Dispose();
+            mask.Dispose();
+            return buffData;
         }
 
         private T GetItemWithMaxConfidence<T>(List<KeyValuePair<float, T>> datas)
@@ -1627,6 +1768,7 @@ namespace UmaMusumeDBBrowser
             FreeShopAvaibleWindow = 12,
             MainDialog = 13,
             MainDialogOption = 14,
+            LegendBuffList = 15,
             GameNotFound = -1,
             NotFound = -2,
             DebugImage = -3

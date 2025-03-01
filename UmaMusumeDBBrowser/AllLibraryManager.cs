@@ -11,6 +11,7 @@ namespace UmaMusumeDBBrowser
     {
         public EventManager EventLibrary { get; set; }
         public SkillManager SkillLibrary { get; set; }
+        public LegendBuffManager LegendBuffLibrary { get; set; }
         public TazunaManager TazunaLibrary { get; set; }
         public FactorManager FactorLibrary { get; set; }
         public MissionManager MissionLibrary { get; set; }
@@ -21,6 +22,7 @@ namespace UmaMusumeDBBrowser
         {
             EventLibrary = new EventManager();
             SkillLibrary = new SkillManager();
+            LegendBuffLibrary = new LegendBuffManager();
             TazunaLibrary = new TazunaManager();
             FactorLibrary = new FactorManager();
             MissionLibrary = new MissionManager();
@@ -32,6 +34,7 @@ namespace UmaMusumeDBBrowser
         {
             EventLibrary.LoadLibrary(Path.Combine(Program.DictonariesDir, "EventLibrary.json"));
             SkillLibrary.FillData();
+            LegendBuffLibrary.FillData();
             TazunaLibrary.LoadLibrary(Path.Combine(Program.DictonariesDir, "TazunaLibrary.json"));
             FactorLibrary.FillData();
             MissionLibrary.FillData();

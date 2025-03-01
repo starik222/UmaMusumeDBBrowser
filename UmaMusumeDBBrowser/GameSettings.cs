@@ -62,7 +62,9 @@ namespace UmaMusumeDBBrowser
             public Rect CurrentMenuBounds { get; set; }
             public Rect BackButtonBounds { get; set; }
             public Rect SkillListWindow { get; set; }
+            public Rect LegendBuffListWindow { get; set; }
             public Rect SkillNameCorrectBounds { get; set; }
+            public Rect LegendBuffNameCorrectBounds { get; set; }
             public Rect TazunaAfterHelpWindow { get; set; }
             public Rect TazunaWarningTestRect { get; set; }
             public Rect TazunaWarningWindow { get; set; }

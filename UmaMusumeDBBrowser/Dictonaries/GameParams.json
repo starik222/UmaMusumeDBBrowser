@@ -85,11 +85,23 @@
         "width": 298,
         "height": 454
       },
+      "LegendBuffListWindow": {
+        "x": 126,
+        "y": 269,
+        "width": 436,
+        "height": 534
+      },
       "SkillNameCorrectBounds": {
         "x": 298,
         "y": 42,
         "width": 290,
         "height": 23
+      },
+      "LegendBuffNameCorrectBounds": {
+        "x": 326,
+        "y": 4,
+        "width": 290,
+        "height": 29
       },
       "TazunaAfterHelpWindow": {
         "x": 117,
@@ -171,11 +183,23 @@
         "width": 298,
         "height": 454
       },
+      "LegendBuffListWindow": {
+        "x": 126,
+        "y": 269,
+        "width": 436,
+        "height": 534
+      },
       "SkillNameCorrectBounds": {
         "x": 298,
         "y": 37,
         "width": 290,
         "height": 24
+      },
+      "LegendBuffNameCorrectBounds": {
+        "x": 326,
+        "y": 4,
+        "width": 290,
+        "height": 29
       },
       "TazunaAfterHelpWindow": {
         "x": 117,
@@ -346,6 +370,20 @@
       "VerticalState": false,
       "DataType": 14,
       "ImageName": "EventOptionHorisontal.bmp"
+    },
+    {
+      "PartName": "LegendBuffList",
+      "VerticalState": true,
+      "DataType": 15,
+      "ImageName": "LegendBuffWindow.bmp",
+      "SubGameParts": [
+        {
+          "PartName": "LegendBuffPartB",
+          "VerticalState": true,
+          "DataType": 15,
+          "ImageName": "LegendBuffPart2.bmp"
+        }
+      ]
     }
   ]
 }

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using Newtonsoft.Json;
+using System.Diagnostics;
+using System.Net.Http;
 
 namespace UmaMusumeDBBrowser
 {
@@ -251,6 +254,70 @@ namespace UmaMusumeDBBrowser
                     badBytesCount++;
             }
             return 1.0f - ((float)badBytesCount / (float)origBytes.Length);
+        }
+
+
+
+        public static async void CheckForUpdateAsync(string currentVersion)
+        {
+            string data = null;
+            await Task.Run(async () =>
+            {
+                try
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        client.DefaultRequestHeaders.Add("Accept", "application/vnd.github+jso");
+                        client.DefaultRequestHeaders.Add("X-GitHub-Api-Version", "2022-11-28");
+                        client.DefaultRequestHeaders.Add("User-Agent", "UmaMusumeDBBrowser");
+                        data = await client.GetStringAsync("https://api.github.com/repos/starik222/UmaMusumeDBBrowser/releases");
+                    }
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+            });
+            if (!string.IsNullOrWhiteSpace(data))
+            {
+                try
+                {
+                    List<ReleaseInfo> releasesList = JsonConvert.DeserializeObject<List<ReleaseInfo>>(data);
+
+                    releasesList.Sort((b, a) => a.published_at.CompareTo(b.published_at));
+                    currentVersion = "v" + currentVersion;
+                    int curIndex = releasesList.FindIndex(a => currentVersion.StartsWith(a.tag_name));
+                    if (curIndex <= 0)
+                        return;
+
+                    List<ReleaseInfo> nVersions = releasesList.Take(curIndex).ToList();
+                    string url = nVersions[0].html_url;
+                    StringBuilder releaseNote = new StringBuilder();
+                    foreach (var item in nVersions)
+                    {
+                        string text = item.body;
+                        string[] listItems = text.Split(new char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                        releaseNote.AppendLine(item.tag_name + ":");
+                        for (int i = 0; i < listItems.Length; i++)
+                        {
+                            releaseNote.AppendLine(listItems[i]);
+                        }
+                    }
+                    if (MessageBox.Show($"Обнаружена новая версия программы ({nVersions[0].tag_name.Substring(1)}).\nНовое в версии:\n{releaseNote}\nХотите перейти на страницу загрузки?",
+                        "Найдено обновление программы", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = url,
+                            UseShellExecute = true
+                        });
+                    }
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+            }
         }
     }
 

@@ -58,6 +58,8 @@ namespace UmaMusumeDBBrowser
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -103,8 +105,33 @@ namespace UmaMusumeDBBrowser
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTempFix = new System.Windows.Forms.Panel();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -132,6 +159,20 @@ namespace UmaMusumeDBBrowser
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage9.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.tableLayoutPanel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.tableLayoutPanel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -150,6 +191,7 @@ namespace UmaMusumeDBBrowser
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
@@ -479,6 +521,24 @@ namespace UmaMusumeDBBrowser
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(227, 20);
             this.textBox6.TabIndex = 4;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox22.Location = new System.Drawing.Point(8, 138);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.ReadOnly = true;
+            this.textBox22.Size = new System.Drawing.Size(227, 20);
+            this.textBox22.TabIndex = 4;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox23.Location = new System.Drawing.Point(8, 164);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.ReadOnly = true;
+            this.textBox23.Size = new System.Drawing.Size(227, 20);
+            this.textBox23.TabIndex = 4;
             // 
             // textBox1
             // 
@@ -941,6 +1001,7 @@ namespace UmaMusumeDBBrowser
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button8);
             this.tabPage3.Controls.Add(this.button5);
             this.tabPage3.Controls.Add(this.pictureBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -996,28 +1057,347 @@ namespace UmaMusumeDBBrowser
             // 
             this.panelTempFix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelTempFix.Location = new System.Drawing.Point(463, 17);
+            this.panelTempFix.Location = new System.Drawing.Point(491, 17);
             this.panelTempFix.Name = "panelTempFix";
-            this.panelTempFix.Size = new System.Drawing.Size(158, 29);
+            this.panelTempFix.Size = new System.Drawing.Size(130, 29);
             this.panelTempFix.TabIndex = 4;
             // 
-            // textBox22
+            // button8
             // 
-            this.textBox22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox22.Location = new System.Drawing.Point(8, 138);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.ReadOnly = true;
-            this.textBox22.Size = new System.Drawing.Size(227, 20);
-            this.textBox22.TabIndex = 4;
+            this.button8.Location = new System.Drawing.Point(530, 333);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 2;
+            this.button8.Text = "GetImage";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // textBox23
+            // tabPage9
             // 
-            this.textBox23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox23.Location = new System.Drawing.Point(8, 164);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.ReadOnly = true;
-            this.textBox23.Size = new System.Drawing.Size(227, 20);
-            this.textBox23.TabIndex = 4;
+            this.tabPage9.Controls.Add(this.tableLayoutPanel7);
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(613, 401);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "Баффы";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel10, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel11, 0, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(5, 5);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 4;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(605, 364);
+            this.tableLayoutPanel7.TabIndex = 4;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel8.ColumnCount = 4;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox7, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.textBox24, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.textBox25, 3, 0);
+            this.tableLayoutPanel8.Controls.Add(this.textBox26, 2, 1);
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox11, 1, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(599, 85);
+            this.tableLayoutPanel8.TabIndex = 2;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.pictureBox7.MinimumSize = new System.Drawing.Size(60, 60);
+            this.pictureBox7.Name = "pictureBox7";
+            this.tableLayoutPanel8.SetRowSpan(this.pictureBox7, 2);
+            this.pictureBox7.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox24.Location = new System.Drawing.Point(133, 3);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(228, 20);
+            this.textBox24.TabIndex = 1;
+            // 
+            // textBox25
+            // 
+            this.textBox25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox25.Location = new System.Drawing.Point(367, 3);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(229, 20);
+            this.textBox25.TabIndex = 2;
+            // 
+            // textBox26
+            // 
+            this.tableLayoutPanel8.SetColumnSpan(this.textBox26, 2);
+            this.textBox26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox26.Location = new System.Drawing.Point(133, 28);
+            this.textBox26.Multiline = true;
+            this.textBox26.Name = "textBox26";
+            this.textBox26.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox26.Size = new System.Drawing.Size(463, 54);
+            this.textBox26.TabIndex = 3;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel9.ColumnCount = 4;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.Controls.Add(this.pictureBox8, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.textBox27, 2, 0);
+            this.tableLayoutPanel9.Controls.Add(this.textBox28, 3, 0);
+            this.tableLayoutPanel9.Controls.Add(this.textBox29, 2, 1);
+            this.tableLayoutPanel9.Controls.Add(this.pictureBox12, 1, 0);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 94);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 2;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(599, 85);
+            this.tableLayoutPanel9.TabIndex = 2;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.pictureBox8.MinimumSize = new System.Drawing.Size(60, 60);
+            this.pictureBox8.Name = "pictureBox8";
+            this.tableLayoutPanel9.SetRowSpan(this.pictureBox8, 2);
+            this.pictureBox8.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 0;
+            this.pictureBox8.TabStop = false;
+            // 
+            // textBox27
+            // 
+            this.textBox27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox27.Location = new System.Drawing.Point(133, 3);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(228, 20);
+            this.textBox27.TabIndex = 1;
+            // 
+            // textBox28
+            // 
+            this.textBox28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox28.Location = new System.Drawing.Point(367, 3);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(229, 20);
+            this.textBox28.TabIndex = 2;
+            // 
+            // textBox29
+            // 
+            this.tableLayoutPanel9.SetColumnSpan(this.textBox29, 2);
+            this.textBox29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox29.Location = new System.Drawing.Point(133, 28);
+            this.textBox29.Multiline = true;
+            this.textBox29.Name = "textBox29";
+            this.textBox29.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox29.Size = new System.Drawing.Size(463, 54);
+            this.textBox29.TabIndex = 3;
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel10.ColumnCount = 4;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Controls.Add(this.pictureBox9, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.textBox30, 2, 0);
+            this.tableLayoutPanel10.Controls.Add(this.textBox31, 3, 0);
+            this.tableLayoutPanel10.Controls.Add(this.textBox32, 2, 1);
+            this.tableLayoutPanel10.Controls.Add(this.pictureBox13, 1, 0);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 185);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(599, 85);
+            this.tableLayoutPanel10.TabIndex = 2;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.pictureBox9.MinimumSize = new System.Drawing.Size(60, 60);
+            this.pictureBox9.Name = "pictureBox9";
+            this.tableLayoutPanel10.SetRowSpan(this.pictureBox9, 2);
+            this.pictureBox9.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 0;
+            this.pictureBox9.TabStop = false;
+            // 
+            // textBox30
+            // 
+            this.textBox30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox30.Location = new System.Drawing.Point(133, 3);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.Size = new System.Drawing.Size(228, 20);
+            this.textBox30.TabIndex = 1;
+            // 
+            // textBox31
+            // 
+            this.textBox31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox31.Location = new System.Drawing.Point(367, 3);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.Size = new System.Drawing.Size(229, 20);
+            this.textBox31.TabIndex = 2;
+            // 
+            // textBox32
+            // 
+            this.tableLayoutPanel10.SetColumnSpan(this.textBox32, 2);
+            this.textBox32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox32.Location = new System.Drawing.Point(133, 28);
+            this.textBox32.Multiline = true;
+            this.textBox32.Name = "textBox32";
+            this.textBox32.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox32.Size = new System.Drawing.Size(463, 54);
+            this.textBox32.TabIndex = 3;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel11.ColumnCount = 4;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Controls.Add(this.pictureBox10, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.textBox33, 2, 0);
+            this.tableLayoutPanel11.Controls.Add(this.textBox34, 3, 0);
+            this.tableLayoutPanel11.Controls.Add(this.textBox35, 2, 1);
+            this.tableLayoutPanel11.Controls.Add(this.pictureBox14, 1, 0);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 276);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(599, 85);
+            this.tableLayoutPanel11.TabIndex = 2;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.pictureBox10.MinimumSize = new System.Drawing.Size(60, 60);
+            this.pictureBox10.Name = "pictureBox10";
+            this.tableLayoutPanel11.SetRowSpan(this.pictureBox10, 2);
+            this.pictureBox10.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 0;
+            this.pictureBox10.TabStop = false;
+            // 
+            // textBox33
+            // 
+            this.textBox33.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox33.Location = new System.Drawing.Point(133, 3);
+            this.textBox33.Name = "textBox33";
+            this.textBox33.Size = new System.Drawing.Size(228, 20);
+            this.textBox33.TabIndex = 1;
+            // 
+            // textBox34
+            // 
+            this.textBox34.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox34.Location = new System.Drawing.Point(367, 3);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.Size = new System.Drawing.Size(229, 20);
+            this.textBox34.TabIndex = 2;
+            // 
+            // textBox35
+            // 
+            this.tableLayoutPanel11.SetColumnSpan(this.textBox35, 2);
+            this.textBox35.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox35.Location = new System.Drawing.Point(133, 28);
+            this.textBox35.Multiline = true;
+            this.textBox35.Name = "textBox35";
+            this.textBox35.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox35.Size = new System.Drawing.Size(463, 54);
+            this.textBox35.TabIndex = 3;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Location = new System.Drawing.Point(68, 5);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.pictureBox11.MinimumSize = new System.Drawing.Size(60, 60);
+            this.pictureBox11.Name = "pictureBox11";
+            this.tableLayoutPanel8.SetRowSpan(this.pictureBox11, 2);
+            this.pictureBox11.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 0;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Location = new System.Drawing.Point(68, 5);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.pictureBox12.MinimumSize = new System.Drawing.Size(60, 60);
+            this.pictureBox12.Name = "pictureBox12";
+            this.tableLayoutPanel9.SetRowSpan(this.pictureBox12, 2);
+            this.pictureBox12.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 0;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Location = new System.Drawing.Point(68, 5);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.pictureBox13.MinimumSize = new System.Drawing.Size(60, 60);
+            this.pictureBox13.Name = "pictureBox13";
+            this.tableLayoutPanel10.SetRowSpan(this.pictureBox13, 2);
+            this.pictureBox13.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 0;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Location = new System.Drawing.Point(68, 5);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.pictureBox14.MinimumSize = new System.Drawing.Size(60, 60);
+            this.pictureBox14.Name = "pictureBox14";
+            this.tableLayoutPanel11.SetRowSpan(this.pictureBox14, 2);
+            this.pictureBox14.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox14.TabIndex = 0;
+            this.pictureBox14.TabStop = false;
             // 
             // Form_GameRecognizer
             // 
@@ -1069,6 +1449,24 @@ namespace UmaMusumeDBBrowser
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage9.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1151,5 +1549,32 @@ namespace UmaMusumeDBBrowser
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox14;
     }
 }
